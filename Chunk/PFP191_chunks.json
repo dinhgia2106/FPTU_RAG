@@ -1,0 +1,780 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Lập trình các nguyên tắc cơ bản với python_cơ sở lập trình (với python) (Lập trình cơ bản với Python). Mã môn: PFP191. Số tín chỉ: 3. Mô tả: - Kiến thức về ngôn ngữ lập trình đã trở thành một phần thiết yếu của giáo dục khoa học máy tính vì việc thực hiện các ý tưởng, phương pháp tiếp cận, mô hình và thuật toán là vô cùng quan trọng đối với lĩnh vực giáo dục và nghiên cứu cũng như sản xuất. Để triển khai từ một ý tưởng đến một sản phẩm, cần có các công cụ ngôn ngữ lập trình. - Trong những năm gần đây, Python đã nổi lên như một ngôn ngữ phổ biến, mạnh mẽ, đa nhiệm và được áp dụng rộng rãi, đặc biệt là trong một số lĩnh vực công nghệ mới như AI, fintech, khoa học dữ liệu, IoT, v.v. - Khóa học này bao gồm các khía cạnh thiết yếu của lập trình, bao gồm các khái niệm cơ bản, thiết kế mã hóa và ngôn ngữ lập trình Python, với sự nhấn mạnh vào lập trình hướng đối tượng (OOP), vì tầm quan trọng của nó đối với phát triển phần mềm nâng cao và các khóa học tiếp theo. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các khe liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và nộp đúng hạn -Liên tục theo dõi https://flm.fpt.edu.vn/ để biết thông tin khóa học cập nhật liên quan đến việc gửi và phản hồi bài tập về các bài tập và công việc dự án.. Công cụ sử dụng: Visual Studio Code, Google Colab.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "general_details"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Hiểu môi trường phát triển (IDE), các khái niệm lập trình và thế giới của Python",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "clos",
+      "clo_id": "1"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Hiểu các biến, biểu thức và câu lệnh",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "clos",
+      "clo_id": "2"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Hiểu thực thi có điều kiện, các chức năng, vòng lặp và lặp lại",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "clos",
+      "clo_id": "3"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Hiểu chuỗi",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "clos",
+      "clo_id": "4"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Hiểu các tập tin",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "clos",
+      "clo_id": "5"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO6): Hiểu danh sách, từ điển, bộ dữ",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "clos",
+      "clo_id": "6"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 7 (CLO7): Hiểu OOP và cách áp dụng công nghệ này cho một ứng dụng thực tế",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "clos",
+      "clo_id": "7"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Chương 1. Tại sao bạn nên học viết chương trình? (Phần 1) 1.1 Sáng tạo và Động lực 1.2 Kiến trúc phần cứng máy tính 1.3 Hiểu lập trình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1. Tài liệu sinh viên: Sách giáo khoa, slide. Link tải tài liệu buổi học: PFP191_Mat - https://flm.fpt.edu.vn/download/12224/S/1_PFP191_Mat.zip. Nhiệm vụ sinh viên: Đọc chương 1 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "1"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - 1,4 từ và câu 1.5 trò chuyện với Python 1.6 Thuật ngữ: Trình thông dịch và trình biên dịch. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 1 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "2"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Chương 1. Tại sao bạn nên học viết chương trình? (Phần 2) 1.7 Viết một chương trình 1.8 Chương trình là gì? 1.9 Các khối chương trình Buiding 1.10 Điều gì có thể xảy ra sai? 1.11 Gỡ lỗi 1.12 Hành trình học tập 1.13 Giới thiệu IDE. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 1 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "3"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Chương 2. Biến, biểu thức và câu lệnh (Phần 1) 2.1 Giá trị và loại 2.2 Biến 2.3 Tên biến và từ khóa 2.4 Báo cáo. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 2 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "4"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - 2.5 toán tử và toán hạng 2.6 Biểu thức. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 2 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "5"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - Chương 2. Biến, biểu thức và câu lệnh (Phần 2) 2.7 Thứ tự hoạt động 2.8 Toán tử mô đun 2.9 Hoạt động chuỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 2 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "6"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - 2.10 Yêu cầu người dùng cho đầu vào 2.11 Nhận xét 2.12 Lựa chọn tên biến MNemonic 2.13 Gỡ lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 2 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "7"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Lab1 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 1 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "8"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Hỗ trợ Lab1 (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 1 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "9"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Chương 3. Thực hiện có điều kiện 3.1 Biểu thức Boolean 3.2 toán tử logic 3.3 Thực hiện có điều kiện 3.4 Thực hiện thay thế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 3 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "10"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - 3.5 điều kiện chuỗi 3.6 điều kiện lồng nhau 3.7 Bắt các ngoại lệ bằng cách sử dụng thử và ngoại trừ 3.8 Đánh giá ngắn mạch các biểu thức logic 3.9 Gỡ lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 3 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "11"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Chương 4. Lặp lại 4.1 Cập nhật các biến 4.2 Tuyên bố trong khi 4.3 Vòng lặp vô hạn 4.4 Hoàn thiện các lần lặp lại với tiếp tục. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 5 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "12"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - 4.5 Các vòng lặp xác định sử dụng cho 4.6 mẫu vòng lặp 4.7 Gỡ lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 5 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "13"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - Chương 5. Chức năng (Phần 1) 5.1 Các cuộc gọi chức năng 5.2 Chức năng tích hợp 5.3 Chức năng chuyển đổi loại. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 4 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "14"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - 5.4 Chức năng toán học 5.5 số ngẫu nhiên 5.6 Thêm các chức năng mới. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 4 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "15"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - Chương 5. Chức năng (Phần 2) 5.7 Định nghĩa và sử dụng 5,8 dòng thực thi 5.9 tham số và đối số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 4 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "16"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - 5.10 Các chức năng hiệu quả và các chức năng trống 5.11 Tại sao chức năng? 5.12 Gỡ lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 4 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "17"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Phòng thí nghiệm 2 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 2 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "18"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - Hỗ trợ phòng thí nghiệm 2 (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 2 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "19"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - Kiểm tra tiến độ 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài kiểm tra tiến độ trên lớp.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "20"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - Chương 6. Chuỗi (Phần 1) 6.1 Chuỗi là một chuỗi 6.2 Nhận độ dài của một chuỗi bằng Len 6.3 Traversal qua một chuỗi với một vòng lặp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "21"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - 6.4 Đụ chuỗi 6,5 chuỗi là bất biến 6.6 vòng lặp và đếm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "22"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - Chương 6. Chuỗi (Phần 2) 6.7 Nhà điều hành trong 6,8 so sánh chuỗi 6,9 Phương thức chuỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "23"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - 6.10 Chuỗi phân tích cú pháp 6.11 toán tử định dạng 6.12 Gỡ lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "24"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - Chương 7. Tệp 7.1. Sự kiên trì 7.2 Mở tập tin 7/3 tệp và dòng văn bản 7.4 Đọc tập tin. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "25"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - 7.5 Tìm kiếm thông qua một tệp 7.6 Cho phép người dùng chọn tên tệp 7.7 Sử dụng thử, ngoại trừ và mở 7.8 Viết tập tin 7.9 Gỡ lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "26"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - Phòng thí nghiệm 3 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "27"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - Lab 3 Hỗ trợ (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "28"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - Chương 8. Danh sách (Phần 1) 8.1 Danh sách là một chuỗi 8.2 Danh sách có thể thay đổi 8.3 Traversing một danh sách. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 8 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "29"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - 8.4 Danh sách hoạt động 8,5 lát danh sách 8.6 Phương pháp liệt kê. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 8 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "30"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - Chương 8. Danh sách (Phần 2) 8.7 Xóa các yếu tố 8.8 Danh sách và chức năng 8,9 danh sách và chuỗi 8.10 Dòng phân tích cú pháp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 8 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "31"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - 8.11 Đối tượng và giá trị 8.12 Bí danh 8.13 Liệt kê đối số 8.14 Gỡ lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 8 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "32"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - Chương 9. Từ điển 9.1 Từ điển như một bộ quầy 9.2 Từ điển và tệp 9.3 Vòng lặp và từ điển. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 9 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "33"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - 9.4 Phân tích văn bản nâng cao 9.5 Gỡ lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 9 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "34"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - Chương 10. Tuples (Phần 1) 10.1 Bộ dữ liệu là bất biến. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 10 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "35"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - 10.2 So sánh bộ dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 10 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "36"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - 10.3 Phân công. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 10 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "37"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - 10,4 Từ điển và bộ dữ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 10 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "38"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - Phòng thí nghiệm 4 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "39"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - LAB 4 Hỗ trợ (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "40"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Chương 14. Lập trình hướng đối tượng 14.1 Giới thiệu về OOP. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "41"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - 14.2 lớp và đối tượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "42"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - 14.3 Đóng gói và ẩn dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "43"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - 14.4 Trừu tượng và thiết kế mô -đun. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "44"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - 14,5 thừa kế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "45"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - 14.6 Đa hình và quá tải phương pháp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "46"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - Hỗ trợ chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "47"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - Hỗ trợ chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "48"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - 14.7 Sử dụng các đối tượng và làm việc với các chương trình OOP. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "49"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - 14.8 Vòng đời đối tượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "50"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - Kiểm tra tiến độ 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm bài kiểm tra tiến độ trên lớp.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "51"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - 14.9 Các khái niệm và mô hình thiết kế OOP nâng cao. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "52"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - 14.10 Nghiên cứu trường hợp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "53"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - 14.11 Tóm tắt. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "54"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - Phòng thí nghiệm 5 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "55"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - Lab 5 Hỗ trợ (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong cuốn sách văn bản 4.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "56"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Đánh giá chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO6, LO7. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Trình bày kết quả của bài tập.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "57"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Đánh giá chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO6, LO7. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Trình bày kết quả của bài tập.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "58"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): All Los. Nhiệm vụ sinh viên: Xem lại khóa học.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "59"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): All Los. Nhiệm vụ sinh viên: Xem lại khóa học.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "sessions",
+      "session_number": "60"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phân công (đang diễn ra). Trọng số: 15.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7. Loại câu hỏi/Nhiệm vụ: Ôn tập. Thời gian: 28 khe cắm. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Tất cả các môn học trong giáo trình.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "assessments",
+      "assessment_category": "Phân công"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7. Loại câu hỏi/Nhiệm vụ: Ôn tập. Thời gian: 90 '/mỗi. Tiêu chí hoàn thành: >0.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi thực tế (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7. Loại câu hỏi/Nhiệm vụ: PEA. Thời gian: 85 '/mỗi. Tiêu chí hoàn thành: >0.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi thực tế"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ (đang diễn ra). Trọng số: 15.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 30 '/mỗi. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Dựa trên tiến trình của lớp. Ghi chú: Instruction and schedules for Progress Tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has responsibility to review the test for students after graded. *** Note: Test 1: LO1, LO2, LO3 Test 2: LO4, LO5, LO6, LO7.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính. Thời gian: 60 '/mỗi. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các môn học trong giáo trình. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Python for Everybody Exploring Data Using Python 3. Tác giả: Charles R. Severance. Nhà xuất bản: Creative Commons Attribution-NonCommercial- ShareAlike 3.0 Unported License. Năm xuất bản: 2016. Link/Ghi chú: http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "materials_table",
+      "material_description": "Python for Everybody Exploring Data Using Python 3"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Python for Everybody (PY4E). Tác giả: Charles R. Severance. Link/Ghi chú: https://www.py4e.com/.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "materials_table",
+      "material_description": "Python for Everybody (PY4E)"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Python for Everybody Specialization. Tác giả: Charles R. Severance. Link/Ghi chú: https://www.coursera.org/specializations/python.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "materials_table",
+      "material_description": "Python for Everybody Specialization"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Python Programming and Numerical Methods - A Guide for Engineers and Scientists. Link/Ghi chú: https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/Index.html.",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "materials_table",
+      "material_description": "Python Programming and Numerical Methods - A Guide"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn PFP191 là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=12224",
+    "metadata": {
+      "subject_code": "PFP191",
+      "syllabus_id": "12224",
+      "source_section": "clo_plo_mapping_link"
+    }
+  }
+]
