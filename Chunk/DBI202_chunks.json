@@ -1,0 +1,948 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Cơ sở dữ liệu HỆ THỐNG_CAC Hệ Cơ Sở Dữ LIệU (Hệ thống cơ sở dữ liệu). Mã môn: DBI202. Số tín chỉ: 3. Mô tả: - Kiến thức về các hệ thống cơ sở dữ liệu đã trở thành một phần thiết yếu của giáo dục khoa học máy tính vì quản lý cơ sở dữ liệu đã phát triển từ một ứng dụng máy tính chuyên dụng sang một thành phần trung tâm của môi trường điện toán hiện đại. - Nội dung của khóa học này bao gồm các khía cạnh của các khái niệm cơ bản quản lý cơ sở dữ liệu, thiết kế cơ sở dữ liệu, ngôn ngữ cơ sở dữ liệu và triển khai hệ thống cơ sở dữ liệu. Dựa trên các nội dung này, khóa học nhấn mạnh vào cách tổ chức, duy trì và truy xuất dữ liệu và thông tin hiệu quả từ DBMS. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các khe liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và nộp đúng hạn -Hãy nhanh chóng truy cập vào https://flm.fpt.edu.vn/ để biết thông tin khóa học cập nhật. Công cụ sử dụng: Microsoft SQL Server.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "57bf2efb-b6d9-4c05-a666-7d75954b7a6e",
+      "source_section": "general_details",
+      "title": "Thông tin chung - DBI202"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Hiểu các khái niệm cơ sở dữ liệu và phần mềm hệ thống quản lý cơ sở dữ liệu",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "d2c62f4d-2978-425b-9460-1439724e4062",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - DBI202"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Hiểu mô hình quan hệ của ngôn ngữ truy vấn dữ liệu và đại số",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "c057d200-0d0e-4e75-bac8-6a3f14fef1fd",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - DBI202"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Hiểu chuẩn hóa dữ liệu và áp dụng các kỹ thuật chuẩn hóa trong thiết kế cơ sở dữ liệu",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "2189f2ff-72c8-445a-8910-ffaa920a24b3",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - DBI202"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Có thể mô hình hóa các yêu cầu dữ liệu của ứng dụng bằng cách sử dụng các công cụ mô hình hóa khái niệm như sơ đồ ER và các lược đồ cơ sở dữ liệu thiết kế dựa trên mô hình khái niệm.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "9bf16624-1e1d-402a-973c-6de1ce8a544e",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - DBI202"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Thành thạo ngôn ngữ truy vấn cấu trúc bao gồm ngôn ngữ định nghĩa dữ liệu (DDL) và ngôn ngữ thao tác dữ liệu (DML)",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "ecbfeee4-192f-4fa9-9e3e-e3771eb9108f",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - DBI202"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO6): Hiểu các khái niệm PL/SQL và thao túng với chế độ xem, con trỏ, quy trình lưu trữ, chức năng, kích hoạt cơ sở dữ liệu",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "8fd12497-9654-454a-9908-4066ddd6d3fb",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - DBI202"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 7 (CLO7): Áp dụng chỉ mục trong thiết kế cơ sở dữ liệu và tối ưu hóa truy vấn",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "808d68a2-6ddf-4eb9-ab68-ba54a394f9b0",
+      "source_section": "clos",
+      "clo_id": "7",
+      "title": "CLO 7 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Chương 1. Thế giới của các hệ thống cơ sở dữ liệu 1.1 Sự phát triển của các hệ thống cơ sở dữ liệu 1.2 Tổng quan về hệ thống quản lý cơ sở dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1. Tài liệu sinh viên: Sách giáo khoa, slide. Link tải tài liệu buổi học: DBI202 - https://flm.fpt.edu.vn/download/6453/S/1_DBI202.zip. Nhiệm vụ sinh viên: Đọc chương 1 trong sách văn bản, tập trung vào 1.1 và 1.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "91e88f25-c9c2-48c4-b7ae-5b1abe6f664b",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - 1.3 phác thảo các nghiên cứu hệ thống cơ sở dữ liệu Giới thiệu bài tập (cá nhân). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1. Tài liệu sinh viên: Sách giáo khoa, slide. Link tải tài liệu buổi học: DBI202 - https://flm.fpt.edu.vn/download/6453/S/2_DBI202.zip. Nhiệm vụ sinh viên: Đọc chương 1 trong sách văn bản, tập trung vào 1.1 và 1.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "8380bcfa-50ac-4aa3-936f-1bd7bc982278",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Chương 2. Mô hình dữ liệu quan hệ 2.1 Tổng quan về các mô hình dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 2 trong sách văn bản, tập trung vào 2.1 và 2.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "523dc7a2-2e2e-45a5-acf0-b38a4558d62d",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - 2.2 Những điều cơ bản của mô hình quan hệ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 2 trong sách văn bản, tập trung vào 2.1 và 2.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "039b576d-0888-4539-b9be-35bd8c734a86",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - 2.4 Một ngôn ngữ truy vấn đại số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 2 trong sách văn bản, tập trung vào 2.4.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "1e99f94d-ed38-49e8-a25e-754831dd4806",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - 2.4 Một ngôn ngữ truy vấn đại số (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 2 trong sách văn bản, tập trung vào 2.4.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "96faaaef-5aa4-4f0f-9c56-51b335b4f61f",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - Lab1 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 1 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "ee2e3f24-7025-4494-a49b-7a7363d38868",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Hỗ trợ Lab1 (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 1 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "4b4d92ac-52c9-4b70-8d0f-83025d69b0d3",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Chương 3. Lý thuyết thiết kế cho cơ sở dữ liệu quan hệ 3.1 Phụ thuộc chức năng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 3 trong Sách văn bản, tập trung vào 3.1 và 3.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "7c14e487-d81a-4a6e-a75b-e533468d6777",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - 3.2 Quy tắc về phụ thuộc chức năng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 3 trong Sách văn bản, tập trung vào 3.1 và 3.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "bffb9391-26b6-4bbc-919c-8b01a6fcbdd7",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - 3.3 Thiết kế lược đồ cơ sở dữ liệu quan hệ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 3 trong Sách văn bản, tập trung vào 3.3.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "721fe4b7-ed7d-4f12-8e39-70f3c1df68ef",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - 3.3 Thiết kế lược đồ cơ sở dữ liệu quan hệ (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 3 trong Sách văn bản, tập trung vào 3.3.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "fa001606-9746-4758-af62-2a70b395ec7a",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - 3.5 Các hình thức bình thường (1NF, 2NF). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 3 trong sách văn bản, tập trung vào 3.5.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "12f28a52-896f-4eea-a534-48319a33c8f7",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - 3.5 Các hình thức bình thường (tiếp viên 3NF, BCNF). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 3 trong sách văn bản, tập trung vào 3.5.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "88e8a810-31b9-43b5-a55f-f04e233ed09d",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - Phòng thí nghiệm 2 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 2 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "95707a8d-d486-40c7-9e84-109e0a464e05",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - Hỗ trợ phòng thí nghiệm 2 (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 2 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "74f37e9c-2ae6-4c98-ad21-987370e7ec10",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - Kiểm tra tiến độ 1 (<= 30 ') Hỗ trợ chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "fe50340d-159a-454b-b122-0d2ed7fabdc7",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Hỗ trợ chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "94e3636a-8126-4761-ba7a-0c888554d945",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - Chương 4. Các mô hình cơ sở dữ liệu cấp cao 4.1 Mô hình thực thể / mối quan hệ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 4 trong Sách văn bản, tập trung vào 4.1, 4.2 và 4.3.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "0fd51fe5-052b-4c86-9bfe-aecac98438ee",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - 4.2 Nguyên tắc thiết kế 4.3 Các ràng buộc trong mô hình E / R. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 4 trong Sách văn bản, tập trung vào 4.1, 4.2 và 4.3.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "194e4f0e-658c-43d5-bdbd-a73e52a41f96",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - 4.4 Bộ thực thể yếu 4.5 Từ sơ đồ E / R đến các mô hình quan hệ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 4 trong Sách văn bản, tập trung vào 4.4, 4.5 và 4.6.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "2f64416e-8ddd-4a67-b206-38fa8a10851e",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - 4.6 Chuyển đổi cấu trúc phân lớp thành quan hệ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 4 trong Sách văn bản, tập trung vào 4.4, 4.5 và 4.6.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "6b4cf864-1299-4ef3-a644-d8ba5ee5d929",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - Phòng thí nghiệm 3 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "dc6e388e-8320-4718-a194-8424e93b1ed8",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - Lab 3 Hỗ trợ (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "76e26759-a389-4267-b233-745f851f6fad",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - Hỗ trợ chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "575599dd-a0d6-4db6-800e-830e0fd77d99",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - Hỗ trợ chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "6f3bd3b7-c322-4e24-9fe1-3abe664777f6",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - Chương 6. Ngôn ngữ cơ sở dữ liệu SQL 6.1 Định nghĩa dữ liệu Lanaguage (DDL). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản, tập trung vào 6.1 và 6.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "dd35720b-ca58-4261-b14b-820a46aacce5",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - DDL (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản, tập trung vào 6.1 và 6.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "24927cf3-bc02-4d0a-b09b-f272e870be8d",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - 6.2. Thực hiện các ràng buộc trên các thuộc tính với MS SQL Server (khóa và khóa nước ngoài, duy nhất, kiểm tra, ..). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 7 trong Sách văn bản, tập trung vào 7.1 và 7.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "a2cd1c8d-e1e2-4747-8ddc-e775880e0fda",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - 6.2. Triển khai các ràng buộc trên các thuộc tính với MS SQL Server (tt.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 7 trong Sách văn bản, tập trung vào 7.1 và 7.2.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "f95fd775-c32d-44af-ae00-b6526184359d",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - 6.3 DML Giới thiệu & Cơ bản của các truy vấn SQL. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "68c9bdc7-4217-42c7-96ba-e5827b39c462",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - DML (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "ffbf91e5-3f65-4493-94a4-ee5c6c2af7f8",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - 6.4 Truy vấn về một mối quan hệ khác. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "1728fa01-312d-4bac-ba4e-9115526de36b",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - 6.4 Truy vấn về một mối quan hệ khác (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "a12b4017-0bf6-4d18-adc6-cab3e4ec5e0c",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - 6.5 Truy vấn lồng nhau trong SQL. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "dedf4ad9-778b-4496-9fd2-51272ee51015",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - 6.5 Truy vấn lồng nhau trong SQL (cont.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "cb29cf0d-2d5c-4b4d-9984-dc9e0913809b",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - 6.6 Truy vấn tổng hợp trong SQL. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "0c222502-2d9c-4d2a-855e-6a906625d881",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - 6.6 Truy vấn tổng hợp trong SQL (cont.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "f053cbe9-c731-48ec-b7ef-4ff67e8e53d9",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - 6.7 Sửa đổi cơ sở dữ liệu (Chèn, câu lệnh cập nhật). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "7e46a1d6-a944-4460-b9f2-bfa0869258c4",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - 6.7 Sửa đổi cơ sở dữ liệu (tiếp theo tuyên bố). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "e7c9e43c-bd17-476a-b546-c3b5929d28ba",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Chương 7. Các vấn đề thực tế của ứng dụng cơ sở dữ liệu 7.1. Chỉ mục. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "19cd8123-d779-47ce-b7fa-620673e5cf92",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - Chỉ mục (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "601e5f38-6177-48cf-abb6-1f4373a499ce",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - 7.2. Tối ưu hóa giao dịch, xem và truy vấn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "a70626dd-117f-458a-97e6-eb02379cbf87",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - 7.2. Tối ưu hóa giao dịch, xem và truy vấn (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 6 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "c91b3030-20c4-4efa-bfd5-86e1a531b704",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - Phòng thí nghiệm 4 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5, LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "77f1f94f-4482-4427-93e0-89911ef49a47",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - LAB 4 Hỗ trợ (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5, LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "dbae449b-e630-4ae4-9233-eb38bba3264f",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - Hỗ trợ chuyển nhượng (tập trung vào truy vấn). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO7. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "288ec73a-0239-44db-b9a9-8bbaed1d22e7",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - Hỗ trợ chuyển nhượng (tập trung vào truy vấn) (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO7. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "62361065-0bd2-405f-a8c2-d8a56e1dd8d8",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - Chương 8. Các ràng buộc và lập trình T-SQL 8.1 Kích hoạt. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 7 trong Sách văn bản, tập trung vào 7.5.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "a876f516-92b8-4518-b7d7-ce5e73bac1f2",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - 8.2 Ràng buộc với các kích hoạt. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc Chương 7 trong Sách văn bản, tập trung vào 7.5.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "093e4b1f-8558-45fe-af77-76f8a10a1cb6",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - 8.3 Xem, chức năng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "09d20c17-7ffd-41e7-acea-2ab4737cbf67",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - Xem 8.3, chức năng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 7 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "b13f6e96-59a7-4bce-8449-3112c84a43a1",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - 8.4 con trỏ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 9 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "7badc123-5c1a-4fce-b844-6263508958ad",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - 8.5 Thực hiện quy trình được lưu trữ với MS SQL Server. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa, slide. Nhiệm vụ sinh viên: Đọc chương 9 trong sách văn bản.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "7b74e735-af8a-4814-a06d-c2310d9b4490",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - Kiểm tra tiến độ 2 Phòng thí nghiệm 5 Hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4, LO5, LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 5 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "21c0ff77-812b-49f2-8f9a-28680383c635",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - Lab 5 Hỗ trợ (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4, LO5, LO6, LO7. Tài liệu sinh viên: Sách giáo khoa, slide, câu hỏi của phòng thí nghiệm. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 5 làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "ea94e2c0-82a5-44f9-8def-40d1fc9e70b5",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Đánh giá chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO6, LO7. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "17625059-87d3-4804-9264-8a0cd42c2528",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Đánh giá chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3, LO4, LO5, LO6, LO7. Tài liệu sinh viên: 'Sách giáo khoa, slide, câu hỏi của bài tập. Nhiệm vụ sinh viên: Làm bài tập làm bài tập về nhà.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "14290105-0336-4e22-8059-e779b5d4f92e",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "4e96b731-11c6-471b-8467-34312c79caee",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - DBI202"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "d3057f46-62ed-42cf-9c94-1316c018cf2f",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - DBI202"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phân công (đang diễn ra). Trọng số: 20.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: . Thời gian: 28 khe cắm. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Tất cả các môn học trong giáo trình.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "b56ac9e6-482a-495a-a5a8-19406b587412",
+      "source_section": "assessments",
+      "assessment_category": "Phân công",
+      "title": "Đánh giá Phân công - DBI202"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: . Thời gian: 90'. Tiêu chí hoàn thành: >0.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "567d6275-c6bc-4407-8dcc-afae63158707",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm",
+      "title": "Đánh giá Phòng thí nghiệm - DBI202"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi thực tế (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: . Thời gian: 85'. Tiêu chí hoàn thành: >0.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "2aa2371e-28e4-4fb1-82ce-2893e0fc6bea",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi thực tế",
+      "title": "Đánh giá Kỳ thi thực tế - DBI202"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn; Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 30'. Tiêu chí hoàn thành: >0. Ghi chú: Instruction and schedules for Progress Tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has responsibility to review the test for students after graded. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "23d4a6a6-8f60-44a8-96a7-76390e058ba7",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ",
+      "title": "Đánh giá Kiểm tra tiến độ - DBI202"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: . Thời gian: 60. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các môn học trong giáo trình. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "032b534d-1120-4230-b901-749be1cb2d1a",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - DBI202"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: First Course in Database Systems. Tác giả: Jeffrey D. Ullman, Jennifer Widom. Nhà xuất bản: Pearson. Năm xuất bản: 2008.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "b3597710-d726-406f-b023-06942d3a486e",
+      "source_section": "materials_table",
+      "material_description": "First Course in Database Systems",
+      "title": "Tài liệu 1 - DBI202"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Database Management System. Tác giả: Raghu ramakrishnan. Nhà xuất bản: Mc Graw-Hill.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "e3abad22-3683-4627-a508-b34da251ef13",
+      "source_section": "materials_table",
+      "material_description": "Database Management System",
+      "title": "Tài liệu 2 - DBI202"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Database Management System (DBMS): A Practical Approach. Tác giả: Rajiv Chopra. Nhà xuất bản: SChand Publications.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "ea92e374-8563-4d73-9cfa-b6f9a07e9cfa",
+      "source_section": "materials_table",
+      "material_description": "Database Management System (DBMS): A Practical App",
+      "title": "Tài liệu 3 - DBI202"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Course slides (.pptx).",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "a1b4610d-7bde-4fc6-8431-0451a23e823b",
+      "source_section": "materials_table",
+      "material_description": "Course slides (.pptx)",
+      "title": "Tài liệu 4 - DBI202"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Labs & assignment.",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "8af4a8fc-fe06-4d6b-b24f-e7373a7c8289",
+      "source_section": "materials_table",
+      "material_description": "Labs & assignment",
+      "title": "Tài liệu 5 - DBI202"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn DBI202 là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=12039",
+    "metadata": {
+      "subject_code": "DBI202",
+      "syllabus_id": "12039",
+      "chunk_id": "5134b798-f305-4449-b206-aa805981a53a",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - DBI202"
+    }
+  }
+]

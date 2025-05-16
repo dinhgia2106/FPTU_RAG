@@ -1,0 +1,900 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Dữ liệu khai thác_khai phá dữ liệu (Khai thác dữ liệu). Mã môn: DBM302m. Số tín chỉ: 3. Mô tả: - Khóa học này giới thiệu các bước chính liên quan đến đường ống khai thác dữ liệu, bao gồm hiểu dữ liệu, tiền xử lý dữ liệu, kho dữ liệu, mô hình hóa dữ liệu, giải thích và đánh giá và các ứng dụng trong thế giới thực. - Học sinh sẽ học các khái niệm chung về khai thác dữ liệu cùng với các phương pháp và ứng dụng cơ bản. Sau đó đi sâu vào một trường con trong khai thác dữ liệu: Khám phá mẫu. Tìm hiểu các khái niệm, phương pháp và ứng dụng chuyên sâu của khám phá mẫu trong khai thác dữ liệu. Courser này sẽ giới thiệu các phương pháp để phân loại dựa trên mẫu và một số ứng dụng thú vị của khám phá mẫu. Nó cũng cung cấp cho bạn cơ hội để học các kỹ năng và nội dung để thực hành và tham gia vào các phương pháp khám phá mẫu có thể mở rộng trên dữ liệu giao dịch lớn, thảo luận về các biện pháp đánh giá mẫu và phương pháp nghiên cứu để khai thác các loại mô hình, mẫu tuần tự và mẫu phụ học phụ. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các khe liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập, bài tập và phòng thí nghiệm được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và nộp đúng hạn - Chỉ sử dụng máy tính xách tay trong lớp cho mục đích học tập -Hãy nhanh chóng truy cập vào FULM tại https://flm.fpt.edu.vn/ để biết thông tin khóa học cập nhật. Công cụ sử dụng: Jupyter Notebooks, RStudio IDE.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "da80d974-139c-45fc-8e45-a27952c10e4f",
+      "source_section": "general_details",
+      "title": "Thông tin chung - DBM302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Hiểu khai thác dữ liệu là gì và các thành phần chính của đường ống khai thác dữ liệu là gì",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "05d41623-6e18-410e-a9d1-c00fcf552eb6",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - DBM302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Tìm hiểu và áp dụng một trong những cốt lõi cơ bản của khai thác dữ liệu: Trực quan hóa dữ liệu",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "0b9df0c9-2a3e-498b-9022-6bdd8498952f",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - DBM302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Hiểu và áp dụng một sân phụ trong khai thác dữ liệu: Khám phá cha con, thực hành với trực quan hóa dữ liệu của khai thác dữ liệu",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "665ceec5-6db0-44a3-af7a-9895877305a3",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - DBM302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Áp dụng sân phụ khác trong khai thác dữ liệu: Phân tích cụm",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "78fad71a-33df-429a-9f31-8c23e3523e01",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - - Giới thiệu khóa học - Chương 1: 1.1. Giới thiệu về khai thác dữ liệu 1.2. Giới thiệu đường ống khai thác dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: - Slide: Giới thiệu '- slide: Chương 1.1, 1.2. Link tải tài liệu buổi học: mat1 - https://flm.fpt.edu.vn/download/10572/S/1_mat1.zip. Nhiệm vụ sinh viên: Đọc giới thiệu slide Giáo trình giáo trình DSR301M Đọc Chương 1.1, 1.2.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "5ca59817-2ffc-4696-bf25-5130035f7922",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - 1.3 Hiểu dữ liệu - Đối tượng & Thuộc tính, Thống kê, trực quan 1.4 Dữ liệu được đánh giá thấp - Tương tự dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: - Trượt chương 1.3, 1.4. Link tải tài liệu buổi học: mat2 - https://flm.fpt.edu.vn/download/10572/S/2_mat2.zip. Nhiệm vụ sinh viên: Đọc Chương 1.3, 1.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "39ea6378-01e7-4019-a2cf-9cbc93ca7d6e",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - 1.5 Tiền xử lý dữ liệu - làm sạch, tích hợp, chuyển đổi, giảm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: - Trượt chương 1.5. Nhiệm vụ sinh viên: Đọc Chương 1.5.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "8d382f3d-09b0-4ae2-ac22-ffac9aad977d",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - 1.6 Kho dữ liệu - Khối kho và OLAP 1.7 Kho dữ liệu - Kiến trúc kho dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: - Trượt chương 1.6, 1.7. Nhiệm vụ sinh viên: Đọc Chương 1.6, 1.7.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "e4f89d75-0930-4b38-9648-b40a7530c85b",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - - Chương 2: Trực quan hóa dữ liệu 2.1 Giới thiệu trực quan hóa dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: - Trượt chương 2.1. Nhiệm vụ sinh viên: Đọc Chương 2.1.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "fa001bc9-c029-4fb2-8368-085f872eac81",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - 2.2 Trực quan hóa dữ liệu số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: - Trượt chương 2.2. Nhiệm vụ sinh viên: Đọc Chương 2.2.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "c772a36f-ba36-47e4-a168-d6211d93cd65",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - 2.3 Trực quan hóa dữ liệu phi hình số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: - Trượt chương 2.3. Nhiệm vụ sinh viên: Đọc Chương 2.3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "a5d830c1-290a-4fa5-b3f2-c888cf2f3a03",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - 2.4 Trực quan hóa bảng điều khiển. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: - Trượt chương 2.4. Nhiệm vụ sinh viên: Đọc Chương 2.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "34c09bcd-fb98-4a08-8256-0d7ee04680d0",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Phòng thí nghiệm 2.1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: - Trượt chương 2, phòng thí nghiệm 2.1. Nhiệm vụ sinh viên: Đọc Chương 2, Phòng thí nghiệm 2.1.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "c11e79a4-8f49-4885-8280-609defa75a1e",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Phòng thí nghiệm 2.2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: - Trượt chương 2, phòng thí nghiệm 2.2. Nhiệm vụ sinh viên: Đọc Chương 2, Phòng thí nghiệm 2.2.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "756511dd-1ae3-401e-aa20-7c16d177489a",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Đánh giá phòng thí nghiệm 2.1, 2.2 Chương 3: Khám phá mô hình trong khai thác dữ liệu 3.1 Giới thiệu về khám phá mẫu 1 3.1.1 Khám phá mẫu là gì? Tại sao nó lại quan trọng? 3.1.2 Các mô hình và quy tắc liên kết thường xuyên. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.1. Nhiệm vụ sinh viên: Đọc Chương 3.1.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "bce56022-fb2e-4cc7-96f5-4698d44eac04",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Giới thiệu về Khám phá mẫu 2 3.1.3 Biểu diễn được nén: Các mẫu đóng và mô hình tối đa 3.1.4 Thuộc tính đóng xuống của các mẫu thường xuyên. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.1. Nhiệm vụ sinh viên: Đọc Chương 3.1.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "7c060d13-7351-4167-83ae-65e2c4cc7e65",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - 3.2 Thuật toán Apriori. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.2. Nhiệm vụ sinh viên: Đọc Chương 3.2.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "c1cbae20-0a04-488a-9078-760447456a7b",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - 3.3 Tiện ích mở rộng hoặc cải tiến của apriori. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.3. Nhiệm vụ sinh viên: Đọc Chương 3.3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "e3591e25-4653-469e-bd8e-f839dd4619de",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - 3.4 Khai thác các mẫu thường xuyên bằng cách khám phá định dạng dữ liệu dọc. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.4. Nhiệm vụ sinh viên: Đọc Chương 3.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "66f52510-c409-49ef-8f24-959895186eb6",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - 3.5 FPGROWTH: Cách tiếp cận tăng trưởng mô hình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.5. Nhiệm vụ sinh viên: Đọc Chương 3.5.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "84f00b0c-07a4-46cf-a7a2-cc68a70909a9",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - 3.6 Khai thác các mẫu đóng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.6. Nhiệm vụ sinh viên: Đọc Chương 3.6.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "8522302b-8ac5-44fb-9477-d3a9bdbcb4e9",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Phòng thí nghiệm 3.1. Loại hình: . Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3, Lab 3.1. Nhiệm vụ sinh viên: Đọc Chương 3, Lab 3.1.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "badfb7ff-e8da-4429-b9bd-4f798a0906a2",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - 3.7 Đánh giá mẫu 1 3.7.1. Giới hạn của Khung tin cậy hỗ trợ 3.7.2. Các biện pháp thú vị: Nâng và χ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.7. Nhiệm vụ sinh viên: Đọc Chương 3.7.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "d789f8e8-325c-48af-8a8c-682834fded18",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - 3.7 Đánh giá mẫu 2 3.7.3. Các biện pháp bất biến NULL 3.7.4. So sánh các biện pháp không điều trị null. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.7. Nhiệm vụ sinh viên: Đọc Chương 3.7.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "fdfd80ac-efef-42ec-8a4b-546159f462d2",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - 3,8 Phương pháp khai thác 1 3.8.1. Khai thác các hiệp hội đa cấp 3.8.2. Khai thác các hiệp hội đa chiều 3.8.3. Khai thác các hiệp hội định lượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.8. Nhiệm vụ sinh viên: Đọc Chương 3.8.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "e28dd287-ee0c-42a8-966d-9b225637177f",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - 3,8 Phương pháp khai thác 2: 3.8.4. Khai thác tương quan tiêu cực 3.8.5. Khai thác các mẫu nén. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.8. Nhiệm vụ sinh viên: Đọc Chương 3.8.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "df9e1fca-80a9-4d02-81ab-fd713e80c385",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - Phòng thí nghiệm 3.2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Slide Chương 3, Phòng thí nghiệm 3.2. Nhiệm vụ sinh viên: Đọc Chương 3, Lab 3.2.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "505b0839-4e6a-4490-8e12-604a3a300cda",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - 3.9 Khai thác các mẫu tuần tự 3.9.1. Mô hình tuần tự và khai thác mô hình tuần tự 3.9.2. GSP: Khai thác mô hình tuần tự dựa trên apriori. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.9. Nhiệm vụ sinh viên: Đọc Chương 3.9.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "ef113651-df71-4b56-933d-1aa61a6274bd",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - 3.9 Khai thác Các mẫu tuần tự 2 3.9.3. Khai thác mô hình tuần tự của Spade ở định dạng dữ liệu dọc 3.9.4. Mining mô hình tuần tự của PREFIXSPAN bằng cách tăng trưởng mẫu 3.9.5. Clospan - khai thác các mẫu tuần tự đóng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.9. Nhiệm vụ sinh viên: Đọc Chương 3.9.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "700a7d16-9ba6-4cf6-9af9-0bde161c69a6",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - 3.10 Khai thác các mẫu Spatiotemporal và quỹ đạo 1 3.10.1. Hiệp hội không gian khai thác 3.10.2. Khai thác mô hình colocation không gian 3.10.3. Khai thác và tổng hợp các mẫu trên nhiều quỹ đạo. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.10. Link tải tài liệu buổi học: flm.fpt.edu.vn. Nhiệm vụ sinh viên: Đọc Chương 3.10.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "c5ff66e0-b1cc-4a07-a763-7cc2ccaf17e2",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - 3.10 Khai thác các mẫu Spatiotemporal và quỹ đạo 2 3.10.4. Khai thác mô hình chuyển động giàu ngữ nghĩa 3.10.5. Khai thác mô hình chuyển động định kỳ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.10. Nhiệm vụ sinh viên: Đọc Chương 3.10.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "dcb667b1-cf4d-4c0b-a8c5-661a80113786",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - Phòng thí nghiệm 3.3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3, Lab 3.3. Nhiệm vụ sinh viên: Đọc Chương 3, Lab 3.3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "7759fd64-028f-46ea-848e-32e49b8becd2",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - 3.11 Cụm từ chất lượng khai thác 1 3.11.1. Từ khai thác mẫu thường xuyên đến khai thác cụm từ 3.11.2. Phương pháp khai thác cụm từ trước. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.11. Nhiệm vụ sinh viên: Đọc Chương 3.11.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "e45279a2-3ee5-4445-8d7d-13b076d9b45f",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - 3.11 Cụm từ chất lượng khai thác 2 3.11.3. Topmine: Cụm khai thác mà không cần dữ liệu đào tạo 3.11.4. Segphrase: Cụm khai thác với bộ đào tạo nhỏ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.11. Nhiệm vụ sinh viên: Đọc Chương 3.11.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "f274b886-42fd-4173-a389-d369760bd096",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - 3.12 Các chủ đề nâng cao về khám phá mẫu 1 3.12.1. Khai thác mẫu thường xuyên trong luồng dữ liệu 3.12.2. Khám phá mẫu cho khai thác lỗi phần mềm 3.12.3. Khám phá mẫu để phân tích hình ảnh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.12. Nhiệm vụ sinh viên: Đọc Chương 3.12.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "2418d37c-dda4-48fd-9832-28c3cedc654b",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - 3.12 Các chủ đề nâng cao về khám phá mẫu 2 3.12.4 Khai thác và xã hội Mẫu vấn đề về vấn đề sinh sản 3.12.5. Mong chờ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Trượt chương 3.12. Nhiệm vụ sinh viên: Đọc Chương 3.12.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "dda3af29-60ec-44c0-a72f-ddac6041a41e",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - Phòng thí nghiệm 3.4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Slide Chương 3, Phòng thí nghiệm 3.4. Nhiệm vụ sinh viên: Đọc Chương 3, Lab 3.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "06eca912-83ab-4ef1-bd4e-01e2adbe5d6e",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - Đánh giá phòng thí nghiệm 3.1, 3.2, 3.3, 3.4. Loại hình: . Chuẩn đầu ra liên quan (LO): . Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "9628d5ea-bcfc-42f7-b8a0-e8347afe3ee3",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - Xem lại Chương 1-2-3. Loại hình: . Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3. Tài liệu sinh viên: - Trượt chương 1, 2, 3. Link tải tài liệu buổi học: flm.fpt.edu.vn. Nhiệm vụ sinh viên: Đọc Chương 1, 2, 3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "4fff94bc-5f41-490d-8ee7-da8dd15a821f",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - Kiểm tra tiến độ 1. Loại hình: . Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3. Tài liệu sinh viên: - Trượt chương 1, 2, 3. Nhiệm vụ sinh viên: - Trượt chương 1, 2,3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "82fc6484-4d83-47f0-b857-39f02456f80e",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - Chương 4: Phân tích cụm trong khai thác dữ liệu 4.1 Giới thiệu về phân tích cụm 1 4.1.1. Phân tích cụm là gì 4.1.2. Ứng dụng phân tích cụm 4.1.3 Yêu cầu và thách thức. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.1. Nhiệm vụ sinh viên: Đọc Chương 4.1.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "3b97f949-b03a-46c5-b3de-c7281b736684",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - 4.1 Giới thiệu về phân tích cụm 2 4.1.4 Một phân loại đa chiều 4.1.5 Tổng quan về các phương pháp phân cụm điển hình 4.1.6 Tổng quan về phân cụm các loại dữ liệu khác nhau 4.1.7 Tổng quan về hiểu biết của người dùng và phân cụm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.1. Nhiệm vụ sinh viên: Đọc Chương 4.1.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "81794a87-e22f-4e65-b5c8-633502eab5d5",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - 4.2 Các biện pháp tương tự để phân tích cụm 1 4.2.1 Khái niệm cơ bản: Đo lường độ tương tự giữa các đối tượng 4.2.2 Khoảng cách về dữ liệu số Minkowski Khoảng cách 4.2.3 Đo lường sự gần gũi cho các biến nhị phân không đối xứng với đối xứng so với. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.2. Nhiệm vụ sinh viên: Đọc Chương 4.2.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "4301fc10-5f3c-4425-acb5-f367b4ec2bdf",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - 4.2 Các biện pháp tương tự để phân tích cụm 2 4.2.4 Khoảng cách giữa các thuộc tính phân loại Thuộc tính thứ tự và các loại hỗn hợp 4.2.5 Biện pháp gần giữa hai vectơ tương tự cosine 4.2.6 Các biện pháp tương quan giữa hai biến hiệp phương sai và hệ số tương quan. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.2. Nhiệm vụ sinh viên: Đọc Chương 4.2.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "fd25e7f1-4071-4501-be87-044b28dff7e2",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Phòng thí nghiệm 4.1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4, phòng thí nghiệm 4.1. Nhiệm vụ sinh viên: Đọc Chương 4, Phòng thí nghiệm 4.1.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "c0ea2449-3625-4ac4-bbe7-e0f0febafbe3",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - 4.3 Phương pháp phân cụm dựa trên phân vùng 1 4.3.1 Phương pháp phân cụm dựa trên phân vùng 4.3.2 Phương pháp phân cụm có nghĩa là K. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.3. Nhiệm vụ sinh viên: Đọc Chương 4.3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "373aa04f-f87a-40e3-a6be-3aaa26c2d6c3",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - 4.3 Phương pháp phân cụm dựa trên phân vùng 2 4.3.3 Khởi tạo phân cụm K-Means 4.3.4 Phương pháp phân cụm K-Medoids. Loại hình: . Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.3. Nhiệm vụ sinh viên: Đọc Chương 4.3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "e0bffb71-43cc-4561-bf48-a24d78c40f58",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - 4.3 Phương pháp phân cụm dựa trên phân vùng 3 4.3.5 Các phương pháp phân cụm K-Medians và K-Modes 4.3.6 Kernel K-Mean phân cụm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.3. Nhiệm vụ sinh viên: Đọc Chương 4.3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "88c9fe6f-d2a4-4d34-8514-a8ad93e652ab",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - 4.4 Phương pháp phân cụm phân cấp 1 4.4.1 Phương pháp phân cụm phân cấp 4.4.2 Thuật toán phân cụm kết tụ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.4. Nhiệm vụ sinh viên: Đọc Chương 4.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "0499b1a2-defa-446c-a2fe-6f7015acdf35",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - 4.4 Phương pháp phân cụm phân cấp 2 4.4.3 Thuật toán phân cụm chia rẽ 4.4.4 Mở rộng đến phân cụm phân cấp 4.4.5 Birch: Một cách tiếp cận dựa trên phân cụm vi mô. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.4. Nhiệm vụ sinh viên: Đọc Chương 4.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "4ec3d54a-58fe-48fc-b829-6e55ea912af6",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - Phòng thí nghiệm 4.2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4, phòng thí nghiệm 4.2. Nhiệm vụ sinh viên: Đọc Chương 4, Phòng thí nghiệm 4.2.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "01d4fa2f-9c72-4bbc-a470-2003412d37a0",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - 4.4 Phương pháp phân cụm phân cấp 3 * Tổng quan 4.4.6 Cure: Phân cụm bằng cách sử dụng các đại diện được phân tán tốt 4.4.7 Chameleon: Biểu đồ phân vùng trên biểu đồ KNN của dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.4. Link tải tài liệu buổi học: flm.fpt.edu.vn. Nhiệm vụ sinh viên: Đọc Chương 4.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "8252dfb3-19a6-4702-b40a-07d95ff29179",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - 4.4 Phương pháp phân cụm phân cấp 3 4.4.8 Phân cụm phân cấp xác suất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.4. Link tải tài liệu buổi học: flm.fpt.edu.vn. Nhiệm vụ sinh viên: Đọc Chương 4.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "bf811db9-0061-4d20-9219-f78c9825a7f0",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - 4.5 Phương pháp phân cụm dựa trên mật độ và dựa trên lưới Tổng quan 4.5.1 Các phương pháp phân cụm dựa trên mật độ và dựa trên lưới 4.5.2 DBSCAN: Thuật toán phân cụm dựa trên mật độ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.5. Nhiệm vụ sinh viên: Đọc Chương 4.5.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "67817664-1088-48e9-8e44-2dd2fff35d1e",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - 4,5 Phương pháp phân cụm dựa trên mật độ và dựa trên lưới 2 4.5.3 Optics: Đơn đặt hàng điểm để xác định phân cụm Kết cấu 4.5.4 Phương pháp phân cụm dựa trên lưới. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.5. Nhiệm vụ sinh viên: Đọc Chương 4.5.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "e8f00118-6261-42ef-967d-c08c8d8205c7",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - 4,5 Phương pháp phân cụm dựa trên mật độ và dựa trên lưới 3 4.5.5 Sting: Cách tiếp cận lưới thông tin thống kê 4.5.6 Clique: Phân cụm không gian con dựa trên lưới. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.5. Nhiệm vụ sinh viên: Đọc Chương 4.5.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "e64c5240-14f2-418b-9eac-63bc3f5efd00",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - Phòng thí nghiệm 4.3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4, Phòng thí nghiệm 4.3. Nhiệm vụ sinh viên: Đọc Chương 4, Phòng thí nghiệm 4.3.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "55f93656-b81c-4d82-aed2-276dbd12aa29",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - 4.6 Phương pháp xác thực phân cụm 1 Tổng quan 4.6.1 Phương pháp xác thực phân cụm 4.6.2 Đánh giá phân cụm Chất lượng phân cụm 4.6.3 Phân cụm dựa trên ràng buộc. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.6. Nhiệm vụ sinh viên: Đọc Chương 4.6.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "2d49b3d5-68d8-4a6c-a373-e9db0968771c",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - 4.6 Phương pháp để phân cụm xác thực 2 4.6.4 Các biện pháp bên ngoài 1: Các biện pháp dựa trên phù hợp 4.6.5 Biện pháp bên ngoài 2: Các biện pháp dựa trên entropy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.6. Nhiệm vụ sinh viên: Đọc Chương 4.6.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "f283323f-17ad-432d-b320-b59ccede3f14",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - 4.6 Phương pháp xác thực phân cụm 3 4.6.6 Biện pháp bên ngoài 3: Các biện pháp theo cặp 4.6.7 Các biện pháp nội bộ để xác nhận phân cụm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.6. Nhiệm vụ sinh viên: Đọc Chương 4.6.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "ff9236ff-64b0-45aa-b10a-43ff3dc501aa",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - 4.6 Phương pháp xác thực phân cụm 4 4.6.8 Các biện pháp tương đối 4.6.9 Tính ổn định của cụm 4.6.10 Xu hướng phân cụm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4.6. Nhiệm vụ sinh viên: Đọc Chương 4.6.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "9bdb26d8-15bd-48ae-87fb-fbaa0a6dfea9",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Phòng thí nghiệm 4.4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Trượt chương 4, phòng thí nghiệm 4.4. Nhiệm vụ sinh viên: Đọc Chương 4, Phòng thí nghiệm 4.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "d93bee2f-a3a5-4f32-8050-9455d7f39327",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Đánh giá phòng thí nghiệm 4.1, 4.2, 4.3, 4.4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: - Trượt chương 4, Phòng thí nghiệm 4.1, 4.2, 4.3, 4.4. Nhiệm vụ sinh viên: Đọc Chương 4, Phòng thí nghiệm 4.1, 4.2, 4.3, 4.4.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "bd80eb0a-e167-468f-97d9-2498db514c91",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - DBM302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3, CLO4. Tài liệu sinh viên: Tất cả các slide. Nhiệm vụ sinh viên: Xem lại slide.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "c9f81ff4-299d-4307-afe5-df44f321c87c",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - DBM302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 2 (đang diễn ra). Trọng số: 15.0%. Chuẩn đầu ra liên quan (CLO): CLO2. Loại câu hỏi/Nhiệm vụ: Công việc nhà, lớp học. Thời gian: 45'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 2. Ghi chú: Lab is named after the index of the chapter..",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "5b29002d-da9d-4b7c-8dbd-c33ac0fb30f0",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 2",
+      "title": "Đánh giá Phòng thí nghiệm 2 - DBM302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 3 (đang diễn ra). Trọng số: 20.0%. Chuẩn đầu ra liên quan (CLO): CLO3. Loại câu hỏi/Nhiệm vụ: Công việc nhà, lớp học. Thời gian: 45'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 3. Ghi chú: Lab is named after the index of the chapter..",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "929d1a0b-79cd-4efb-80a3-8e2b4a56bb55",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 3",
+      "title": "Đánh giá Phòng thí nghiệm 3 - DBM302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 4 (đang diễn ra). Trọng số: 20.0%. Chuẩn đầu ra liên quan (CLO): CLO4. Loại câu hỏi/Nhiệm vụ: Công việc nhà, lớp học. Thời gian: 45'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 4. Ghi chú: Lab is named after the index of the chapter..",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "8d43e465-dd49-433b-a225-233af35087f2",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 4",
+      "title": "Đánh giá Phòng thí nghiệm 4 - DBM302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ (đang diễn ra). Trọng số: 15.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 45'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che Chương 1, 2, 3. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "6f79f154-27ef-4a6d-ac58-9fac697025e2",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ",
+      "title": "Đánh giá Kiểm tra tiến độ - DBM302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: - Bao gồm Chương 1, 2, 3, 4. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "3a7c2601-5ff1-4d1b-a054-c18d468de266",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - DBM302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Data Mining Pipeline. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/data-mining-pipeline?specialization=data-mining-foundations-practice.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "5220bcdf-9aa5-44fa-b331-b5080f5bbbab",
+      "source_section": "materials_table",
+      "material_description": "Data Mining Pipeline",
+      "title": "Tài liệu 1 - DBM302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Data Visualization. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/datavisualization?specialization=data-mining.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "c8b402d0-96bf-448c-9e92-708c7ef628f7",
+      "source_section": "materials_table",
+      "material_description": "Data Visualization",
+      "title": "Tài liệu 2 - DBM302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Pattern Discovery in Data Mining. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/data-patterns?specialization=data-mining.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "b8c722b2-e0f1-442b-932a-be213d106a54",
+      "source_section": "materials_table",
+      "material_description": "Pattern Discovery in Data Mining",
+      "title": "Tài liệu 3 - DBM302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Cluster Analysis in Data Mining. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/cluster-analysis?specialization=data-mining.",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "99b8a921-d8af-4606-9b17-49a284e6c47d",
+      "source_section": "materials_table",
+      "material_description": "Cluster Analysis in Data Mining",
+      "title": "Tài liệu 4 - DBM302m"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn DBM302m là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=11218",
+    "metadata": {
+      "subject_code": "DBM302m",
+      "syllabus_id": "11218",
+      "chunk_id": "c01a58f1-46e4-43c7-a926-840a76da6af2",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - DBM302m"
+    }
+  }
+]

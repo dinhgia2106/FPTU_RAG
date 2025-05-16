@@ -40,12 +40,25 @@ def create_faiss_index(input_embedding_file, output_index_file):
     dimension = embeddings_np.shape[1]
     print(f"Đã trích xuất {embeddings_np.shape[0]} embeddings với chiều là {dimension}.")
 
-    # Tạo FAISS index
-    # IndexFlatL2 là một index đơn giản, thực hiện tìm kiếm L2 brute-force.
-    # Phù hợp cho số lượng vector không quá lớn hoặc để thử nghiệm ban đầu.
+    # Tạo FAISS index tối ưu hơn
+    # IndexFlatL2 là đơn giản nhưng chính xác
+    # Nếu số lượng vectors lớn (>10k), có thể cân nhắc dùng IndexIVFFlat hoặc IndexHNSW
     try:
-        index = faiss.IndexFlatL2(dimension)
-        print(f"Đã tạo FAISS index (IndexFlatL2) với chiều {dimension}.")
+        if embeddings_np.shape[0] > 10000:
+            # IndexIVFFlat cho tập dữ liệu lớn: nhanh hơn nhưng độ chính xác thấp hơn một chút
+            print("Tạo index IndexIVFFlat cho tập dữ liệu lớn...")
+            quantizer = faiss.IndexFlatL2(dimension)
+            nlist = min(4096, embeddings_np.shape[0] // 39)  # Số lượng clusters
+            index = faiss.IndexIVFFlat(quantizer, dimension, nlist)
+            # Cần train index trước khi thêm vectors
+            print(f"Training index với {embeddings_np.shape[0]} vectors...")
+            index.train(embeddings_np)
+        else:
+            # IndexFlatL2 cho tập dữ liệu nhỏ hơn: chính xác và đủ nhanh
+            print("Tạo index IndexFlatL2 cho tập dữ liệu vừa và nhỏ...")
+            index = faiss.IndexFlatL2(dimension)
+        
+        print(f"Đã tạo FAISS index với chiều {dimension}.")
     except Exception as e:
         print(f"Lỗi khi tạo FAISS index: {e}")
         return None
@@ -67,9 +80,17 @@ def create_faiss_index(input_embedding_file, output_index_file):
         print(f"Lỗi khi lưu FAISS index: {e}")
         return None
 
+def extract_subject_codes(embedded_chunks):
+    """Trích xuất tất cả các mã môn học từ dữ liệu chunks đã embedding."""
+    subject_codes = set()
+    for chunk in embedded_chunks:
+        if 'metadata' in chunk and 'subject_code' in chunk['metadata']:
+            subject_codes.add(chunk['metadata']['subject_code'])
+    return sorted(list(subject_codes))
+
 if __name__ == "__main__":
-    input_file = "Embedded/PFP191_embeddings.json"
-    output_index_path = "Faiss/PFP191_faiss.index"
+    input_file = "Embedded/all_embeddings.json"
+    output_index_path = "Faiss/all_syllabi_faiss.index"
     
     output_dir = os.path.dirname(output_index_path)
     if not os.path.exists(output_dir) and output_dir:
@@ -78,14 +99,26 @@ if __name__ == "__main__":
     created_index_file = create_faiss_index(input_file, output_index_path)
     
     if created_index_file:
+        # Lưu thông tin về mã môn học vào file riêng để tham khảo sau này
+        try:
+            with open(input_file, 'r', encoding='utf-8') as f:
+                embedded_data = json.load(f)
+            
+            subject_codes = extract_subject_codes(embedded_data)
+            metadata_file = os.path.join(output_dir, "syllabus_metadata.json")
+            
+            with open(metadata_file, 'w', encoding='utf-8') as f:
+                json.dump({
+                    "subject_codes": subject_codes,
+                    "total_chunks": len(embedded_data),
+                    "index_path": output_index_path,
+                    "embeddings_file": input_file
+                }, f, ensure_ascii=False, indent=2)
+                
+            print(f"Đã lưu metadata về các môn học ({len(subject_codes)} môn) vào file: {metadata_file}")
+        except Exception as e:
+            print(f"Lỗi khi lưu metadata về các môn học: {e}")
+            
         print(f"Hoàn thành tạo và lưu FAISS index: {created_index_file}")
-        # Bạn có thể thêm phần kiểm thử truy vấn ở đây nếu muốn
-        # Ví dụ: tải lại index và thực hiện tìm kiếm
-        # index_loaded = faiss.read_index(created_index_file)
-        # D, I = index_loaded.search(np.array([embeddings_np[0]]), k=5) # Tìm 5 vector gần nhất với vector đầu tiên
-        # print("Kết quả tìm kiếm mẫu:")
-        # print("Distances:", D)
-        # print("Indices:", I)
     else:
         print("Không thể tạo hoặc lưu FAISS index.")
-

@@ -1,0 +1,312 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Trí tuệ nhân tạo_Trí Tuệ Nhân Tạo (Trí tuệ nhân tạo). Mã môn: AIG201c. Số tín chỉ: 3. Mô tả: Chuyên ngành này được thiết kế cho những người có ít hoặc không có nền tảng về AI, cho dù bạn có nền tảng công nghệ hay không, và không yêu cầu bất kỳ kỹ năng lập trình nào. Nó được thiết kế để cung cấp cho bạn một sự hiểu biết vững chắc về AI, các ứng dụng và trường hợp sử dụng của nó trong các ngành công nghiệp khác nhau. Học sinh sẽ làm quen với các thuật ngữ như học máy, học sâu và mạng lưới thần kinh. Hơn nữa, nó sẽ làm quen với bạn với các dịch vụ AI của IBM Watson cho phép bất kỳ doanh nghiệp nào nhanh chóng và dễ dàng sử dụng AI Smart được xây dựng sẵn cho các sản phẩm và giải pháp của họ. Học sinh cũng sẽ tìm hiểu về việc tạo ra các trợ lý ảo thông minh và làm thế nào chúng có thể được tận dụng trong các tình huống khác nhau. Vào cuối chuyên ngành này, người học sẽ có các tương tác thực hành với một số môi trường và ứng dụng AI, và đã xây dựng và triển khai chatbot hỗ trợ AI trên trang web-mà không cần mã hóa. Người học sẽ thực hiện một số bài tập thực hành không mã hóa trong mỗi ba khóa học. Vào cuối khóa học trước, người học sẽ phát triển, thử nghiệm và triển khai chatbot dịch vụ khách hàng chạy bằng Watson AI trên một trang web để làm hài lòng khách hàng của họ. Nhiệm vụ sinh viên: Học sinh phải lấy chứng nhận nền tảng AI cho mọi người chuyên môn hóa từ Coursera để được chấp nhận vào kỳ thi cuối cùng.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "554ba30d-34dd-48eb-81c0-9b10b8df7928",
+      "source_section": "general_details",
+      "title": "Thông tin chung - AIG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Hiểu AI là gì, các ứng dụng và trường hợp sử dụng của nó, sự quan tâm về đạo đức của nó và cách nó biến đổi cuộc sống của chúng ta.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "4ed5cf34-ebfc-4ee8-b637-106ca613cfd9",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - AIG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Giải thích các khái niệm cơ bản liên quan đến học máy, học tập sâu và mạng lưới thần kinh.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "8358c875-4dc3-47b5-bb4a-48e38179b821",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - AIG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Khám phá các mô hình và công cụ AI chung chung cho văn bản, mã, hình ảnh, âm thanh và tạo video.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "d1947d21-553b-4bae-8062-e5a58cda1156",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - AIG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Khám phá các công cụ thường được sử dụng để kỹ thuật kịp thời hỗ trợ kỹ thuật kịp thời",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "21a829d7-62e1-41fb-a861-f0e47c28f2f9",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - AIG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Trực quan tạo chatbots với Watson Assistant (trước đây là cuộc trò chuyện của Watson) và cách triển khai chúng trên trang web của riêng bạn thông qua một plugin WordPress tiện dụng.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "bc09df79-527b-4a8b-bfea-7143a6b07c40",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Giới thiệu chuyên môn hóa Giới thiệu về Trí tuệ nhân tạo (AI) - AI là gì? Các ứng dụng và ví dụ về AI - Khái niệm, thuật ngữ và khu vực ứng dụng AI Ngoại tuyến 1: Hướng dẫn học tập và xem xét chuyên môn. Loại hình: Ngoại tuyến, trực tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2. Nhiệm vụ sinh viên: Hoàn thành Tuần 1, 2 của khóa học Giới thiệu về Trí tuệ nhân tạo (AI) Tất cả học sinh nên tham gia vào vị trí đánh giá (nếu có câu hỏi).",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "bd626886-f565-4ec6-9ed6-93a226de0da4",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - - AI: Các vấn đề, mối quan tâm và cân nhắc đạo đức. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2. Nhiệm vụ sinh viên: Hoàn thành Tuần 3 của khóa học Giới thiệu về Trí tuệ nhân tạo (AI).",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "8d80ead3-050d-4c2c-a5e2-302d9f29f3da",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - - Tương lai với AI và AI hoạt động Ngoại tuyến 2: Đánh giá khóa học 1. Loại hình: Ngoại tuyến, trực tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2. Nhiệm vụ sinh viên: Hoàn thành Tuần 4 của khóa học Giới thiệu về Trí tuệ nhân tạo (AI) - Hạn chót hoàn thành khóa học 1: Kết thúc thứ Sáu trong tuần. Tất cả học sinh nên tham gia vào vị trí đánh giá (nếu có câu hỏi).",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "6eabb542-5204-42a9-aa50-2d9fe4c83d73",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - AI thế hệ: Giới thiệu và Ứng dụng: - Giới thiệu và năng lực của AI thế hệ - Ứng dụng và Công cụ của AI thế hệ. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO3. Nhiệm vụ sinh viên: Hoàn thành Tuần 1, Tuần 2 của khóa học AI: Giới thiệu và Ứng dụng.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "fa81b6c6-5a06-464c-a591-64410e3409d6",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - - Quiz, dự án và khởi động Offiline 3: Đánh giá khóa học 2. Loại hình: Trực tuyến, ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Nhiệm vụ sinh viên: Hoàn thành Tuần 3 của khóa học AI: Giới thiệu và Ứng dụng - Hạn chót hoàn thành khóa học 2: Kết thúc thứ Sáu trong tuần. Tất cả học sinh nên tham gia vào vị trí đánh giá (nếu có câu hỏi).",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "8912970d-2a4a-41bb-a5f8-467855e4c235",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - AI thế hệ: Cơ bản kỹ thuật nhanh chóng: - Kỹ thuật nhanh chóng cho AI thế hệ. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO4. Nhiệm vụ sinh viên: Hoàn thành Tuần 1 của khóa học AI: Bastering Basicering Basic.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "7b406ed0-b2ad-4b2a-b79e-b9d526e73d4e",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - - Kỹ thuật nhanh chóng: Kỹ thuật và phương pháp tiếp cận. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO4. Nhiệm vụ sinh viên: Hoàn thành Tuần 2 của khóa học AI: Basicering Basicering cơ bản.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "0f0e3b15-43aa-4d50-90ab-4856696d9edb",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - - Quiz, dự án và khởi động Offiline 4: Đánh giá khóa học 3. Loại hình: Ngoại tuyến, trực tuyến. Chuẩn đầu ra liên quan (LO): LO4. Nhiệm vụ sinh viên: Hoàn thành Tuần 3 của khóa học AI: Bastering Basicering Basic Tất cả học sinh nên tham gia vào vị trí đánh giá (nếu có câu hỏi).",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "e43edda4-0ac4-4093-8d73-f6c9e02a7511",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Xây dựng các chatbot chạy bằng AI mà không cần lập trình: - Giới thiệu - Ý định. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO5. Nhiệm vụ sinh viên: Hoàn thành Tuần 1 của khóa học xây dựng các chatbot chạy bằng AI mà không cần lập trình.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "7506a0c3-b4f4-4b17-8c19-7c6cc6459b1d",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - - thực thể - Hộp thoại. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO5. Nhiệm vụ sinh viên: Hoàn thành Tuần 2 của khóa học xây dựng các chatbot chạy bằng AI mà không cần lập trình Tất cả học sinh nên tham gia vào vị trí đánh giá (nếu có câu hỏi).",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "503677fb-ffed-45c5-ba42-0f45d7fb5d1e",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - - Triển khai - Biến bối cảnh & khe cắm. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO5. Nhiệm vụ sinh viên: Hoàn thành Tuần 3 của khóa học xây dựng các chatbot chạy bằng ai mà không cần lập trình.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "1d9d7173-de91-45e8-83c1-0214f7e7ab2c",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - AIG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - - lạc đề - Bản tóm tắt - (Tùy chọn) Hành động Watson - Kỳ thi cuối cùng (spec) Ngoại tuyến 5: Đánh giá khóa học 4. Loại hình: Trực tuyến, ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Nhiệm vụ sinh viên: Hoàn thành Tuần 4 của khóa học xây dựng các chatbot chạy bằng ai mà không cần lập trình - Hạn chót hoàn thành khóa học 3: Kết thúc thứ Sáu trong tuần. Tất cả học sinh nên tham gia vào vị trí đánh giá (nếu có câu hỏi).",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "0715bb63-b8da-4e13-b4e4-ebdfda9ab43e",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - AIG201c"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: TE (kỳ thi cuối cùng). Trọng số: 100.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Máy tính có thể phân loại. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các khóa học nghiên cứu. Mỗi mô-đun tất nhiên đóng góp 2-3 câu hỏi.. Ghi chú: Customized from the quizzes of this specialization..",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "e49089d6-d0b3-421b-b801-a4843397c234",
+      "source_section": "assessments",
+      "assessment_category": "TE",
+      "title": "Đánh giá TE - AIG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/introduction-to-ai. Nhà xuất bản: Coursera. Ghi chú: MOOC 01: Introduction to Artificial Intelligence (AI).",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "7607d337-b5f9-45db-9560-617f12bec434",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/introduction-to-ai",
+      "title": "Tài liệu 1 - AIG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://learner.coursera.help/hc/en-us/articles/208280036-Coursera-Code-of-Conduct. Nhà xuất bản: Coursera. Ghi chú: Help Articles.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "f1af4d93-93f9-45b0-97fc-144d2647584f",
+      "source_section": "materials_table",
+      "material_description": "https://learner.coursera.help/hc/en-us/articles/20",
+      "title": "Tài liệu 2 - AIG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/generative-ai-introduction-and-applications. Nhà xuất bản: Coursera. Ghi chú: MOOC 02: Generative AI: Introduction and Applications.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "e1480e53-88b3-488a-bd6a-c23cf89aeac2",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/generative-ai-intro",
+      "title": "Tài liệu 3 - AIG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/building-ai-powered-chatbots. Nhà xuất bản: Coursera. Ghi chú: MOOC 04: Building AI Powered Chatbots Without Programming.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "0e660c04-4eb3-412a-b526-f732fdcdea52",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/building-ai-powered",
+      "title": "Tài liệu 4 - AIG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/specializations/ai-foundations-for-everyone. Nhà xuất bản: Coursera. Ghi chú: SPEC: AI Foundations for Everyone Specialization.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "5691911e-80f6-415b-974e-5914471e2687",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/specializations/ai-founda",
+      "title": "Tài liệu 5 - AIG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/generative-ai-prompt-engineering-for-everyone. Nhà xuất bản: Coursera. Ghi chú: MOOC 03: Generative AI: Prompt Engineering Basics.",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "417623ec-31c8-4c0a-93e0-dc9b6343c867",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/generative-ai-promp",
+      "title": "Tài liệu 6 - AIG201c"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn AIG201c là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=10473",
+    "metadata": {
+      "subject_code": "AIG201c",
+      "syllabus_id": "10473",
+      "chunk_id": "07e2567f-afae-48d1-80d6-90ffc452c98d",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - AIG201c"
+    }
+  }
+]

@@ -1,0 +1,336 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Ai trong sản xuất_thiết kế sản phnt (AI trong sản xuất). Mã môn: AID301c. Số tín chỉ: 3. Mô tả: Chuyên ngành Khóa học sáu khóa học này được thiết kế để chuẩn bị cho bạn tham gia kỳ thi Chứng nhận cho chuyên gia Khoa học Dữ liệu V1 của IBM AI Enterprise. Quy trình làm việc của IBM AI Enterprise là một quy trình toàn diện, đầu cuối, cho phép các nhà khoa học dữ liệu xây dựng các giải pháp AI, bắt đầu với các ưu tiên kinh doanh và làm việc để đưa AI vào sản xuất. Việc học nhằm nâng cao các kỹ năng thực hành các nhà khoa học dữ liệu bằng cách kết nối rõ ràng các ưu tiên kinh doanh với triển khai kỹ thuật, kết nối học máy với các trường hợp sử dụng AI chuyên ngành như nhận dạng trực quan và NLP và kết nối Python với IBM Cloud Technologies. Các video, bài đọc và nghiên cứu trường hợp trong các khóa học này được thiết kế để hướng dẫn bạn thông qua công việc của bạn như một nhà khoa học dữ liệu tại một công ty truyền thông phát trực tuyến giả định. Trong suốt chuyên môn này, trọng tâm sẽ là thực hành khoa học dữ liệu trong các doanh nghiệp lớn, hiện đại. Bạn sẽ được hướng dẫn thông qua việc sử dụng các công cụ cấp doanh nghiệp trên đám mây IBM, các công cụ mà bạn sẽ sử dụng để tạo, triển khai và kiểm tra các mô hình học máy. Các công cụ nguồn mở yêu thích của bạn, chẳng hạn như máy tính xách tay Jupyter và thư viện Python sẽ được sử dụng rộng rãi để chuẩn bị dữ liệu và mô hình xây dựng. Các mô hình sẽ được triển khai trên đám mây IBM bằng công cụ IBM Watson hoạt động liền mạch với các công cụ nguồn mở. Điều kiện tiên quyết: SWE201c, AIL303m. Nhiệm vụ sinh viên: 'Sinh viên phải nhận được chứng nhận chuyên môn về quy trình làm việc của IBM AI từ Coursera để được chấp nhận vào kỳ thi cuối cùng.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "a4c4428e-6bf4-4722-8aba-f7f1cc8b4ded",
+      "source_section": "general_details",
+      "title": "Thông tin chung - AID301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Người học sẽ có thể mô tả trường hợp sử dụng kinh doanh và quá trình nhập dữ liệu.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "e7897e29-6373-48d3-af5f-5fd2d770b2cb",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - AID301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Người học có thể sử dụng các kỹ thuật phổ biến như: EDA, trực quan hóa, kiểm tra giả thuyết và các công cụ thống kê.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "689f1be4-90b2-4b37-9b7f-86367b6bef96",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - AID301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Người học có thể mô tả và sử dụng các kỹ thuật kỹ thuật tính năng và tính năng chung",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "5bf3c483-b815-46c0-ad36-87a2d232433c",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - AID301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Người học nên có thể thực hiện mô hình: Học máy và các thuật toán học tập sâu, đánh giá và số liệu hiệu suất.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "96424852-8b76-4a61-9875-e8b6cffc90ef",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - AID301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Người học sẽ có thể triển khai mô hình bằng cách tương tác với Apache Spark sau đó tiến tới một hướng dẫn với Docker.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "63e0791d-2694-41dc-bb26-2a5808430dd1",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Giới thiệu chuyên môn hóa Giới thiệu về quy trình làm việc của AI: Ưu tiên kinh doanh và nhập dữ liệu - Giới thiệu quy trình làm việc của IBM AI Enterprise Ngoại tuyến 1: Hướng dẫn học tập và xem xét chuyên môn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: Hoàn thành Tuần 1 của khóa học Quy trình làm việc của AI: Ưu tiên kinh doanh và nhập dữ liệu.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "b8ea956b-d83a-4ead-a900-ec20ade93beb",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - Giới thiệu về quy trình làm việc của AI: Ưu tiên kinh doanh và nhập dữ liệu (tiếp.) - Thu thập dữ liệu - Ăn uống dữ liệu. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Liên kết liên kết Coursera. Link tải tài liệu buổi học: Associated Coursera links. Nhiệm vụ sinh viên: Hoàn thành Tuần 2 của khóa học Quy trình làm việc: Ưu tiên kinh doanh và nhập dữ liệu.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "7cd17953-a72b-4624-ad8e-5a6aa9e38cc5",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Quy trình làm việc của AI: Phân tích dữ liệu và kiểm tra giả thuyết - Phân tích dữ liệu. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Hoàn thành Tuần 1 của khóa học Quy trình làm việc: Phân tích dữ liệu và kiểm tra giả thuyết.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "83388646-fcbb-4df0-8f2e-69ad6f1e3939",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Quy trình làm việc của AI: Phân tích dữ liệu và kiểm tra giả thuyết (tiếp.) - Điều tra dữ liệu. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Liên kết liên kết Coursera. Link tải tài liệu buổi học: Associated Coursera links. Nhiệm vụ sinh viên: Hoàn thành Tuần 2 của khóa học AI Quy trình làm việc: Phân tích dữ liệu và kiểm tra giả thuyết.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "df283678-3870-4eb6-b661-dca47a808c60",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - Quy trình làm việc của AI: Phát hiện kỹ thuật và thiên vị tính năng - Biến đổi dữ liệu và kỹ thuật tính năng. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: Hoàn thành Tuần 1 của Khóa học Quy trình làm việc: Kỹ thuật tính năng và phát hiện thiên vị.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "725f1bc5-3c2e-42e5-b913-f54a2c68f5dd",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - Quy trình làm việc của AI: Phát hiện kỹ thuật và thiên vị tính năng (tiếp.) - Nhận dạng mẫu và khai thác dữ liệu thực hành tốt nhất. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Liên kết liên kết Coursera. Link tải tài liệu buổi học: Associated Coursera links. Nhiệm vụ sinh viên: Hoàn thành Tuần 2 của Khóa học Quy trình làm việc: Kỹ thuật tính năng và phát hiện thiên vị.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "52e7aced-cd39-4f44-87d8-64e6cafef06e",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - Quy trình làm việc của AI: Học máy, nhận dạng trực quan và NLP - Đánh giá mô hình và số liệu hiệu suất. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Hoàn thành Tuần 1 của Khóa học Quy trình làm việc: Học máy, nhận dạng trực quan và NLP.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "57b1bc19-dad0-4601-9a2e-d1bdb733edcd",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Quy trình làm việc của AI: Học máy, nhận dạng trực quan và NLP (cont.) - Xây dựng máy học và mô hình học tập sâu. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Liên kết liên kết Coursera. Link tải tài liệu buổi học: Associated Coursera links. Nhiệm vụ sinh viên: Hoàn thành Tuần 2 của Khóa học Quy trình làm việc: Học máy, nhận dạng trực quan và NLP.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "9cfc98f7-db61-4881-9572-6a18761158a2",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Quy trình làm việc của AI: Triển khai mô hình doanh nghiệp - Triển khai các mô hình. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Liên kết liên kết Coursera. Link tải tài liệu buổi học: Associated Coursera links. Nhiệm vụ sinh viên: Hoàn thành Tuần 1 của khóa học Quy trình làm việc AI: triển khai mô hình doanh nghiệp.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "d7b03c1a-c4ce-49a5-9c15-4eb0dd41d470",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Quy trình làm việc của AI: Triển khai mô hình doanh nghiệp (tiếp) - Triển khai các mô hình bằng Spark. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Hoàn thành Tuần 2 của Khóa học Quy trình làm việc: Triển khai mô hình doanh nghiệp.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "5b4770f9-6d14-4e22-8c35-a99d43a7b954",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Dự án Capstone: AI Workflow: AI trong sản xuất - Các vòng phản hồi và giám sát - T đi với OpenScale và Kubernetes ). Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Liên kết liên kết Coursera. Link tải tài liệu buổi học: Associated Coursera links. Nhiệm vụ sinh viên: Hoàn thành Tuần 1,2 của Khóa học Dự án Capstone: AI Workflow: AI trong sản xuất.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "32f9e918-8efb-4607-b2aa-43b087c78d27",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - AID301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Dự án Capstone: AI Workflow: AI trong sản xuất - Capstone: Kéo tất cả lại với nhau (Phần 1 - Capstone: Kéo tất cả lại với nhau (Phần 2). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Hoàn thành Tuần 3,4 của Khóa học Dự án Capstone: AI Workflow: AI trong sản xuất Hạn chót hoàn thành Coursera: Kết thúc Thứ Sáu trong tuần. Tất cả học sinh nên tham gia vào vị trí đánh giá (nếu có câu hỏi).",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "95f8a2ac-bac8-47fb-a23c-63ed635a4cf2",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - AID301c"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 100.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn được đánh dấu bởi máy tính. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các khóa học nghiên cứu. Mỗi mô-đun tất nhiên đóng góp 4-5 câu hỏi.. Ghi chú: Customized from the quizzes of this specialization. 1st Evaluation: For students who completed & got Coursera's specialization certificates (Option at week 7); 2nd Evaluation: For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation: For students who completed & got Coursera's specialization certificates) at week 14..",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "cb450e04-d0f4-4ace-8003-2defcf365e7d",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - AID301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: IBM AI Enterprise Workflow Specialization. Tác giả: IBM. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/specializations/ibm-ai-workflow.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "b3bf0176-ff9a-4b9f-baf1-191be3e43573",
+      "source_section": "materials_table",
+      "material_description": "IBM AI Enterprise Workflow Specialization",
+      "title": "Tài liệu 1 - AID301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Course 1. AI Workflow: Business Priorities and Data Ingestion. Tác giả: IBM. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/ibm-ai-workflow-business-priorities-data-ingestion.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "0a447acb-f673-4557-a0b6-2986a628f9d2",
+      "source_section": "materials_table",
+      "material_description": "Course 1. AI Workflow: Business Priorities and Dat",
+      "title": "Tài liệu 2 - AID301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Course 2. AI Workflow: Data Analysis and Hypothesis Testing. Tác giả: IBM. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/ibm-ai-workflow-data-analysis-hypothesis-testing.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "8af563a2-a672-449b-8c9e-62b63b8453d9",
+      "source_section": "materials_table",
+      "material_description": "Course 2. AI Workflow: Data Analysis and Hypothesi",
+      "title": "Tài liệu 3 - AID301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Course 3. AI Workflow: Feature Engineering and Bias Detection. Tác giả: IBM. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/ibm-ai-workflow-feature-engineering-bias-detection.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "1ab7f235-4c5b-4aad-9d25-1ed69ad374f3",
+      "source_section": "materials_table",
+      "material_description": "Course 3. AI Workflow: Feature Engineering and Bia",
+      "title": "Tài liệu 4 - AID301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Course 4. AI Workflow: Machine Learning, Visual Recognition and NLP. Tác giả: IBM. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-vr-nlp?specialization=ibm-ai-workflow.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "5947dc53-ae78-42a0-b755-a0794bb0a41d",
+      "source_section": "materials_table",
+      "material_description": "Course 4. AI Workflow: Machine Learning, Visual Re",
+      "title": "Tài liệu 5 - AID301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Course 5. AI Workflow: Enterprise Model Deployment. Tác giả: IBM. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-model-deployment?specialization=ibm-ai-workflow.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "0e7d6106-52f2-4705-95f9-a0f2ee2ed566",
+      "source_section": "materials_table",
+      "material_description": "Course 5. AI Workflow: Enterprise Model Deployment",
+      "title": "Tài liệu 6 - AID301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Course 6. AI Workflow: AI in Production. Tác giả: IBM. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/ibm-ai-workflow-ai-production?specialization=ibm-ai-workflow.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "10953084-2176-48c2-a2a6-de43cb29b078",
+      "source_section": "materials_table",
+      "material_description": "Course 6. AI Workflow: AI in Production",
+      "title": "Tài liệu 7 - AID301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Help Articles. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.support/s/article/208280036-Coursera-Code-of-Conduct?language=en_US.",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "9b1fa643-42f5-4309-839e-f3510f6df857",
+      "source_section": "materials_table",
+      "material_description": "Help Articles",
+      "title": "Tài liệu 8 - AID301c"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn AID301c là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=12630",
+    "metadata": {
+      "subject_code": "AID301c",
+      "syllabus_id": "12630",
+      "chunk_id": "a1b7d8ae-9651-49db-ab5c-db23bcedfc4d",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - AID301c"
+    }
+  }
+]

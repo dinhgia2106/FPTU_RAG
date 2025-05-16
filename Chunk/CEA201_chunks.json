@@ -1,0 +1,984 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Tổ chức máy tính và Kiến trúc_tổ Chức Và Kiến Trúc Máiy Tính (Tổ chức máy tính và kiến ​​trúc). Mã môn: CEA201. Số tín chỉ: 3. Mô tả: Khóa học này trong phần giới thiệu về kiến ​​trúc và tổ chức máy tính. Nó sẽ bao gồm các chủ đề trong cả thiết kế vật lý của máy tính (tổ chức) và thiết kế logic của máy tính (kiến trúc). Nội dung chính bao gồm tổ chức của một máy tính chương trình được lưu trữ đơn giản: CPU, xe buýt và bộ nhớ; Bộ hướng dẫn, mã máy và ngôn ngữ lắp ráp; Các quy ước cho ngôn ngữ lắp ráp được tạo bởi các trình biên dịch; Đại diện số điểm nổi; Tổ chức phần cứng của bộ xử lý đơn giản; Địa chỉ dịch và bộ nhớ ảo; Các ví dụ rất giới thiệu về các thiết bị đầu vào/đầu ra, xử lý ngắt và hệ thống đa tác vụ. Chương được bảo hiểm: Sự tiến hóa và hiệu suất của máy tính; Một cái nhìn cấp cao nhất về chức năng máy tính và kết nối; Bộ nhớ bộ nhớ cache; Bộ nhớ trong; Bộ nhớ ngoài; Đầu vào/đầu ra; Hỗ trợ hệ điều hành; Bộ hướng dẫn: Đặc điểm và chức năng; Cấu trúc bộ xử lý và chức năng; Giảm máy tính đặt hướng dẫn; Các bộ xử lý song song cấp độ hướng dẫn và bộ xử lý superscalar; Xử lý song song; Máy tính đa nàng. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các phiên liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập và thực tế được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và nộp đúng hạn. Làm câu đố trong lớp..",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "7f81eaa1-956a-4fe7-a53d-c968c7eae1af",
+      "source_section": "general_details",
+      "title": "Thông tin chung - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Giải thích các chức năng và cấu trúc chung của máy tính kỹ thuật số",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "5b4e5136-ccbe-4bfa-b282-0b6dda555fb9",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Trình bày một cái nhìn tổng quan về sự phát triển của công nghệ máy tính từ sớm Máy tính kỹ thuật số cho các bộ vi xử lý mới nhất.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "fb97d297-8c2c-49d2-ad50-61814934669a",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Hiểu các vấn đề hiệu suất chính liên quan đến thiết kế máy tính",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "30511658-72f9-43cc-855c-29a893c0e618",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Mô tả chi tiết các yếu tố thiết yếu của tổ chức máy tính bao gồm bus nội bộ, bộ nhớ, đầu vào/đầu ra (I/O) và các tiêu chuẩn giao thoa và thảo luận về cách các yếu tố này hoạt động;",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "4ff2a1c3-8ceb-41ba-97f6-5950d4f52cba",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Tóm tắt, ở cấp cao nhất, các chức năng chính của hệ điều hành (HĐH).",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "72ea76e8-0ceb-48f8-bb9f-efb32f28364b",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO6): Có thể áp dụng đại số Boolean và logic kỹ thuật số để thiết kế và giải thích các mạch kỹ thuật số phức tạp;",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "ffeb46a4-4d30-42c5-b9f5-e4617292aafc",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 7 (CLO7): Trình bày các loại chế độ địa chỉ khác nhau phổ biến trong các bộ hướng dẫn, một đặc điểm thiết yếu của hướng dẫn máy, các loại toán hạng được hỗ trợ bởi các bộ hướng dẫn máy thông thường",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "26ee90ec-5f54-4cbc-ad63-67a343d2ed46",
+      "source_section": "clos",
+      "clo_id": "7",
+      "title": "CLO 7 - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 8 (CLO8): Giải thích cấu trúc và chức năng của bộ xử lý chi tiết, các hoạt động của các máy tính tập lệnh giảm",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "cc404e31-ea31-40fd-89d1-036c10c38cd4",
+      "source_section": "clos",
+      "clo_id": "8",
+      "title": "CLO 8 - CEA201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 9 (CLO9): Điều tra, đánh giá và truyền đạt các xu hướng chung trong các công nghệ điện toán như song song cấp độ hướng dẫn và bộ xử lý Superscalar",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "346753db-50fd-41cf-b1d9-5626c1843b57",
+      "source_section": "clos",
+      "clo_id": "9",
+      "title": "CLO 9 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Giới thiệu về khóa học Chương 1: Giới thiệu 1.1 Tổ chức và kiến ​​trúc. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Link tải tài liệu buổi học: CEA201 - https://flm.fpt.edu.vn/download/9297/S/1_CEA201.zip. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "2f490ed4-f704-49c1-851d-0aa5290bea77",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - Giới thiệu về khóa học Chương 1: Giới thiệu 1.2 Cấu trúc và chức năng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Link tải tài liệu buổi học: CEA201 - https://flm.fpt.edu.vn/download/9297/S/2_CEA201.zip. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "62724494-8f47-49c0-aee2-d362959f506e",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Đánh giá các bài tập của Chương 1 Chương 2: Sự phát triển và hiệu suất của máy tính 2.1 Một lịch sử ngắn gọn về máy tính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "e6e4b32b-0258-49dc-a9cd-23631d27f3d3",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Đánh giá các bài tập của Chương 1 Chương 2: Sự phát triển và hiệu suất của máy tính 2.2 Thiết kế cho hiệu suất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "a0f162b3-a44b-484f-9f46-66e679417e23",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - Chương 2 2.3 Multicore, mics và gpgpus. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "a52bf346-30c6-44a0-aa64-b6b7f38b2733",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - Chương 2 2.6 Đánh giá hiệu suất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "5afbfccd-2850-4104-ab99-eb490ef5989f",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - Đánh giá các bài tập của Chương 2 Chương 3 Một cái nhìn cấp cao nhất về chức năng máy tính và kết nối 3.1 Thành phần máy tính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "b55c0294-e885-4fe8-aeb3-0560cdc28f19",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Đánh giá các bài tập của Chương 2 Chương 3 Một cái nhìn cấp cao nhất về chức năng máy tính và kết nối 3.2 Chức năng máy tính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "d3da95c2-bd03-45e9-ae49-5979d9263eb5",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Chương 3 3.3 Cấu trúc kết nối. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "dd2e3407-5dee-4de8-9c8a-060d30252ee7",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Chương 3 3.4 Kết nối xe buýt. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "7c8f0ae3-b0be-4725-867f-c0682415e306",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Đánh giá các bài tập của Chương 3 Chương 4 Bộ nhớ bộ nhớ cache 4.1 Tổng quan về hệ thống bộ nhớ máy tính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "d09c94fd-4202-40c4-bbba-5fa49f6bf0b3",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Đánh giá các bài tập của Chương 3 Chương 4 Bộ nhớ bộ nhớ cache 4.2 Nguyên tắc bộ nhớ bộ nhớ cache. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "2779e121-d666-421c-83c2-f0b57dc87aa8",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - Chương 4 4.3 Các yếu tố của thiết kế bộ nhớ cache. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "964ac5d9-8dfe-46a8-a272-d14b57820f4f",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - Chương 4 4.3 Các yếu tố của thiết kế bộ nhớ cache (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "edd88a17-8b0c-4f65-abfc-72e235be7de3",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - Đánh giá các bài tập của Chương 4 Chương 5 Bộ nhớ nội bộ 5.1 Bộ nhớ chính bán dẫn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "aa6f2037-ad3e-450c-992e-55044ff92be8",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - Đánh giá các bài tập của Chương 4 Chương 5 Bộ nhớ nội bộ 5.2 Sửa lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "0520256b-2ad2-4008-8dc5-7335de438529",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - Chương 5 5.3 Tổ chức DRAM nâng cao. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "39ee03da-b203-4e0d-9a4d-38a51b1a29ae",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Chương 5 5.3 Tổ chức DRAM nâng cao (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "3802a2d8-dc92-446b-a8ff-7d9ebcea9c3c",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - Đánh giá các bài tập của Chương 5 Chương 6 Bộ nhớ ngoài 6.1 Đĩa từ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "bccf9285-6849-4c20-8aeb-5a32e7bfea63",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - Đánh giá các bài tập của Chương 5 Chương 6 Bộ nhớ ngoài 6.2 RAID. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "ff8af03a-038d-489d-95ed-96f3facf8b95",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - Chương 6 Bộ nhớ ngoài 6.2 RAID (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "a1ee0411-a36c-4593-bae2-15abe923cc86",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - Chương 6 Bộ nhớ ngoài 6.3 Ổ đĩa trạng thái rắn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "38d12db8-9c71-4693-b11e-2514086c8038",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - Đánh giá các bài tập của Chương 6 Chương 7 Đầu vào/Đầu ra 7.1 Thiết bị bên ngoài 7.2 Mô -đun I/O.. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "9519369f-fe13-411c-98d3-11a0f1554c21",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - Đánh giá các bài tập của Chương 6 Chương 7 Đầu vào/Đầu ra 7.3 I/O được lập trình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "caa8c8f4-3ef4-4182-83f9-fa26f7f69031",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - Chương 7 Đầu vào/Đầu ra 7.4 I/O điều khiển ngắt. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "203a925b-bd5a-4e14-8be7-fc762b9b1a4a",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - Chương 7 Đầu vào/Đầu ra 7.6 Kênh và bộ xử lý I/O. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "4c711767-5451-40d3-b389-b5965963ad1f",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - Đánh giá các bài tập của Chương 7 Chương 8 Hỗ trợ hệ điều hành 8.1 Tổng quan về hệ điều hành. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "13f8e9e7-4d28-4372-ba13-82e3c9b393d0",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - Đánh giá các bài tập của Chương 7 Chương 8 Hỗ trợ hệ điều hành 8.1 Tổng quan về hệ điều hành (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "9a553361-efa2-4237-8fd9-ea958953ffec",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - Chương 8 Hỗ trợ hệ điều hành 8.2 Lập kế hoạch. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "ea95829d-480c-4e25-8a8d-eb09f4fb9124",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - Chương 8 Hỗ trợ hệ điều hành 8.3 Quản lý bộ nhớ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "6a45df7a-2ae3-4cf3-921d-c48bb6b5b343",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - Đánh giá các bài tập của Chương 8 Chương 11 Logic kỹ thuật số 11.1- Đại số Boolean 11,2 cổng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "2936c5a2-59ad-4036-acb2-aa15b3abcc3c",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - Đánh giá các bài tập của Chương 8 Chương 11 Logic kỹ thuật số 11.3- Mạch kết hợp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "45b614d3-87b4-40b5-b59c-34044d99dcd1",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - Đánh giá các bài tập của Chương 9 Chương 12 Bộ hướng dẫn: Đặc điểm và chức năng 12.1 Đặc điểm hướng dẫn máy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "4cd6f9c4-b02e-4b98-a61f-f2531dc03703",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - Đánh giá các bài tập của Chương 9 Chương 12 Bộ hướng dẫn: Đặc điểm và chức năng 12.2 Các loại toán hạng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "eab0a457-d63b-4ff6-8c2e-490329d4c524",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - Chương 12 Bộ hướng dẫn: Đặc điểm và chức năng tiếp. 12.4 Các loại hoạt động. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "5a7527e7-96e5-4ef1-840d-ed507cc27356",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - Chương 12 Bộ hướng dẫn: Đặc điểm và chức năng tiếp. 12.4 Các loại hoạt động. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "32343e15-ef4a-4e98-8f25-091ab3fe43e2",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - Đánh giá các bài tập của Chương 12 Chương 13 Bộ hướng dẫn: Địa chỉ các chế độ và định dạng 13.1 Chế độ địa chỉ 13.3 Định dạng hướng dẫn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "82d6b29a-75f8-4c64-9f51-a8e1e7d8ee2a",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - Đánh giá các bài tập của Chương 12 Chương 13 Bộ hướng dẫn: Địa chỉ các chế độ và định dạng 13,5 Ngôn ngữ lắp ráp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "da5aa206-9590-4e6a-9bc1-ae423f14dee3",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - Laguage lắp ráp thực tế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "5fe9d068-8088-452e-ac0d-e5d2127dd067",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - Laguage lắp ráp thực tế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "98acdad8-9de6-4d37-a367-22beb1caf858",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Laguage lắp ráp thực tế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "193c6584-b28c-4635-8d31-8373d593c135",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - Laguage lắp ráp thực tế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "40ddef26-27cc-4761-928f-3f0d7a95c0b8",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - Laguage lắp ráp thực tế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "9e5e6c62-d4b3-4c66-9faf-ec105b1c26d1",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - Laguage lắp ráp thực tế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "dea906f4-b65a-45ca-b501-d08abc173d09",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - Laguage lắp ráp thực tế Giới thiệu bài tập (Chương trình 1). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "ef7d42e9-bc7d-4f5b-8362-7ae451fda387",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - Laguage lắp ráp thực tế Giới thiệu bài tập (chương trình thứ 2). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "7e16e40a-d9d2-41d5-9923-e004a2237cdb",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - Đánh giá các bài tập của Chương 13 Chương 14 Cấu trúc và chức năng của bộ xử lý 14.1 Tổ chức bộ xử lý. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "4d906952-fc46-4e15-8bf6-8b345684cb0f",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - Đánh giá các bài tập của Chương 13 Chương 14 Cấu trúc và chức năng của bộ xử lý 14.2 Tổ chức đăng ký. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "53f2bf75-b03e-4acb-922b-b7d0d891d35e",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - Chương 14 Cấu trúc và chức năng của bộ xử lý 14.3 Chu kỳ hướng dẫn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "08e61caa-2f12-44ec-ad06-0074d189ac43",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - Chương 14 Cấu trúc và chức năng của bộ xử lý 14.4 Đường ống dẫn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "a269350c-1d40-4074-8c1d-f33b64b661f8",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - Đánh giá các bài tập của Chương 14 Chương 15 Giảm hướng dẫn đặt máy tính 15.1 Đặc điểm thực thi hướng dẫn 15.2 Việc sử dụng một tệp đăng ký lớn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "c7de2c84-b180-4ded-a158-827061fbd2c0",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - Đánh giá các bài tập của Chương 14 Chương 15 Giảm hướng dẫn đặt máy tính 15.3 Tối ưu hóa đăng ký dựa trên trình biên dịch 15.4 Giảm kiến ​​trúc bộ hướng dẫn. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "c72ecc16-b803-434a-be3d-0f36f7bc1a1a",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - Đánh giá các bài tập của Chương 15 Chương 16 Bộ xử lý song song ở cấp độ hướng dẫn và bộ xử lý Superscalar 16.1 Tổng quan. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "4c8cf501-a57b-4e8a-8fbe-f9c0fef6cda8",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - Đánh giá các bài tập của Chương 15 Chương 16 Bộ xử lý song song ở cấp độ hướng dẫn và bộ xử lý Superscalar 16.2 Vấn đề thiết kế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "19b64856-3ca1-4788-8549-5e079f5dad15",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - Đánh giá các bài tập của Chương 16 Chương 17 Xử lý song song 17.1 nhiều tổ chức bộ xử lý 17.2 Bộ xử lý đối xứng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "318c1d0c-71f7-421a-ac18-599bd9fcc3ad",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - Đánh giá các bài tập của Chương 16 Chương 17 Xử lý song song 17.3 Sự kết hợp của bộ nhớ cache và giao thức MESI 17.4 Bộ xử lý đa đọc và chip. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "2b9ade11-3473-4ffa-90ac-67a1e6e9a6fe",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Đánh giá các bài tập của Chương 16 Chương 18 Máy tính đa lõi 18.1 Vấn đề về hiệu suất phần cứng 18.2 Vấn đề về hiệu suất phần mềm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "12e83327-4cdf-4963-af82-fbd12226dbdc",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Đánh giá các bài tập của Chương 16 Chương 18 Máy tính đa lõi 18.3 Tổ chức đa lõi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: - Cầu trượt - Sách văn bản,. Nhiệm vụ sinh viên: Làm bài tập.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "8d3f37ab-ec2c-40eb-ab4f-c6f80235bcdc",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Đánh giá các xét xử Xem lại 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "f2756120-797e-4306-929b-dd60916a2d74",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - CEA201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Đánh giá các xét xử Đánh giá 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "c78fa60b-b867-44f2-9f00-333efabb778c",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - CEA201"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phân công (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Tùy chọn 1: Phát triển Chương trình tập hợp Tùy chọn 2 (chỉ cho phương pháp tiếp cận xây dựng): Thực hiện theo đề xuất của Giảng viên. Thời gian: Tùy chọn 1: Tùy chọn tại nhà. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Các chương trình cơ bản. Ghi chú: 30% of total progress mark.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "405f6ca6-47be-4190-a0d8-4097d9e06b8f",
+      "source_section": "assessments",
+      "assessment_category": "Phân công",
+      "title": "Đánh giá Phân công - CEA201"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Bài tập (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Tùy chọn 1: Viết Tùy chọn 2 (chỉ cho cách tiếp cận chủ nghĩa xây dựng): Thực hiện theo đề xuất của Giảng viên. Thời gian: Tùy chọn 1: N/A Tùy chọn2: (Chỉ tiếp cận chủ nghĩa xây dựng). Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Các chương nghiên cứu; kiến thức và kỹ năng. Ghi chú: 30% of total progress mark.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "1c89614a-50ce-4b9f-9dfc-35833b3a8ee0",
+      "source_section": "assessments",
+      "assessment_category": "Bài tập",
+      "title": "Đánh giá Bài tập - CEA201"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 40.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các chương; kiến thức và kỹ năng của hệ thống kỹ thuật số;. Ghi chú: 40% of total progress mark.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "48bcd152-a9c2-4859-8957-2084cde85bce",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - CEA201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Computer Organization and Architecture: Design for Performance. Tác giả: William Stallings. Nhà xuất bản: Prentice Hall. Năm xuất bản: 2012.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "3d09ea4f-2c30-4ad7-8331-baf9c5d61820",
+      "source_section": "materials_table",
+      "material_description": "Computer Organization and Architecture: Design for",
+      "title": "Tài liệu 1 - CEA201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Computer architecture : A quantitative approach. Tác giả: John L. Hennessy, David A Patterson. Nhà xuất bản: Morgan Kaufmann.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "d51ae48a-3d66-4a19-abf2-7d39467455ae",
+      "source_section": "materials_table",
+      "material_description": "Computer architecture : A quantitative approach",
+      "title": "Tài liệu 2 - CEA201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: http://williamstallings.com/ComputerOrganization/COA9e-Instructor/.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "3e776d6b-9a14-4beb-9786-c50bba4021c0",
+      "source_section": "materials_table",
+      "material_description": "http://williamstallings.com/ComputerOrganization/C",
+      "title": "Tài liệu 3 - CEA201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: http://williamstallings.com/ComputerOrganization/COA9e-student/.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "e7d7a069-25c9-49b2-9b83-a0e4fdb8cc15",
+      "source_section": "materials_table",
+      "material_description": "http://williamstallings.com/ComputerOrganization/C",
+      "title": "Tài liệu 4 - CEA201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: PowerPoint Lecture Slides.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "84e62fb2-e1e0-4bb2-947c-16704887b832",
+      "source_section": "materials_table",
+      "material_description": "PowerPoint Lecture Slides",
+      "title": "Tài liệu 5 - CEA201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Instructor Solutions Manual.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "5619815f-e27f-45ea-9df4-5b76a4da0e3c",
+      "source_section": "materials_table",
+      "material_description": "Instructor Solutions Manual",
+      "title": "Tài liệu 6 - CEA201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Instructor Project Manual.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "06095368-c7a6-4483-b1e8-4bd8ad31305a",
+      "source_section": "materials_table",
+      "material_description": "Instructor Project Manual",
+      "title": "Tài liệu 7 - CEA201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Test banks.",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "3c6835a1-de1e-4784-bd7c-ca155dc0259d",
+      "source_section": "materials_table",
+      "material_description": "Test banks",
+      "title": "Tài liệu 8 - CEA201"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn CEA201 là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=11098",
+    "metadata": {
+      "subject_code": "CEA201",
+      "syllabus_id": "11098",
+      "chunk_id": "b1116118-d4b9-47ec-b35e-47ac66c65de1",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - CEA201"
+    }
+  }
+]
