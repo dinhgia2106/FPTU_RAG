@@ -1,0 +1,960 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Khoa học dữ liệu ứng dụng với R - Khoa Học Dữ liệu ứng dụng với r (). Mã môn: DSR301m. Số tín chỉ: 3. Mô tả: Khóa học này giới thiệu những điều cơ bản của ngôn ngữ R như các loại dữ liệu, kỹ thuật để thao tác. Học sinh sẽ có thể thực hiện các tác vụ lập trình R cơ bản để hoàn thành quá trình phân tích dữ liệu, tạo cơ sở dữ liệu quan hệ và truy vấn dữ liệu bằng SQL và R và truyền đạt kết quả dữ liệu của họ bằng các kỹ thuật trực quan hóa dữ liệu. Học sinh sẽ làm việc với các công cụ như R Studio và các thư viện R liên quan cho khoa học dữ liệu như Tidyverse, Tidymodels, R Shiny, GGPLOT2. Điều kiện tiên quyết: DBI202. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các khe liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập, bài tập và phòng thí nghiệm được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và nộp đúng hạn - Chỉ sử dụng máy tính xách tay trong lớp cho mục đích học tập -Hãy nhanh chóng truy cập vào FU LMS tại http://lms.fpt.edu.vn để biết thông tin khóa học cập nhật. Công cụ sử dụng: Jupyter Notebooks, RStudio IDE.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "24ea2175-32bd-47d3-bc05-ed9cd50ce919",
+      "source_section": "general_details",
+      "title": "Thông tin chung - DSR301m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Hiểu những điều cơ bản của ngôn ngữ R.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "7768e31a-6769-43eb-bae1-a827dd78b913",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - DSR301m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Hiểu cách thao túng dữ liệu với ngôn ngữ lập trình R và thực hiện các tác vụ lập trình cơ bản",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "d47c7793-f707-4767-95e3-65697cd653ab",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - DSR301m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Tìm hiểu và áp dụng kiến ​​thức nền tảng về các ngôn ngữ SQL & R và cách truy cập cơ sở dữ liệu từ máy tính xách tay Jupyter bằng SQL và R",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "297c9b5f-ebe0-40f2-980f-0af2d2a160a6",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - DSR301m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Biết cách đánh giá dữ liệu để phân tích dữ liệu, phát triển các mô hình, cải thiện mô hình, đánh giá và điều chỉnh hiệu suất",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "8f24d638-daef-463b-9cc9-4bd9bf34c8cc",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - DSR301m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Hiểu cách mô tả và xây dựng biểu đồ bằng các gói R. Thực hiện các loại biểu đồ cơ bản khác nhau để trực quan hóa như biểu đồ thanh, biểu đồ, biểu đồ hình tròn, sơ đồ phân tán, sơ đồ đường và âm mưu hộp",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "792582ea-198e-4c49-83af-2721d5fd8381",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - DSR301m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO6): Thực hiện một dự án khoa học dữ liệu nhỏ bao gồm các bước: Wrangling dữ liệu, phân tích dữ liệu, trực quan hóa dữ liệu, phát triển mô hình, đánh giá mô hình và báo cáo",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "91fc2381-d022-4cc2-beb2-ad6f234a83d7",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - - Giới thiệu khóa học - Chương 1: Giới thiệu về Lập trình R cho Khoa học dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1. Tài liệu sinh viên: - Slide: Giới thiệu. Link tải tài liệu buổi học: mat1 - https://flm.fpt.edu.vn/download/9492/S/1_mat1.zip. Nhiệm vụ sinh viên: Đọc giới thiệu slide Giáo trình giáo trình DSR301M.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "f9ac1836-b9a5-4ae4-b81a-995d02accf1f",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - 1.1. Giới thiệu về ngôn ngữ r 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1. Tài liệu sinh viên: - Slide: Chương 1.1. Link tải tài liệu buổi học: mat2 - https://flm.fpt.edu.vn/download/9492/S/2_mat2.zip. Nhiệm vụ sinh viên: Đọc Chương 1.1.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "a9f9427d-542a-4bdc-b8ed-6e8adbbf557d",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - 1.2.Intruction to r ngôn ngữ 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1. Tài liệu sinh viên: - Slide: Chương 1.2. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 1.2.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "8c773376-1eb2-4da8-bba0-77db5cb1d146",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - 1.3 Lấy dữ liệu vào r 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1. Tài liệu sinh viên: - Trượt chương 1.3. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 1.3.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "583aee2d-9b15-4512-826b-788ad83fcb07",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - 1.4 Lấy dữ liệu vào r 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1, CLO2. Tài liệu sinh viên: - Trượt chương 1.4. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 1.4.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "432c6502-8b8f-42b0-8a3d-55fa2ef59ad9",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - 1.5 Lấy dữ liệu vào r 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1, CLO2. Tài liệu sinh viên: - Trượt chương 1.5. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 1.5.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "63281bb9-4ec7-473d-b1a0-f9670df39fba",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - 1.6 Lấy dữ liệu vào r 4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1, CLO2. Tài liệu sinh viên: - Trượt chương 1.6. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 1.6.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "fa1c73c7-955a-4139-a27a-e1a3f887b617",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - 1.7 Lấy dữ liệu vào r 5. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1, CLO2. Tài liệu sinh viên: - Trượt chương 1.7. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 1.7.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "e8357924-6500-4fff-bc8e-372113df63ca",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - 1.8 R Lập trình Nguyên tắc cơ bản 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Trượt chương 1.8. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 1.8.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "3e3ab36c-8d77-4959-ac24-541d406c2b54",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - 1.9 R Lập trình cơ bản 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Trượt chương 1.9. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 1.9.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "d59b3ad8-1f3f-476d-845c-989726ba4dbd",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - LAB 1A: Giới thiệu về lập trình R. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Trượt chương 1, phòng thí nghiệm 1. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc phòng thí nghiệm 1.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "9fd46ac3-c5fb-46f7-a1a2-f7e8b3b3a76c",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - LAB 1B: Giới thiệu về lập trình R. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Trượt chương 1, phòng thí nghiệm 1. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc phòng thí nghiệm 1.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "76799893-3fcf-40d3-bc30-431dc0db97fb",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - LAB 1C: Giới thiệu về lập trình R. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Trượt chương 1, phòng thí nghiệm 1. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc phòng thí nghiệm 1.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "2b83ed90-8b0b-428b-aef0-5274f3115bb7",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - Hướng dẫn chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Bài tập (tệp .docx). Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "5fe92628-7bf1-4926-973c-ad0c7bc8afc2",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - - Chương 2: SQL cho khoa học dữ liệu với r 2.1 Nhắc nhở: Cơ sở dữ liệu và bảng quan hệ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2.1. Nhiệm vụ sinh viên: Đọc Chương 2.1.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "c19d5dca-17f4-4ba7-8315-24bb11108f3b",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - 2.2 Nhắc nhở: SQL trung gian. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2.2. Nhiệm vụ sinh viên: Đọc Chương 2.2.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "a4df8872-d449-4cff-93c6-8d34f832bd8a",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - 2.3 Bắt đầu với cơ sở dữ liệu bằng R 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2.3. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 2.3.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "fd82c089-8947-47ef-95aa-536c764b1955",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - 2.4 Bắt đầu với cơ sở dữ liệu bằng R 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2.4. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 2.4.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "05255746-5395-4757-b47b-203b921dcb24",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - 2.5 Làm việc với các đối tượng cơ sở dữ liệu bằng R 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2.5. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 2.5.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "de165b49-ffd1-4f99-9fe0-ed8a81585b02",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - 2.6 Làm việc với các đối tượng cơ sở dữ liệu bằng R 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2.6. Nhiệm vụ sinh viên: Đọc Chương 2.6.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "3c1876dd-df3e-4fa9-9801-0dbbed2ffd5c",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - 2.7 Làm việc với các đối tượng cơ sở dữ liệu bằng R 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2.7. Nhiệm vụ sinh viên: Đọc Chương 2.7.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "e9e06bf0-75ff-46c0-b335-04a72807483a",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - Lab 2a: SQL với r. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2, phòng thí nghiệm 2A. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 2, Lab 2A.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "7c3ea3b9-29fe-4a79-b361-1e49992bbac2",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - Lab 2b: SQL với r. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2, phòng thí nghiệm 2b. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 2, Phòng thí nghiệm 2B.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "e0e72ec9-3ad6-495c-b37b-87b33116f78a",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - Lab 2c: SQL với r. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2, phòng thí nghiệm 2c. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 2, Lab 2c.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "eb279ce4-f27e-4454-b206-f605d42246b5",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - Lab 2D: SQL với r. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Trượt chương 2, phòng thí nghiệm 2D. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 2, Lab 2D.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "c212901a-cb38-4c8a-9f4d-3f98c0b1e730",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - Xem lại bài tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: Bài tập của học sinh. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "a652e87d-b3eb-400a-9977-bf48a9b27761",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - Kiểm tra tiến độ 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3. Tài liệu sinh viên: - Trượt chương 1, 2. Nhiệm vụ sinh viên: - Trượt chương 1, 2.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "68329f28-8432-47f3-b961-ed7016876b5a",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - Chương 3: Phân tích dữ liệu với r 3.1 Giới thiệu về phân tích dữ liệu với r 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.1. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.1.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "abb55112-357b-4cfb-8ec1-9f015c218ff9",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - 3.2 Giới thiệu về phân tích dữ liệu với R 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.2. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.2.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "2d04e00e-f3c4-484f-98c0-dace1fbe6b8b",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - 3.3 Dữ liệu Wrangling 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.3. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.3.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "596fb27c-307c-469c-bf92-cc15b2fa7ea9",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - 3.4 Dữ liệu Wrangling 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.4. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.4.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "12bd233d-62aa-4989-9c0f-c24fc707fbdb",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - 3.5 Phân tích dữ liệu khám phá 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.5. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.5.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "9cdd7f80-837b-41d4-b08f-3427c65f9c39",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - 3.6 Phân tích dữ liệu khám phá 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.6. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.6.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "78bbcc71-95c3-42f5-8c99-af241302e91b",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - 3.7 Phát triển mô hình trong r 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.7. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.7.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "3bfb9426-8a01-4cef-a3bf-8c823fdfd5a5",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - 3.8 Phát triển mô hình trong R 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.8. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.8.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "ec5c5289-a420-47ed-a3d2-f84ef2814304",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - 3.9 Phát triển mô hình trong r 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.9. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Trượt: Chương 3.9 - Coursera.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "bcfe6d15-4cc8-4d82-91ec-86055fad4b80",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - 3.10 Đánh giá mô hình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.10. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.10.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "46adc43b-32ea-4767-a7d2-652d44a87cfc",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - 3.11 Đánh giá mô hình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3.11. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3.11.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "cb035134-4ab1-4d8f-9272-60a0fd27860c",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - Lab 3A: Phân tích dữ liệu với r 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3, phòng thí nghiệm 3A. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3, Lab 3A.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "257811d4-6c6a-4755-b519-d3c39f190f7d",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - LAB 3B: Phân tích dữ liệu với R 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3, phòng thí nghiệm 3b. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3, Phòng thí nghiệm 3B.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "e085f14e-2edd-4a80-a431-eb572f6e518a",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Lab 3C: Phân tích dữ liệu với R 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3, phòng thí nghiệm 3c. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3, Lab 3C.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "e05c7b92-ca59-4697-932e-20f5fbbfa32a",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - Lab 3D: Phân tích dữ liệu với R 4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 3, phòng thí nghiệm 3D. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3, Phòng thí nghiệm 3D.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "9793bbf8-63a9-4691-8731-1e9f7910c7a3",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - Lab 3E: Phân tích dữ liệu với R 5. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 3, phòng thí nghiệm 3E. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 3, Phòng thí nghiệm 3E.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "833a7591-f09f-4b9f-bc46-0ba301ace21b",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - Xem lại viên đá mini. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: Capstone của học sinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "17bf74ea-2728-4944-a427-6634b2c60b34",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - Chương 4: Trực quan hóa dữ liệu với r 4.1 Giới thiệu về trực quan hóa dữ liệu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4.1. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.1.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "d52eba6e-6b08-4eb6-8ce1-aaed0a1c87e7",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - 4.2 Sơ đồ, Bản đồ và Tùy chỉnh cơ bản 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4.2. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.2.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "b98fdd3a-c9d5-4e95-94ac-8eba8cc10e62",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - 4.3 Sơ đồ, Bản đồ và Tùy chỉnh cơ bản 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4.3. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.3.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "e92adfdf-3b11-4aff-9e62-9eebac989be3",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - 4.4 Cốt truyện, bản đồ và tùy chỉnh cơ bản 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4.4. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.4.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "1b871109-eb4f-41ff-bbc2-10f0be229836",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - 4,5 Bảng điều khiển 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4.5. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.5.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "6f03a323-0519-4e96-ba7c-a3d486104f03",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - 4.6 Bảng điều khiển 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4.6. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.6.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "e1ab717b-5afb-4386-b011-446c8232bef8",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - 4,7 Bảng điều khiển 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4.7. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.7.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "867595ba-5b1b-40a5-aedb-433dd171e239",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - Lab 4A: Trực quan hóa dữ liệu với r 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4, phòng thí nghiệm 4A. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4, Phòng thí nghiệm 4A.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "57d1ac30-983f-4203-8081-c908bfa23fa2",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - LAB 4B: Trực quan hóa dữ liệu với R 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4, phòng thí nghiệm 4B. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4, Phòng thí nghiệm 4B.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "d15d14f2-b493-4901-9dff-7421ef165dcb",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - LAB 4C: Trực quan hóa dữ liệu với R 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 4, phòng thí nghiệm 4c. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4, Phòng thí nghiệm 4C.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "7f902c69-6d8c-49d6-a86f-b272f5d1ba28",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - Kiểm tra tiến độ 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: - Trượt chương 3, 4. Nhiệm vụ sinh viên: - Trượt chương 3, 4.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "42409532-c1ed-4382-a9a6-bb19d1625f24",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - Phân loại chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: Bài tập của sinh viên và ppt.. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "88feb37e-f64e-4665-b604-8a6713327adc",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Phân loại chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: Bài tập của sinh viên và ppt.. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "0038da51-7cd4-4536-bb5f-96fd73b986fc",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Phân loại chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: Bài tập của sinh viên và ppt.. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "34aefdc0-483e-4c1e-8fa0-3666100ff0fa",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Xem xét khóa học. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3, CLO4, CLO5. Tài liệu sinh viên: Tất cả các slide. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Xem lại slide.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "6efdffec-4403-462f-9c00-6bdf66f2f3cc",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - DSR301m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Xem xét khóa học Kết quả. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3, CLO4, CLO5. Tài liệu sinh viên: Tất cả các slide. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Xem lại slide.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "e896420c-1af7-467b-b0e3-b2501d077e62",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - DSR301m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phân công (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO6. Loại câu hỏi/Nhiệm vụ: Dự án nhỏ. Thời gian: 8-10 tuần. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bao gồm Chương 1, 2, 3, 4. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "c62fe746-b9fd-45ba-8525-45b0dcdc9bc7",
+      "source_section": "assessments",
+      "assessment_category": "Phân công",
+      "title": "Đánh giá Phân công - DSR301m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 1 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2. Loại câu hỏi/Nhiệm vụ: Công việc nhà, lớp học. Thời gian: 30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 1. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "0b23b6ef-bc8f-41d7-ad7e-c74518880faa",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 1",
+      "title": "Đánh giá Phòng thí nghiệm 1 - DSR301m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 2 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO3. Loại câu hỏi/Nhiệm vụ: Công việc nhà, lớp học. Thời gian: 30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 2. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "bcc0cc32-268d-4435-87f1-0b031242a9ec",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 2",
+      "title": "Đánh giá Phòng thí nghiệm 2 - DSR301m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 3 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO4. Loại câu hỏi/Nhiệm vụ: Công việc nhà, lớp học. Thời gian: 30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 3. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "40624edb-d460-4604-bb98-9b63200a50d2",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 3",
+      "title": "Đánh giá Phòng thí nghiệm 3 - DSR301m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 4 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO5. Loại câu hỏi/Nhiệm vụ: Công việc nhà, lớp học. Thời gian: 30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 4. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "d010b6a4-3ad0-4528-9bb0-94c16e279cd5",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 4",
+      "title": "Đánh giá Phòng thí nghiệm 4 - DSR301m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 1 (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 45'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 1,2. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "ca57b0ae-7eb5-45b4-b70c-d98231b17111",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 1",
+      "title": "Đánh giá Kiểm tra tiến độ 1 - DSR301m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 2 (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO4, CLO5. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 45'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Bìa chương 3,4. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "030447b9-ccb4-4466-9d63-a77345312668",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 2",
+      "title": "Đánh giá Kiểm tra tiến độ 2 - DSR301m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5, CLO6. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: - Bao gồm Chương 1, 2, 3, 4. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "b7ef615a-5693-4780-8726-5162b9bce73a",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - DSR301m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Introduction to R Programming for Data Science. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/introducton-r-programming-data-science.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "84952693-2715-498a-a295-4cc067a1134a",
+      "source_section": "materials_table",
+      "material_description": "Introduction to R Programming for Data Science",
+      "title": "Tài liệu 1 - DSR301m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: SQL for Data Science with R. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/sql-data-science-r.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "d8ef9844-0276-48f8-b841-a5a6aa5b77aa",
+      "source_section": "materials_table",
+      "material_description": "SQL for Data Science with R",
+      "title": "Tài liệu 2 - DSR301m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Data Analysis with R. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/data-analysis-with-r?specialization=applied-data-science-r.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "24b3053e-b545-49ad-a415-ba5ff1dc121d",
+      "source_section": "materials_table",
+      "material_description": "Data Analysis with R",
+      "title": "Tài liệu 3 - DSR301m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Data Visualization with R. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/data-visualization-r?specialization=applied-data-science-r.",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "20dc50f2-6242-4b02-8531-07292ea38c5c",
+      "source_section": "materials_table",
+      "material_description": "Data Visualization with R",
+      "title": "Tài liệu 4 - DSR301m"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn DSR301m là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=11217",
+    "metadata": {
+      "subject_code": "DSR301m",
+      "syllabus_id": "11217",
+      "chunk_id": "f5a64208-d911-4e53-8cf2-8cd5a5dc2367",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - DSR301m"
+    }
+  }
+]

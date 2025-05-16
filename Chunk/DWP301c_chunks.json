@@ -1,0 +1,468 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Phát triển web với Python_Phát Triển Web với Python (Phát triển web với Python). Mã môn: DWP301c. Số tín chỉ: 3. Mô tả: Trong khóa học này, bạn sẽ học cách xây dựng các ứng dụng dựa trên đám mây của riêng mình và làm việc với các công nghệ đằng sau chúng. Chương trình này bao gồm 10 khóa học với nội dung giảng dạy rộng rãi cũng như các bài tập và dự án thực hành được thiết kế để trau dồi kỹ năng của bạn và giúp bạn xây dựng danh mục đầu tư của mình. Bạn sẽ có kỹ năng với các công cụ và công nghệ mà các nhà phát triển phần mềm thành công sử dụng để xây dựng, triển khai, kiểm tra, chạy và quản lý các ứng dụng gốc của Cloud Stack, cung cấp cho bạn các kỹ năng thực tế để bắt đầu sự nghiệp mới trong một lĩnh vực theo yêu cầu. Các khóa học trong chương trình này sẽ giúp bạn phát triển các bộ kỹ năng trong nhiều công nghệ bao gồm: nền tảng đám mây, HTML, CSS, JavaScript, GitHub, Node.js, React, Cloud Native Practice, DevOps, CI/CD, Bảo mật, microservice, máy tính không có máy chủ, và nhiều hơn nữa. Sau khi hoàn thành tất cả các khóa học trong chương trình, bao gồm dự án Capstone, bạn sẽ phát triển một số ứng dụng sử dụng các công nghệ mặt trước và back-end và triển khai chúng trên nền tảng đám mây bằng phương pháp tự nhiên. Điều kiện tiên quyết: PFP191. Nhiệm vụ sinh viên: Sinh viên phải có được chứng nhận chuyên môn của nhà phát triển phần mềm Full Stack IBM từ Coursera để được chấp nhận vào kỳ thi cuối cùng.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "21f8d600-b6ee-43ba-bc07-e2bee28c7c43",
+      "source_section": "general_details",
+      "title": "Thông tin chung - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Hiểu về điện toán đám mây từ góc độ kinh doanh cũng như để trở thành một học viên đám mây",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "b5fe39ec-a778-481f-982b-4a1834722caf",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO10): Hiểu về cách các nhà phát triển có lợi cho máy chủ, học khi sử dụng lập trình không có máy chủ, mô hình triển khai không có máy chủ và khám phá các trường hợp sử dụng hàng đầu và các mẫu thiết kế của nó",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "69dfda98-31fa-4895-aed2-d50a1f7fe399",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO11): Có thể áp dụng kiến ​​thức mới cho một thách thức thực tế và sử dụng chuyên môn của bạn để phát triển một giải pháp ngăn xếp đầy đủ thành công.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "233bf64b-3f6c-4f8c-8a34-595ef5e97f28",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO2): Hiểu về HTML, CSS, JS và tìm hiểu làm thế nào sự kết hợp của cả hai công nghệ có thể giúp các nhà phát triển tạo ra cấu trúc và phong cách của trang web của họ",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "74da5647-93a3-4269-b09c-e489b8a3c08e",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO3): Kinh nghiệm thực hành bằng cách sử dụng Git và GitHub",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "6129c519-eea4-47f1-aafe-fa3738a7e0a5",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO4): Có thể xây dựng các ứng dụng phía trước phong phú với React và ES6 - Kết nối các thành phần React bằng cách sử dụng dữ liệu và trạng thái - Viết các thành phần React phong phú với các tính năng nâng cao như Hook và Redux",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "ed33f726-fc06-43a7-80de-b3e7428bfcce",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 7 (CLO5): Có thể phát triển các ứng dụng bằng cách sử dụng các cuộc gọi lại và lời hứa không đồng bộ - tạo API REST và thực hiện các hoạt động CRUD - thực hiện xác thực và quản lý phiên",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "7f019ee2-ce57-4a81-b155-c53b5f5baf5f",
+      "source_section": "clos",
+      "clo_id": "7",
+      "title": "CLO 7 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 8 (CLO6): Hiểu những điều cơ bản của Python và các loại dữ liệu khác nhau và tạo các chương trình cơ bản, làm việc với dữ liệu và tự động hóa các tác vụ trong thế giới thực bằng cách sử dụng Python",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "ae68f53e-47ac-4bde-90e4-373df0edf287",
+      "source_section": "clos",
+      "clo_id": "8",
+      "title": "CLO 8 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 9 (CLO7): Có thể phát triển các ứng dụng web và các giải pháp hỗ trợ AI",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "2ca740e3-0b11-4678-9953-f02ee277ee6d",
+      "source_section": "clos",
+      "clo_id": "9",
+      "title": "CLO 9 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 10 (CLO8): Hiểu các khái niệm cơ sở dữ liệu cơ bản và trải nghiệm thực hành triển khai ứng dụng web Django của bạn trên đám mây",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "26446592-90a6-4efa-aae4-8bac6dc2cca9",
+      "source_section": "clos",
+      "clo_id": "10",
+      "title": "CLO 10 - DWP301c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 11 (CLO9): Có thể xây dựng các ứng dụng gốc trên đám mây bằng các công cụ và công nghệ container hiện tại như container, Docker, Cơ quan đăng ký container, Kubernetes, OpenShift và Istio",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "e97588bf-cb16-4783-a127-c71089bb4af1",
+      "source_section": "clos",
+      "clo_id": "11",
+      "title": "CLO 11 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Giới thiệu về Điện toán đám mây - Khái niệm cốt lõi của điện toán đám mây. - Kiến thức nền tảng cần thiết để hiểu điện toán đám mây từ góc độ kinh doanh cũng như để trở thành một học viên đám mây. - Định nghĩa và các đặc điểm thiết yếu của điện toán đám mây, lịch sử của nó, trường hợp kinh doanh cho điện toán đám mây và các cơ sở công nghệ mới nổi được kích hoạt bởi đám mây. - Giới thiệu với một số nhà cung cấp dịch vụ nổi bật của thời đại chúng ta (ví dụ: AWS, Google, IBM, Microsoft, v.v.) Các dịch vụ họ cung cấp và xem xét một số nghiên cứu trường hợp về điện toán đám mây trên các ngành dọc của ngành. - Tìm hiểu về các mô hình dịch vụ đám mây khác nhau (IaaS, PaaS, SaaS) và các mô hình triển khai (công cộng, riêng tư, lai) và các thành phần chính của cơ sở hạ tầng đám mây (VMS, mạng, lưu trữ - tệp, khối, đối tượng, CDN). - Bao gồm các xu hướng và thực tiễn đám mây mới nổi bao gồm - Hybrid Multicloud, Microservice, Serverless, DevOps, Cloud Native và ứng dụng hiện đại hóa. - Những điều cơ bản về bảo mật đám mây, giám sát và vai trò công việc khác nhau trong ngành công nghiệp đám mây. - Tạo tài khoản của riêng bạn trên IBM Cloud và có được một số kinh nghiệm thực hành bằng cách cung cấp dịch vụ đám mây và làm việc với nó.. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: Hoàn thành khóa học Giới thiệu về Điện toán đám mây.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "30ef0b4c-ee2d-4a82-a2a3-34ceb5ed22d6",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - Giới thiệu về Phát triển web với HTML, CSS, JavaScript - Khám phá các ngôn ngữ, khung và các công cụ mà bạn sẽ cần tạo các trang web tương tác và hấp dẫn ngay từ đầu. -Tìm hiểu về vai trò của các nhà phát triển Front-end, back-end và đầy đủ và cách họ làm việc cùng nhau trong các dự án phát triển. - Làm quen với thuật ngữ và kỹ năng cần thiết trong sự nghiệp của bạn với tư cách là một nhà phát triển web. - Khám phá các ngôn ngữ cần thiết để phát triển các trang web hoặc ứng dụng. - Hiểu về HTML và CSS và tìm hiểu làm thế nào sự kết hợp của cả hai công nghệ có thể giúp các nhà phát triển tạo ra cấu trúc và phong cách của trang web của họ. - Tìm hiểu cách JavaScript có thể làm cho các trang web của bạn động với các tính năng bao gồm các hình thức tương tác, sửa đổi nội dung động và các hệ thống menu tinh vi. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: Hoàn thành khóa học 2 của chuyên ngành này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "b674438f-3de7-4b79-8563-555f24bb940c",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Bắt đầu với Git và GitHub - Được giới thiệu để kiểm soát phiên bản hợp tác và các nền tảng GIT phổ biến. - Khám phá các khái niệm GIT chính như phân nhánh và kho lưu trữ, cũng như việc sử dụng các lệnh GIT. - Thực hành các khái niệm GIT khác nhau như forking, nhân bản và hợp nhất quy trình công việc. - Sử dụng GitHub để hoạt động hiệu quả như một nhóm và thực hiện các hoạt động GIT thông thường, chẳng hạn như các yêu cầu kéo, từ cả giao diện người dùng web và dòng lệnh.. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Khóa hoàn chỉnh 3 của chuyên ngành này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "488a54a9-9bdd-4cb4-aaa1-4251e2552c26",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Phát triển các ứng dụng phía trước với React - Xây dựng các ứng dụng đầu tiên phong phú với React và ES6 - Kết nối các thành phần React bằng cách sử dụng dữ liệu và trạng thái - Viết các thành phần React phong phú với các tính năng nâng cao như Hook và Redux - Khám phá cách truy cập thư viện Giao diện người dùng Framework React Framework (UI) và chạy các ứng dụng React phong phú. - Tìm cách sử dụng các thành phần React và thay đổi thuộc tính và trạng thái của chúng trong giao diện người dùng động. - Kết nối với một máy chủ bên ngoài từ một trang React. - Giới thiệu các công cụ thử nghiệm khác nhau mà bạn có thể sử dụng để kiểm tra thành phần mà không cần xác minh thủ công. - Thể hiện các kỹ năng phản ứng của bạn với một dự án cuối cùng để thêm vào danh mục đầu tư của bạn.. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: Hoàn thành khóa học 4 của thông số kỹ thuật này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "5f965e09-a4e2-4b34-ba0f-f2f4a9c90ee7",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - Phát triển các ứng dụng back-end với Node.js và Express - Tập trung vào Node.js và Express. - Phát triển các ứng dụng bằng cách sử dụng các cuộc gọi lại và lời hứa không đồng bộ - Tạo API REST và thực hiện các hoạt động CRUD - Thực hiện xác thực và quản lý phiên - Hoàn thành nhiều phòng thí nghiệm thực hành để có được kinh nghiệm thực tế. - Thể hiện các kỹ năng nút của bạn với một dự án cuối cùng để xây dựng danh mục đầu tư của bạn.. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Hoàn thành khóa học 5 của thông số kỹ thuật này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "de63b318-9a05-43d9-9424-57c02aef8dc6",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - Python cho khoa học dữ liệu, AI & phát triển - Tìm hiểu về cơ bản của Python và các loại dữ liệu khác nhau. - Làm quen với các cấu trúc dữ liệu Python như danh sách và bộ dữ liệu, cũng như các khái niệm logic như điều kiện và phân nhánh. - Sử dụng các thư viện Python như gấu trúc, súp numpy & đẹp. - Sử dụng Python để thực hiện các tác vụ như thu thập dữ liệu và quét web với API. - Thực hành và áp dụng những gì bạn học được thông qua các phòng thí nghiệm thực hành bằng máy tính xách tay Jupyter. - Thoải mái tạo các chương trình cơ bản, làm việc với dữ liệu và tự động hóa các tác vụ trong thế giới thực bằng Python. - Đánh giá đầu tiên (dành cho sinh viên đã hoàn thành và có chứng chỉ chuyên môn của Coursera). Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Hoàn thành khóa học 6 của thông số kỹ thuật này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "572f5708-3483-4cd3-a979-05f9da22ae4f",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - Dự án Python để phát triển ứng dụng AI & Ứng dụng - Áp dụng các kỹ năng Python cơ bản để phát triển các ứng dụng cho phép Trí tuệ Nhân tạo (AI). - Phát triển chức năng và logic ứng dụng - Trao đổi dữ liệu bằng API Watson - Viết bài kiểm tra đơn vị, - Gói ứng dụng để phân phối. - Thể hiện các kỹ năng Python nền tảng của bạn bằng cách sử dụng các kỹ thuật khác nhau để phát triển các ứng dụng web và các giải pháp hỗ trợ AI.. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Khóa hoàn chỉnh 7 của thông số kỹ thuật này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "e042df36-1a24-48ca-837c-1b542497e8c6",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Phát triển các ứng dụng với SQL, cơ sở dữ liệu và Django - Mô tả cơ sở dữ liệu là gì và cách mô hình hóa dữ liệu - soạn các truy vấn SQL để chèn, chọn, cập nhật, xóa dữ liệu trong cơ sở dữ liệu - Hiểu mô hình quan hệ đối tượng (ORM) - Sử dụng Django để phát triển các ứng dụng do cơ sở dữ liệu hỗ trợ - Triển khai ứng dụng Django của bạn trên các điều kiện tiên quyết của đám mây: - GitHub - HTML & CSS - Python. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO8. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Khóa học hoàn chỉnh 8 của thông số kỹ thuật này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "8aeb2a4b-8093-46f8-827e-f53d5797e512",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Giới thiệu về Container w/ Docker, Kubernetes & OpenShift - Tìm hiểu cách xây dựng các ứng dụng gốc trên đám mây bằng các công cụ và công nghệ container hiện tại như container, Docker, Cơ quan đăng ký container, Kubernetes, OpenShift và ISTIO. - Tìm hiểu cách triển khai và mở rộng quy mô các ứng dụng của bạn trong bất kỳ đám mây công cộng, riêng tư hoặc lai. -Áp dụng những gì bạn học trong các phòng thí nghiệm thực hành, dựa trên trình duyệt. - Có thể xây dựng một hình ảnh container, sau đó triển khai và chia tỷ lệ container của bạn trên đám mây bằng OpenShift.. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO9. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Khóa hoàn chỉnh 9 của thông số kỹ thuật này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "0a723576-9705-4a92-93e0-7dc437b2bc5c",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Phát triển ứng dụng sử dụng microservice và serverless - Hiểu về cách các nhà phát triển có lợi cho máy chủ, - Tìm hiểu khi nào nên sử dụng lập trình không có máy chủ, các mô hình triển khai không có máy chủ và khám phá các trường hợp sử dụng hàng đầu và các mẫu thiết kế. - Khám phá cách máy chủ không hỗ trợ tích hợp liên tục và phân phối liên tục (CI/CD) và tích hợp microservice. -Phòng thí nghiệm thực hành củng cố các khái niệm lập trình không có máy chủ để tạo, triển khai và gọi các chức năng dựa trên đám mây, bao gồm việc triển khai các dịch vụ vi mô bằng OpenShift và ISTIO. - Sự tự tin để xây dựng một ứng dụng web nhiều tầng sử dụng các chức năng đám mây của IBM, OpenShift, ISTIO và hơn thế nữa.. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Hoàn thành khóa học 10 của thông số kỹ thuật này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "9f775955-c10a-4378-8ede-aefb6aa50a42",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Dự án Capstone phát triển đám mây đầy đủ - Thể hiện các kỹ năng mà bạn đã thành thạo trong phát triển ứng dụng bản địa trên đám mây. - Áp dụng kiến ​​thức mới của bạn vào một thử thách thực tế và sử dụng chuyên môn của bạn để phát triển một giải pháp thành công. - Cung cấp cho bạn một cơ hội để củng cố trình độ xếp chồng đầy đủ của bạn. - Khi bạn thiết kế trải nghiệm người dùng động, bạn sẽ làm việc với các hành động của GitHub để xây dựng, kiểm tra và triển khai ứng dụng của mình. - Phát triển các trang frontend, thêm quản trị người dùng, xây dựng các hành động cho các hoạt động cơ sở dữ liệu, tạo dịch vụ phụ trợ, tạo kết nối với các API gốc đám mây và khởi chạy các đường ống CI/CD. - Tăng khả năng của bạn với các dịch vụ bản địa trên đám mây, JavaScript, Django, JSON, IBM Cloud Foundry, Python và Kubernetes. - đưa ra một giải pháp để quản lý việc triển khai ứng dụng của bạn.. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO11. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Khóa hoàn chỉnh 11 của thông số kỹ thuật này.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "df204e0a-f386-4bef-88f1-a9b9057b1499",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - DWP301c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Đánh giá nhà phát triển phần mềm Stack đầy đủ Các khái niệm cốt lõi trong điện toán đám mây Ngôn ngữ phát triển web bao gồm HTML, CSS và JavaScript Git và GitHub Node.js và React Container Python Các khái niệm cơ sở dữ liệu và các công nghệ liên quan như SQL và Django Microservice và máy tính không có máy chủ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Tài liệu sinh viên: Liên kết liên kết Coursera. Nhiệm vụ sinh viên: - Hoàn thành khóa học 12 của thông số kỹ thuật này - Hạn chót hoàn thành Coursera: Kết thúc thứ Sáu trong tuần..",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "ecd1d072-caa7-4dc5-84a0-1d0ca6a036f8",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - DWP301c"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 100.0%. Chuẩn đầu ra liên quan (CLO): Tất cả LOS. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn được đánh dấu bởi máy tính. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các khóa học nghiên cứu. Mỗi mô-đun tất nhiên đóng góp 4-5 câu hỏi.. Ghi chú: Customized from the quizzes of this specialization. 1st Evaluation: For students who completed & got Coursera's specialization certificates (Option at week 9); 2nd Evaluation: For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation: For students who completed & got Coursera's specialization certificates) at week 14..",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "9cf29141-b04c-48b0-a0a2-c9347d5e6ecb",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/introduction-to-cloud. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "652ba014-c0ce-4e61-aab0-6e3539ffad31",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/introduction-to-clo",
+      "title": "Tài liệu 1 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/introduction-to-web-development-with-html-css-javacript/. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "8d3889ce-d168-4362-92a0-68711a99071a",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/introduction-to-web",
+      "title": "Tài liệu 2 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/getting-started-with-git-and-github. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "e779fb3d-fe96-476e-aa64-928a1e30e076",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/getting-started-wit",
+      "title": "Tài liệu 3 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/developing-frontend-apps-with-react/. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "91834bf7-3284-425b-9e63-876c81cdfaa9",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/developing-frontend",
+      "title": "Tài liệu 4 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/developing-backend-apps-with-nodejs-and-express/. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "05967c6f-6e32-44d7-9990-6b9e5a380437",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/developing-backend-",
+      "title": "Tài liệu 5 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/python-for-applied-data-science-ai. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "3df4213c-78f8-495b-ab84-ebca228fff80",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/python-for-applied-",
+      "title": "Tài liệu 6 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/python-project-for-ai-application-development/. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "3bfcca30-688f-4268-bcf1-b43e83873094",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/python-project-for-",
+      "title": "Tài liệu 7 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/developing-applications-with-sql-databases-and-django. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "69d4b3b5-cbd0-48a6-9c55-92785124eba6",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/developing-applicat",
+      "title": "Tài liệu 8 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/ibm-containers-docker-kubernetes-openshift. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "f8c7cdd4-d12b-40a2-87de-db85e02c8d33",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/ibm-containers-dock",
+      "title": "Tài liệu 9 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/applications-development-microservices-serverless-openshift. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "e13f4a6b-cc39-48dd-95dd-99367643584d",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/applications-develo",
+      "title": "Tài liệu 10 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/ibm-cloud-native-full-stack-development-capstone/. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "2deb30be-7138-4c26-83cd-de81122acc83",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/ibm-cloud-native-fu",
+      "title": "Tài liệu 11 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/full-stack-software-developer-assessment. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "880305be-8f54-4f44-a14b-4b5a7f6ec183",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/full-stack-software",
+      "title": "Tài liệu 12 - DWP301c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.support/s/article/208280036-Coursera-Code-of-Conduct?language=en_US. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "f2f5efc0-38c8-4bd3-88f4-6a2795f506a3",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.support/s/article/208280036-C",
+      "title": "Tài liệu 13 - DWP301c"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn DWP301c là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=12631",
+    "metadata": {
+      "subject_code": "DWP301c",
+      "syllabus_id": "12631",
+      "chunk_id": "27ab5c9b-71ef-4176-ab8d-b10f97241568",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - DWP301c"
+    }
+  }
+]

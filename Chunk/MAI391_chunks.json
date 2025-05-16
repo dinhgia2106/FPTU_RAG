@@ -1,0 +1,1008 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Toán Cho học máiy (Toán học cho học máy). Mã môn: MAI391. Số tín chỉ: 3. Mô tả: Khóa học này giới thiệu các khái niệm và nền tảng toán học cần thiết để nói về ba thành phần chính của hệ thống học máy: dữ liệu, mô hình và học tập. Theo khóa học này, sinh viên sẽ có thể hiểu: • Các khái niệm Foundametal về ma trận và phân hủy ma trận. • Khái niệm về độ dốc. • Những điều cơ bản về xác suất và một số phân phối. • Tối ưu hóa để tìm Maxima/Minima của các chức năng. • Giảm kích thước bằng cách sử dụng phân tích thành phần chính. • Phân loại trong bối cảnh máy vector hỗ trợ. Phương pháp dạy và học: Bài giảng và học tập dựa trên dự án Điều kiện tiên quyết: MAE101. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các khe liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập và bài tập được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà. - Chỉ sử dụng máy tính xách tay trong lớp cho mục đích học tập -Truy cập nhanh chóng các trang web khóa học để biết thông tin khóa học cập nhật. Công cụ sử dụng: - Internet - Python Programme.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "8ca39b23-6555-41a3-a8b9-95c09b2eb42a",
+      "source_section": "general_details",
+      "title": "Thông tin chung - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO0): Hình học phân tích Lo 0.1 xác định một định mức và một sản phẩm bên trong trên không gian vectơ LO 0.2 Xác định ánh xạ song tuyến và kiểm tra xem ma trận vuông có xác định dương không. LO 0.3 Tìm chiều dài của một vectơ cũng như khoảng cách giữa hai vectơ trong một không gian vectơ bằng cách sử dụng sản phẩm bên trong. LO 0.4 Tìm góc giữa hai vectơ và kiểm tra xem chúng có trực giao không. Kiểm tra xem một ma trận vuông là trực giao. LO 0,5 Kiểm tra xem một tập hợp các vectơ là một cơ sở trực giao hoặc trực giao của một không gian vectơ nhất định. Xác định một bổ sung trực giao của một không gian con. LO 0,6 xây dựng hình chiếu lên một không gian con.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "eb6bb446-c616-40d1-9ecd-2cd7112a3191",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO1): Phân hủy ma trận LO 1.1 Tính toán xác định của một ma trận vuông, quyết định khi nào một ma trận vuông có thể đảo ngược bởi các điều kiện tương đương. Tìm đa thức đặc trưng, ​​eigenvalues ​​và eigenvector của một ma trận. Hiểu một số định lý liên quan đến giá trị riêng. LO1.2 Đường chéo một ma trận bằng cách riêng biệt. Phân tách một ma trận bằng cách phân tách giá trị số ít. LO1.3 Tính toán xấp xỉ ma trận.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "23a7349a-2021-4fd3-8b35-3d9cccd721e5",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO2): Tính toán vector LO 2.1 Xem lại sự khác biệt của một hàm đơn biến. Tìm sự mở rộng Taylor của một hàm trơn tru tại một điểm nhất định. LO 2.2 Tìm các dẫn xuất một phần bằng cách sử dụng các công thức cơ bản và quy tắc chuỗi, độ dốc của các hàm đa biến. LO 2.3 Tìm độ dốc, ma trận Jacobian của các hàm có giá trị vector. LO 2.4 Lấy độ dốc của ma trận đối với các vectơ. LO 2.5 Hiểu ý tưởng của backpropagation trong học tập sâu. LO 2.6 Tìm các dẫn xuất một phần bậc cao, tuyến tính hóa và loạt các chức năng đa biến đa biến.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "15e1a66d-d5b2-4dc1-ba7f-4a077d1aa92f",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO3): Xác suất và phân phối LO 3.1 Bắt các quan niệm về biến liên tục biến đổi riêng biệt; Tìm hàm khối xác suất, hàm mật độ xác suất, hàm phân phối tích lũy và tính chất của chúng. LO 3.2 Tính xác suất có điều kiện; Sử dụng quy tắc nhân, tổng quy tắc xác suất và định lý Bayes để tìm xác suất. LO 3.3 Tính toán trung bình và phương sai của một biến ngẫu nhiên, tính toán hiệp phương sai và mối tương quan giữa hai biến. LO 3.4 Hãy xem xét liệu hai biến có độc lập hay không. LO 3.5 Mô tả phân phối Gauss, lề, điều kiện, tổng và sản phẩm phân phối Gauss.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "79c8f4a8-cfaa-4a58-91ff-5296abc8110e",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO4): Tối ưu hóa liên tục LO 4.1 Tìm một hàm tối thiểu cục bộ của một chức năng sử dụng giảm độ dốc. LO 4.2 Sử dụng hệ số nhân Lagrange để tìm giá trị tối đa/tối thiểu của hàm đa biến với các ràng buộc. LO 4.3 Hiểu các vấn đề tối ưu hóa lồi và giải quyết các chương trình tuyến tính.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "9a119ccf-4aff-48ee-8b10-429b7e3d028b",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO5): Hồi quy tuyến tính LO 5.1 Sử dụng khả năng tối đa và ước tính tối đa (MAP) để tìm các tham số mô hình tối ưu. LO 5.2 Sử dụng các ước tính tham số này để có một cái nhìn ngắn gọn về các lỗi tổng quát và quá mức. LO 5.3 Thảo luận về hồi quy tuyến tính Bayesian.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "9ca80505-03d3-4c9f-b214-c6e8e4571c03",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 7 (CLO6): Giảm kích thước với PCA LO 6.1 Tính ma trận hiệp phương sai dữ liệu của tập dữ liệu, xây dựng không gian con m chiều với phương sai tối đa. LO 6.2 Tìm cơ sở của không gian con. LO 6.3 Sử dụng ma trận hạng thấp để xấp xỉ PCA. LO 6.4 Thảo luận về PCA trong các bước cao và các bước chính của PCA.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "a0049bad-4276-4d19-8009-8cbc957e9476",
+      "source_section": "clos",
+      "clo_id": "7",
+      "title": "CLO 7 - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 8 (CLO7): Phân loại với SVM LO 7.1 Hiểu phân loại nhị phân bằng cách tách siêu phẳng. LO 7.2 Bắt Ý tưởng toán học của máy vector hỗ trợ. LO 7.3 Hiểu lợi thế của máy vector hỗ trợ kép. LO 7.4 Giới thiệu các phân loại phi tuyến tính của hạt nhân. LO 7.5 Xem xét hai cách tiếp cận khác nhau để tìm giải pháp tối ưu cho SVM.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "0456e2a6-101f-468a-876d-d494d676d4f4",
+      "source_section": "clos",
+      "clo_id": "8",
+      "title": "CLO 8 - MAI391"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 9 (CLO8): Thái độ và kỹ năng mềm LO 8 Phát triển làm việc trong các kỹ năng nhóm và kỷ luật tự giác",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "4d2b7cb5-62ca-4b61-8cd7-39f5d6fd447b",
+      "source_section": "clos",
+      "clo_id": "9",
+      "title": "CLO 9 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Chương 3. Hình học phân tích 3.1 Định mức 3.2 Sản phẩm bên trong. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO0. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Đọc Chương 2 Bài tập Chương 3.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "5bab1012-efcb-4108-9f81-51790bb93d1c",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - 3,3 chiều dài và khoảng cách 3,4 góc và tính trực giao. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO0. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Đọc Chương 2 Bài tập Chương 3.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "5d88be55-ea91-48b3-80f2-27d53be4e8b9",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - 3.5 cơ sở trực giao 3.6 Bổ sung trực giao. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO0. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Đọc Chương 2 Bài tập Chương 3.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "a75514ce-733b-4985-b85c-570123d89367",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - 3.8 Dự báo trực giao. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO0. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Đọc Chương 2 Bài tập Chương 3.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "e5a8cc32-1630-45ea-b2c3-99271b6eed4b",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - Chương 4. Phân tách ma trận 4.1 Các yếu tố quyết định và dấu vết. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "4677bff9-ebf0-4564-a958-e61f7fd620e3",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - 4.2 Eigenvalues ​​và eigenvector. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "f8ae0d5b-0c34-4735-b407-db84e80db456",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - 4.4 Eigendecompation và chéo hóa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "325933f1-5506-472a-9e6c-f7b4d0931f97",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - 4.5 Phân hủy giá trị đơn lẻ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "6f344a96-3cf5-46db-adbd-82a490958c45",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - 4.5 Phân hủy giá trị số ít (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "4fb7b8ed-0361-4279-b3b9-282bbc0cc11f",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Xấp xỉ ma trận 4.6. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "e9fc1528-d037-4d45-9801-6a53f1827c23",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Chương 5. Tính toán vector 5.1 Sự khác biệt của các chức năng đơn biến. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Sách giáo khoa Chương 5. Nhiệm vụ sinh viên: Bài tập Chương 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "6bbc1d2a-5b45-41b1-ab7f-951ff58e6e81",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - 5.2 Sự khác biệt và độ phân biệt một phần. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Sách giáo khoa Chương 5. Nhiệm vụ sinh viên: Bài tập Chương 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "b1a135b5-9c0a-4003-8b7e-50bde9e0fba7",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - 5.2 Phân biệt một phần và độ dốc (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Sách giáo khoa Chương 5. Nhiệm vụ sinh viên: Bài tập Chương 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "9a33323e-f07a-49dc-9a6d-9005a3b15c0f",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - 5.3 Độ dốc của các hàm có giá trị vector. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Sách giáo khoa Chương 5. Nhiệm vụ sinh viên: Bài tập Chương 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "4c3a0ad3-9287-43ae-b29f-9f5b9669d34b",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - 5.3 Độ dốc của các hàm có giá trị vector (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Sách giáo khoa Chương 5. Nhiệm vụ sinh viên: Bài tập Chương 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "7ecb372e-6f39-4cb1-be74-4d957a9cac4d",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - 5.6 Backpropagation và sự khác biệt tự động. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Sách giáo khoa Chương 5. Nhiệm vụ sinh viên: Bài tập Chương 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "07c67fd2-8f4a-4079-b58e-4383811a36e2",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - 5.7 Các dẫn xuất bậc cao. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Sách giáo khoa Chương 5. Nhiệm vụ sinh viên: Bài tập Chương 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "7d794c22-ef23-4f92-b91b-9b26042a26f6",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - 5,8 Sê -ri Taylor tuyến tính và đa biến. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Sách giáo khoa Chương 5. Nhiệm vụ sinh viên: Bài tập Chương 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "97970cac-521b-4516-a7b9-87bc84d1cca0",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO0, CLO1, CLO2, CLO8. Nhiệm vụ sinh viên: Xem lại Chương 3, 4, 5.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "3bd82c9d-d7ab-442a-99ba-bc795274500e",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - Kiểm tra tiến độ 1 Đệ trình Assigment 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO0, CLO1, CLO2, CLO8. Tài liệu sinh viên: Gửi bài tập 1. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "88887cd9-c04a-4802-9444-d5d4744721b0",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - Chương 6. Xác suất và phân phối 6.1 Xây dựng không gian xác suất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "0b6ad156-c68e-4465-9b88-259d000ecd8b",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - 6.2 Xác suất rời rạc và liên tục. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "3acd1e35-7d52-444d-a182-98cdcc52abee",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - 6.3 Quy tắc tổng hợp, quy tắc sản phẩm và định lý Bayes. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "96ba1049-4459-428a-b4bf-08c22fef7eda",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - 6.3 Quy tắc tổng hợp, quy tắc sản phẩm và định lý Bayes, (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "498c43af-f705-47e2-873b-6fd6cda943d3",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - 6.4 Thống kê tóm tắt và độc lập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "4177af41-5643-4fb1-aebd-7bda92484acb",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - 6.4 Thống kê Tóm tắt và Độc lập (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "bda90ed0-608e-45bc-87de-ec8a2475c31a",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - 6,5 Phân phối Gaussian. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "19f08744-01a9-466d-88d1-a6bf80679973",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - 6,5 Phân phối Gaussian (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "dc7d1dd1-e32c-405f-a949-10394fb8282c",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - Chương 7. Tối ưu hóa liên tục 7.1 Tối ưu hóa bằng cách sử dụng giảm độ dốc. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Sách giáo khoa Chương 7. Nhiệm vụ sinh viên: Bài tập Chương 7.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "65908802-6c22-475d-bce9-fe93e8ddb990",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - 7.2 Tối ưu hóa bị ràng buộc và hệ số nhân Lagrange. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Sách giáo khoa Chương 7. Nhiệm vụ sinh viên: Bài tập Chương 7.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "4b12adcc-4b90-4a09-81cc-187459d0974f",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - 7.2 Tối ưu hóa bị ràng buộc và hệ số nhân Lagrange (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Sách giáo khoa Chương 7. Nhiệm vụ sinh viên: Bài tập Chương 7.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "86331094-ad97-4be0-9003-19208b48a1ff",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - 7.3 Tối ưu hóa lồi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Sách giáo khoa Chương 7. Nhiệm vụ sinh viên: Bài tập Chương 7.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "3a06bc46-8215-48e8-92de-62008239020e",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - 7.3 Tối ưu hóa lồi (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Sách giáo khoa Chương 7. Nhiệm vụ sinh viên: Bài tập Chương 7.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "4134bee2-1e63-4bcf-86da-8af61af61a49",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - 7.3 Tối ưu hóa lồi (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Sách giáo khoa Chương 7. Nhiệm vụ sinh viên: Bài tập Chương 7.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "eee7dc24-5f21-4e3e-9f85-42bd94374dd3",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3, LO4, CLO8. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "9bfc621f-26c1-4a43-ac16-bbb533d48695",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - Kiểm tra tiến độ 2 Đệ trình bài tập 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3, LO4, CLO8. Tài liệu sinh viên: Gửi bài tập 2. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "11c181f9-fb95-4c32-b2a5-595947225542",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - Chương 9. Hồi quy tuyến tính 9.1 Xây dựng vấn đề. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Hồi quy tuyến tính trong Python: Đọc và mã.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "38fe97dd-e479-4c73-b3c1-52a352d66ab3",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - 9.1 Xây dựng vấn đề (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Hồi quy tuyến tính trong Python: Đọc và mã.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "63f0ba3e-6c06-4ed6-a457-e3c103f1c9ea",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - 9.2 Ước tính tham số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Hồi quy tuyến tính trong Python: Đọc và mã.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "f247e1b7-fd2e-416a-8279-93d432b3e6f4",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - 9.2 Ước tính tham số (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Hồi quy tuyến tính trong Python: Đọc và mã.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "151c46bc-fffc-468d-8ea9-a28980d8d588",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Không bắt buộc: 9.3 Hồi quy tuyến tính Bayes. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Hồi quy tuyến tính trong Python: Đọc và mã.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "eca4fb60-4b34-464f-8be3-0298185f2860",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - Không bắt buộc: 9.4 Khả năng tối đa là phép chiếu trực giao. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Hồi quy tuyến tính trong Python: Đọc và mã.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "fc933a71-a772-4588-a18c-efcd6fad609e",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - Chương 10. Giảm kích thước với phân tích thành phần chính 10.1 Cài đặt vấn đề. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Mã ghi đại diện cho hình ảnh là vectơ.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "82b6f9a4-ae92-4c85-9e0b-c7e0d5ab9a79",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - 10.2 Phối cảnh phương sai tối đa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Viết mã tính toán số liệu thống kê cơ bản của bộ dữ liệu.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "ed8fd298-50de-489c-96b4-8544e32e1a8d",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - 10.2 Phối cảnh phương sai tối đa (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Viết mã tính toán số liệu thống kê cơ bản của bộ dữ liệu.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "0f6086f7-f31a-4bb9-8d55-7a868510ff9b",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - 10.6 Các bước chính của PCA trong thực tế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Viết mã dự án dữ liệu hình ảnh lên không gian con 2 chiều.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "009c4912-2c8b-4962-b2d1-62c308d3ea55",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - 10.6 Các bước chính của PCA trong thực tế (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Viết mã dự án dữ liệu hình ảnh lên không gian con 2 chiều.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "3f6043cb-4f8a-494d-a9e5-44bbba90df1a",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - Không bắt buộc: 10.3 Quan điểm chiếu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Viết mã dự án dữ liệu hình ảnh lên không gian con 2 chiều.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "24ed6300-8802-4cf7-a970-46b0bb1df484",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - Không bắt buộc: 10,4 Tính toán eigenvector và xấp xỉ thứ hạng thấp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Viết mã thực hiện PCA.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "1d5a6e0f-1078-4278-8300-54d83cc2639b",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - Không bắt buộc: 10,5 PCA ở kích thước cao. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5, CLO6. Tài liệu sinh viên: Sách giáo khoa Chương 10 Gửi bài tập 3. Nhiệm vụ sinh viên: Viết mã thực hiện PCA.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "6aad1441-056f-4b74-97f5-07f74f159fd4",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - Chương 12. Phân loại với máy vector hỗ trợ 12.1 Tách các siêu phàm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Sách giáo khoa Chương 12. Nhiệm vụ sinh viên: Tạo một máy vector hỗ trợ trong Python.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "099a1b5f-7969-470c-b739-d01c4bcd5027",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - 12.2 Máy vectơ hỗ trợ nguyên thủy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Sách giáo khoa Chương 12. Nhiệm vụ sinh viên: Tạo một máy vector hỗ trợ trong Python.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "076e7651-491b-4eea-9c36-4a29a6e85506",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - 12.2 Máy vectơ hỗ trợ nguyên thủy (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Sách giáo khoa Chương 12. Nhiệm vụ sinh viên: Tạo một máy vector hỗ trợ trong Python.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "3ccc807d-b16c-4f02-b4be-3235119fc894",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - 12.2 Máy vectơ hỗ trợ nguyên thủy (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Sách giáo khoa Chương 12. Nhiệm vụ sinh viên: Tạo một máy vector hỗ trợ trong Python.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "c439ca62-58db-43c3-b64f-f32cc32b6898",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - 12.3 Máy vectơ hỗ trợ kép. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Sách giáo khoa Chương 12. Nhiệm vụ sinh viên: Tạo một máy vector hỗ trợ trong Python.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "e88cb65c-6279-432d-bc59-c47b462abd53",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - 12.3 Máy vector hỗ trợ kép (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Sách giáo khoa Chương 12. Nhiệm vụ sinh viên: Tạo một máy vector hỗ trợ trong Python.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "a41182ca-06e8-4973-8ab1-8b92ebb172e9",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Không bắt buộc: 12,4 hạt nhân. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Sách giáo khoa Chương 12. Nhiệm vụ sinh viên: Tạo một máy vector hỗ trợ trong Python.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "290d980f-83da-4a4e-b723-70eaef5a7b3b",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Không bắt buộc: 12,5 giải pháp số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7. Tài liệu sinh viên: Sách giáo khoa Chương 12. Nhiệm vụ sinh viên: Tạo một máy vector hỗ trợ trong Python.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "06ec7a7a-eec7-4f75-b891-16a325d34ba3",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Trình bày dự án máy tính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5, CLO6, CLO7, CLO8. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "eb4c5e79-6f8c-40e7-90f4-ef96be60e604",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - MAI391"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Trình bày dự án máy tính (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5, CLO6, CLO7, CLO8. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "9c2bf3e9-af3f-4688-803d-6d2382712025",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - MAI391"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Bài tập (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): LO0, LO1, LO2, LO3, LO4, LO5, LO8. Loại câu hỏi/Nhiệm vụ: mở. Thời gian: ở nhà. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: OP1: Assigment 1: Chương 3, 4,5 Bài tập 2: Các chương bìa 6,7 Bài tập 3: Chương 9 OP2: (chỉ cho cách tiếp cận chủ nghĩa xây dựng): Thực hiện theo đề xuất của Giảng viên. Ghi chú: Assignment 1: LO 0, LO 1, LO 2, LO 8 Assignment 2: LO 3, LO 4, LO 8 Assignment 3: LO 5, LO 8.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "b1242fa0-b701-41d0-b67a-351b16f98377",
+      "source_section": "assessments",
+      "assessment_category": "Bài tập",
+      "title": "Đánh giá Bài tập - MAI391"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Dự án máy tính (đang diễn ra). Trọng số: 20.0%. Chuẩn đầu ra liên quan (CLO): LO5, LO6, LO7, LO8. Loại câu hỏi/Nhiệm vụ: OP1: Open // OP2: (Chỉ cho cách tiếp cận chủ nghĩa xây dựng): Thực hiện theo đề xuất của Giảng viên. Thời gian: ở nhà. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Bao gồm Chương 10,12. Ghi chú: Presented by group of students.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "c5de3413-b1fc-419a-80d2-3cd03fee7266",
+      "source_section": "assessments",
+      "assessment_category": "Dự án máy tính",
+      "title": "Đánh giá Dự án máy tính - MAI391"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ (đang diễn ra). Trọng số: 20.0%. Chuẩn đầu ra liên quan (CLO): LO0, LO1, LO2, LO3, LO4. Loại câu hỏi/Nhiệm vụ: OP1: Nhiều lựa chọn // OP2: (chỉ cho cách tiếp cận chủ nghĩa xây dựng): Thực hiện theo đề xuất của Giảng viên. Thời gian: 30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Kiểm tra 1: Chương 3, 4,5 - Bài kiểm tra 2: Chương bìa 6,7. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress Test 1: LO 0, LO 1, LO 2 Progress Test 2: LO 3, LO 4 Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "91fe383f-2ddc-4aca-8452-9ff6895cc945",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ",
+      "title": "Đánh giá Kiểm tra tiến độ - MAI391"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): Lo 0, lo 1, lo 2, lo 3, lo 4. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Các chương được chọn. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "04c6bcac-3cff-433d-bfc1-7292358ddd80",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Mathematics for Machine Learning. Tác giả: M. P. Deisenroth, A. Faisal, Ch. S. Ong. Nhà xuất bản: Cambrige Univeristy Press. Năm xuất bản: 2020. Link/Ghi chú: https://mml-book.github.io/?fbclid=IwAR2WAfBUZe-E6O-pbbGL3k6E7KngL8F9sbOqraZr9LD14PAnHw6Y_e-O6Q4.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "e2c5df7a-7892-4203-bed6-feaf22ea488c",
+      "source_section": "materials_table",
+      "material_description": "Mathematics for Machine Learning",
+      "title": "Tài liệu 1 - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: PDF Slides. Tác giả: Instructors.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "41a9b182-0c68-4707-b9ff-34da172547e1",
+      "source_section": "materials_table",
+      "material_description": "PDF Slides",
+      "title": "Tài liệu 2 - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Machine Learning cơ bản. Tác giả: Vũ Hữu Tiệp. Link/Ghi chú: https://github.com/tiepvupsu/ebookMLCB/blob/master/book_ML.pdf.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "6a00c632-8144-4047-9c6a-989b2b05912e",
+      "source_section": "materials_table",
+      "material_description": "Machine Learning cơ bản",
+      "title": "Tài liệu 3 - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Multivariate Calculus. Tác giả: Denis Auroux. Nhà xuất bản: MIT OpenCourseWare. Link/Ghi chú: https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/index.htm.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "24bc1b28-1ac9-48dc-8823-4f89ecf4d2ab",
+      "source_section": "materials_table",
+      "material_description": "Multivariate Calculus",
+      "title": "Tài liệu 4 - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Mathematics for machine learning. Tác giả: Mirror Neuron Chanel. Link/Ghi chú: https://www.youtube.com/playlist?list=PLcQCwsZDEzFmlSc6levE3UV9rZ8yY-D_7.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "1bfa0bf9-a293-469f-be10-8cc18f443dfa",
+      "source_section": "materials_table",
+      "material_description": "Mathematics for machine learning",
+      "title": "Tài liệu 5 - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Mathematics for machine Learning. Tác giả: Digital Learning Hub - Imperial College London Chanel. Link/Ghi chú: https://www.youtube.com/channel/UCSzae1ITUdw9DCdELMduaQw/playlists.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "c609d8a5-d416-4541-a749-62e02bb6c08f",
+      "source_section": "materials_table",
+      "material_description": "Mathematics for machine Learning",
+      "title": "Tài liệu 6 - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Linear Algebra Done Right. Tác giả: Sheldon Axler. Nhà xuất bản: Springer. Năm xuất bản: 2015.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "8c81c336-a93b-469e-bc9b-dd3ba7b2c7d5",
+      "source_section": "materials_table",
+      "material_description": "Linear Algebra Done Right",
+      "title": "Tài liệu 7 - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Machine Learning. Tác giả: Andrew Ng. Nhà xuất bản: Stanford Chanel. Link/Ghi chú: https://www.youtube.com/watch?v=UzxYlbK2c7E&list=PLA89DCFA6ADACE599&index=1.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "cbc4795a-0dfb-463f-8b90-1cba677cbb4f",
+      "source_section": "materials_table",
+      "material_description": "Machine Learning",
+      "title": "Tài liệu 8 - MAI391"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Mathematics for Machine Learning. Tác giả: Cousera. Link/Ghi chú: https://www.coursera.org/specializations/mathematics-machine-learning.",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "43c6ee01-6ef5-4291-8d96-01986da17e49",
+      "source_section": "materials_table",
+      "material_description": "Mathematics for Machine Learning",
+      "title": "Tài liệu 9 - MAI391"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn MAI391 là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=11252",
+    "metadata": {
+      "subject_code": "MAI391",
+      "syllabus_id": "11252",
+      "chunk_id": "b2ca956c-7873-431f-a5fa-3897325f8b0a",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - MAI391"
+    }
+  }
+]

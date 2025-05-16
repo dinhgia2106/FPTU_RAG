@@ -1,0 +1,948 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Thống kê & Xác suất_Xácu Suất thống Kê (). Mã môn: MAS291. Số tín chỉ: 3. Mô tả: Sau khi hoàn thành khóa học, sinh viên phải có được: 1. Kiến thức sau: (ABET A1) • Các nguyên tắc cơ bản về xác suất và các ứng dụng của chúng • Các phân phối xác suất được sử dụng thường xuyên. • Những điều cơ bản của thống kê mô tả • Suy luận của thống kê: Ước tính tham số, kiểm tra giả thuyết, hồi quy & tương quan. 2. Các kỹ năng sau: (ABET A2) • Nhận ra các mô hình thống kê đơn giản và áp dụng chúng để giải quyết các vấn đề kỹ thuật. • Sử dụng ít nhất một phần mềm thống kê (Excel, Maxima) để giải quyết vấn đề. • Kỹ năng tự học. (Abet I) Điều kiện tiên quyết: MAE101 or MAC101. Nhiệm vụ sinh viên: Học sinh phải tham dự ít nhất 80% giờ liên lạc để được được chấp nhận để kiểm tra cuối cùng.. Công cụ sử dụng: - Internet - Computerized tools (for example Excel and DDXL add-ons) (CT).",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "62d30d8b-04dc-41a9-9eaf-9bdc57c5689c",
+      "source_section": "general_details",
+      "title": "Thông tin chung - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Thảo luận về vai trò của thống kê trong kỹ thuật LO1.1 Giải thích các loại lý luận của suy luận thống kê; Phân biệt các mô hình cơ học và mô hình thực nghiệm, thống kê và tham số, mẫu và dân số. LO1.2 Mô tả các phương pháp khác nhau mà các kỹ sư sử dụng để thu thập dữ liệu.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "1dfb4f6d-0253-4bab-ab20-beafec215066",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Xác định không gian và sự kiện mẫu, và sử dụng các quy tắc cơ bản để tính toán xác suất của một sự kiện LO2.1 Mô tả không gian mẫu và sự kiện của một thí nghiệm; phân biệt các không gian mẫu liên tục và riêng biệt; Thực hiện các hoạt động trên các sự kiện. LO2.2 Tính xác suất của một sự kiện trong không gian mẫu riêng biệt; Sử dụng bổ sung và quy tắc bổ sung để tìm xác suất. LO2.3 Tính xác suất có điều kiện; Sử dụng quy tắc nhân, tổng quy tắc xác suất và định lý Bayes để tìm xác suất. LO2.4 Xác định xem hai sự kiện có độc lập hay không; Sử dụng độc lập để tìm xác suất. LO2.5 nhận ra một biến ngẫu nhiên; Phân biệt các biến ngẫu nhiên liên tục và rời rạc.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "36c14d51-bde3-4013-81fc-30ff3631de96",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Mô tả phân phối xác suất và tính toán trung bình và phương sai của biến ngẫu nhiên riêng biệt LO3.1 Mô tả một biến ngẫu nhiên riêng biệt; Kiểm tra xem một hàm là hàm khối xác suất và sử dụng nó để tính xác suất; Tìm chức năng phân phối tích lũy của một biến ngẫu nhiên rời rạc. LO3.2 Tính giá trị trung bình và phương sai của một biến ngẫu nhiên rời rạc. LO3.3 Xác định xác suất, trung bình và phương sai của đồng nhất, nhị thức, hình học và phân phối nhị thức âm, siêu âm và poisson.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "12c78d9d-a9d5-46da-b49d-54b131cd8962",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Mô tả phân phối xác suất và tính toán trung bình và phương sai của biến ngẫu nhiên liên tục LO4.1 mô tả một biến ngẫu nhiên liên tục; Kiểm tra xem một hàm là hàm mật độ xác suất và sử dụng nó để tính xác suất; Tìm chức năng phân phối tích lũy của một biến ngẫu nhiên liên tục. LO4.2 Tính giá trị trung bình và phương sai của một biến ngẫu nhiên liên tục LO4.3 Áp dụng các công thức phân phối đồng nhất liên tục và phân phối theo cấp số nhân để giải quyết các vấn đề. LO4.4 Thao tác xác suất của phân phối bình thường tiêu chuẩn bằng cách sử dụng excel hoặc bảng dữ liệu; Chuẩn hóa một phân phối bình thường. LO4.5 Sử dụng phân phối bình thường để phân phối Binomial và Poisson gần đúng.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "66160220-ccac-40ff-b1e1-7a964fcbc0a1",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Mô tả dữ liệu bằng cách sử dụng tóm tắt số và hiển thị trực quan LO5.1 Tìm tóm tắt số dữ liệu; Mô tả dữ liệu bằng sơ đồ gốc và lá, phân phối tần số, biểu đồ, sơ đồ chuỗi thời gian. LO5.2 Xác định các bộ tứ và xây dựng biểu đồ hộp cho một dữ liệu; Xác định các ngoại lệ.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "c4c6274a-987b-47cc-9cb8-e26b9605836d",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO6): Thảo luận về phân phối lấy mẫu và sử dụng định lý giới hạn trung tâm để phân tích phân phối lấy mẫu của các phương tiện LO6.1 Thảo luận về phân phối lấy mẫu; Tìm ước tính điểm của một tham số. LO6.2 Áp dụng Định lý giới hạn trung tâm để tính toán xác suất liên quan đến phân phối lấy mẫu của phương tiện.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "37fa9b45-b424-41ea-a309-d1d288278b8a",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 7 (CLO7): Xây dựng khoảng tin cậy cho tham số dân số/chênh lệch của các tham số dân số LO7.1 xây dựng một khoảng tin cậy cho trung bình/chênh lệch dân số của hai phương tiện dân số và giải thích ý nghĩa của nó; Xác định kích thước của mẫu để cải thiện ước tính. LO7.2 Xây dựng một khoảng tin cậy cho tỷ lệ/chênh lệch dân số của hai pproporions dân số và giải thích ý nghĩa của nó; Xác định kích thước của mẫu để cải thiện ước tính.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "1096b7a3-1e61-4d34-96ca-1e6ebdb48aa4",
+      "source_section": "clos",
+      "clo_id": "7",
+      "title": "CLO 7 - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 8 (CLO8): Xác minh yêu cầu về tham số dân số/sự khác biệt của các tham số dân số bằng cách sử dụng kiểm tra giả thuyết LO8.1 xây dựng hai giả thuyết; Xác định các giá trị quan trọng, kiểm tra thống kê và tính toán giá trị p để kiểm tra các giả thuyết về trung bình/chênh lệch dân số của hai phương tiện dân số LO8.2 hình thành hai giả thuyết; Xác định các giá trị quan trọng, kiểm tra thống kê và tính toán giá trị p để kiểm tra các giả thuyết về tỷ lệ dân số/chênh lệch của hai tỷ lệ dân số LO8.3 Xác định loại lỗi trong thử nghiệm các giả thuyết.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "27270aa8-df09-4414-a3b3-51cfd051c76b",
+      "source_section": "clos",
+      "clo_id": "8",
+      "title": "CLO 8 - MAS291"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 9 (CLO9): Xây dựng mô hình hồi quy tuyến tính đơn giản LO9.1 Tính toán các tổng bình phương khác nhau cho một tập hợp các cặp dữ liệu. LO9.2 Xác định phương trình hồi quy tuyến tính và hệ số tương quan; Sử dụng hồi quy tuyến tính để dự đoán các giá trị trong tương lai. LO9.3 Thực hiện một bài kiểm tra giả thuyết trong hồi quy tuyến tính đơn giản; Kiểm tra tầm quan trọng của hồi quy bằng cách sử dụng bài kiểm tra t.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "85de5c0f-b14e-4536-8814-8284b80f57fe",
+      "source_section": "clos",
+      "clo_id": "9",
+      "title": "CLO 9 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Vai trò thống kê trong kỹ thuật 1.1 Phương pháp kỹ thuật và tư duy thống kê 1.2 Thu thập dữ liệu kỹ thuật. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1. Tài liệu sinh viên: Sách giáo khoa Chương 1. Nhiệm vụ sinh viên: Bài tập Chương 1 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "e047e297-fc6c-4d93-88ac-c8d5761bcb59",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - Vai trò thống kê trong kỹ thuật 1.3 Các mô hình cơ học và thực nghiệm 1.4 Mô hình xác suất và xác suất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1. Tài liệu sinh viên: Sách giáo khoa Chương 1. Nhiệm vụ sinh viên: Bài tập Chương 1 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "34a9b3d5-a084-4901-84a8-784cb45813be",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Xác suất 2.1 Không gian và sự kiện mẫu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa Chương 2. Nhiệm vụ sinh viên: Bài tập Chương 2 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "9a6eca11-5b86-47ee-b233-1e66483f6c3b",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Xác suất 2.2 Giải thích về xác suất 2.3 Quy tắc bổ sung. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa Chương 2. Nhiệm vụ sinh viên: Bài tập Chương 2 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "851569e0-2c00-4fa3-a64d-764c466a8c1e",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - Xác suất 2.4 Xác suất có điều kiện. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa Chương 2. Nhiệm vụ sinh viên: Bài tập Chương 2 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "a5dc5198-946e-4b12-8a7e-9d9ea384f16a",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - Xác suất 2.5 Nhân và Tổng quy tắc xác suất 2.6 Độc lập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa Chương 2. Nhiệm vụ sinh viên: Bài tập Chương 2 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "6aca059d-8b3a-43fb-8189-dc06a2b741b4",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - Xác suất Định lý 2.7 Bayes. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa Chương 2. Nhiệm vụ sinh viên: Bài tập Chương 2 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "f4deb9b5-e66a-4f1c-bcc4-8bff939e5f79",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Xác suất 2.8 Biến ngẫu nhiên. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO2. Tài liệu sinh viên: Sách giáo khoa Chương 2. Nhiệm vụ sinh viên: Bài tập Chương 2 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "012c0412-b6c4-4c91-9f39-6aca75494af0",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất riêng biệt 3.1 Biến ngẫu nhiên rời rạc. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Bài tập Chương 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "677307bc-7545-4c84-8bce-adf232d11cb6",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất riêng biệt 3.2 Phân phối xác suất và các chức năng khối lượng xác suất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Bài tập Chương 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "a6ab3a98-9ca8-4a99-8175-3121b2f644e0",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất riêng biệt 3.3 Chức năng phân phối tích lũy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Bài tập Chương 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "4af7ec24-7d57-4bb8-bfb1-8dc74c1723e7",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất riêng biệt 3.4 Trung bình và phương sai của một varibale ngẫu nhiên rời rạc. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Bài tập Chương 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "46d51b6e-c494-4f68-81ce-d65f9273fff6",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất riêng biệt 3.5 Phân phối đồng nhất rời rạc 3.6 Phân phối nhị thức. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Bài tập Chương 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "616c3392-a692-4aa1-8c4f-76755683618c",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất riêng biệt 3.7 Phân phối nhị thức hình học và âm tính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Bài tập Chương 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "42d484ca-e78b-46b1-8903-24a911340a75",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất riêng biệt 3.8 Phân phối siêu âm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Bài tập Chương 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "7a97a45e-e345-4659-95b0-2dbd051c3164",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất riêng biệt 3.9 Phân phối Poisson. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO3. Tài liệu sinh viên: Sách giáo khoa Chương 3. Nhiệm vụ sinh viên: Bài tập Chương 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "a612449d-8df2-4d47-a9bc-f58383d68288",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - Giải quyết các câu hỏi và vấn đề cho các chương 1 - 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3. Tài liệu sinh viên: Sách giáo khoa 1 - 3. Nhiệm vụ sinh viên: Bài tập chương 1 - 3 Bài tập 1.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "37005214-e266-40f6-9678-84845129e572",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Kiểm tra tiến độ 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO1, LO2, LO3. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "928ee0aa-0014-4af6-921a-a365ada8a181",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất liên tục 4.1 Biến ngẫu nhiên liên tục 4.2 Phân phối xác suất và chức năng mật độ xác suất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "1f410de7-9494-4596-a0f0-3bb7ef36c1b0",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất liên tục 4.3 Chức năng phân phối tích lũy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "fc273732-1056-4b15-aac1-fe4982007429",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất liên tục 4.4 Trung bình và phương sai của biến ngẫu nhiên liên tục. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "4da8b4ac-698d-4130-992c-3efb138f3dd1",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất liên tục 4.5 Phân phối đồng nhất liên tục. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "9d5097b5-0cfb-448c-b64f-e9af13f5ac25",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất liên tục 4.6 Phân phối bình thường. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "2d213ddd-eb50-41a8-8023-258bb3cfd030",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất liên tục 4.6 Phân phối bình thường (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "cb92dd25-ace6-47fa-9386-0ba33e5fa000",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất liên tục 4.7 xấp xỉ bình thường với phân phối Binomial và Poisson. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "323b5846-647f-45a6-bacb-a08f0ff914d0",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - Các biến ngẫu nhiên và phân phối xác suất liên tục 4,8 Phân phối theo cấp số nhân. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4. Tài liệu sinh viên: Sách giáo khoa Chương 4. Nhiệm vụ sinh viên: Bài tập Chương 4 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "2098712e-eda2-40f5-9613-9f59e97a3a04",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - Thống kê mô tả 6.1 Tóm tắt số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "12a41e0a-4f65-4335-98b6-214200cc9799",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - Thống kê mô tả 6.2 Sơ đồ thân và lá 6.3 Phân phối tần số và biểu đồ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "e2d667f3-6480-4e97-bbd3-c881a1557f95",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - Thống kê mô tả 6.4 Biểu đồ hộp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "8647e504-b3dd-42c6-99f1-56feef309cc1",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - Thống kê mô tả 6,5 sơ đồ trình tự thời gian. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO5. Tài liệu sinh viên: Sách giáo khoa Chương 6. Nhiệm vụ sinh viên: Bài tập Chương 6 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "884a832a-e2ba-412b-8ea1-4e557db7c04b",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - Phân phối lấy mẫu và ước tính điểm của các tham số Ước tính điểm 7,1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa Chương 7. Nhiệm vụ sinh viên: Bài tập Chương 7 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "dd20cddb-8789-4407-8c94-0692ae507f0a",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - Phân phối lấy mẫu và ước tính điểm của các tham số 7.2 Phân phối lấy mẫu và định lý giới hạn trung tâm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO6. Tài liệu sinh viên: Sách giáo khoa Chương 7. Nhiệm vụ sinh viên: Bài tập Chương 7 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "8dd0ce84-31ed-42bc-870d-a34b3c70676b",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - Giải quyết các câu hỏi và vấn đề cho các chương 4, 6 và 7. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4, LO5, LO6. Tài liệu sinh viên: Sách giáo khoa Chương 4, 6 và 7. Nhiệm vụ sinh viên: Bài tập Chương 4, 6 và 7 Bài tập 2.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "4e08f488-14cd-48c9-b3f8-3d98924e2436",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - Kiểm tra tiến độ 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO4, LO5, LO6. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "88d06dc9-b7ef-480e-993e-029aba0d433b",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - Khoảng thời gian thống kê cho một mẫu 8.1 Khoảng tin cậy về giá trị trung bình của phân phối bình thường, phương sai được biết đến. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa Chương 8. Nhiệm vụ sinh viên: Bài tập Chương 8 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "f6e6e675-4478-49cd-a520-2cd629fad8ad",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - Khoảng thời gian thống kê cho một mẫu 8.1 Khoảng tin cậy về giá trị trung bình của phân phối bình thường, phương sai được biết đến (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa Chương 8. Nhiệm vụ sinh viên: Bài tập Chương 8 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "c450c9ba-8a5e-4b4c-87ac-d79a09a00917",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - Khoảng thời gian thống kê cho một mẫu 8.2 Khoảng tin cậy về giá trị trung bình của phân phối bình thường, không xác định phương sai. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa Chương 8. Nhiệm vụ sinh viên: Bài tập Chương 8 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "7bedecfb-afd8-48e5-8817-747b903f337c",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - Khoảng thời gian thống kê cho một mẫu 8.2 Khoảng tin cậy về giá trị trung bình của phân phối bình thường, không xác định phương sai (tt.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa Chương 8. Nhiệm vụ sinh viên: Bài tập Chương 8 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "a3b72da6-1c7d-44ea-9928-b266428f37d8",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - Khoảng thời gian thống kê cho một mẫu 8.4 Khoảng tin cậy mẫu lớn cho tỷ lệ dân số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa Chương 8. Nhiệm vụ sinh viên: Bài tập Chương 8 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "f0e7f09d-933b-49c1-8705-214e69bbdbad",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - Khoảng thời gian thống kê cho một mẫu 8.4 Khoảng tin cậy mẫu lớn cho tỷ lệ dân số (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7. Tài liệu sinh viên: Sách giáo khoa Chương 8. Nhiệm vụ sinh viên: Bài tập Chương 8 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "b8fc2a02-e092-4734-950b-53a6742c75b8",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Kiểm tra các giả thuyết cho một mẫu 9.1 Kiểm tra giả thuyết. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO8. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Bài tập Chương 9 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "0c99ca8d-f5b0-41e9-98bc-78de9b40bbd4",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - Kiểm tra các giả thuyết cho một mẫu 9.1 Kiểm tra giả thuyết (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO8. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Bài tập Chương 9 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "d473d817-497b-4ea6-8479-6e618db66d77",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - Kiểm tra các giả thuyết cho một mẫu 9.2 Các thử nghiệm về giá trị trung bình của phân phối bình thường, phương sai được biết đến. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO8. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Bài tập Chương 9 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "a49a72c1-24cf-4b91-9458-0f5f9117c5a8",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - Kiểm tra các giả thuyết cho một mẫu 9.2 Các thử nghiệm về giá trị trung bình của phân phối bình thường, phương sai được biết đến (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO8. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Bài tập Chương 9 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "31ab2e3f-8862-4ba1-b892-9b8420cab1cc",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - Kiểm tra các giả thuyết cho một mẫu 9.3 Các bài kiểm tra về giá trị trung bình của phân phối bình thường, không xác định phương sai. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO8. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Bài tập Chương 9 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "f48705e4-a39e-4ada-a13c-c0eef768640b",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - Kiểm tra các giả thuyết cho một mẫu 9.5 Các bài kiểm tra về tỷ lệ dân số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO8. Tài liệu sinh viên: Sách giáo khoa Chương 9. Nhiệm vụ sinh viên: Bài tập Chương 9 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "1a39e501-0550-42f5-84d3-8575730f5cde",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - Suy luận thống kê cho hai mẫu 10.1 Suy luận về sự khác biệt về phương tiện phân phối bình thường, phương sai được biết đến. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7,LO8. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Bài tập Chương 10 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "b7db672d-0d9a-49df-8ab4-a45b81591a4f",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - Suy luận thống kê cho hai mẫu 10.2 Suy luận về sự khác biệt về phương tiện phân phối bình thường, không xác định phương sai. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7,LO8. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Bài tập Chương 10 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "56882946-5d5d-428e-93f7-51154efb78d0",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - Suy luận thống kê cho hai mẫu 10.6 Suy luận về hai tỷ lệ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7,LO8. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Bài tập Chương 10 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "2a6ec407-ef0f-4ac6-8e69-fa1082152bfc",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - Suy luận thống kê cho hai mẫu 10.6 Suy luận về hai tỷ lệ (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7,LO8. Tài liệu sinh viên: Sách giáo khoa Chương 10. Nhiệm vụ sinh viên: Bài tập Chương 10 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "1588b9ac-5e24-4058-9c9e-88d915351a64",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - Hồi quy tuyến tính đơn giản và mối tương quan 11.1 Mô hình thực nghiệm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO9. Tài liệu sinh viên: Sách giáo khoa Chương 11. Nhiệm vụ sinh viên: Bài tập Chương 11 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "a963c355-3f2f-4aab-8cde-1f8bd6db23df",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - Hồi quy tuyến tính đơn giản và mối tương quan 11.2 Hồi quy tuyến tính đơn giản. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO9. Tài liệu sinh viên: Sách giáo khoa Chương 11. Nhiệm vụ sinh viên: Bài tập Chương 11 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "f1f67b36-b6d9-4d68-8020-83a957435829",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - Hồi quy tuyến tính đơn giản và mối tương quan 11.3 Thuộc tính của các công cụ ước tính bình phương tối thiểu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO9. Tài liệu sinh viên: Sách giáo khoa Chương 11. Nhiệm vụ sinh viên: Bài tập Chương 11 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "495032b8-0146-45e6-b857-87254756116f",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - Hồi quy tuyến tính đơn giản và mối tương quan 11.4 Kiểm tra giả thuyết trong hồi quy tuyến tính đơn giản. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO9. Tài liệu sinh viên: Sách giáo khoa Chương 11. Nhiệm vụ sinh viên: Bài tập Chương 11 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "7dcc929f-2450-43c9-a16b-d1e88acd538c",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - Hồi quy tuyến tính đơn giản và mối tương quan 11.8 Tương quan. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO9. Tài liệu sinh viên: Sách giáo khoa Chương 11. Nhiệm vụ sinh viên: Bài tập Chương 11 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "673540e1-4f0e-4c58-b30f-dc351b032a60",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - Hồi quy tuyến tính đơn giản và mối tương quan 11.8 Tương quan (tiếp). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO9. Tài liệu sinh viên: Sách giáo khoa Chương 11. Nhiệm vụ sinh viên: Bài tập Chương 11 Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "7e43a6d3-d585-4d1e-8350-aaf2c182aacb",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Trình bày dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7, LO8, LO9. Nhiệm vụ sinh viên: Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "f27ce18f-df14-4e64-a06f-afd6d508249e",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Trình bày dự án (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7, LO8, LO9. Nhiệm vụ sinh viên: Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "1899a7cf-bb6d-49e7-815b-6da77429f73d",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Trình bày dự án (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7, LO8, LO9. Nhiệm vụ sinh viên: Dự án.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "779134f7-f604-4f84-9023-f1119df2ca17",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - MAS291"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Kiểm tra tiến độ 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): LO7, LO8, LO9. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "eb66f2cc-1c9c-4cf6-96c3-a633ae89424a",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - MAS291"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phân công (đang diễn ra). Trọng số: 20.0%. Chuẩn đầu ra liên quan (CLO): Tất cả LOS. Loại câu hỏi/Nhiệm vụ: OP1: Open // OP2: (Chỉ cho cách tiếp cận chủ nghĩa xây dựng): Thực hiện theo đề xuất của Giảng viên. Thời gian: ở nhà. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Chương được giới thiệu.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "073bd164-8f1d-41f2-be98-6cf3523f9742",
+      "source_section": "assessments",
+      "assessment_category": "Phân công",
+      "title": "Đánh giá Phân công - MAS291"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Dự án máy tính (đang diễn ra). Trọng số: 15.0%. Chuẩn đầu ra liên quan (CLO): Tất cả LOS. Loại câu hỏi/Nhiệm vụ: OP1: Open // OP2: (Chỉ cho cách tiếp cận chủ nghĩa xây dựng): Thực hiện theo đề xuất của Giảng viên. Thời gian: ở nhà. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Chương được giới thiệu.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "a2db6ad4-ceed-4ba0-b2d0-7ca53baba283",
+      "source_section": "assessments",
+      "assessment_category": "Dự án máy tính",
+      "title": "Đánh giá Dự án máy tính - MAS291"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): Tất cả LOS. Loại câu hỏi/Nhiệm vụ: OP1: MC hoặc một định dạng phù hợp // op2: (chỉ cho phương pháp tiếp cận xây dựng): Thực hiện. Thời gian: 30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: Chương được giới thiệu. Ghi chú: OP1: Instruction and schedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. OP2: (For Constructivism Approach only): Follow lecturer's proposal Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "0eca45d3-cbca-4cbe-9bc4-3be7c640c86d",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ",
+      "title": "Đánh giá Kiểm tra tiến độ - MAS291"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 35.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Máy tính có thể phân loại. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các chương nghiên cứu 3-10 câu hỏi/mỗi câu hỏi. Hơn 70% câu hỏi mới (cho học kỳ hiện tại);. Ghi chú: 10% of questions is ABET a2-objective oriented.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "826ec82e-8b6f-4752-a5f3-a6dec9aff374",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - MAS291"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Montgomery D.C. & Runger G.C., Applied Statistics and Probability for Engineers. Tác giả: John Wiley & Sons.. Nhà xuất bản: Wiley. Năm xuất bản: 2006. Ghi chú: 7th ed. ISBN: 9781119718871.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "525d7e9f-4cf0-4724-8db0-dde1763a476d",
+      "source_section": "materials_table",
+      "material_description": "Montgomery D.C. & Runger G.C., Applied Statistics ",
+      "title": "Tài liệu 1 - MAS291"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Powerpoint slides (PP)..",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "6a49ffc6-c28c-4325-99af-f0c26e9b868d",
+      "source_section": "materials_table",
+      "material_description": "Powerpoint slides (PP).",
+      "title": "Tài liệu 2 - MAS291"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Computerized tools (for example Excel and DDXL add-ons) (CT).",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "c8277d6f-2a7f-4b9a-b5fa-961ef49a5e81",
+      "source_section": "materials_table",
+      "material_description": "Computerized tools (for example Excel and DDXL add",
+      "title": "Tài liệu 3 - MAS291"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Elementary Statistics Using Excel, 3/E,. Tác giả: Mario F. Triola. Nhà xuất bản: Addison-Wesley. Năm xuất bản: 200.",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "21079163-fe29-4413-9678-e04e802f8c9f",
+      "source_section": "materials_table",
+      "material_description": "Elementary Statistics Using Excel, 3/E,",
+      "title": "Tài liệu 4 - MAS291"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn MAS291 là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=10422",
+    "metadata": {
+      "subject_code": "MAS291",
+      "syllabus_id": "10422",
+      "chunk_id": "7f99ab2b-65c0-4d79-b757-bbe16b3ce9d4",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - MAS291"
+    }
+  }
+]

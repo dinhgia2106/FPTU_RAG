@@ -1,0 +1,456 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Doanh nhân kinh nghiệm 2 - Trải Nghiệm Khởi Nghiệp 2 (Doanh nhân kinh nghiệm 2). Mã môn: EXE201. Số tín chỉ: 3. Mô tả: Trong kinh doanh kinh nghiệm 2, các nhóm sinh viên sẽ phát triển sản phẩm/dịch vụ cho các ý tưởng khởi nghiệp của họ được chuẩn bị từ doanh nhân kinh nghiệm 1 và triển khai bán hàng và tìm khách hàng thực sự cho các sản phẩm/dịch vụ của nhóm của họ. Không có nội dung bắt buộc cho khóa học này, chỉ là một danh sách các bài giảng/cuộc nói chuyện được đề xuất mà sinh viên có thể xem để có được những lời khuyên và kinh nghiệm hữu ích để thực hiện dự án. Ngoài ra, sẽ có các hội thảo và hội thảo với các chủ đề liên quan được lên kế hoạch và thực hiện mỗi học kỳ theo nhu cầu thực tế và tình hình thực hiện. Điều kiện tiên quyết: EXE101. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các bộ phận huấn luyện, hội thảo và cố vấn của người hướng dẫn. - Học sinh có trách nhiệm thực hiện tất cả các bài tập và bài tập được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và gửi chúng đúng hạn. - Học sinh phải đáp ứng tất cả các yêu cầu của các cột mốc. - Truy cập promplty vào nền tảng tài liệu học tập https://flm.fpt.edu.vn/ để cập nhật thông tin khóa học.. Công cụ sử dụng: - A hall for seminars has a capacity of at least 200 people.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "dfe97591-7deb-4662-b68e-5acafc545565",
+      "source_section": "general_details",
+      "title": "Thông tin chung - EXE201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Xây dựng sản phẩm/dịch vụ vật lý",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "a102f7eb-3397-4016-ab62-325a3478fad6",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - EXE201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Có thể vạch ra kế hoạch mua lại khách hàng",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "8ca39b38-138e-4c68-b713-06ca9975c1c3",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - EXE201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Khởi chạy sản phẩm trên các kênh khác nhau",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "24a942c4-9677-47e7-a649-03c688f3460b",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - EXE201"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Có thể phân tích phản hồi từ các kênh",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "7ffcd2f7-eae7-41dd-92e4-c1c1f12c202e",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Tuần 1 Huấn luyện của người hướng dẫn Thiết kế cho các công ty khởi nghiệp - Phần 1. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Xem các bài giảng video dưới đây: https://www.ycombinator.com/l Library/7g-design-for-startups-part-1-sus-2018 - (Tùy chọn) Đọc sách Khởi nghiệp Lean. Link tải tài liệu buổi học: EXE201 - https://flm.fpt.edu.vn/download/10361/S/1_EXE201.zip. Nhiệm vụ sinh viên: Trình bày kế hoạch thực hiện của nhóm và tiến trình của dự án so với kế hoạch.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "c57b305e-1c76-4ba3-8542-2e8c7b7540de",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - Tuần 1 Hội thảo 1 “Hãy thành công theo cách của riêng bạn” - diễn giả khách mời. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Nhiệm vụ sinh viên: - Tham dự hội thảo Trong hội thảo: - Chuẩn bị câu hỏi cho người nói khách mời.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "09aab6cf-03e3-4960-9525-f99a25258699",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Tuần 2 Huấn luyện của người hướng dẫn Thiết kế cho các công ty khởi nghiệp, Phần 2. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Xem các bài giảng video dưới đây: https://www.ycombinator.com/l Library/7h-design-for-startups-part-2-sus-2018 - (Tùy chọn) Đọc sách Khởi nghiệp Lean. Nhiệm vụ sinh viên: - Thực hiện theo các hướng dẫn và yêu cầu của giảng viên, hãy xem xét các bài giảng video được chỉ định - Trình bày tiến trình xây dựng sản phẩm/dịch vụ và chứng minh kết quả - Sửa đổi kế hoạch liên quan đến ý kiến ​​của giảng viên - Tiếp tục phát triển sản phẩm/dịch vụ.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "54061fe8-322d-46a7-8e60-dd4dcf323b09",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Tuần 3 Huấn luyện của người hướng dẫn Xây dựng sản phẩm. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Xem các bài giảng video dưới đây: https://www.ycombinator.com/l Library/7s-Building-Product-sus-2018 - (Tùy chọn) Đọc sách Khởi nghiệp Lean. Nhiệm vụ sinh viên: - Chuẩn bị danh sách các kênh có thể khởi chạy sản phẩm/dịch vụ.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "0df13032-3899-4833-a07a-2d26fe6a43fd",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - Tuần 3 Hội thảo 2 “Chọn một ý tưởng khởi nghiệp” - diễn giả khách mời. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Nhiệm vụ sinh viên: - Tham dự hội thảo Trong hội thảo: - Chuẩn bị câu hỏi cho người nói khách mời.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "c4c6b3f5-ddd1-4a9d-a6aa-e24fbce7a6fa",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - Tuần 3 Cố vấn 1. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2. Nhiệm vụ sinh viên: Trước khi cố vấn: Chuẩn bị câu hỏi Trong quá trình cố vấn: Thảo luận và yêu cầu hướng dẫn từ người cố vấn. Sau khi cố vấn: Đặt vào thực hành kiến ​​thức và cố gắng làm sâu sắc thêm nó trong dự án..",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "d364ece5-2869-4158-909c-35fafc13b9bb",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - Tuần 4 Huấn luyện của người hướng dẫn Cách khởi chạy (hết lần này đến lần khác). Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Xem các bài giảng video dưới đây: https://www.ycombinator.com/l Library/6i-how-to-launch-again-and-again - (Tùy chọn) Đọc sách Khởi nghiệp Lean. Nhiệm vụ sinh viên: - Phân tích thị trường hiện tại và tuyên bố vấn đề, cung cấp thông tin phù hợp từ nghiên cứu thị trường của mình - Trình bày các kênh được chọn để khởi chạy. - Cải thiện sản phẩm/dịch vụ nếu cần.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "8a5ceea5-bd80-4720-94f3-0cabbf39b2e4",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Tuần 5 Huấn luyện của người hướng dẫn Làm thế nào để có được mười khách hàng đầu tiên của bạn? Trình bày OUCOME 2. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2. Tài liệu sinh viên: Xem các bài giảng video dưới đây: https://www.ycombinator.com/l Library/9h-how-to-get-your-first-ten-customers - (Tùy chọn) Đọc sách Khởi nghiệp Lean. Nhiệm vụ sinh viên: Trình bày tình huống khởi động (kênh, phương pháp, chi phí, phù hợp với thị trường, mục tiêu khách hàng, phản hồi nguyên thủy, Hồi).",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "ade7e416-ea43-4af6-8e11-2f308c206032",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Tuần 5 Cố vấn 2 (tùy chọn). Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Nhiệm vụ sinh viên: Có được hướng dẫn của người cố vấn và đưa nó vào thực tế..",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "7bc2f700-0f92-4904-b116-01898235b3ff",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Tuần 6 Huấn luyện của người hướng dẫn Làm thế nào để có được người dùng và phát triển. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO2, CLO3. Tài liệu sinh viên: Xem các bài giảng video dưới đây: https://www.ycombinator.com/l Library/7k-how-to-get-users-and-grow-sus-2018 - (Tùy chọn) Đọc sách Khởi nghiệp Lean. Nhiệm vụ sinh viên: Tiếp tục cải thiện sản phẩm/dịch vụ nếu cần Tiếp tục khởi chạy sản phẩm/dịch vụ trên các kênh đã chọn.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "3ceab104-b66f-48ad-a944-1b5374e12244",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Tuần 6 Cố vấn 3 (tùy chọn). Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Nhiệm vụ sinh viên: Có được hướng dẫn của người cố vấn và đưa nó vào thực tế..",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "c7f9dcfa-df9f-47d1-8bd9-89570f1c4f87",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Tuần 7 Huấn luyện của người hướng dẫn Làm thế nào để bán. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO3, CLO4. Tài liệu sinh viên: Xem video dưới đây: https://www.ycombinator.com/l Library/7f-how-to-sell-sus-2018. Nhiệm vụ sinh viên: Chuẩn bị mẫu phản hồi và gửi cho ít nhất 20 người. Thu thập câu trả lời phản hồi và phân tích chúng. Tiếp tục cải thiện sản phẩm/dịch vụ nếu cần Tiếp tục khởi chạy sản phẩm/dịch vụ trên các kênh đã chọn.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "4b1a061e-29f0-45eb-9680-663c127c9a81",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - Tuần 8 Huấn luyện của người hướng dẫn Cách đặt KPI và mục tiêu. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO3, CLO4. Tài liệu sinh viên: Xem video dưới đây: https://www.ycombinator.com/l Library/6j-how-to-set-kpis-and- goals-sus-2019. Nhiệm vụ sinh viên: Trình bày các phân tích phản hồi và kế hoạch cải tiến nếu có. Tiếp tục cải thiện sản phẩm/dịch vụ nếu cần Tiếp tục khởi chạy sản phẩm/dịch vụ trên các kênh đã chọn.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "6307cb7b-ec77-4de3-9f01-7a295cd83f31",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - Tuần 8 Hội thảo 3 Các chủ đề được đề xuất: Cách thực hiện nghiên cứu thị trường - người hướng dẫn hoặc diễn giả khách mời MVP và cách rút ngắn thời gian đến thị trường- Diễn giả khách “Khởi nghiệp gây quỹ & đầu tư mạo hiểm” - diễn giả khách mời. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2, CLO3, CLO4. Nhiệm vụ sinh viên: - Tham dự hội thảo Trong hội thảo: - Chuẩn bị câu hỏi cho người nói khách mời.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "aaa8d298-c6b1-4140-a02d-1deba5b4dc1e",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - Tuần 8 Cố vấn 4 (tùy chọn). Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Nhiệm vụ sinh viên: Có được hướng dẫn của người cố vấn và đưa nó vào thực tế..",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "875a3a5a-447a-48f4-b36e-38feb0e57ced",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - Tuần 9 Huấn luyện của người hướng dẫn Tăng trưởng cho các công ty khởi nghiệp. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO3, CLO4. Tài liệu sinh viên: Xem video dưới đây: https://www.ycombinator.com/l Library/6k-growth-for-startups. Nhiệm vụ sinh viên: Trình bày các phân tích phản hồi, kế hoạch cải tiến nếu có. Tiếp tục cải thiện sản phẩm/dịch vụ nếu cần Tiếp tục khởi chạy sản phẩm/dịch vụ trên các kênh đã chọn Chuẩn bị báo cáo cuối cùng.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "b5f531e1-9b5a-4e47-97f4-a583cfa652a3",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - Tuần 9 Cố vấn 5. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3, CLO4. Nhiệm vụ sinh viên: Chuẩn bị sàn sân.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "7672292a-3046-430b-8afc-ef3acd67a5eb",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Tuần 10 Đánh giá tất cả các nhóm 1 phiên ngoại tuyến. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3, CLO4. Nhiệm vụ sinh viên: Trình bày dự án khởi nghiệp và kết quả.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "5c835927-53f5-47ba-a803-b7ca691fe841",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - EXE201"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - Tuần 11-14 Khởi động lại và cố gắng tiếp cận khách hàng một lần nữa nếu trước đó thất bại. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3, CLO4. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "11a83bdc-091b-40b9-b788-0c34b85ac122",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - EXE201"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kết quả 1 (đang đi). Trọng số: 40.0%. Chuẩn đầu ra liên quan (CLO): CLO1. Loại câu hỏi/Nhiệm vụ: Trình diễn sản phẩm/dịch vụ. Thời gian: không giới hạn. Tiêu chí hoàn thành: >0. Ghi chú: See rubric at Material link (Schedule sheet, line1) Instructor has resposibility to review the group's demonstration for students..",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "5cb769c0-c71d-49cb-9082-a5d23d7ffc54",
+      "source_section": "assessments",
+      "assessment_category": "Kết quả 1",
+      "title": "Đánh giá Kết quả 1 - EXE201"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kết quả 2 (đang đi). Trọng số: 20.0%. Chuẩn đầu ra liên quan (CLO): CLO2. Loại câu hỏi/Nhiệm vụ: Bài thuyết trình. Thời gian: không giới hạn. Tiêu chí hoàn thành: >0. Ghi chú: See rubric at Material link (Schedule sheet, line1) Instructor has resposibility to review the group's presentation for students..",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "7cc25059-d88a-4fa4-b403-0032f667ad54",
+      "source_section": "assessments",
+      "assessment_category": "Kết quả 2",
+      "title": "Đánh giá Kết quả 2 - EXE201"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kết quả 3 (đang đi). Trọng số: 40.0%. Chuẩn đầu ra liên quan (CLO): CLO3, CLO4. Loại câu hỏi/Nhiệm vụ: Báo cáo. Thời gian: không giới hạn. Tiêu chí hoàn thành: 4. Ghi chú: See rubric at Material link (Schedule sheet, line1) Instructor has resposibility to review the group's presentation for students after graded..",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "50e361ab-e21f-4278-98ce-9c5cf06e903a",
+      "source_section": "assessments",
+      "assessment_category": "Kết quả 3",
+      "title": "Đánh giá Kết quả 3 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Online material sources (video, documents). Tác giả: YCombinator (San Jose, CA). Link/Ghi chú: www.StartupSchool.org.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "09bcaf7f-081f-4afc-982f-496b8fb8054f",
+      "source_section": "materials_table",
+      "material_description": "Online material sources (video, documents)",
+      "title": "Tài liệu 1 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Startup Directory sources. Tác giả: Y Combinat or (San Jose, CA). Link/Ghi chú: https://www.ycombinator.com/companies/.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "b762c86c-e5d1-4296-b1a2-41987fdbcb40",
+      "source_section": "materials_table",
+      "material_description": "Startup Directory sources",
+      "title": "Tài liệu 2 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Techstars. Tác giả: Techstars (Boulder, Colorado). Link/Ghi chú: https://www.techstars.com/portfolio.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "02fee97d-2bf3-41c1-beb3-b39d5c944cea",
+      "source_section": "materials_table",
+      "material_description": "Techstars",
+      "title": "Tài liệu 3 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: 500 Startups. Tác giả: 500 Startups. Link/Ghi chú: https://500.co/companies.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "98d9a169-a43e-451a-b7aa-183b5fdbddc1",
+      "source_section": "materials_table",
+      "material_description": "500 Startups",
+      "title": "Tài liệu 4 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: AngelPad (NYC). Tác giả: AngelPad (NYC). Link/Ghi chú: https://angelpad.com/portfolio/.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "d76041a5-3572-4a55-a657-2f460930f3d9",
+      "source_section": "materials_table",
+      "material_description": "AngelPad (NYC)",
+      "title": "Tài liệu 5 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Seed Accelerators database. Tác giả: Seed Accelerat ors. Link/Ghi chú: https://www.seed-db.com/accelera tors.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "637fcdea-16a7-4167-a72a-2326677945c2",
+      "source_section": "materials_table",
+      "material_description": "Seed Accelerators database",
+      "title": "Tài liệu 6 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: The Lean Startup. Tác giả: Eric Ries.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "7efa5003-0b31-49ac-8b12-1a1ac05d66a6",
+      "source_section": "materials_table",
+      "material_description": "The Lean Startup",
+      "title": "Tài liệu 7 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: How to Design a Better Pitch Deck. Tác giả: Kevin Hale. Link/Ghi chú: https://www.ycombinator.com/library/4T-how-to-design-a-better-pitch-deck/.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "6df05899-b653-4057-948d-c526a185a942",
+      "source_section": "materials_table",
+      "material_description": "How to Design a Better Pitch Deck",
+      "title": "Tài liệu 8 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: A Guide to Seed Fundraising. Tác giả: Geoff Ralston. Link/Ghi chú: https://www.ycombinator.com/library/4A- a-guide- to-seed- fundraisi ng.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "8a9bc493-16a5-4c15-915d-0eb69f64564b",
+      "source_section": "materials_table",
+      "material_description": "A Guide to Seed Fundraising",
+      "title": "Tài liệu 9 - EXE201"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: A Guide to YC Demo Day Presentations. Tác giả: Geoff Ralston. Link/Ghi chú: https://www.ycombinator.com/library/49-a-guide-to-yc-demo-day-present ations.",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "cdc51499-3f9e-4c09-8158-ffa5d1889887",
+      "source_section": "materials_table",
+      "material_description": "A Guide to YC Demo Day Presentations",
+      "title": "Tài liệu 10 - EXE201"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn EXE201 là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=10361",
+    "metadata": {
+      "subject_code": "EXE201",
+      "syllabus_id": "10361",
+      "chunk_id": "17714e17-583e-4007-baaf-76d56d3038cc",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - EXE201"
+    }
+  }
+]

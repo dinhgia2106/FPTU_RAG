@@ -1,0 +1,1020 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Máy học_học Máiy (Học máy). Mã môn: AIL303m. Số tín chỉ: 3. Mô tả: Khóa học cung cấp phần giới thiệu về phân tích dữ liệu khám phá cho học máy (các kỹ thuật phổ biến để lấy dữ liệu của bạn, làm sạch nó, áp dụng kỹ thuật tính năng và đã sẵn sàng để phân tích sơ bộ và kiểm tra giả thuyết), việc học máy được giám sát (cách tìm thấy các mô hình được đưa ra. sẽ tìm hiểu một số thuật toán giảm phân cụm và kích thước cho việc học không được giám sát cũng như cách chọn thuật toán phù hợp nhất với dữ liệu của bạn). Điều kiện tiên quyết: MAS291, MAI391, PFP191. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các khe liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập, bài tập và phòng thí nghiệm được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và nộp đúng hạn - Chỉ sử dụng máy tính xách tay trong lớp cho mục đích học tập -Hãy nhanh chóng truy cập vào FU LMS tại https://flm.fpt.edu.vn/ để biết thông tin khóa học cập nhật. Công cụ sử dụng: - jupyterlite - JupyterLab.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "55b53800-cf3d-4c2c-b741-77ce9b2f5ebf",
+      "source_section": "general_details",
+      "title": "Thông tin chung - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Người học sẽ có thể sử dụng các kỹ thuật phổ biến để truy xuất dữ liệu từ nhiều nguồn dữ liệu: SQL, cơ sở dữ liệu NoQuery, API, đám mây",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "b5508d7f-84c3-4203-93ec-4c24f959f0d6",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO10): Thực hiện dự án Mini Capstone ML bao gồm các bước: thu thập dữ liệu, tranh cãi dữ liệu, phân tích dữ liệu khám phá, phát triển mô hình, đánh giá mô hình và báo cáo",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "18147b00-aed8-416f-93c3-11346d860ced",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO2): Người học có thể mô tả và sử dụng các kỹ thuật kỹ thuật tính năng và tính năng chung",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "105032dd-b4c4-4ebb-8b6b-de2043dc5098",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO3): Người học sẽ có thể sử dụng nhiều kỹ thuật để phát hiện và xử lý các ngoại lệ",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "77445f6d-6525-44c6-a3a3-9493edde85c8",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO4): Người học có thể mô tả và sử dụng các mô hình được giám sát",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "bd8722ec-af6a-40ef-b648-6fc83def5e8d",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO5): Người học sẽ có thể sử dụng nhiều số liệu lỗi khác nhau để so sánh và chọn mô hình được giám sát phù hợp nhất với dữ liệu của bạn",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "35008026-3938-4b01-b204-a177a34f866f",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 7 (CLO6): Người học có thể sử dụng quá trình lấy mẫu và lấy mẫu dưới dạng các kỹ thuật để xử lý các lớp không cân bằng trong một dữ liệu",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "f2c8d532-9684-46c3-83b2-3bb391e545e4",
+      "source_section": "clos",
+      "clo_id": "7",
+      "title": "CLO 7 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 8 (CLO7): Người học có thể giải thích các loại vấn đề phù hợp cho các phương pháp học không được giám sát",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "15d4fb23-8c5a-4841-9b8b-e57753416796",
+      "source_section": "clos",
+      "clo_id": "8",
+      "title": "CLO 8 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 9 (CLO8): Giải thích lời nguyền của chiều và làm thế nào nó gây khó khăn với nhiều tính năng",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "1268cfe8-bb0e-4c41-8bdd-8f1a38262797",
+      "source_section": "clos",
+      "clo_id": "9",
+      "title": "CLO 9 - AIL303m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 10 (CLO9): Người học có thể mô tả và sử dụng thuật toán phân cụm và giảm kích thước phổ biến",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "a0bdf8b6-e640-4600-9395-9ebbd7fbda10",
+      "source_section": "clos",
+      "clo_id": "10",
+      "title": "CLO 10 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Giới thiệu khóa học 1.1. Lịch sử ngắn gọn về AI hiện đại và ứng dụng của nó 1.1.1. Giới thiệu về AI và học máy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, video giới thiệu về trí tuệ nhân tạo và học máy. Link tải tài liệu buổi học: mat1 - https://flm.fpt.edu.vn/download/9315/S/1_mat1.zip. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "5889e905-d6bf-47c2-9326-3f6c41e84154",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - 1.1. Lịch sử ngắn gọn về AI hiện đại và ứng dụng của nó 1.1.2. AI hiện đại: ứng dụng và quy trình làm việc của máy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của AI hiện đại: Ứng dụng và quy trình làm việc của máy. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "812456f5-86c8-4fde-a2dc-3cc2256bbd53",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - 1.2. Lấy và làm sạch dữ liệu 1.2.1. Lấy dữ liệu 1.2.2. Dữ liệu làm sạch. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Trượt, video truy xuất dữ liệu và dữ liệu làm sạch. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "49e763e5-cefd-4b67-ba63-2ce451af978f",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - 1.3. Phân tích dữ liệu khám phá và kỹ thuật tính năng 1.3.1 Phân tích dữ liệu khám phá. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, Video phân tích dữ liệu khám phá. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "bc03a770-7a23-4a8d-9ad0-74967f4d8115",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - 1.3. Phân tích dữ liệu khám phá và kỹ thuật tính năng 1.3.1 Phân tích dữ liệu khám phá. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, Video phân tích dữ liệu khám phá. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "fa0c9923-9068-46ab-8747-baf712e9a0a2",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - 1.3. Phân tích dữ liệu khám phá và kỹ thuật tính năng 1.3.2 Kỹ thuật và biến tính năng Biến đổi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, video về kỹ thuật tính năng và biến Biến đổi. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "f03da0c5-243e-4602-bf68-ae4e590a55a3",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - 1.3. Phân tích dữ liệu khám phá và kỹ thuật tính năng 1.3.2 Kỹ thuật và biến tính năng Biến đổi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, video về kỹ thuật tính năng và biến Biến đổi. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "297bf69d-749c-4f28-86ac-de429ae64a7a",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - 1.4 Thống kê suy luận và kiểm tra giả thuyết 1.4.1 Ước tính và suy luận. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Slide, video về ước tính và suy luận, và kiểm tra giả thuyết. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "b844bf09-70fa-41ef-90f4-15407b71aed5",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - 1.4 Thống kê suy luận và kiểm tra giả thuyết 1.4.2 Kiểm tra giả thuyết (bài tập về nhà) 1.3.3 Kỹ thuật tính năng phòng thí nghiệm demo. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Slide, video kiểm tra giả thuyết. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "6b562e08-e14f-4e57-97d1-49bd41765ebd",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Kiểm tra tiến độ 1 Hướng dẫn Capstone Mini. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: - Nội dung 1 - 9. - Kiểm tra tiến độ 1. - Mini Capstone (tệp .docx). Nhiệm vụ sinh viên: - Xem xét nội dung 1 - 9 - Kiểm tra tiến độ 1.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "1166cbea-4ae6-4e66-8ba3-2da1afa06209",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - 2.1 Giới thiệu về học máy được giám sát và hồi quy tuyến tính 2.1.1 Giới thiệu về học máy được giám sát 2.2 Tách dữ liệu và xác thực chéo 2.2.1 Chuẩn bị và kiểm tra chia tách. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, video giới thiệu về học máy được giám sát 'Slide, Video đào tạo và phân chia bài kiểm tra. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "8680e6cf-217b-49d9-8549-47f7d8555c90",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - 2.2 Tách dữ liệu và xác thực chéo 2.2.1 Chuẩn bị và kiểm tra chia tách. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video đào tạo và chia tách bài kiểm tra. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "578116f0-5b27-4a4d-9887-8c181d5972d3",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - 2.2 Tách dữ liệu và xác thực chéo 2.2.2 Xác thực chéo. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video xác thực chéo. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "580e92fe-99f0-4ff2-8472-6893eb770549",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - 2.3 Hồi quy tuyến tính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, video hồi quy tuyến tính. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "5e219d68-b97e-4c45-8468-6a0fdae0e1f5",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - 2.4 Hồi quy đa thức 2,5 hồi quy với các kỹ thuật chính quy 2.5.1 Kỹ thuật chính quy Net đàn hồi, loại bỏ tính năng đệ quy (bài tập về nhà). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, video hồi quy đa thức 'Slide, video về kỹ thuật chính quy. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: .",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "e0194b78-227f-4570-8490-82706c4ce2a9",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - 2,5 hồi quy với các kỹ thuật chính quy 2.5.2 Các tính năng đa thức và bản demo chính quy hóa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video về kỹ thuật chính quy. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "a9bc1e41-1e6b-49b4-ac69-3bad8020437d",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - 2,5 hồi quy với các kỹ thuật chính quy 2.5.2 Các tính năng đa thức và bản demo chính quy hóa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, video về các tính năng đa thức và bản demo chính quy. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "f80251d1-b8d2-4bec-8690-4a3413ea4df4",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - 2,5 hồi quy với các kỹ thuật chính quy 2.5.3. Chi tiết chính quy hóa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, video chi tiết về chính quy hóa. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "86f58073-6a8e-4d2c-aecf-cb14840cc6bf",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - Kiểm tra tiến độ 2 Xem lại phòng thí nghiệm 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: - Nội dung 11 - 19. - Kiểm tra tiến độ 2 - Phòng thí nghiệm của học sinh. Nhiệm vụ sinh viên: - Đánh giá nội dung 11 - 19 - Kiểm tra tiến độ 2.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "ff892866-e094-44de-bfb3-04da582f8241",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - Xem lại phòng thí nghiệm 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: Phòng thí nghiệm của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "fd04bd2c-141f-41bb-9f6b-06462e6eaaa3",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - Xem lại viên đá mini. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: Capstone của học sinh. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "94cb842f-9025-4bb5-90f8-fc0754ad4be1",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - 3.1 Hồi quy logistic 3.1.1 Hồi quy logistic: Giới thiệu về phân loại và số liệu lỗi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video về hồi quy logistic: Giới thiệu về phân loại và số liệu lỗi. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "d33733ab-d027-4cd8-9bd0-20333699207b",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - 3.1 Hồi quy logistic 3.1.2 Số liệu lỗi 3.1.3 Phòng thí nghiệm hồi quy logistic. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, video về số liệu lỗi 'Slide, Video của Phòng thí nghiệm hồi quy logistic. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "eceadc18-a2a2-48a0-9bd1-3afc88087ebb",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - 3.1 Hồi quy logistic 3.1.2 Phòng thí nghiệm hồi quy logistic. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của Phòng thí nghiệm hồi quy logistic. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "365eed99-aaf9-4e88-951b-2c08cf67e1a2",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - 3,2 K hàng xóm gần nhất 3.2.1 K Hàng xóm gần nhất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của K Hàng xóm gần nhất. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "5bc07213-9a4e-4f9f-b2f9-6795499b9662",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - 3,2 K hàng xóm gần nhất 3.2.1 K Hàng xóm gần nhất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của K Hàng xóm gần nhất. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "30830420-c81d-4789-9507-7b8e66050b79",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - 3,2 K hàng xóm gần nhất 3.2.2 K Phòng thí nghiệm hàng xóm gần nhất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của K Phòng thí nghiệm hàng xóm gần nhất. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "6db88a87-5b6a-40f5-906a-88338099237e",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - 3,2 K hàng xóm gần nhất 3.2.2 K Phòng thí nghiệm hàng xóm gần nhất. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của K Phòng thí nghiệm hàng xóm gần nhất. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "cc3b081a-9d13-4d59-a9a9-adcea6c027b3",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - Xem lại phòng thí nghiệm 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: Phòng thí nghiệm của sinh viên 2. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "9407a5e6-c79e-470a-a30c-f6ee61eb427e",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - Xem lại viên đá mini. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: Capstone của học sinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "6d1297be-786d-4e21-8338-75e973b09b9b",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - 3.3 Máy vector hỗ trợ 3.3.1 Máy vector hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video về máy vector hỗ trợ. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "e42d57c1-10c4-4e04-94e9-fc77fb812974",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - 3.3 Máy vector hỗ trợ 3.3.2 Hỗ trợ Hạt nhân máy vector. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video về hạt nhân vector hỗ trợ. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "1922f212-f7f5-472d-9059-93bd4a91d180",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - 3.3 Máy vector hỗ trợ 3.3.3 Phòng thí nghiệm máy vector hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của các phòng thí nghiệm máy vector hỗ trợ. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "78fcff5e-5f42-45a5-8b79-76f763c8cfb8",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - 3.3 Máy vector hỗ trợ 3.3.3 Phòng thí nghiệm máy vector hỗ trợ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của các phòng thí nghiệm máy vector hỗ trợ. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "55b836ef-296a-4fba-bd2d-a0dee0756159",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - 3.4 Cây quyết định 3.4.1 Cây quyết định. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video về cây quyết định. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "2c7fcc27-9d32-440c-9a33-8d3d5cf5249c",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - 3.4 Cây quyết định 3.4.2 Phòng thí nghiệm cây quyết định. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của Labs Cây quyết định. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "e90d3c83-e293-45b2-b1d0-257be14eb8bb",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - 3.5 Mô hình hòa tấu 3.5.1 Phương pháp dựa trên bản hòa tấu và đóng gói. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Trượt, video về các phương pháp dựa trên bộ đồng phục và đóng gói. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "49ea1c8f-fe34-4cfc-a8fe-11d261515337",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - 3.5 Mô hình hòa tấu 3.5.1 Phương pháp dựa trên bản hòa tấu và đóng gói. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video về Rừng ngẫu nhiên. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "14ed470a-bdd9-4a4e-b115-7b2fa5f757e5",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - 3.5 Mô hình hòa tấu 3.5.2 Phòng thí nghiệm đóng gói. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của các phòng thí nghiệm đóng gói. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "d91c7077-8b48-4424-9958-ce9f21ac7dfb",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - 3.5 Mô hình hòa tấu 3.5.2 Phòng thí nghiệm đóng gói. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video của các phòng thí nghiệm đóng gói. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "9c724400-39d8-40ea-9056-8d6a76f4020b",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - 3.5 Mô hình hòa tấu 3.5.3 Tăng và xếp chồng (bài tập về nhà để xếp chồng). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Trượt, video tăng cường và xếp chồng. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "fb4b2b6e-c200-4bd6-8ed0-22e83ccbb493",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - 3.5 Mô hình hòa tấu 3.5.4 Phòng thí nghiệm tăng và xếp chồng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, Video về các phòng thí nghiệm tăng cường và xếp chồng. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "eef802cf-b155-4442-8fcb-4fdef6df91ab",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - 3.6 Mô hình các lớp không cân bằng 3.6.1 Khả năng diễn giải mô hình (bài tập về nhà) 3.6.2 Mô hình các lớp không cân bằng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4, CLO5. Tài liệu sinh viên: Slide, video về khả năng diễn giải mô hình. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "14e4f1d3-0ae3-4f8f-9ced-3452e6ba5b0e",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - 3.6 Mô hình các lớp không cân bằng 3.6.2 Mô hình các lớp không cân bằng 3.6.3 Phòng thí nghiệm thực hành: Mô hình các lớp học mất cân bằng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Slide, Video mô hình các lớp không cân bằng. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "246238ea-e1cd-47ef-be27-6d697c99c6f1",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - Kiểm tra tiến độ 3 Xem lại viên đá mini. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: - Nội dung 24 - 30 và 34 - 47. - Kiểm tra tiến độ 3 - Capstone của học sinh. Nhiệm vụ sinh viên: - Đánh giá nội dung 24 - 30 và 34 - 47 - Thử nghiệm tiến độ 3 -.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "3a89f1db-a7f9-4361-a04d-c19a16da0387",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - Xem lại viên đá mini. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: Capstone của học sinh. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "b901f891-4f75-4364-967a-6eaa4ab59acb",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - 4.1 Giới thiệu về Học tập không giám sát và K có nghĩa là 4.1.1 Giới thiệu về học tập không giám sát 4.1.2 K có nghĩa là phân cụm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO7, CLO8. Tài liệu sinh viên: Slide, Video giới thiệu về học tập không giám sát, K có nghĩa là phân cụm. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "feea9e82-edea-4b01-acc5-8d8d764b0040",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - 4.1 Giới thiệu về Học tập không giám sát và K có nghĩa là 4.1.2 K có nghĩa là phân cụm 4.1.3 Phòng thí nghiệm K-MEANS. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8. Tài liệu sinh viên: Slide, video của k có nghĩa là phân cụm. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "39de4f54-95e0-4cc9-bc62-0dcb1deee253",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - 4.2 Chọn thuật toán phân cụm 4.2.1 Số liệu khoảng cách của thuật toán phân cụm 4.2.2 Thuật toán phân cụm phổ biến 4.2.2.1 Phân cụm kết tụ phân cấp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8, CLO9. Tài liệu sinh viên: Slide, Video về các rào cản tính toán của các thuật toán phân cụm. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "52d58f25-4679-45ee-97bf-86cd0096cd32",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - 4.2 Chọn thuật toán phân cụm 4.2.2.2 dbscan (bài tập về nhà) 4.2.2.3 Biến nghĩa trung bình (Howework) 4.2.2.4 Phòng thí nghiệm phân cụm kết tụ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8, CLO9. Tài liệu sinh viên: Slide, video của các thuật toán phân cụm phổ biến. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "0761ffb7-4206-4768-b7a6-9fecfa0640b8",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - 4.2 Chọn thuật toán phân cụm 4.2.3 So sánh thuật toán phân cụm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8, CLO9. Tài liệu sinh viên: Slide, video so sánh thuật toán phân cụm. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "db3b3132-7a8e-41ca-8416-aae280aa87bd",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - 4.2 Chọn thuật toán phân cụm 4.2.3 So sánh thuật toán phân cụm Phân cụm bản demo. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8, CLO9. Tài liệu sinh viên: Slide, video so sánh thuật toán phân cụm. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "5e8fdc1a-d799-4a42-881b-c0bb5b486754",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - 4.3 Giảm kích thước 4.3.1 Giảm kích thước. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8, CLO9. Tài liệu sinh viên: Slide, Video về giảm chiều. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "54c4ce1c-a4ff-4454-b694-61b2d278072c",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - 4.3 Giảm kích thước 4.3.2 Phân tích thành phần chính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8, CLO9. Tài liệu sinh viên: Slide, Video phân tích thành phần chính và hệ số ma trận. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "c867ca36-7598-4abd-a6e6-9e454b17552e",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - 4.3 Giảm kích thước 4.3.2 Hệ số ma trận (bài tập về nhà) 4.3.3 Phòng thí nghiệm phân tích thành phần chính. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO8, CLO9. Tài liệu sinh viên: Slide, Video phân tích thành phần chính và hệ số ma trận. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "cb50c661-8a0d-43e0-8ed2-86c52f09030f",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - Kiểm tra tiến độ 4 Xem lại Mini Capstone. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: - Nội dung 50 - 58. - Kiểm tra tiến độ 4 - Dự án của học sinh và ppt.. Nhiệm vụ sinh viên: - Xem xét nội dung 50 - 58. - Kiểm tra tiến độ 4 -.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "350b856f-2417-4256-b489-cebf241e4d5b",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Xem lại viên đá mini. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: Capstone của sinh viên và Ppt.. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "6457f89f-ea28-4d36-82c0-741ec5d22da9",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Xem lại viên đá mini. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO10. Tài liệu sinh viên: Capstone của sinh viên và Ppt.. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "2504a016-d822-400b-afee-1f68ce9fa23f",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: Tất cả các slide. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Xem lại slide.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "ea4b1c10-bb4e-4154-b252-5b694eebcc74",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - AIL303m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: Tất cả các slide. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Xem lại slide.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "d5c78cdd-ad04-4698-85f0-28f28906bf4a",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - AIL303m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 1 (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3. Loại câu hỏi/Nhiệm vụ: . Thời gian: 1 tuần - 2 tuần. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Nội dung của Moduel 1. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "a836603c-d24a-48bf-bad7-d54b2dd4d53c",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 1",
+      "title": "Đánh giá Phòng thí nghiệm 1 - AIL303m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 2 (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): CLO4, CLO5. Loại câu hỏi/Nhiệm vụ: . Thời gian: 1 tuần - 2 tuần. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của Mô -đun 2. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "7516383c-ed95-4cce-a455-8493affba086",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 2",
+      "title": "Đánh giá Phòng thí nghiệm 2 - AIL303m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Mini Capstone (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO10. Loại câu hỏi/Nhiệm vụ: . Thời gian: 8 tuần. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của tất cả các mô -đun. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "9d15aed6-11d5-4170-9352-194e1da71d72",
+      "source_section": "assessments",
+      "assessment_category": "Mini Capstone",
+      "title": "Đánh giá Mini Capstone - AIL303m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 1 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 20'-30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của mô -đun 1. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "d081dcfc-cd66-4c30-bbf3-3f1e648308ac",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 1",
+      "title": "Đánh giá Kiểm tra tiến độ 1 - AIL303m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 2 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO4, CLO5. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 20'-30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của Mô -đun 2. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "2936aa0b-7d5f-4b50-aa32-2e5ba969c97f",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 2",
+      "title": "Đánh giá Kiểm tra tiến độ 2 - AIL303m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 3 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO4, CLO5, CLO6. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 20'-30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của mô -đun 3. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "748f247e-6541-4f95-8e2a-522d1a2f4cd6",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 3",
+      "title": "Đánh giá Kiểm tra tiến độ 3 - AIL303m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 4 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO8, CLO9, CLO10. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 20'-30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của mô -đun 4. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "810b668a-a5bc-431b-8f87-19955734306b",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 4",
+      "title": "Đánh giá Kiểm tra tiến độ 4 - AIL303m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8, CLO9. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các mô -đun nghiên cứu. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "1999309a-a7b1-41a2-b130-d14f8ae2aefd",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - AIL303m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/specializations/ibm-intro-machine-learning. Tác giả: Coursera. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "0490ae76-821b-4035-a6e4-b9ba0cd8645a",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/specializations/ibm-intro",
+      "title": "Tài liệu 1 - AIL303m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/ibm-exploratory-data-analysis-for-machine-learning?specialization=ibm-intro-machine-learning. Tác giả: Coursera. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "e9e77c37-bb4d-4d15-baa7-ca062a2a9de2",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/ibm-exploratory-dat",
+      "title": "Tài liệu 2 - AIL303m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/supervised-machine-learning-regression?specialization=ibm-intro-machine-learning. Tác giả: Coursera. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "77a9c88f-78ff-4fb6-915a-03c910dd99a8",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/supervised-machine-",
+      "title": "Tài liệu 3 - AIL303m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/supervised-machine-learning-classification?specialization=ibm-intro-machine-learning. Tác giả: Coursera. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "0b391fa6-63c1-4270-b7fe-24912eb29ca5",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/supervised-machine-",
+      "title": "Tài liệu 4 - AIL303m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/ibm-unsupervised-machine-learning?specialization=ibm-intro-machine-learning. Tác giả: Coursera. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "b35dfd79-5301-4781-b4df-a98824c3443c",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/ibm-unsupervised-ma",
+      "title": "Tài liệu 5 - AIL303m"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn AIL303m là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=10736",
+    "metadata": {
+      "subject_code": "AIL303m",
+      "syllabus_id": "10736",
+      "chunk_id": "6cb5b045-4c68-4564-be16-c21cf6a34e47",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - AIL303m"
+    }
+  }
+]

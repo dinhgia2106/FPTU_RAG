@@ -1,6 +1,7 @@
 import json
 import re
 import os
+import uuid
 
 def clean_text(text):
     """Làm sạch văn bản cơ bản: loại bỏ khoảng trắng thừa, chuẩn hóa newline."""
@@ -15,7 +16,8 @@ def create_chunks_from_syllabus(subject_code, syllabus_data):
     chunks = []
     base_metadata = {
         "subject_code": subject_code,
-        "syllabus_id": syllabus_data.get("syllabus_id", "N/A")
+        "syllabus_id": syllabus_data.get("syllabus_id", "N/A"),
+        "chunk_id": None  # Sẽ được cập nhật cho mỗi chunk
     }
 
     # Chunk 1: Thông tin chung của môn học
@@ -46,10 +48,15 @@ def create_chunks_from_syllabus(subject_code, syllabus_data):
             general_info_texts.append(f"Công cụ sử dụng: {tools}.")
         
         chunk_text = clean_text(" ".join(general_info_texts))
+        chunk_metadata = base_metadata.copy()
+        chunk_metadata["chunk_id"] = str(uuid.uuid4())
+        chunk_metadata["source_section"] = "general_details"
+        chunk_metadata["title"] = f"Thông tin chung - {subject_code}"
+        
         chunks.append({
             "type": "general_info",
             "content": chunk_text,
-            "metadata": {**base_metadata, "source_section": "general_details"}
+            "metadata": chunk_metadata
         })
 
     # Chunk 2: Mỗi Chuẩn đầu ra (CLO)
@@ -63,10 +70,17 @@ def create_chunks_from_syllabus(subject_code, syllabus_data):
                 chunk_text = clean_text(f"Chuẩn đầu ra {clo_name}: {lo_details}")
             else:
                  chunk_text = clean_text(f"Chuẩn đầu ra {clo_name} ({clo_details_text}): {lo_details}")
+            
+            chunk_metadata = base_metadata.copy()
+            chunk_metadata["chunk_id"] = str(uuid.uuid4())
+            chunk_metadata["source_section"] = "clos"
+            chunk_metadata["clo_id"] = clo_name
+            chunk_metadata["title"] = f"CLO {clo_name} - {subject_code}"
+            
             chunks.append({
                 "type": "clo",
                 "content": chunk_text,
-                "metadata": {**base_metadata, "source_section": "clos", "clo_id": clo_name}
+                "metadata": chunk_metadata
             })
 
     # Chunk 3: Mỗi Buổi học (Session)
@@ -102,17 +116,24 @@ def create_chunks_from_syllabus(subject_code, syllabus_data):
                 session_texts.append(f"URLs liên quan: {urls}.")
             
             chunk_text = clean_text(" ".join(session_texts))
+            
+            chunk_metadata = base_metadata.copy()
+            chunk_metadata["chunk_id"] = str(uuid.uuid4())
+            chunk_metadata["source_section"] = "sessions"
+            chunk_metadata["session_number"] = session_number
+            chunk_metadata["title"] = f"Buổi {session_number} - {subject_code}"
+            
             chunks.append({
                 "type": "session",
                 "content": chunk_text,
-                "metadata": {**base_metadata, "source_section": "sessions", "session_number": session_number}
+                "metadata": chunk_metadata
             })
 
     # Chunk 4: Mỗi Hình thức Đánh giá (Assessment)
     if "assessments" in syllabus_data and syllabus_data["assessments"]:
-        for assessment in syllabus_data["assessments"]:
+        for i, assessment in enumerate(syllabus_data["assessments"]):
             assessment_texts = []
-            category = assessment.get("Category", "N/A")
+            category = assessment.get("Category", f"Đánh giá {i+1}")
             assessment_type = assessment.get("Type", "N/A")
             assessment_texts.append(f"Hình thức đánh giá: {category} ({assessment_type}).")
             
@@ -137,10 +158,17 @@ def create_chunks_from_syllabus(subject_code, syllabus_data):
                  assessment_texts.append(f"Ghi chú: {note_assessment}.")
 
             chunk_text = clean_text(" ".join(assessment_texts))
+            
+            chunk_metadata = base_metadata.copy()
+            chunk_metadata["chunk_id"] = str(uuid.uuid4())
+            chunk_metadata["source_section"] = "assessments"
+            chunk_metadata["assessment_category"] = category
+            chunk_metadata["title"] = f"Đánh giá {category} - {subject_code}"
+            
             chunks.append({
                 "type": "assessment",
                 "content": chunk_text,
-                "metadata": {**base_metadata, "source_section": "assessments", "assessment_category": category}
+                "metadata": chunk_metadata
             })
 
     # Chunk 5: Thông tin Tài liệu học tập (Materials)
@@ -169,63 +197,101 @@ def create_chunks_from_syllabus(subject_code, syllabus_data):
                  material_texts.append(f"Ghi chú: {note_material}.")
 
             chunk_text = clean_text(" ".join(material_texts))
+            
+            chunk_metadata = base_metadata.copy()
+            chunk_metadata["chunk_id"] = str(uuid.uuid4())
+            chunk_metadata["source_section"] = "materials_table"
+            chunk_metadata["material_description"] = desc[:50]
+            chunk_metadata["title"] = f"Tài liệu {i+1} - {subject_code}"
+            
             chunks.append({
                 "type": "material",
                 "content": chunk_text,
-                "metadata": {**base_metadata, "source_section": "materials_table", "material_description": desc[:50]}
+                "metadata": chunk_metadata
             })
             
     # Thêm chunk cho liên kết CLO-PLO nếu có
     clo_plo_link = syllabus_data.get("clo_plo_mapping_link")
     if clo_plo_link:
         chunk_text = clean_text(f"Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn {subject_code} là: {clo_plo_link}")
+        
+        chunk_metadata = base_metadata.copy()
+        chunk_metadata["chunk_id"] = str(uuid.uuid4())
+        chunk_metadata["source_section"] = "clo_plo_mapping_link"
+        chunk_metadata["title"] = f"Mapping CLO-PLO - {subject_code}"
+        
         chunks.append({
             "type": "clo_plo_mapping",
             "content": chunk_text,
-            "metadata": {**base_metadata, "source_section": "clo_plo_mapping_link"}
+            "metadata": chunk_metadata
         })
 
     return chunks
 
-# --- Đoạn mã để chạy thử với dữ liệu mẫu --- 
-if __name__ == "__main__":
-    input_syllabus_file = "Syllabus_crawler/fpt_syllabus_data_appended_vi.json"
-    
+def process_all_syllabi(input_syllabus_file, output_dir="Chunk"):
+    """Xử lý tất cả các syllabus từ file đầu vào và lưu các chunks theo môn học."""
     try:
         with open(input_syllabus_file, "r", encoding="utf-8") as f:
             raw_data = json.load(f)
     except FileNotFoundError:
         print(f"Lỗi: Không tìm thấy file dữ liệu syllabus tại: {input_syllabus_file}")
-        exit()
+        return None
     except json.JSONDecodeError as e:
         print(f"Lỗi: File dữ liệu syllabus không phải là JSON hợp lệ: {e}")
-        exit()
+        return None
 
     if not isinstance(raw_data, dict) or not raw_data:
         print("Lỗi: Dữ liệu syllabus không có cấu trúc dictionary hoặc rỗng.")
-        exit()
-        
-    subject_code_from_file = list(raw_data.keys())[0]
-    syllabus_content = raw_data[subject_code_from_file]
-
-    if not isinstance(syllabus_content, dict):
-        print(f"Lỗi: Nội dung syllabus cho môn {subject_code_from_file} không phải là dictionary.")
-        exit()
-
-    created_chunks = create_chunks_from_syllabus(subject_code_from_file, syllabus_content)
-
-    print(f"Đã tạo được {len(created_chunks)} chunks cho môn {subject_code_from_file}.")
+        return None
     
-    output_dir = "Chunk"
-    output_chunk_file = f"{output_dir}/{subject_code_from_file}_chunks.json"
-
-    # Tạo thư mục nếu chưa tồn tại
+    all_chunks = []
+    processed_subjects = []
+    
+    # Tạo thư mục output nếu chưa tồn tại
     os.makedirs(output_dir, exist_ok=True)
-
+    
+    # Xử lý từng môn học
+    for subject_code, syllabus_content in raw_data.items():
+        print(f"Đang xử lý syllabus cho môn {subject_code}...")
+        
+        if not isinstance(syllabus_content, dict):
+            print(f"Bỏ qua: Nội dung syllabus cho môn {subject_code} không phải là dictionary.")
+            continue
+            
+        subject_chunks = create_chunks_from_syllabus(subject_code, syllabus_content)
+        print(f"Đã tạo {len(subject_chunks)} chunks cho môn {subject_code}.")
+        
+        # Lưu chunks của môn học này vào file riêng
+        subject_output_file = f"{output_dir}/{subject_code}_chunks.json"
+        try:
+            with open(subject_output_file, "w", encoding="utf-8") as f_out:
+                json.dump(subject_chunks, f_out, ensure_ascii=False, indent=2)
+            print(f"Đã lưu chunks của môn {subject_code} vào file: {subject_output_file}")
+            processed_subjects.append(subject_code)
+        except IOError as e:
+            print(f"Lỗi khi lưu file chunks cho môn {subject_code}: {e}")
+        
+        # Thêm chunks vào danh sách tổng hợp
+        all_chunks.extend(subject_chunks)
+    
+    # Lưu tất cả chunks vào một file tổng hợp
+    all_chunks_file = f"{output_dir}/all_chunks.json"
     try:
-        with open(output_chunk_file, "w", encoding="utf-8") as f_out:
-            json.dump(created_chunks, f_out, ensure_ascii=False, indent=2)
-        print(f"\nĐã lưu các chunks vào file: {output_chunk_file}")
+        with open(all_chunks_file, "w", encoding="utf-8") as f_out:
+            json.dump(all_chunks, f_out, ensure_ascii=False, indent=2)
+        print(f"\nĐã lưu tất cả {len(all_chunks)} chunks từ {len(processed_subjects)} môn học vào file: {all_chunks_file}")
+        return all_chunks_file
     except IOError as e:
-        print(f"Lỗi khi lưu file chunks: {e}")
+        print(f"Lỗi khi lưu file tổng hợp chunks: {e}")
+        return None
 
+if __name__ == "__main__":
+    input_syllabus_file = "Syllabus_crawler/fpt_syllabus_data_appended_vi.json"
+    output_directory = "Chunk"
+    
+    all_chunks_file = process_all_syllabi(input_syllabus_file, output_directory)
+    
+    if all_chunks_file:
+        print(f"Hoàn thành xử lý tất cả syllabus. Dữ liệu chunks được lưu tại: {all_chunks_file}")
+    else:
+        print("Không thể hoàn thành việc xử lý syllabus.")

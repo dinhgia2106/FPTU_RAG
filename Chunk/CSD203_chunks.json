@@ -1,0 +1,984 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Cấu trúc dữ liệu và thuật toán với python_cấu trúc dữ liệu và gi (Cấu trúc dữ liệu và thuật toán với python). Mã môn: CSD203. Số tín chỉ: 3. Mô tả: Khóa học này giới thiệu các khái niệm cơ bản về cấu trúc dữ liệu và thuật toán trong các cấu trúc dữ liệu với việc sử dụng Python. Các chủ đề được giới thiệu trong khóa học bao gồm những điều cơ bản của phân tích thuật toán, cấu trúc dữ liệu cơ bản (bao gồm ngăn xếp, hàng đợi, danh sách liên kết, hashtable, cây), đệ quy và một số ứng dụng quan trọng của các cấu trúc dữ liệu và thuật toán này. Điều kiện tiên quyết: PFP191 (Programming Fundamentals with Python_Cơ sở lập trình với Python). Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các khe liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập, bài tập và phòng thí nghiệm được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và nộp đúng hạn - Chỉ sử dụng máy tính xách tay trong lớp cho mục đích học tập -Hãy nhanh chóng truy cập vào https://flm.fpt.edu.vn/ để biết thông tin khóa học cập nhật. Công cụ sử dụng: - Thonny - PyCharm - Visual Studio Code.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "4b391c51-7588-4824-837c-069fea32801c",
+      "source_section": "general_details",
+      "title": "Thông tin chung - CSD203"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): LO1. Mô tả cấu trúc dữ liệu danh sách và cách triển khai khác nhau của nó. Thực hiện danh sách liên kết đơn.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "1060c24d-f769-43ce-92c0-6279796adb70",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - CSD203"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): LO2. Xác định ngăn xếp và hàng đợi. Mô tả các hoạt động cơ bản và việc sử dụng các cấu trúc này.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "cfdba6b1-e66f-41ab-8d39-1f33a6db6d0b",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - CSD203"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): LO3. Mô tả về các định nghĩa đệ quy, thuật toán, chức năng và việc thực hiện và sử dụng của chúng.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "f63ae5a1-578f-41e8-8b88-4c4c88e938ab",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - CSD203"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): LO4. Giải thích về cây chung, cây nhị phân và cây tìm kiếm nhị phân (BST). Thực hiện BST với các hoạt động cơ bản.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "0397c0ed-6ed2-43da-8bad-3caa5e70aef3",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - CSD203"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): LO5. Díscuss về đồ thị và ứng dụng của họ. Thực hiện một biểu đồ với một số hoạt động cơ bản.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "a5405221-9f58-4df1-a2e6-3797234eabe0",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - CSD203"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO6): LO6 Giải thích hoạt động và hiệu suất của một số alggorithms sắp xếp cơ bản và nâng cao",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "35d672ce-2df9-4cba-92c4-dc900b1340b9",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - CSD203"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 7 (CLO7): LO7 Giải thích về băm và ứng dụng.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "d71dbe30-2d6f-4e62-b2d6-1b076d0c0310",
+      "source_section": "clos",
+      "clo_id": "7",
+      "title": "CLO 7 - CSD203"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 8 (CLO8): LO8 mô tả vấn đề xử lý văn bản và ứng dụng của nó. Giải thích các thuật toán mã hóa Huffman, LZW và độ dài chạy.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "d3f28a3c-60c9-43de-b828-42287099b6a0",
+      "source_section": "clos",
+      "clo_id": "8",
+      "title": "CLO 8 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Giới thiệu khóa học 1.1. Sử dụng mảng 1.2. Danh sách liên kết đơn lẻ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: - Slide: Chương 1 Sách văn bản: - Chương 5 Trang 184 - 224 - Chương 7 Trang 256-275. Link tải tài liệu buổi học: mat1 - https://flm.fpt.edu.vn/download/6663/S/1_mat1.zip. Nhiệm vụ sinh viên: Đọc Chương 1,5,7.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "5fb311a9-3967-4649-b08b-9dfb9b19b079",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - 1.3. Danh sách liên kết tròn 1.4. Danh sách liên kết gấp đôi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: - Slide: Chương 1 Sách văn bản: - Chương 5 Trang 184 - 224 - Chương 7 Trang 256-275. Nhiệm vụ sinh viên: Đọc Chương 1,5,7.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "b24efcb8-b980-462f-9045-de170a3e62d8",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1. Tài liệu sinh viên: Trượt chương 1, 5, 7 LAB 1: LAB1_ST (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 1, 5, 7 Làm phòng thí nghiệm 1.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "7981e6b0-85ed-47a3-8621-ff536b990104",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 1. Tài liệu sinh viên: Trượt chương 1, 5, 7 LAB 1: LAB1_ST (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 1, 5, 7 Làm phòng thí nghiệm 1.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "a82ee81d-5211-403e-bd92-9cced7e6c15a",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - 2.1 ngăn xếp Bài tập hướng dẫn/Bài tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Slide: Chương 6 - Sách văn bản: Chương 6 Trang 228-238. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 6 Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "383e7fbf-b1bb-4503-a5f6-01ba49ae3e57",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - 2.1 ngăn xếp Bài tập hướng dẫn/Bài tập (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Slide: Chương 6 - Sách văn bản: Chương 6 Trang 228-238. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 6 Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "e47ba400-d36f-4079-8bf5-8d233722aadc",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - 2.2 hàng đợi 2.3 Hàng đợi kết thúc kép (Deque). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Slide: Chương 6 - Sách văn bản: Chương 6 Trang 239-250. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 6 Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "be5e212a-e32b-4dce-a7b7-6bb0eb39f66e",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - 2.4 Hàng đợi ưu tiên. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Slide: Chương 6 - Sách văn bản: Chương 6 Trang 239-250. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 6 Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "ea0ce815-7e7b-47a1-97df-494483981f8c",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Slide: Chương 6 - Sách giáo khoa - Lab 2: Lab2 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 6 Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "65d01090-cc28-4a9b-8bbe-09a007162c52",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 2. Tài liệu sinh viên: - Slide: Chương 6 - Sách giáo khoa - Lab 2: Lab2 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 6 Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "9ff193be-bd94-4219-b40a-0eccb147e799",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - 3.1 Ví dụ minh họa 3.1.1 Chức năng giai thừa 3.1.2 Tìm kiếm nhị phân 3.1.3 Hệ thống tệp 3.2 Phân tích thuật toán đệ quy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Slide: Chương 4 - Sách văn bản: Chương 4 Trang 148 - 180. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "b0cd7999-7dc0-40e7-b9c7-4c6a82b48ecb",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - 3.3 Các ví dụ khác về đệ quy 3.3.1 đệ quy tuyến tính 3.3.2 đệ quy nhị phân 3.3.3 Nhiều đệ quy 3.4 Thiết kế thuật toán đệ quy 3.5 Loại bỏ đệ quy đuôi. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: - Slide: Chương 4 - Sách văn bản: Chương 4 Trang 148 - 180. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 4.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "15c59d5c-821c-422f-8597-9f7b3714e388",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: LAB 3: LAB3 (tệp .docx). Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "4ac97014-5427-461a-a227-8f5b2c63d038",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 3. Tài liệu sinh viên: LAB 3: LAB3 (tệp .docx). Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "727461e1-cd26-474b-9b23-4db07d689655",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - 4.1 Cây chung 4.1.1 Định nghĩa và thuộc tính cây 4.1.2 Kiểu dữ liệu trừu tượng cây 4.2 Cây nhị phân -. 317 4.2.1 Kiểu dữ liệu trừu tượng của cây nhị phân 4.2.2 Tính chất của cây nhị phân. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Slide: Chương 8 - Sách văn bản: Chương 8 Trang 300 - 310. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 8.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "46a7617d-c767-4c1d-ac07-3fb335ce5ba8",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - 4.3 Thực hiện cây 4.4 Thuật toán truyền tải cây. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Slide: Chương 8 - Sách văn bản: Chương 8 Trang 300 - 310. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 8.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "8366b179-580d-4d73-95b8-46485effdc22",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: LAB 4: LAB4 (Tệp .docx) - Sách văn bản: Chương 8 Trang 300 - 310. Nhiệm vụ sinh viên: Xem lại Chương 8 Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "36359ee6-e49f-4340-9612-fb79e43f859b",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: LAB 4: LAB4 (Tệp .docx) - Sách văn bản: Chương 8 Trang 300 - 310. Nhiệm vụ sinh viên: Xem lại Chương 8 Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "631ce2d7-674d-4c67-93a7-071ed86ba36d",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - 4,5 cây tìm kiếm nhị phân 4.5.1 Tìm kiếm trong cây tìm kiếm nhị phân. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Slide: Chương 11 - Sách văn bản: Chương 11 Trang 460 - 473. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 11.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "ec8fded3-c2c9-4f3a-ae09-c01dfe2caeb9",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - 4.5.2 Chèn và xóa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Slide: Chương 11 - Sách văn bản: Chương 11 Trang 460 - 473. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 11.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "77a48d4e-7124-4c95-9fd2-1a2418b6527b",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 11 - LAB 4: LAB4 (tệp .docx) - Sách văn bản: Chương 11 Trang 460 - 473. Nhiệm vụ sinh viên: Xem lại Chương 11 Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "5824607d-3bc2-46d9-a832-de42aff06dbf",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Trượt chương 11 - LAB 4: LAB4 (tệp .docx) - Sách văn bản: Chương 11 Trang 460 - 473. Nhiệm vụ sinh viên: Xem lại Chương 11 Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "d1eea8f4-3ae9-454f-a060-2f964a0ca7d0",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - 4.6 Cây tìm kiếm cân bằng 4.7 Cây AVL. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Slide: Chương 11, 9 - Chương 11 Trang 475 - 488 - Chương 9 Trang 370 - 384. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 9,11.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "92eb7ccb-b02e-4831-a569-caf8de4bd614",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - 4,8 đống. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - Slide: Chương 11, 9 - Chương 11 Trang 475 - 488 - Chương 9 Trang 370 - 384. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 9,11.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "1c29786c-5e74-431c-bf0f-af318bdfb838",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - LAB 4: LAB4 (tệp .docx). Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "d10fa1b0-7535-4e84-8768-f639f995f297",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Bài tập (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 4. Tài liệu sinh viên: - LAB 4: LAB4 (tệp .docx). Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "7b144ec3-432f-4ea4-b901-ffb5231278f5",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - Kiểm tra tiến độ 1 và đánh giá. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: - Nội dung 1 - 4 - Sách văn bản - Kiểm tra chung 1. Nhiệm vụ sinh viên: Xem lại nội dung 1 - 4 Làm kiểm tra vững chắc 1.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "b7d0710a-02db-44ec-af51-9510f47df18e",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - Kiểm tra tiến độ 1 và đánh giá (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: - Nội dung 1 - 4 - Sách văn bản - Kiểm tra chung 1. Nhiệm vụ sinh viên: Xem lại nội dung 1 - 4 Làm kiểm tra vững chắc 1.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "095776ee-d849-4fb9-98af-53550e90ddd6",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - 5.1 đồ thị 5.2 Cấu trúc dữ liệu cho đồ thị 5.2.1 Cấu trúc danh sách cạnh 5.2.2 Cấu trúc danh sách liền kề 5.2.3 Cấu trúc ma trận liền kề. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Slide: Chương 14 - Sách văn bản: Chương 14 Trang 620 - 648. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 14.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "fea3ce73-6fef-449c-8e98-e36511a0dbb8",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - 5.3 Đường mòn đồ thị 5.3.1 Tìm kiếm độ sâu đầu tiên 5.3.3 Tìm kiếm đầu tiên. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Slide: Chương 14 - Sách văn bản: Chương 14 Trang 620 - 648. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 14.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "3d386623-b30a-4146-9dd9-63a93ba9e613",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - Kiểm tra tiến độ và/hoặc người chuyển nhượng Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 14 - LAB 5: LAB5 (tệp .docx) - Bài tập 1. Nhiệm vụ sinh viên: Xem lại Chương 14 Làm phòng thí nghiệm 5 Làm - Bài tập 1.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "bf54cce5-a8b6-40bf-9a15-b9eeef3de0c8",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - Kiểm tra tiến độ và/hoặc người chuyển nhượng Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 14 - LAB 5: LAB5 (tệp .docx) - Bài tập 1. Nhiệm vụ sinh viên: Xem lại Chương 14 Làm phòng thí nghiệm 5 Làm - Bài tập 1.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "c0d87f34-1d7f-42fd-a724-81715d64a99e",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - 5.4 Đường dẫn ngắn nhất 5.4.1 Đồ thị có trọng số. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Slide: Chương 14 - Sách văn bản: Chương 14 Trang 659 - 669. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 14.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "d14dad49-dce1-487a-b553-96ab75b00594",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - 5.4.2 Thuật toán Dijkstra. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Slide: Chương 14 - Sách văn bản: Chương 14 Trang 659 - 669. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 14.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "530a8550-ee08-48c0-89f7-b36616f2706b",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 14 - LAB 5: LAB5 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 14 Làm phòng thí nghiệm 5.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "a1c0878f-822e-4006-894a-594ec26f207d",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 14 - LAB 5: LAB5 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 14 Làm phòng thí nghiệm 5.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "360cbba6-fae1-4502-8e63-0bf265716d44",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - 5,5 cây bao trùm tối thiểu 5.5.1 Thuật toán nguyên thủy Jarn 5.5.2 Thuật toán Kruskal. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Slide: Chương 14 - Sách văn bản: Chương 14 Trang 670 - 685. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 14.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "e7323487-4f07-4b57-98f1-bfb7ca50973a",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - 5.6. Chuyến lưu diễn của Euler và chu kỳ của Euler. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Slide: Chương 14 - Sách văn bản: Chương 14 Trang 670 - 685. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 14.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "8e7cd39c-49d2-43fb-bdf9-5afbb713a466",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 14 - LAB 5: LAB5 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 14 Làm phòng thí nghiệm 5.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "ec5d45da-9200-4e57-9b76-56db116bd78b",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 5. Tài liệu sinh viên: - Trượt chương 14 - LAB 5: LAB5 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 14 Làm phòng thí nghiệm 5.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "1b74915a-6d69-47fd-9d03-6b23db53c84a",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - 6.1 Lựa chọn-Sort 6.2 Chèn-sort. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Slide: Chương 9, 12 - Sách văn bản: Chương 9 Trang 385 -386 - Chương 12 Trang 550 - 559. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 9, 12.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "1983160b-b70b-4fa0-80dc-db422421dc0e",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - 6.3 Bong bóng-sort 6,4-Sort nhanh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Slide: Chương 9, 12 - Sách văn bản: Chương 9 Trang 385 -386 - Chương 12 Trang 550 - 559. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 9, 12.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "383e8ca4-b468-44d1-9dd4-d4efa5070656",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Trượt chương 9, 12 - Lab 6: Lab6 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 9, 12 Làm phòng thí nghiệm 6.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "65587bdf-1937-479b-8b37-c72d2f2d37ed",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Trượt chương 9, 12 - Lab 6: Lab6 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 9, 12 Làm phòng thí nghiệm 6.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "6adf33a9-876e-43eb-87ba-ecfd23d1b4c6",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - 6.5 Merge-Sort 6.6 HEAP-SORT. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Slide: Chương 9, 12 - Sách văn bản: Chương 9 Trang 370 -388 - Sách văn bản: Chương 12 Trang 538 - 547. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 9, 12.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "afa787fe-8c3b-40fc-b817-da10ea067c45",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - 6,7 Sắp xếp thời gian tuyến tính: Xô và phân loại radix 6.8 So sánh thuật toán sắp xếp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Slide: Chương 9, 12 - Sách văn bản: Chương 9 Trang 370 -388 - Sách văn bản: Chương 12 Trang 538 - 547. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 9, 12.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "9ceee5f6-2247-4736-a82c-56b952a3ba3f",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Trượt chương 9, 12 - Lab 6: Lab6 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 9, 12 Làm phòng thí nghiệm 6.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "f0880ea4-ed34-4a44-899c-e7a57590bcb5",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 6. Tài liệu sinh viên: - Trượt chương 9, 12 - Lab 6: Lab6 (tệp .docx). Nhiệm vụ sinh viên: Xem lại Chương 9, 12 Làm phòng thí nghiệm 6.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "e80e54a6-b1a4-487f-afcb-fda3cf4534fe",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - 7.1 Bảng băm 7.2 Chức năng băm 7.3 Xử lý va chạm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 7. Tài liệu sinh viên: - Slide: Chương 10 - Sách văn bản: Chương 10 Trang 410 - 422. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 10.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "15beed9c-c904-424f-98a1-e93a69f2d0ec",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - 7.4 Các yếu tố tải, thử lại và hiệu quả 7.5 Triển khai bảng băm Python. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 7. Tài liệu sinh viên: - Slide: Chương 10 - Sách văn bản: Chương 10 Trang 410 - 422. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc Chương 10.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "5d253622-cf12-46d0-96d9-dcefe1d92a94",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 7. Tài liệu sinh viên: LAB 7: LAB7 (tệp .docx). Nhiệm vụ sinh viên: Làm phòng thí nghiệm 7.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "536b95cf-7294-4899-a14e-26be2fac9fb3",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 7. Tài liệu sinh viên: LAB 7: LAB7 (tệp .docx). Nhiệm vụ sinh viên: Làm phòng thí nghiệm 7.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "41a45b46-3784-446c-9524-50fce6f6c60b",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - 8.1 Sự phong phú của văn bản số hóa 8.2 Thuật toán phù hợp với mẫu 8.2.1 Lực lượng vũ phu 8.2.2 Thuật toán Knuth-Morris-Pratt. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 8. Tài liệu sinh viên: - Slide: Chương 13 - Sách văn bản: Chương 13 Trang 581 -612. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 13.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "2b93dc70-2598-4c4b-a580-18b2610229c9",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - 8.3 Nén văn bản 8.3.1 Thuật toán mã hóa Huffman 8.3.2 Thuật toán LZW 8.3.3 Thuật toán mã hóa có độ dài chạy. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 8. Tài liệu sinh viên: - Slide: Chương 13 - Sách văn bản: Chương 13 Trang 581 -612. Link tải tài liệu buổi học: drive.google.com. Nhiệm vụ sinh viên: Đọc chương 13.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "772fb97d-f612-4f4e-92cb-6f1ea652ef47",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 8. Tài liệu sinh viên: Trượt chương 13 LAB 8: LAB 8 (Tệp .Docx). Nhiệm vụ sinh viên: Xem lại Chương 13 Làm phòng thí nghiệm 8.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "052126bb-0a16-4ad2-809d-1f0b9def5eb3",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - Kiểm tra tiến độ và/hoặc Đánh giá bài tập Bài tập hướng dẫn/Người chuyển nhượng (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO 8. Tài liệu sinh viên: Trượt chương 13 LAB 8: LAB 8 (Tệp .Docx). Nhiệm vụ sinh viên: Xem lại Chương 13 Làm phòng thí nghiệm 8.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "0e9f8bd5-deff-4004-99a0-4bc34df4749e",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Đánh giá khóa học Kỳ thi thực tế. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: Xem lại khóa học - Bài tập 2. Nhiệm vụ sinh viên: Xem lại khóa học - Làm nhiệm vụ 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "5d4ff911-5b19-4c93-bfbb-fdcf01911d75",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Đánh giá khóa học Bài kiểm tra thực tế (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: Xem lại khóa học - Bài tập 2. Nhiệm vụ sinh viên: Xem lại khóa học - Làm nhiệm vụ 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "b8d1661f-6716-46f2-b03f-545ced609f75",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Kiểm tra tiến độ 2 và đánh giá. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: Nội dung 5 - 8 Sách văn bản Thử nghiệm chung 2. Nhiệm vụ sinh viên: Xem lại khóa học Thử nghiệm Fracy 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "89d9f405-9a94-4428-b8f6-e1b49ed51397",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - CSD203"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Kiểm tra tiến độ 2 và đánh giá (tiếp.). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): . Tài liệu sinh viên: Nội dung 5 - 8 Sách văn bản Thử nghiệm chung 2. Nhiệm vụ sinh viên: Xem lại khóa học Thử nghiệm Fracy 2.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "f52abf98-205a-483e-af70-2b535044e8f8",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - CSD203"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Bài tập 1 (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Câu hỏi kiểm tra viết. Thời gian: 45. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Nội dung bao gồm 1,2,3,4. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "7cd68e17-2b28-4db3-8907-2e4fc87b2aa5",
+      "source_section": "assessments",
+      "assessment_category": "Bài tập 1",
+      "title": "Đánh giá Bài tập 1 - CSD203"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Bài tập 2 (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Câu hỏi kiểm tra viết. Thời gian: 45'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Nội dung bao gồm 5,6,7,8. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "64bbf2d8-76d8-4d49-bc4c-07e1e2b8f6a2",
+      "source_section": "assessments",
+      "assessment_category": "Bài tập 2",
+      "title": "Đánh giá Bài tập 2 - CSD203"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi thực tế (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Câu hỏi kiểm tra viết. Thời gian: 60'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Nội dung bao gồm 1,2,3,4,5,6,7. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "8db56a99-8a2e-4b18-95a4-88009c34b292",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi thực tế",
+      "title": "Đánh giá Kỳ thi thực tế - CSD203"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 1 (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 10'-30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Nội dung bao gồm 1,2,3,4. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "b5998fe1-fdd9-46b7-b1cc-daa492fcab1e",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 1",
+      "title": "Đánh giá Kiểm tra tiến độ 1 - CSD203"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 2 (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 10'-30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Nội dung bao gồm 5,6,7,8. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "2357e52e-5a1a-4890-b0bc-a7b278246fac",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 2",
+      "title": "Đánh giá Kiểm tra tiến độ 2 - CSD203"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): . Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: khái niệm, thuật toán; Tất cả các chương nghiên cứu. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "f9945ada-a37a-4c86-a786-d4d9ea9d9011",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - CSD203"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Data Structures and Algorithms in Python. Tác giả: Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser. Nhà xuất bản: Wiley. Năm xuất bản: 2013. Ghi chú: Sách online (Wiley platform).",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "a503190b-3f95-4464-a6ca-6d2bf3b6009f",
+      "source_section": "materials_table",
+      "material_description": "Data Structures and Algorithms in Python",
+      "title": "Tài liệu 1 - CSD203"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: - PowerPoint Slides.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "28078490-5bd5-45e7-a80f-0f4b4a1df9ee",
+      "source_section": "materials_table",
+      "material_description": "- PowerPoint Slides",
+      "title": "Tài liệu 2 - CSD203"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: - Assignments.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "2e0a1aed-a988-4661-9796-6adcaa6561af",
+      "source_section": "materials_table",
+      "material_description": "- Assignments",
+      "title": "Tài liệu 3 - CSD203"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: - Labs.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "1c845815-8636-442a-a0bb-4e8f02cdb71f",
+      "source_section": "materials_table",
+      "material_description": "- Labs",
+      "title": "Tài liệu 4 - CSD203"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Data Structures and Algorithms using Python. Tác giả: Rance D. Necaise. Nhà xuất bản: Wiley. Năm xuất bản: 2011.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "598a108c-f194-42f1-9fec-2d5999b6bc7b",
+      "source_section": "materials_table",
+      "material_description": "Data Structures and Algorithms using Python",
+      "title": "Tài liệu 5 - CSD203"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Data Structures and Algorithms with Python. Tác giả: Kent D. Lee Steve Hubbard. Nhà xuất bản: Springer. Năm xuất bản: 2015.",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "a5c89c88-f136-4de2-9d89-e3bd98858400",
+      "source_section": "materials_table",
+      "material_description": "Data Structures and Algorithms with Python",
+      "title": "Tài liệu 6 - CSD203"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn CSD203 là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=10369",
+    "metadata": {
+      "subject_code": "CSD203",
+      "syllabus_id": "10369",
+      "chunk_id": "ead2530b-cdf4-4cd5-a62a-99af339b84e1",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - CSD203"
+    }
+  }
+]

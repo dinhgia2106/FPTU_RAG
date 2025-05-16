@@ -1,0 +1,348 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Quản lý dự án_quản trị dự án (Quản lý dự án). Mã môn: PMG201c. Số tín chỉ: 3. Mô tả: Một loạt các khóa học chuyên sâu và thực hành này cung cấp cho bạn các kỹ năng để đảm bảo các dự án của bạn được hoàn thành đúng hạn và ngân sách trong khi cung cấp cho người dùng sản phẩm mà họ mong đợi. Bạn sẽ có được kiến ​​thức làm việc mạnh mẽ về những điều cơ bản của quản lý dự án và có thể sử dụng ngay kiến ​​thức đó ngay lập tức để quản lý hiệu quả các dự án làm việc. Vào cuối loạt, bạn sẽ có thể xác định và quản lý phạm vi sản phẩm, xây dựng cấu trúc phân tích công việc, tạo kế hoạch dự án, tạo ngân sách dự án, xác định và phân bổ tài nguyên và xác định và quản lý rủi ro, sau đó bạn sẽ có thể quản lý phát triển dự án. Điều kiện tiên quyết: None. Nhiệm vụ sinh viên: - Học sinh phải nhận được chứng nhận giới thiệu về các nguyên tắc quản lý dự án và chuyên môn hóa thực hành từ Coursera để được chấp nhận vào kỳ thi cuối cùng \".",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "a0b62b87-fb3b-4da2-9158-80e704d9bea9",
+      "source_section": "general_details",
+      "title": "Thông tin chung - PMG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Xác định kế hoạch dự án",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "b67aef14-77e5-4a0b-b763-adace76d7398",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - PMG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): - Xác định phạm vi dự án - Xây dựng Lịch phân tích công việc - Phân bổ tài nguyên dự án - Tạo ngân sách dự án",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "55a36148-b8d9-4b01-8a87-cdf8565f6a99",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - PMG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): - Xác định các yếu tố chính của Kế hoạch quản lý truyền thông - Xác định và quản lý rủi ro",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "a708623b-b198-4831-a489-2725ce92b74d",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - PMG201c"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Thực hành: - Xác định kế hoạch dự án - Xác định phạm vi dự án - Xây dựng Lịch trình phân chia công việc - Phân bổ tài nguyên dự án - Tạo ngân sách dự án - Xác định các yếu tố chính của Kế hoạch quản lý truyền thông - Xác định và quản lý rủi ro",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "5eef2ae0-5244-4204-8ff0-ecce94b86d99",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Giới thiệu chuyên môn hóa Khởi đầu và lập kế hoạch các dự án - Bắt đầu! - Dự án là gì? - Làm quen với các bên liên quan của bạn Ngoại tuyến 1: Giới thiệu về khóa học trực tuyến PMG201C. Loại hình: Ngoại tuyến, trực tuyến. Chuẩn đầu ra liên quan (LO): LO1. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần) Tất cả học sinh nên tham gia vào vị trí ngoại tuyến (nếu có bất kỳ câu hỏi).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "8733e13e-40c2-4205-89bd-7c3fc34943cb",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - Khởi đầu và lập kế hoạch các dự án - Phạm vi vấn đề - Chính quyền so với ảnh hưởng. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO1. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "dc92c31e-7255-4363-a54e-dd7a9060b8ce",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Khởi đầu và lập kế hoạch các dự án - Kết thúc. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO2. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "57ec0a83-24c4-4113-8dad-a39165ac3db3",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Dự án lập ngân sách và lập lịch - Nhu cầu & Quản lý chất lượng Ressource - Ước tính. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO2. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "3485b028-4ed8-4997-a488-ce7eb92d8a79",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - Dự án lập ngân sách và lập lịch - Lập kế hoạch - Kết thúc. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO3. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "57fe9f31-7ded-441f-87d2-82109aee59d4",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - Quản lý rủi ro dự án và thay đổi - Quản lý rủi ro dự án - Thay đổi xảy ra. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): LO3. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "81649ea3-1dbd-4732-954d-b1902b2f0935",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - Quản lý rủi ro dự án và thay đổi - Kết thúc. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "9664c061-782c-475f-835d-b722fda93612",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Quản lý dự án Capstone - Bắt đầu! - Thành phần & Hướng dẫn dự án. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "f2d85955-61c1-4e86-9bed-a0602eda0a9b",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Quản lý dự án Capstone - Thành phần & Hướng dẫn dự án - Đánh giá nội dung. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "eadb091e-cae1-45c1-baca-ff3d6e4ed11b",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Quản lý dự án Capstone - Đánh giá phản hồi ngang hàng - Đệ trình phân công dự án cuối cùng - Đánh giá đánh giá ngang hàng dự án cuối cùng. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "27c04344-7f08-41cc-9c3b-21efdfde6096",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Đánh giá dự án Capstone & Giới thiệu FE Quản lý dự án Capstone - Đánh giá đánh giá ngang hàng dự án cuối cùng. Loại hình: Trực tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "500ea8ad-c5b0-44b7-967a-87821041351e",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - PMG201c"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - - Chuyên ngành kết thúc Ngoại tuyến 2: Đánh giá các nguyên tắc và thực tiễn quản lý dự án (SPEC). Loại hình: Ngoại tuyến, trực tuyến. Chuẩn đầu ra liên quan (LO): All LOs. Nhiệm vụ sinh viên: - Xem tất cả các video, đọc tất cả các tài liệu trong MOOC - Kết thúc các câu đố, tự đánh giá, bài tập và tham gia các bảng thảo luận (nếu cần) tất cả các sinh viên nên tham gia vào vị trí đánh giá (nếu có bất kỳ câu hỏi) Hạn chót hoàn thành Coursera: Kết thúc Thứ Sáu trong tuần. Tất cả học sinh nên tham gia vào vị trí ngoại tuyến (nếu có bất kỳ câu hỏi).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "22297296-fff5-4090-9abd-f9a578739b63",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - PMG201c"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: PE (kỳ thi cuối cùng). Trọng số: 50.0%. Chuẩn đầu ra liên quan (CLO): Tất cả LOS. Loại câu hỏi/Nhiệm vụ: . Thời gian: 120 Phút. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các khóa học nghiên cứu.. Ghi chú: Customized from the Assignment & Project Capstone of this specialization.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "f6a8460e-842c-4d22-84af-c4ecf7ea7470",
+      "source_section": "assessments",
+      "assessment_category": "PE",
+      "title": "Đánh giá PE - PMG201c"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: TE (kỳ thi cuối cùng). Trọng số: 50.0%. Chuẩn đầu ra liên quan (CLO): Tất cả LOS. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn. Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 60 Phút. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các khóa học nghiên cứu. Mỗi mô-đun tất nhiên đóng góp 3-5 câu hỏi.. Ghi chú: Customized from the quizzes of this specialization.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "8479e6c2-2563-4816-bb5e-15fc9cc84b5b",
+      "source_section": "assessments",
+      "assessment_category": "TE",
+      "title": "Đánh giá TE - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://learner.coursera.help/hc/en-us/articles/208280036-Coursera-Code-of-Conduct. Nhà xuất bản: Coursera.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "1d3687f4-93ed-4383-af1c-8599d046f257",
+      "source_section": "materials_table",
+      "material_description": "https://learner.coursera.help/hc/en-us/articles/20",
+      "title": "Tài liệu 1 - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: ITPM: Information Technology Project Management. Tác giả: Kathy Schwalbe. Nhà xuất bản: Cengage Learning.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "07c9f333-fe57-4b24-afb9-531944c0ad86",
+      "source_section": "materials_table",
+      "material_description": "ITPM: Information Technology Project Management",
+      "title": "Tài liệu 2 - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: The Project Management Body of Knowledge (PMBOK Guide).",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "158db1ee-4ea3-4ab9-acc1-b79fd084256d",
+      "source_section": "materials_table",
+      "material_description": "The Project Management Body of Knowledge (PMBOK Gu",
+      "title": "Tài liệu 3 - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: SE8: Software Engineering. Tác giả: Ian Sommerville. Nhà xuất bản: Addison-Wesley.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "ed00b2e0-5d6c-4b4f-95d7-0aa73aca7c22",
+      "source_section": "materials_table",
+      "material_description": "SE8: Software Engineering",
+      "title": "Tài liệu 4 - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/project-planning. Nhà xuất bản: Coursera. Ghi chú: MOOC 1: Initiating and Planning Projects.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "374add62-3db0-4d42-9a24-bea0ff3b2478",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/project-planning",
+      "title": "Tài liệu 5 - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/schedule-projects. Nhà xuất bản: Coursera. Ghi chú: MOOC 2: Budgeting and Scheduling Projects.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "fb518297-f18b-4ca8-83d9-4ec589be9381",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/schedule-projects",
+      "title": "Tài liệu 6 - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/project-risk-management. Nhà xuất bản: Coursera. Ghi chú: MOOC 3: Managing Project Risks and Changes.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "4a482aac-6996-4db4-afca-c83b5b3f8c33",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/project-risk-manage",
+      "title": "Tài liệu 7 - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/learn/project-management-capstone. Nhà xuất bản: Coursera. Ghi chú: MOOC 4: Project Management Project.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "6b2ab3f2-0938-4f88-bf1f-910add52de12",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/learn/project-management-",
+      "title": "Tài liệu 8 - PMG201c"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: https://www.coursera.org/specializations/project-management. Nhà xuất bản: Coursera. Ghi chú: SPEC: Project Management Principles and Practices.",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "84bf0098-d86c-44f2-8d85-191063436524",
+      "source_section": "materials_table",
+      "material_description": "https://www.coursera.org/specializations/project-m",
+      "title": "Tài liệu 9 - PMG201c"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn PMG201c là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=12548",
+    "metadata": {
+      "subject_code": "PMG201c",
+      "syllabus_id": "12548",
+      "chunk_id": "7c17143d-90c0-4a26-94aa-9505f75f86f5",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - PMG201c"
+    }
+  }
+]

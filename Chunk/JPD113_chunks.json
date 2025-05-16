@@ -1,0 +1,936 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Tiếng Nhật tiểu học 1- A1.1_Tiếng NHật Sơ CấP 1-A1.1 (Tiếng Nhật tiểu học 1- A1.1). Mã môn: JPD113. Số tín chỉ: 3. Mô tả: I. Tượng Sinh Viênn Học Tiếng NHật là NGOạI ngữ 2 tại trường Đi Học. Ii. Mục tiêu của Môn Học: Sau Khiêu 1) đó là thể viết, đọc thành thạo bảng chữ cái 2) đó là thể nắm được Khoảng 200 từ vựng 3) Có thể hiểu, sử dụng các cách nÓi Quen THUộC Thiệu Tênn, Quốc Tịch, Nghsề Nghiệp, Sở Thích V.V ..); đó là hỏi Địa Điểm, đó đó là thể kể về NHững hoạt Động hằng ngàoa của bản thân 4 ( Điều kiện tiên quyết: Không. Nhiệm vụ sinh viên: - Tham dự tối thiểU 80% Số GIờ HọC TRU LớP MớI Đủ - học từ vựng và tìm hiểu trước bài học, lÀm các Bài tập và nhiệm vụ do gv giao. - - Trênn lớp Tích cực Tham GIA Trao ĐổI, Xây dựng Bài.. Công cụ sử dụng: - Sử dụng giáo trình chính và giáo trình bổ trợ bằng tiếng Nhật. - Sử dụng slide môn học. - Tra cứu, tham khảo các nội dung có liên quan đến môn học trên mạng hoặc giáo trình tham khảo được giới thiệu trong môn học. - Sử dụng https://heyjapan.net/ để học bảng chữ cái và ôn thi cuối kỳ. - Sử dụng AI (ChatGPT, Copilot, v.v.) để tra cứu cách dùng từ vựng, ứng dụng của ngữ pháp, và các từ ghép Hán tự ngoài các từ đã được học..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "fc9305b2-1d4b-47d9-8273-1450281d729c",
+      "source_section": "general_details",
+      "title": "Thông tin chung - JPD113"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): NHận Biết ĐượC Các Ký Tự Trong Hệ Th",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "c286658e-23a9-4e20-80f1-3c9373c38825",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - JPD113"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): GHI NHớ 200 từ vựng, 23 cấu trâm ngữ phát, 35 chữ hán liên Quan Đến Các Chủ Đề",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "f5391ed6-55d9-4b7a-bfbb-1de3cee4a506",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - JPD113"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Vận dụng từ vựng, mẫu câu, chữ hán đÃ Hội thoại Đơn Giản Về Chủ Đề MUA Sắm, GọI Đồ; đó là thể kể về NHững hoạt Động hằng ngàoa của bản thân",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "65692532-3f72-434c-94ac-a54d9cc5ae86",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - JPD113"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Đọc ĐượC ĐOạn Văn ngắn Trình",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "48e6077a-3b46-4f25-a590-b606dfce4f32",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - JPD113"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Rèn luyện kỹ năng lÀm Việc nhóm, phát triển bản thn (Nhập vai ..).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "48c56f76-bdcd-444a-bd84-f1ad7732f641",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Tiết 1: . (*) Giới thiệu về tiếng NHật. Loại hình: Bài giảng, học tập tích cực, bài giảng trong lớp. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 1 (tiết 1). Link tải tài liệu buổi học: JPD113 - https://flm.fpt.edu.vn/download/11772/S/1_JPD113.zip. Nhiệm vụ sinh viên: 1. nắm Được NHững nét 2) 3) Dùng https://heyjapan.net/ để luyện tập bảng Chữ.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "8f0755ee-7265-454a-a341-0001ef711639",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - Tiết 2: (*) (*) CHÀO HỏI Cơ BảN 1. Loại hình: Bài giảng, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 1 (tiết 2). Link tải tài liệu buổi học: JPD113 - https://flm.fpt.edu.vn/download/11772/S/2_JPD113.zip. Nhiệm vụ sinh viên: 1) Tiến HànH Luyện Viết, Đọc 20 Chữ Hiragana Đầu. 2.).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "228c0481-7745-4c37-96d0-839f3e8d9809",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Tiết 1: . (*) Học Hiragana: 26 Chữ tiếp Theo. Loại hình: Bài giảng, thực hành, học tập tích cực. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 2 (tiết 1). Link tải tài liệu buổi học: JPD113_3 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) Luyện Tập Các Chữ 2. 3) Xác NHận Các Thông tin chưa rõ. 4) Dùng https://heyjapan.net/ để luyện tập bảng Chữ.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "cf23094e-879a-4a43-a810-657617e85abf",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Tiết 2: (*) Học Hiragana: Âm Đan (*) CHÀO HỏI Cơ BảN 2. Loại hình: Bài giảng, nhập vai, học tập tích cực. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 2 (tiết 2). Link tải tài liệu buổi học: JPD113_4 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) 2) Luyện ĐọC Và NHận Biết Các 3) 4) Dùng https://heyjapan.net/.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "bd77bb73-534e-465b-a024-cd192251581d",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - Tiết 1 (*) Luyện Tập: Hiragana Và CHA (*) Học Hiragana: Âm ghép. Loại hình: Nhập vai, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide Của khe 3 (Tiết 1). Link tải tài liệu buổi học: JPD113_5 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) Luyện Tập Các 2) Luyện ĐọC Và NHận diện âm Ghéph, Âm Mũi 3) Xác NHận Các 4) Dùng https://heyjapan.net/.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "55869dd0-bb58-4610-818f-25bce0fc6c9d",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - Tiết 2 (*) CHÀO HỏI Cơ BảN 3 (*). Loại hình: Bài giảng, nhập vai, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide Của khe 3 (tiết 2). Link tải tài liệu buổi học: JPD113_6 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) 2) Luyện tập các 3) Dùng https://heyjapan.net/ để luyện tập bảng ch.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "ba9b3133-bd29-4226-88c8-c4f639186379",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - Tiết 1: . (*) Học Hiragana: Âm dào. Loại hình: Nhập vai, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 4 (tiết 1). Link tải tài liệu buổi học: JPD113_7 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) Luyện Tập Bảng Hiragana Và CHA 2) Luyện ĐọC Và NHận Diện âm Dài 3) Dùng https://heyjapan.net/ để luyện tập bảng ch.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "3da7b905-f23d-4fdc-9d81-945568a70438",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - Tiết 2: (*) Học Hiragana: Âm ngắt. (*) Số ĐếM (*) CHÀO HỏI Cơ BảN 4. Loại hình: Bài giảng, nhập vai, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 4 (tiết 2). Link tải tài liệu buổi học: JPD113_8 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) NHận diện Và luyện tập âm ngắt 2) 3) Dùng https://heyjapan.net/ để luyện tập bảng ch.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "6425ec43-0cab-4c5c-979e-7feb08034b49",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - Tiết 1: .. Loại hình: Bài giảng, nhập vai, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 5 (tiết 1). Link tải tài liệu buổi học: JPD113_9 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) Tham GIA LUYệN TậP TOAN Bộ BảNG HIRAGANA 2) Luyện Tập Phần Chao Hỏi Cơ Bản 4 3) Xác NHận Các 4) Dùng https://heyjapan.net/.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "37941edf-e17c-4ae2-9e29-e35662deed6a",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - Tiết 2: (*) CHÀO HỏI Cơ BảN 5 (*) Tổng ôn bảng chữ Hiragana. Loại hình: Bài giảng, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide Của khe 5 (Tiết 2). Link tải tài liệu buổi học: JPD113_10 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) Luyện Tập Chao 2) thử cài bộ gõ và tập gõ.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "b89ce34f-abdc-4362-b37f-f24499d41f74",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Tiết 1: . (*) Học Katakana: 20 Chữ ĐầU. Loại hình: Bài giảng, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 6 (tiết 1). Link tải tài liệu buổi học: JPD113_11 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) 2) Luyện Viết, Luyện ĐọC 20 Chữ Katakana Đêm Tin 3) Xác NHận Các 4) Dùng https://heyjapan.net/.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "267ea30b-3aa3-420d-9d7f-bd070f88b211",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Tiết 2: (*) Học Katakana: 20 Chữ Đầu (tiếp); Luyện Tập. Loại hình: Bài giảng, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 6 (tiết 2). Link tải tài liệu buổi học: JPD113_12 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) tiếp tục luyện viết, luyện Đọc 20 chữ katakana đầu tin 2) Xác NHận Các 3) Dùng https://heyjapan.net/ để luyện tập bảng ch.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "913b7625-2420-42ca-bca8-5b58e954144d",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - Tiết 1: (*) Luyện Tập: (*) Học Katakana: 26 Chữ. Loại hình: Bài giảng, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 7 (tiết 1). Link tải tài liệu buổi học: JPD113_13 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) Luyện Tập Các Chữ Cứng ĐA 2) Luyện Viết, Luyện ĐọC 26 Chữ Katakana Tiếp Theo 3) Xác NHận Các 4) Dùng https://heyjapan.net/.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "a3bde081-0112-4ed0-85c4-8ee788fcf649",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - Tiết 2: (*) Học Katakana: 26 Chữ (TIếp). Loại hình: Bài giảng, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 7 (tiết 2). Link tải tài liệu buổi học: JPD113_14 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) Luyện Viết, Luyện ĐọC 26 Chữ Katakana (Tiếp) 2) Xác NHận Các 3) Dùng https://heyjapan.net/ để luyện tập bảng ch.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "ea0453bc-8345-4526-ad2a-96d1846403a8",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - Tiết 1: (*) Luyện Tập: (*) Học Katakana: Âm Dài. Loại hình: Bài giảng, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 8 (tiết 1). Link tải tài liệu buổi học: JPD113_15 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) 2) Tham gia GIA luyện tập, thảo luận về cast 3) Xác NHận Các 4) Dùng https://heyjapan.net/.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "4f95afff-e809-4325-abe7-80f103524b6e",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - Tiết 2: (*) Luyện Tập: (*) Học Katakana: Âm ngắt + Âm ghéph. Loại hình: Bài giảng, học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide của khe 8 (tiết 2). Link tải tài liệu buổi học: JPD113_16 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) Luyện Tập 2) NHận diện, luyện Đọc, luyện viết âm ngắt và âm ghép 3) Dùng https://heyjapan.net/ để luyện tập bảng ch.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "3d39bb41-11da-4e78-90e1-ab52d461e33d",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - Tiết 1: (*). Loại hình: Học tập tích cực, thực hành. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide Các BÀI HọC TRướC (khe 1 Đội 8). Link tải tài liệu buổi học: JPD113_17 - https://heyjapan.net/. Nhiệm vụ sinh viên: 1) 2) Xác NHận Các 3) 4) Dùng https://heyjapan.net/.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "68d2a380-5339-4ee4-8ef4-32cd6efea74e",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Tiết 2: (*) BÀI KIểM Tra 1 .. Loại hình: Bài giảng, học tập tích cực, kiểm tra. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Giáih trình Chính. Nhiệm vụ sinh viên: 1. 2) Chuẩn bị Cho Giờ Học tiếp Theo: Sử dụng ai Tiếng NHật..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "44a747ba-9ffc-4370-b275-0025b454030c",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - Tiết 1: 第 1 - ST1: + 話してみよう p15） + 聞いてみよう p15 - CD A01 + 1,2 P16- CD A02,03） + + 1,2 （P18） - 文法説明 私は［名前］です. Loại hình: Bài giảng, học tập tích cực, thực hành, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 10 (tiết 1). Nhiệm vụ sinh viên: 1) Tham GI 2) Học từ vựng. 3. 4) Nghe hiểu thang tin liên Quan tới Bài Học..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "713e150c-854f-4c39-a26e-6a84326b670c",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - Tiết 2: 第 1 課 - ST1 （続き） + 3 （P17- CD A04） + 3 （P18） - 文法説明 お国はどちらですか - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, thực hành, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 10 (tiết 2). Nhiệm vụ sinh viên: 1) Luyện tập Đặt Câu với mẫu 2) Nghe hiểu thang tin liên Quan tới Bài Học 3) luyện tập hội thoại.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "f087d990-a482-403c-8a43-0471b5c5f6bc",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - Tiết 1: 第 1 課 - ST1 （続き） + 4,5 （P17 - CD A05-06） + 4,5 （P18） - 文法説明 お仕事は ［仕事］ですか はい、［仕事］ですいいえ、［仕事］じゃありません - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, thực hành, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 11 (tiết 1). Nhiệm vụ sinh viên: 1) Sử dụng ai (chatgpt, copilot, v.v.) luyện tập ôn câu với mẫu câu gi 2) Nghe hiểu thang tin liên Quan tới Bài Học 3) luyện tập hội thoại.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "a32489ae-5b53-499c-ba6b-4a3e3404313d",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - Tiết 2: 第 1 課 - ST1 （続き） + チャレンジ 6 （P17 - CD A07 + 言ってみよう 6 （P19） - 文法説明 N の n - 応用会話練習 + やってみよう p19 - CD A08). Loại hình: Bài giảng, học tập tích cực, thực hành, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 11 (tiết 2). Nhiệm vụ sinh viên: 1) luyện tập Đặt Câu với mẫu câu giới thiệu tun cơ Quan Côn 2) 3) luyện tập hội thoại.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "fd9d134c-af2a-4cf3-9d8c-d22bfaadff6a",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - Tiết 1: 第 1 課- ST2: + 1,2, （P20,21 - CD A09-10） + + 1,2 （P22） - 文法説明 ～歳です. Loại hình: Bài giảng, học tập tích cực, thực hành, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 12 (tiết 1). Nhiệm vụ sinh viên: 1) Sử dụng ai (Chatgpt, Copilot, V.V.) 2. 3) Nghe hiểu thang tin liên Quan tới BÀi Học..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "eaf9b29b-a001-40ad-a381-c317917e05bf",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - Tiết 2: 第 1 課- ST2 （続き - 文法説明 いつ～月～日 - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, thực hành, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 12 (tiết 1). Nhiệm vụ sinh viên: 1) Luyện tập Cách nói ngài thán, mẫu câu hỏi và tr 2) Luyện tập hội thoại.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "fc94432d-7415-490c-bb54-8b463b724586",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - Tiết 1: 第 1 課- ST2 （続き やってみよう p23 ​​CD A11-12) 練習問題. Loại hình: Học tập tích cực, thực hành, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 13 (tiết 1). Nhiệm vụ sinh viên: 1) Luyện BÀi NGHE P23 2) lào sẵn các bào 3) Đặt Câu Hỏi Cho NHững nội Dung Khôn.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "b203ad25-6da9-4dcb-9b88-3a7ba2685fb4",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - Tiết 2: 第 1 課- ST2 （続き 練習問題 （続き. Loại hình: Thực hành, học tập tích cực. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 13 (tiết 2). Nhiệm vụ sinh viên: 1) 2) Đặt Câu hỏi với những nội phân khó. 3) Luyện tập thênm ở nhà..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "ec26f0e5-98bd-44ba-8551-e829aa356c1a",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - Tiết 1: 第 1 課 - ST3: + 1,2 p24 CD A13, 14） + + 1,2 （P26） - 文法説明 何ですか N と n. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 14 (tiết 1). Nhiệm vụ sinh viên: 1) Sử dụng ai (Chatgpt, copilot, v.v.) 2) Luyện tập ngữ ph tòa 何ですか, n と N. 3) Nghe hiểu thang tin liên Quan tới BÀi Học..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "c654087c-a61f-4676-8857-28b7bdfb09db",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - Tiết 2: 第 1 課 - ST3: + 3 （p25 cd a15） + 3 （p26） - 文法説明 N も - 応用会話練習 + やってみよう p27 CD A16）. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 14 (tiết 2). Nhiệm vụ sinh viên: 1) luyện tập mẫu ngữ ph tòa n も 2) Nghe hiểu thang tin liên Quan Đến BÀi Học 3) Luyện hội thoại 4).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "c205cce0-a288-4404-bc08-dce90790d2f2",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - Tiết 1: ＋第一課復習 - -. Loại hình: Thực hành, học tập tích cực,. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO4,CLO5. Tài liệu sinh viên: Giáih trình Chính. Nhiệm vụ sinh viên: 1) 2) Luyện Nghe Trênn Lớp Và ở Nhà. 3) Đặt câu hỏi với những nội phân CHưA rõ.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "ee009784-b2e0-4ed2-80ac-6a59b752cf16",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - Tiết 2: 第一課. Loại hình: Bài giảng. Chuẩn đầu ra liên quan (LO): CLO2,CLO5. Tài liệu sinh viên: Slide khe 15: Chữ Hán BÀi 1. Nhiệm vụ sinh viên: 1) Nghe Giải thích Phần Chữ Hán, 2) 3) Luyện tập chữ hán ở nhà.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "990f2578-a9e9-4f1a-946c-ff2eb7773d4e",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - 中間テスト. Loại hình: Bài kiểm tra. Chuẩn đầu ra liên quan (LO): CLO1,CLO2. Tài liệu sinh viên: Thi trên eos. Nhiệm vụ sinh viên: LÀm bào thi tr.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "ba289867-8fe5-4520-b5b1-4f5460890c78",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - 中間テスト. Loại hình: Bài kiểm tra. Chuẩn đầu ra liên quan (LO): CLO1,CLO2. Tài liệu sinh viên: Thi trên eos. Nhiệm vụ sinh viên: 1) 2) Chuẩn Bị Cho Giờ Học Tiếp Theo: Sử Dụng Ai (Chatgpt, Copilot, V.V.).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "421a7af6-8d05-41e6-af9c-2755c7b3bce0",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - Tiết 1: 第 2 - ST1: +話してみよう p31） +聞いてみよう p31 CD A17 +. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 17 (tiết 1). Nhiệm vụ sinh viên: Nghe hiểu thang tin liên Quan tới bài h ọc Trang 31.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "59038877-1150-4f1d-a1f5-79b08a354c63",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - Tiết 2: 第 2 - ST1: +1 （P32,33 CDA18 - 文法説明 何階ですか階数の言い方 1 （p34） - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 17 (tiết 2). Nhiệm vụ sinh viên: 1) Sử dụng ai (TATGPT, COPILOT, V.V.) 2) Luyện Nghe hiểu Thông tin liên Quan Đêm Bài Học 3).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "0e7da24c-0002-44a0-a432-b39fa08d8b07",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - Tiết 1: 第 2 - ST1 （続き） +チャレンジ 2.1 （p33 cd A19 +言ってみよう 2.1 （p34） - 文法説明 ～はどこですか ここ・そこ・あそこ - 会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 18 (tiết 1). Nhiệm vụ sinh viên: 1) Luyện tập ngữ ph tòa ここ・そこ・あそこ 2) Nghe hiểu thang tin liên Quan tới Bài Học. 3).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "48d6fb35-e012-4749-9a11-b079d1f912b7",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - Tiết 2: 第 2 - ST1 （続き） +チャレンジ 2.2 （p33 cd a20 +言ってみよう 2.2 （p35） - 文法説明 ～はどこですか こちら・そちら・あちら 会話練習 + やってみよう p35 CD A21. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 18 (tiết 2). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan Đến BÀi Học 2) Luyện tập ngữ ph tòa 3) luyện tập hội thoại 4).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "6423ad23-7950-4c3d-832a-e3bc13526d33",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - Tiết 1: 第 2 - ST2: +1 （p36 CD A22 + +1 （p38） - 文法説明 ～はいくらですかこれ・それ・あれ. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 19 (tiết 1). Nhiệm vụ sinh viên: 1) Sử dụng ai (chatgpt, copilot, v.v.) 2) luyện tập cấu trúc 3) Nghe hiểu thang tin liên Quan tới Bài Học.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "dbae22c6-af09-4f7d-bebe-df274ae288b1",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - Tiết 2: 第 2 課 - ST2 （続き +2 （p36 cd A23） +2 （p38） - 文法説明 この n ・その n ・あの n - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 19 (tiết 2). Nhiệm vụ sinh viên: 1) luyện tập Đặt câu với mẫu ngữ ph tòa 2) Nghe hiểu thang tin liên Quan tới Bài Học 3) Luyện hội thoại 4).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "eceffe46-d12c-4136-a5b1-5cffd0c542fd",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - Tiết 1: 第 2 課 - ST2: （続き 続き +チャレンジ 3 （p37 CD A24） +3 （P38,39） - 文法説明 N をください - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 20 (tiết 1). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan tới bài học チャレンジ 3 2) luyện tập ngữ ph tòa n をください 3) Luyện tập nói trênn lớp 言ってみよう 3 và lun 4).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "7578beed-d583-48f0-8f31-574cc0b4ad8d",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - Tiết 2: 第 2 課 - ST2: （続き 続き + やってみよう p39 CD A25 + 読解. Loại hình: Thực hành, học tập tích cực. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO4,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 20 (tiết 2). Nhiệm vụ sinh viên: 1) Luyện Nghe BÀi TậP Nghe P39 2).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "17b5b55f-0d98-46b2-90f6-e3ac25bf6180",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Tiết 1: 第 2 - ST3: +1 （p40 cd A26） + +1 （P42） - 文法説明 何の n. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 21 (tiết 1). Nhiệm vụ sinh viên: 1) 2) Nghe hiểu thang tin liên Quan tới bài h チャレンジc チャレンジ 1 3) Luyện tập ngữ ph tòa 何の n.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "df30a896-520d-427a-b047-6b288831693f",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - Tiết 2: 第 2 - ST3: +2,3,4 （p40 cd A27-29 +2,3,4 （P43） - 文法説明 ［言語］で どこの n N を （～つ - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 21 (tiết 2). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan tới bài học チャレンジ 2,3,4 2) Sử dụng ai (chatgpt, copilot, v.v.) ［言語］で どこの n N を （～つ 3) Luyện tập nói theo phần 言ってみよう 2,3,4 4) Luyện tập hội thoại.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "44ff4327-8e85-4ea8-ab53-f06ca9dea6e3",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - Tiết 1: 第 2 課 - ST3: （続き 続き + 5 （p41 CD A30 +5 （P43） - 文法説明 だれの n. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 22 (tiết 1). Nhiệm vụ sinh viên: 1) Tham gia 2) Học từ vựng 3).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "f86cdac5-1c51-44f0-86a9-54434f3e2365",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - Tiết 2: 第 2 課 - ST3: （続き 続き + やってみよう p43 CD A31 +漢字 ： 2. Loại hình: Thực hành, bài giảng. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide Chữ Hánslot 22. Nhiệm vụ sinh viên: 1) 2) Nghe Giải thích Phần Chữ Hán, 3) Dùng ai Tra cứu thênm Các 4) Luyện tập chữ hán ở nhà.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "d901a4ad-e349-410a-baf4-5d41de870803",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - Tiết 1: 2 - -. Loại hình: Luyện tập. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính. Nhiệm vụ sinh viên: 1) 2..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "32427ca7-4968-4c2e-9e03-81e8c922138f",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - Tiết 2: ＋ Bài Kiểm Tra 2. Loại hình: Bài kiểm tra. Chuẩn đầu ra liên quan (LO): CLO2. Nhiệm vụ sinh viên: 1) 2) Chuẩn bị Cho Giờ Học Tiếp Theo: Dùng ai Tra Cứu Từ Vựng BÀi 3.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "4ed26a49-6833-4a1f-8247-286cdb3ba85d",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - Tiết 1: 第 3 課 - ST1: +話してみよう p47） +聞いてみよう p47 CD A32 +1 （p48 CDA33 + 1 （P50） - 文法説明 今、何時ですか時間の言い方. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 24 (tiết 1). Nhiệm vụ sinh viên: 1) Tham GI 2) Sử dụng ai (chatgpt, copilot, v.v.) 3) Nghe hiểu thang tin liên Quan tới BÀi học チャレンジ 1, 聞いてみよう. 4) Luyện tập ngữ ph tòa.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "f633d609-faff-4bdc-892d-2f5368bee1c5",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - Tiết 2: 第 3 課 - ST1 (続き 続き +2,3 （49 CDA34, 35） 言ってみよう 2,3 （P50） - 文法説明 ［時間］から［時間］までです 何曜日ですか曜日の言い方 - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 24 (tiết 2). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan tới bài học チャレンジ 2,3. 2) Sử dụng ai (chatgpt, copilot, v.v.) ［時間］から［時間］までです . 3) Luyện tập Đặt Câu, luyện hội thoại..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "400fc4e1-8133-4227-895a-0277a3cae280",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - Tiết 1: 第 3 課 - ST1 （続き） + やってみよう p51 CD A36. Loại hình: Luyện tập. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính. Nhiệm vụ sinh viên: 1) Luyện Nghe Trênn Lớp P51 Và ở Nhà. 2) 3) Xác NHận Các Thông tin chưa rõ..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "3e814c63-2900-4979-a49a-a49077fcaf54",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - Tiết 2: 第 3 課 - ST1 （続き） - 漢字 ： 第 3. Loại hình: Bài giảng. Chuẩn đầu ra liên quan (LO): CLO2, CLO5. Tài liệu sinh viên: Slide Slot 25: Chữ Hán BÀi 3. Nhiệm vụ sinh viên: 1) Theo dõi BÀi GIảNG Về Chữ Hán. 2.).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "898ab9d6-6264-4c3d-89b6-c531bca13b1f",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - Tiết 1: 第 3 課 - ST2: +1 （p52 CD A37） + +1 （p54） - 文法説明 V ます （） ～を v. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 26 (tiết 1). Nhiệm vụ sinh viên: 1) Học trước từ vựng Phần 2 BÀi 3. 2) Nghe hiểu thang tin liên Quan tới BÀi học チャレンジ 1. 3. 4) Luyện tập hội thoại..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "d5498102-f3a1-43c0-9acd-0ad41afe0c67",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - Tiết 2: 第 3 課 - ST2: +2 （p52 CD A38 +2 （p54） - 文法説明 ［場所］へ - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 26 (tiết 2). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan tới bài h チャレンジc チャレンジ 2 2) Luyện tập ngữ ph tòa 3) luyện tập hội thoại 4).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "1ea1dcb2-5074-4160-a44a-cb5a3dadacd6",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - Tiết 1: 第 3 課 - ST2: （続き 続き +3 （p53 cd A39 + +3 （p55） - 文法説明 V ません - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 27 (tiết 1). Nhiệm vụ sinh viên: 1) Sử dụng ai (chatgpt, copilot, v.v.) 2) Nghe hiểu thang tin liên Quan tới bài học チャレンジ 3 3) Luyện tập mẫu ngữ ph tòa v. 4) Luyện tập Đặt câu, luyện tập hội thoại 言ってみよう 3.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "9f36940c-99ed-4751-a13d-ee182f25fef0",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - Tiết 2: 第 3 課 - ST2: （続き 続き +チャレンジ 4 （p53 cd A40 +4 （p55） - 文法説明 ［場所］で - 応用会話練習 + やってみよう p56 CD A41. Loại hình: Bài giảng, học tập tích cực, nhập vai, thực hành. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 27 (tiết 1). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan tới bài h チャレンジc チャレンジ 4 2) luyện tập mẫu ngữ ph tòa 3) Luyện tập Đặt Câu, luyện tập hội thoại 言ってみよう 4 4) Luyện BÀi TậP Nghe P56.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "0456d59f-e71d-4c7d-8a54-7b9ff31b767a",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - Tiết 1: 第 3 課 - ST3: +1 （p58 CD A42 + +1 （P60） - 文法説明 V ます （習慣. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 28 (tiết 1). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan tới bài h チャレンジc チャレンジ 2) Sử dụng ai (chatgpt, copilot, v.v.) 3) Luyện tập ngữ ph tòa v ます （習慣 習慣 4) Luyện tập Đặt Câu, Luyện nói 言ってみよう 1.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "e47fc6bb-3be8-4cac-8b6c-cf302e5cdbb6",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - Tiết 2: 第 3 課 - ST3: +2,3,4 p58 CD A43-45） +2,3,4 （p61） - 文法説明 N や n 何も v ません ［時間］に - 応用会話練習. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 28 (tiết 2). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan tới bài học チャレンジ 2,3,4 2) luyện tập Đặt câu với mẫu ngữ ph tòa n や n など 何も v ません ［時間］に 3) Luyện tập nói, luyện Đặt câu.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "6c211ca5-d69f-4089-b1ae-c16f47c30a72",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - Tiết 1: 第 3 課 - ST3: （続き 続き + 5,6 （p59 cd a46,47） +5,6 （P62） - 文法説明 ［時間］から［時間］まで v ます どこへも行きません. Loại hình: Bài giảng, học tập tích cực, nhập vai. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 29 (tiết 1). Nhiệm vụ sinh viên: 1) Nghe hiểu thang tin liên Quan tới bài học チャレンジ 5,6 2) Sử dụng ai (chatgpt, copilot, v.v.) ［時間］から［時間］まで v ます どこへも行きません 3) Luyện tập nói, luyện Đặt câu.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "6acec5e0-a043-4482-a15f-2c4ddbd6e058",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Tiết 2: 第 3 課 - ST3: （続き 続き - 応用会話練習 + やってみよう p63 CD A48 -. Loại hình: Luyện tập. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 29 (tiết 2). Nhiệm vụ sinh viên: 1) Luyện tập hội thoại 2) Luyện Nghe Trênn Lớp P63; Luyện Nghe BÀi Cuối Sách 3).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "86c88ecd-a33e-463b-a0f1-9a847a06f41c",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Tiết 1: 3 -. Loại hình: Luyện tập. Chuẩn đầu ra liên quan (LO): CLO2,CLO3,CLO4,CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 30 (tiết 1). Nhiệm vụ sinh viên: 1) 2).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "e492f08f-4bc9-4f65-9d69-f4da746c3586",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - JPD113"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Tiết 2: 3 ＋期末試験の復習. Loại hình: Luyện tập. Chuẩn đầu ra liên quan (LO): CLO1~CLO5. Tài liệu sinh viên: Giáih trình Chính Slide của khe 30 (tiết 2). Nhiệm vụ sinh viên: 1) 2) 3) 4).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "6705ca67-67d4-41c9-88ab-9df8c2009ced",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - JPD113"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra giữa kì (đang diễn ra). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO1,2. Loại câu hỏi/Nhiệm vụ: TRắc Nghiệm. Thời gian: 50'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: 1) Kiểm tra bảng chữ cái, Các. Ghi chú: 1. Bộ môn chủ động đề thi cho Campus của mình. Giảng viên được phân công ra đề, gửi CNBM/cán bộ quản lí. CNBM/cán bộ quản lí tổng hợp đề thi và gửi Khảo thí. 2. Thi tại lớp học..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "5039db8d-d50f-4eb4-9c15-0f89633e2dbc",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra giữa kì",
+      "title": "Đánh giá Kiểm tra giữa kì - JPD113"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm Tra NHỏ (Bài kiểm tra nhỏ) (đang diễn ra). Trọng số: 20.0%. Chuẩn đầu ra liên quan (CLO): CLO1,2. Loại câu hỏi/Nhiệm vụ: Bài kiểm tra nhỏ 1: TRắC Nghiệm Hoặc Kiểm Tra Đ-C Bài kiểm tra nhỏ 2: TRắC Nghiệm. Thời gian: 30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: 1) Thử nghiệm nhỏ 1: BảNG CHữ MềM Và. Ghi chú: Giảng viên phụ trách tự chủ động ra đề, chấm bài và tổng hợp điểm..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "aaf0f709-6739-4fd5-93e8-050122b791df",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm Tra NHỏ (Bài kiểm tra nhỏ)",
+      "title": "Đánh giá Kiểm Tra NHỏ (Bài kiểm tra nhỏ) - JPD113"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Tham GI (đang diễn ra). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): CLO5. Loại câu hỏi/Nhiệm vụ: . Thời gian: 90'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: 1) hăng háil lÀm việc nhóm Lựa chọn 2: (chỉ dànnh cho phở 2). Ghi chú: Dựa vào các yếu tố: chuyên cần, nghiêm túc, tích cực tham gia bài giảng.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "b78f26ce-a14b-44fb-8022-cede3c9609d4",
+      "source_section": "assessments",
+      "assessment_category": "Tham GI",
+      "title": "Đánh giá Tham GI - JPD113"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Thi Cuối Kỳ (kỳ thi cuối cùng). Trọng số: 40.0%. Chuẩn đầu ra liên quan (CLO): CLO1 ~ CLO4. Loại câu hỏi/Nhiệm vụ: TRắc Nghiệm+ Nói. Thời gian: 40'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: 1) từ vựng, ngữ ph tòa. Ghi chú: 1.Thi đề chung 2. Điều kiện hoàn thành môn học: thỏa mãn đồng thời 2 điều kiện dưới đây: a) Điểm đánh giá quá trình, điểm thi giữa kì >0; Điểm thi cuối kì >=4/10; Tổng điểm chung cho toàn bộ môn học >=5/10; b)Thi cuối kỳ không có kỹ năng nào bị 0..",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "263d8ace-dd50-4143-a748-9c6e394ce2bd",
+      "source_section": "assessments",
+      "assessment_category": "Thi Cuối Kỳ",
+      "title": "Đánh giá Thi Cuối Kỳ - JPD113"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Thi Cuối Kỳ: Từ vựng, ngữ Phổi, Chữ Hán (Bài kiểm tra cuối cùng Phần từ vựng, ngữ Ph tòa, Chữ Hán). Trọng số: 10.0%. Chuẩn đầu ra liên quan (CLO): CLO1,2,4. Loại câu hỏi/Nhiệm vụ: Trắc nghiệm: từ vựng, ngữ ph tòa, chữ hán bào. Thời gian: 30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: 1) từ vựng, ngữ ph tòa.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "446411a5-ed44-4a7b-abe3-5529e4da3232",
+      "source_section": "assessments",
+      "assessment_category": "Thi Cuối Kỳ: Từ vựng, ngữ Phổi, Chữ Hán",
+      "title": "Đánh giá Thi Cuối Kỳ: Từ vựng, ngữ Phổi, Chữ Hán - JPD113"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Thi Cuối Kỳ: NÓi (Bài kiểm tra cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO1 ~ CLO4. Loại câu hỏi/Nhiệm vụ: Nói: đọc Đoạn Văn+ trả lời câu hỏi. Thời gian: 5'~10'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: 1) từ vựng, ngữ ph tòa.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "30f60ae6-56d5-4cb5-8661-3011481d95c8",
+      "source_section": "assessments",
+      "assessment_category": "Thi Cuối Kỳ: NÓi",
+      "title": "Đánh giá Thi Cuối Kỳ: NÓi - JPD113"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: できる日本語 初級 本冊. Tác giả: 嶋田和子. Nhà xuất bản: アルク. Năm xuất bản: 2011. Ghi chú: Giáo trình Dekiru quyển đỏ (Tiếng Nhật trong tầm tay).",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "31ec66aa-9c81-429c-8b2c-f6a74994b717",
+      "source_section": "materials_table",
+      "material_description": "できる日本語　初級　本冊",
+      "title": "Tài liệu 1 - JPD113"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: わたしのことばノート 初級 (できる日本語). Tác giả: できる日本語教材開発プロジェクト. Nhà xuất bản: 嶋田 和子. Năm xuất bản: 凡人社.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "1ae34e74-0092-46db-9c49-896d41b0d839",
+      "source_section": "materials_table",
+      "material_description": "わたしのことばノート 初級 (できる日本語)",
+      "title": "Tài liệu 2 - JPD113"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Kana Nyuumon (Nhập môn Kana). Tác giả: Japan Foundation.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "1ed364fe-7bbf-4ebc-ad5a-0c5056da48ce",
+      "source_section": "materials_table",
+      "material_description": "Kana Nyuumon (Nhập môn Kana)",
+      "title": "Tài liệu 3 - JPD113"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: 漢字たまご 初級. Tác giả: 有山優樹 (著), 落合知春 (著), 立原雅子 (著), 林英子 (著), 山口知才子 (著), 酒井弘美 (イラスト), 嶋田和子 (監修). Nhà xuất bản: 凡人社. Năm xuất bản: 2012.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "4a5ec7ed-59f3-4327-9284-2bdb182cd322",
+      "source_section": "materials_table",
+      "material_description": "漢字たまご 初級",
+      "title": "Tài liệu 4 - JPD113"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: わたしの文法ノート 初級 (できる日本語). Tác giả: 嶋田和子. Nhà xuất bản: 凡人社. Năm xuất bản: 2012.",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "83530187-cb6d-4ec6-b173-9e807f02dd6e",
+      "source_section": "materials_table",
+      "material_description": "わたしの文法ノート 初級 (できる日本語)",
+      "title": "Tài liệu 5 - JPD113"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn JPD113 là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=12746",
+    "metadata": {
+      "subject_code": "JPD113",
+      "syllabus_id": "12746",
+      "chunk_id": "9d3e822f-2d5a-4748-8fd9-ecf1857ad92e",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - JPD113"
+    }
+  }
+]

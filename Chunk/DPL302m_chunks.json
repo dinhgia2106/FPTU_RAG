@@ -1,0 +1,1752 @@
+[
+  {
+    "type": "general_info",
+    "content": "Tên môn học: Deep Learning_học Sâu (). Mã môn: DPL302m. Số tín chỉ: 6. Mô tả: Trong khóa học này, sinh viên sẽ xây dựng và đào tạo các kiến ​​trúc mạng thần kinh như mạng lưới thần kinh tích chập, mạng thần kinh tái phát, LSTM, máy biến áp và học cách làm cho chúng tốt hơn với các chiến lược như bỏ học, Batchnorm, Xavier/HE khởi tạo, v.v. Hãy sẵn sàng để thành thạo các khái niệm lý thuyết và các ứng dụng công nghiệp của họ bằng cách sử dụng Python và Tensorflow và giải quyết các trường hợp trong thế giới thực như nhận dạng giọng nói, tổng hợp âm nhạc, chatbots, dịch máy, xử lý ngôn ngữ tự nhiên, v.v. Điều kiện tiên quyết: AIL303m. Nhiệm vụ sinh viên: - Học sinh phải tham dự ít nhất 80% các khe liên hệ để được chấp nhận vào kỳ thi cuối cùng. - Học sinh có trách nhiệm thực hiện tất cả các bài tập, bài tập và phòng thí nghiệm được đưa ra bởi người hướng dẫn trong lớp hoặc ở nhà và nộp đúng hạn - Chỉ sử dụng máy tính xách tay trong lớp cho mục đích học tập -Hãy nhanh chóng truy cập vào FU LMS tại http://flm.fpt.edu.vn để biết thông tin khóa học cập nhật. Công cụ sử dụng: - Jupyter notebook - Cloud server: 72 hours/project.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "8910875e-c9c3-4c13-a9ce-4581865f48b4",
+      "source_section": "general_details",
+      "title": "Thông tin chung - DPL302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 1 (CLO1): Nên xây dựng, đào tạo và áp dụng các mạng thần kinh sâu được kết nối đầy đủ, triển khai các mạng thần kinh hiệu quả, xác định các thông số chính trong kiến ​​trúc của mạng thần kinh và áp dụng học tập sâu cho các ứng dụng của sinh viên.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "b4298ad2-0199-47cd-a078-10f9bb3138fc",
+      "source_section": "clos",
+      "clo_id": "1",
+      "title": "CLO 1 - DPL302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 2 (CLO2): Có thể đào tạo và phát triển các bộ kiểm tra, phân tích sự thiên vị/phương sai để xây dựng các ứng dụng học tập sâu, áp dụng các thuật toán tối ưu hóa và thực hiện một mạng lưới thần kinh bằng TensorFlow.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "dddbc35c-c572-43c1-a4d4-ca4c5f4b172d",
+      "source_section": "clos",
+      "clo_id": "2",
+      "title": "CLO 2 - DPL302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 3 (CLO3): Hiểu các cài đặt ML phức tạp, chẩn đoán lỗi trong hệ thống học máy, ưu tiên các chiến lược để giảm lỗi và áp dụng học tập từ đầu đến cuối, học tập và học đa nhiệm vụ.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "7d7993dd-1a11-4937-b8bb-cb0729a68a74",
+      "source_section": "clos",
+      "clo_id": "3",
+      "title": "CLO 3 - DPL302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 4 (CLO4): Xây dựng các mô hình CNN để phát hiện và nhận dạng thị giác và sử dụng chuyển kiểu thần kinh để tạo nghệ thuật từ các loại dữ liệu khác nhau.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "9210c3c8-ebf0-4478-99a2-54708ad451cd",
+      "source_section": "clos",
+      "clo_id": "4",
+      "title": "CLO 4 - DPL302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 5 (CLO5): Có thể xây dựng và đào tạo các mạng thần kinh tái phát (RNNS), hoạt động với NLP và Word nhúng, sử dụng tokenizer HuggingFace và các mô hình máy biến áp để giải quyết các tác vụ NLP khác nhau.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "50c1f8a0-dd3b-4256-b3af-5ba96a0fa3a6",
+      "source_section": "clos",
+      "clo_id": "5",
+      "title": "CLO 5 - DPL302m"
+    }
+  },
+  {
+    "type": "clo",
+    "content": "Chuẩn đầu ra 6 (CLO6): Thực hiện một dự án DL bao gồm các bước: thu thập dữ liệu, tranh cãi dữ liệu, phân tích dữ liệu khám phá, phát triển mô hình, đánh giá mô hình và báo cáo",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "85b55ae0-8966-412f-a037-05d6010a4a5c",
+      "source_section": "clos",
+      "clo_id": "6",
+      "title": "CLO 6 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 1: Chủ đề - Giới thiệu khóa học 1.1. Giới thiệu về Học sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, video giới thiệu về trí tuệ nhân tạo và học máy. Link tải tài liệu buổi học: mat1 - https://flm.fpt.edu.vn/download/12092/S/1_mat1.zip. Nhiệm vụ sinh viên: Tham dự bài giảng, tham gia các cuộc thảo luận về phần giới thiệu khóa học.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "2f6272a2-351b-4a58-8d56-8c107a23f378",
+      "source_section": "sessions",
+      "session_number": "1",
+      "title": "Buổi 1 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 2: Chủ đề - Thảo luận về chủ đề dự án (CP). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Link tải tài liệu buổi học: mat2 - https://flm.fpt.edu.vn/download/12092/S/2_mat2.zip. Nhiệm vụ sinh viên: Tham dự bài giảng, tham gia vào các mục tiêu khóa học & giới thiệu cấu trúc..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "d1c08ac6-bdb6-4df5-b054-aa6ffe342631",
+      "source_section": "sessions",
+      "session_number": "2",
+      "title": "Buổi 2 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 3: Chủ đề - Sự hình thành của các nhóm/nhóm. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Link tải tài liệu buổi học: mat3 - https://flm.fpt.edu.vn/download/12092/S/3_mat3.zip. Nhiệm vụ sinh viên: Hợp tác để thành lập các nhóm hoặc nhóm dự án..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "c9a51623-526e-48ff-bfcf-47456e119157",
+      "source_section": "sessions",
+      "session_number": "3",
+      "title": "Buổi 3 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 4: Chủ đề - Thảo luận và chọn một chủ đề dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Link tải tài liệu buổi học: mat4 - https://flm.fpt.edu.vn/download/12092/S/4_mat4.zip. Nhiệm vụ sinh viên: Thảo luận và chọn các chủ đề dự án phù hợp..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "9f6e36a7-aecd-46fb-a0dc-0db4ea00777a",
+      "source_section": "sessions",
+      "session_number": "4",
+      "title": "Buổi 4 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 5: Chủ đề - 1.2 Khái niệm cơ bản về mạng lưới thần kinh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video về những điều cơ bản về mạng lưới thần kinh. Link tải tài liệu buổi học: mat5 - https://flm.fpt.edu.vn/download/12092/S/5_mat5.zip. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "3b1e626e-bfa0-41db-acc0-cfca2e583b3a",
+      "source_section": "sessions",
+      "session_number": "5",
+      "title": "Buổi 5 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 6: Chủ đề - 1.2 Khái niệm cơ bản về mạng lưới thần kinh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video về những điều cơ bản về mạng lưới thần kinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "35666b06-aeb9-4ede-8297-703193cb33ba",
+      "source_section": "sessions",
+      "session_number": "6",
+      "title": "Buổi 6 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 7: Chủ đề - 1.2 Khái niệm cơ bản về mạng lưới thần kinh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video về những điều cơ bản về mạng lưới thần kinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "18bc1dbb-fc45-4ddd-9463-aab70f3bab20",
+      "source_section": "sessions",
+      "session_number": "7",
+      "title": "Buổi 7 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 8: Chủ đề - 1.3 Mạng lưới thần kinh nông. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh nông. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "3aa109a2-1814-4e9d-b941-defd63e50566",
+      "source_section": "sessions",
+      "session_number": "8",
+      "title": "Buổi 8 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 9: Chủ đề - 1.3 Mạng lưới thần kinh nông. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh nông. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "65ef94be-3c17-4316-abfd-2c169e2acf3c",
+      "source_section": "sessions",
+      "session_number": "9",
+      "title": "Buổi 9 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 10: Chủ đề - 1.3 Mạng lưới thần kinh nông. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh nông. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "d8707685-1a16-43fc-aa0d-ca94c4962d5a",
+      "source_section": "sessions",
+      "session_number": "10",
+      "title": "Buổi 10 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 11: Chủ đề - Hướng dẫn dự án 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "71e49374-0a98-4286-9d07-2c5120597404",
+      "source_section": "sessions",
+      "session_number": "11",
+      "title": "Buổi 11 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 12: Chủ đề - Dự án hướng dẫn 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "2825d74d-663d-4e1c-8a3a-ac354971d209",
+      "source_section": "sessions",
+      "session_number": "12",
+      "title": "Buổi 12 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 13: Chủ đề - 1.4 Mạng lưới thần kinh sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh sâu. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "f5eca2ed-bac3-4c8d-a27a-cef7fa2b4792",
+      "source_section": "sessions",
+      "session_number": "13",
+      "title": "Buổi 13 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 14: Chủ đề - 1.4 Mạng lưới thần kinh sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh sâu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "659b33cd-5f16-4124-850c-f79de026f306",
+      "source_section": "sessions",
+      "session_number": "14",
+      "title": "Buổi 14 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 15: Chủ đề - 1.4 Mạng lưới thần kinh sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh sâu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "81489a6b-1706-49b7-89ff-decaf9f00c88",
+      "source_section": "sessions",
+      "session_number": "15",
+      "title": "Buổi 15 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 16: Chủ đề - Lab 1 (Mạng thần kinh sâu). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Tệp phòng thí nghiệm 1. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 1.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "4b09cc6f-1d35-4781-bcab-71913068c2ee",
+      "source_section": "sessions",
+      "session_number": "16",
+      "title": "Buổi 16 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 17: Chủ đề - Lab 1 (Mạng thần kinh sâu). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Tệp phòng thí nghiệm 1. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 1.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "f6e42ea7-64f8-41e6-9ac3-ee92a5fbe978",
+      "source_section": "sessions",
+      "session_number": "17",
+      "title": "Buổi 17 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 18: Chủ đề - Lab 1 (Mạng thần kinh sâu). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Tệp phòng thí nghiệm 1. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 1.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "72853df0-08a9-4bf6-b495-1c565237db4f",
+      "source_section": "sessions",
+      "session_number": "18",
+      "title": "Buổi 18 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 19: Chủ đề - 1.4 Mạng lưới thần kinh sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh sâu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "f4622ecf-086f-417e-8473-0f4af5a08909",
+      "source_section": "sessions",
+      "session_number": "19",
+      "title": "Buổi 19 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 20: Chủ đề - 1.4 Mạng lưới thần kinh sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh sâu. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "0e4db1ea-becc-4830-b091-c02dd2f603cc",
+      "source_section": "sessions",
+      "session_number": "20",
+      "title": "Buổi 20 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 21: Chủ đề - 1.4 Mạng lưới thần kinh sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Slide, Video của các mạng thần kinh sâu. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "3b4cb390-fa11-4dd8-a8c0-ec84d5c91d3c",
+      "source_section": "sessions",
+      "session_number": "21",
+      "title": "Buổi 21 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 22: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "2be9f471-386f-4c52-a610-597411f1a165",
+      "source_section": "sessions",
+      "session_number": "22",
+      "title": "Buổi 22 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 23: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "b626b108-8d55-4cb3-9e64-371a08108295",
+      "source_section": "sessions",
+      "session_number": "23",
+      "title": "Buổi 23 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 24: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "38c2f97b-97fe-4046-8a5b-8fc36234b560",
+      "source_section": "sessions",
+      "session_number": "24",
+      "title": "Buổi 24 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 25: Chủ đề - Xem lại phòng thí nghiệm 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Phòng thí nghiệm của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "14aab019-40db-40fc-abd2-b9ca17b9aed1",
+      "source_section": "sessions",
+      "session_number": "25",
+      "title": "Buổi 25 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 26: Chủ đề - Xem lại phòng thí nghiệm 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1. Tài liệu sinh viên: Phòng thí nghiệm của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "0852d0d4-5b43-480f-a2b9-7aa25911936b",
+      "source_section": "sessions",
+      "session_number": "26",
+      "title": "Buổi 26 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 27: Chủ đề - 2.1 Các khía cạnh thực tế của học tập sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, video về các khía cạnh thực tế của học tập sâu. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "46982f8c-34be-4978-a395-683c925a419c",
+      "source_section": "sessions",
+      "session_number": "27",
+      "title": "Buổi 27 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 28: Chủ đề - 2.1 Các khía cạnh thực tế của học tập sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, video về các khía cạnh thực tế của học tập sâu. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "908ae0b3-6a2d-484a-86a1-79321e265fee",
+      "source_section": "sessions",
+      "session_number": "28",
+      "title": "Buổi 28 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 29: Chủ đề - 2.1 Các khía cạnh thực tế của học tập sâu. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, video về các khía cạnh thực tế của học tập sâu. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "921641d6-ad8d-4a41-b823-566713f4e720",
+      "source_section": "sessions",
+      "session_number": "29",
+      "title": "Buổi 29 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 30: Chủ đề - 2.2 Thuật toán tối ưu hóa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, video về thuật toán tối ưu hóa. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "043a997d-6963-43d6-a12f-acf9dfc05d75",
+      "source_section": "sessions",
+      "session_number": "30",
+      "title": "Buổi 30 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 31: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "df348736-cbc9-45bd-ab8f-39ea066cfd85",
+      "source_section": "sessions",
+      "session_number": "31",
+      "title": "Buổi 31 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 32: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "642d1657-d544-4531-b5a3-8ec79a1f4070",
+      "source_section": "sessions",
+      "session_number": "32",
+      "title": "Buổi 32 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 33: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "f734fc49-7385-49ce-8635-f31127b15a5f",
+      "source_section": "sessions",
+      "session_number": "33",
+      "title": "Buổi 33 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 34: Chủ đề - 2.2 Thuật toán tối ưu hóa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, video về thuật toán tối ưu hóa. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "204a27cc-15b6-4c97-94b6-d1aded8f5eb0",
+      "source_section": "sessions",
+      "session_number": "34",
+      "title": "Buổi 34 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 35: Chủ đề - 2.2 Thuật toán tối ưu hóa. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, video về thuật toán tối ưu hóa. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "362668bf-7a6e-4eca-8d61-0768ae99fb12",
+      "source_section": "sessions",
+      "session_number": "35",
+      "title": "Buổi 35 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 36: Chủ đề - 2.3 Điều chỉnh siêu đồng hồ, chuẩn hóa hàng loạt và khung lập trình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, Video về điều chỉnh siêu phân tích, chuẩn hóa hàng loạt và khung lập trình. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "8e63c3a8-5783-48ee-aab3-3b4ff87d7cbe",
+      "source_section": "sessions",
+      "session_number": "36",
+      "title": "Buổi 36 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 37: Chủ đề - 2.3 Điều chỉnh siêu đồng hồ, chuẩn hóa hàng loạt và khung lập trình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, Video về điều chỉnh siêu phân tích, chuẩn hóa hàng loạt và khung lập trình. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "58596be8-a15c-4ef4-a904-fd6a1d103264",
+      "source_section": "sessions",
+      "session_number": "37",
+      "title": "Buổi 37 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 38: Chủ đề - 2.3 Điều chỉnh siêu đồng hồ, chuẩn hóa hàng loạt và khung lập trình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, Video về điều chỉnh siêu phân tích, chuẩn hóa hàng loạt và khung lập trình. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "140fb161-c80f-4b06-84b5-a0f94e370f69",
+      "source_section": "sessions",
+      "session_number": "38",
+      "title": "Buổi 38 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 39: Chủ đề - 2.3 Điều chỉnh siêu đồng hồ, chuẩn hóa hàng loạt và khung lập trình. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Slide, Video về điều chỉnh siêu phân tích, chuẩn hóa hàng loạt và khung lập trình. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "b49a6517-4bab-4641-a43b-6289961211c7",
+      "source_section": "sessions",
+      "session_number": "39",
+      "title": "Buổi 39 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 40: Chủ đề - Dự án hướng dẫn 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "0e88206e-e651-4f29-b7ad-7638a2c0ce6d",
+      "source_section": "sessions",
+      "session_number": "40",
+      "title": "Buổi 40 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 41: Chủ đề - Dự án hướng dẫn 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "1bff759a-c6b8-4089-8041-6abd8b2cadc5",
+      "source_section": "sessions",
+      "session_number": "41",
+      "title": "Buổi 41 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 42: Chủ đề - Phòng thí nghiệm 2 (Tensorflow). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Tệp phòng thí nghiệm 2. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "b4b6e339-de3c-4ca0-a13b-e74fb1d38aef",
+      "source_section": "sessions",
+      "session_number": "42",
+      "title": "Buổi 42 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 43: Chủ đề - Phòng thí nghiệm 2 (Tensorflow). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Tệp phòng thí nghiệm 2. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "ee0dea6f-83df-4a76-9675-7d15497d336e",
+      "source_section": "sessions",
+      "session_number": "43",
+      "title": "Buổi 43 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 44: Chủ đề - Phòng thí nghiệm 2 (Tensorflow). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Tệp phòng thí nghiệm 2. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 2.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "898fd842-bb35-496e-979b-aab972b97735",
+      "source_section": "sessions",
+      "session_number": "44",
+      "title": "Buổi 44 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 45: Chủ đề - Kiểm tra progess 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2. Tài liệu sinh viên: - Mô -đun nội dung 1 và 2.. Nhiệm vụ sinh viên: - Xem lại mô -đun nội dung 1 và 2 - Kiểm tra tiến độ 1.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "0cbdf341-0932-4642-8634-5cdd81128255",
+      "source_section": "sessions",
+      "session_number": "45",
+      "title": "Buổi 45 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 46: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "75d25497-3f11-474b-ad8b-00799e1d84e1",
+      "source_section": "sessions",
+      "session_number": "46",
+      "title": "Buổi 46 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 47: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "5d8eefbb-f9ef-4f4a-b0ee-d0c2af3ed27b",
+      "source_section": "sessions",
+      "session_number": "47",
+      "title": "Buổi 47 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 48: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "f1196019-6150-4e15-9fb8-c1e480a671a5",
+      "source_section": "sessions",
+      "session_number": "48",
+      "title": "Buổi 48 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 49: Chủ đề - Chiến lược 3,1 ml 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Slide, video của chiến lược ML 1. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "ea5e7029-baa8-452a-8b49-074b132c2ecf",
+      "source_section": "sessions",
+      "session_number": "49",
+      "title": "Buổi 49 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 50: Chủ đề - Chiến lược 3,1 ml 1. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Slide, video của chiến lược ML 1. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "5fa5feb3-95eb-44ec-aff9-1765ec6a16bd",
+      "source_section": "sessions",
+      "session_number": "50",
+      "title": "Buổi 50 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 51: Chủ đề - Chiến lược 3,1 ml 1 Chiến lược 3,2 ml 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Slide, Video của Chiến lược ML 1 và ML Chiến lược 2. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "daf8ac5d-4eb0-4a40-85ac-793fa9bf8d00",
+      "source_section": "sessions",
+      "session_number": "51",
+      "title": "Buổi 51 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 52: Chủ đề - Chiến lược 3,2 ml 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3. Tài liệu sinh viên: Slide, video của chiến lược ML 2. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "d7f6771c-7ab4-40c1-a2ef-2e678752aecd",
+      "source_section": "sessions",
+      "session_number": "52",
+      "title": "Buổi 52 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 53: Chủ đề - Đánh giá phòng thí nghiệm 2 (Tensorflow). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Tệp phòng thí nghiệm 2. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "ca4950e2-f479-490b-915c-6517c5131e1a",
+      "source_section": "sessions",
+      "session_number": "53",
+      "title": "Buổi 53 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 54: Chủ đề - Đánh giá phòng thí nghiệm 2 (Tensorflow). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO2. Tài liệu sinh viên: Tệp phòng thí nghiệm 2. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "69a9be01-ee54-436a-8c42-21b5c37d5ac7",
+      "source_section": "sessions",
+      "session_number": "54",
+      "title": "Buổi 54 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 55: Chủ đề - 4.1 Nền tảng của CNNS. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, video về nền tảng của CNNS. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "6c508cb4-6ed8-4ff5-8515-0858b61b6f7e",
+      "source_section": "sessions",
+      "session_number": "55",
+      "title": "Buổi 55 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 56: Chủ đề - 4.1 Nền tảng của CNNS. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, video về nền tảng của CNNS. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "5777867e-451d-4562-ac59-bb677496af91",
+      "source_section": "sessions",
+      "session_number": "56",
+      "title": "Buổi 56 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 57: Chủ đề - 4.1 Nền tảng của CNNS. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, video về nền tảng của CNNS. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "648c6276-32f5-4bf0-a122-deb3faf78919",
+      "source_section": "sessions",
+      "session_number": "57",
+      "title": "Buổi 57 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 58: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "7a36d99f-7d07-4326-a749-43366b21e825",
+      "source_section": "sessions",
+      "session_number": "58",
+      "title": "Buổi 58 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 59: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "b072ad97-fb80-4453-bf6f-eb34c57c0ce0",
+      "source_section": "sessions",
+      "session_number": "59",
+      "title": "Buổi 59 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 60: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "8f6f7b5f-c831-4c20-b446-650b3b9580e3",
+      "source_section": "sessions",
+      "session_number": "60",
+      "title": "Buổi 60 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 61: Chủ đề - 4.2 Mô hình tích chập sâu: Nghiên cứu trường hợp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video của các mô hình tích chập sâu: Nghiên cứu trường hợp. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "665f67ff-9cce-43cc-8770-06472bc2eb11",
+      "source_section": "sessions",
+      "session_number": "61",
+      "title": "Buổi 61 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 62: Chủ đề - 4.2 Mô hình tích chập sâu: Nghiên cứu trường hợp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video của các mô hình tích chập sâu: Nghiên cứu trường hợp. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "561f2fcc-e1a3-48e0-92d4-5c828e5817c4",
+      "source_section": "sessions",
+      "session_number": "62",
+      "title": "Buổi 62 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 63: Chủ đề - 4.2 Mô hình tích chập sâu: Nghiên cứu trường hợp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video của các mô hình tích chập sâu: Nghiên cứu trường hợp. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "c4cbbedd-881d-450e-b350-7ea9c3a5d748",
+      "source_section": "sessions",
+      "session_number": "63",
+      "title": "Buổi 63 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 64: Chủ đề - 4.2 Mô hình tích chập sâu: Nghiên cứu trường hợp. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video của các mô hình tích chập sâu: Nghiên cứu trường hợp. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "f904a3cb-3ea1-4a77-82fe-8c7fed5d300a",
+      "source_section": "sessions",
+      "session_number": "64",
+      "title": "Buổi 64 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 65: Chủ đề - Dự án hướng dẫn 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "0d4109da-0b18-477b-8594-0c3cab6401d8",
+      "source_section": "sessions",
+      "session_number": "65",
+      "title": "Buổi 65 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 66: Chủ đề - Dự án hướng dẫn 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "81e79867-6acc-4c11-937b-c6f689908b0b",
+      "source_section": "sessions",
+      "session_number": "66",
+      "title": "Buổi 66 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 67: Chủ đề - 4.3 Phát hiện đối tượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Trượt, video phát hiện đối tượng. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "4e19f723-f9ea-48fa-80d9-415f0b3102c9",
+      "source_section": "sessions",
+      "session_number": "67",
+      "title": "Buổi 67 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 68: Chủ đề - 4.3 Phát hiện đối tượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Trượt, video phát hiện đối tượng. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "7c310659-9a3d-4c41-9028-b9156f204717",
+      "source_section": "sessions",
+      "session_number": "68",
+      "title": "Buổi 68 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 69: Chủ đề - 4.3 Phát hiện đối tượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Trượt, video phát hiện đối tượng. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "6373d462-c2f3-4cf2-87fe-1b210608f5ed",
+      "source_section": "sessions",
+      "session_number": "69",
+      "title": "Buổi 69 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 70: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "f7f02831-b7d7-4a7b-994c-1edb39fd817b",
+      "source_section": "sessions",
+      "session_number": "70",
+      "title": "Buổi 70 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 71: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "316fe826-d511-4b51-9a22-b9c9c8bf6255",
+      "source_section": "sessions",
+      "session_number": "71",
+      "title": "Buổi 71 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 72: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "94699942-6e57-4d55-be57-0dcc0f790145",
+      "source_section": "sessions",
+      "session_number": "72",
+      "title": "Buổi 72 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 73: Chủ đề - 4.3 Phát hiện đối tượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Trượt, video phát hiện đối tượng. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "6d6c660d-c7e8-4c4c-9f48-7495ac58bb3c",
+      "source_section": "sessions",
+      "session_number": "73",
+      "title": "Buổi 73 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 74: Chủ đề - 4.3 Phát hiện đối tượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Trượt, video phát hiện đối tượng. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "45e849a0-9f22-4f26-82a9-9ad05030a4ee",
+      "source_section": "sessions",
+      "session_number": "74",
+      "title": "Buổi 74 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 75: Chủ đề - 4.3 Phát hiện đối tượng. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Trượt, video phát hiện đối tượng. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "be68622b-76e3-4776-af26-5c16fa979a4d",
+      "source_section": "sessions",
+      "session_number": "75",
+      "title": "Buổi 75 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 76: Chủ đề - Dự án hướng dẫn 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "96bc6315-49fc-4c5b-b983-1f874c3c079a",
+      "source_section": "sessions",
+      "session_number": "76",
+      "title": "Buổi 76 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 77: Chủ đề - Dự án hướng dẫn 3. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "c7abecc0-6417-4a69-84b8-b83b2abea2d0",
+      "source_section": "sessions",
+      "session_number": "77",
+      "title": "Buổi 77 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 78: Chủ đề - Phòng thí nghiệm 3 (Phát hiện xe). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Tệp phòng thí nghiệm 3. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "a31eb9e5-bba5-4d61-9fb2-6c3452d3d6f8",
+      "source_section": "sessions",
+      "session_number": "78",
+      "title": "Buổi 78 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 79: Chủ đề - Phòng thí nghiệm 3 (Phát hiện xe). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Tệp phòng thí nghiệm 3. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "21b91193-7648-4eec-8310-947209452469",
+      "source_section": "sessions",
+      "session_number": "79",
+      "title": "Buổi 79 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 80: Chủ đề - Phòng thí nghiệm 3 (Phát hiện xe). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Tệp phòng thí nghiệm 3. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "31b7178a-0f4d-4705-8158-2b71c2ad0fcf",
+      "source_section": "sessions",
+      "session_number": "80",
+      "title": "Buổi 80 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 81: Chủ đề - Phòng thí nghiệm 3 (Phát hiện xe). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Tệp phòng thí nghiệm 3. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 3.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "51fd2a05-6db1-409b-9550-834ab7945917",
+      "source_section": "sessions",
+      "session_number": "81",
+      "title": "Buổi 81 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 82: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "e85eaac5-d1f4-42a4-bdeb-2825b6cd3b65",
+      "source_section": "sessions",
+      "session_number": "82",
+      "title": "Buổi 82 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 83: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "a6705890-cc5d-4e2a-80a8-95fd97d20442",
+      "source_section": "sessions",
+      "session_number": "83",
+      "title": "Buổi 83 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 84: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "dcdf5cef-8864-4b84-b140-cc7e04b2c76b",
+      "source_section": "sessions",
+      "session_number": "84",
+      "title": "Buổi 84 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 85: Chủ đề - Đánh giá phòng thí nghiệm 3 (Phát hiện xe hơi). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Tệp phòng thí nghiệm 3. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "e189735d-9cb0-4fc9-92aa-7a660d3ce2d3",
+      "source_section": "sessions",
+      "session_number": "85",
+      "title": "Buổi 85 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 86: Chủ đề - Đánh giá phòng thí nghiệm 3 (Phát hiện xe hơi). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Tệp phòng thí nghiệm 3. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "807d1837-a213-4141-acb6-9c70dfdc00b8",
+      "source_section": "sessions",
+      "session_number": "86",
+      "title": "Buổi 86 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 87: Chủ đề - 4.4 Ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video về các ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "a1c13b28-4543-40fe-9f1c-160b9af80311",
+      "source_section": "sessions",
+      "session_number": "87",
+      "title": "Buổi 87 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 88: Chủ đề - 4.4 Ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video về các ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "505515bc-6169-46da-a676-feebf4953aeb",
+      "source_section": "sessions",
+      "session_number": "88",
+      "title": "Buổi 88 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 89: Chủ đề - 4.4 Ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video về các ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "96b1c894-6e97-461d-b55b-8eac9f108feb",
+      "source_section": "sessions",
+      "session_number": "89",
+      "title": "Buổi 89 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 90: Chủ đề - 4.4 Ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video về các ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "72409984-ac7e-41d8-946f-6080c994d7c1",
+      "source_section": "sessions",
+      "session_number": "90",
+      "title": "Buổi 90 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 91: Chủ đề - 4.4 Ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO4. Tài liệu sinh viên: Slide, Video về các ứng dụng đặc biệt: Nhận dạng khuôn mặt và chuyển kiểu thần kinh. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "704f6b2b-0d84-4e6d-bd44-be2347c0e767",
+      "source_section": "sessions",
+      "session_number": "91",
+      "title": "Buổi 91 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 92: Chủ đề - 5.1 Mạng lưới thần kinh tái phát. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video của các mạng thần kinh tái phát. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "97e4fde4-9aa4-44ce-9180-9ad8c5315ba3",
+      "source_section": "sessions",
+      "session_number": "92",
+      "title": "Buổi 92 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 93: Chủ đề - 5.1 Mạng lưới thần kinh tái phát. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video của các mạng thần kinh tái phát. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "1a3f3d8c-2ae2-4e46-b8ac-0131cf91f196",
+      "source_section": "sessions",
+      "session_number": "93",
+      "title": "Buổi 93 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 94: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "8af79f8c-214a-4a10-b4ad-c3e132fe9a66",
+      "source_section": "sessions",
+      "session_number": "94",
+      "title": "Buổi 94 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 95: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "bf685345-9312-4f6d-b3ea-30405c62b43d",
+      "source_section": "sessions",
+      "session_number": "95",
+      "title": "Buổi 95 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 96: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "a02be7aa-b4ea-4577-b6b8-df46f39952c8",
+      "source_section": "sessions",
+      "session_number": "96",
+      "title": "Buổi 96 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 97: Chủ đề - 5.1 Mạng lưới thần kinh tái phát. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video của các mạng thần kinh tái phát. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "a0964c35-6bf2-4c20-b4d0-449dbaa20114",
+      "source_section": "sessions",
+      "session_number": "97",
+      "title": "Buổi 97 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 98: Chủ đề - Dự án hướng dẫn 4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "1cbb3c4e-3754-477d-b3d9-7fe02c8d2411",
+      "source_section": "sessions",
+      "session_number": "98",
+      "title": "Buổi 98 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 99: Chủ đề - Dự án hướng dẫn 4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Liên kết trong các vật liệu. Nhiệm vụ sinh viên: Xem trong liên kết.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "82d926ac-1890-4351-b9ca-b616ea24de20",
+      "source_section": "sessions",
+      "session_number": "99",
+      "title": "Buổi 99 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 100: Chủ đề - Phòng thí nghiệm 4 (Hoạt động trên các vectơ từ - Debiasing). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Tệp phòng thí nghiệm 4. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "5f311d31-c28a-47fc-95b7-90eb38f22272",
+      "source_section": "sessions",
+      "session_number": "100",
+      "title": "Buổi 100 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 101: Chủ đề - Phòng thí nghiệm 4 (Hoạt động trên các vectơ từ - Debiasing). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Tệp phòng thí nghiệm 4. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "468ea744-e6be-49f7-aa95-08c92a69ed9f",
+      "source_section": "sessions",
+      "session_number": "101",
+      "title": "Buổi 101 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 102: Chủ đề - Phòng thí nghiệm 4 (Hoạt động trên các vectơ từ - Debiasing). Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Tệp phòng thí nghiệm 4. Nhiệm vụ sinh viên: Làm phòng thí nghiệm 4.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "9425a32a-6e1a-4d2f-9eca-16fc0a049287",
+      "source_section": "sessions",
+      "session_number": "102",
+      "title": "Buổi 102 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 103: Chủ đề - 5.2 Xử lý ngôn ngữ tự nhiên và nhúng từ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Trượt, video xử lý ngôn ngữ tự nhiên và nhúng từ. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "1e97de2a-1a74-41ed-9154-35237065ddba",
+      "source_section": "sessions",
+      "session_number": "103",
+      "title": "Buổi 103 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 104: Chủ đề - 5.2 Xử lý ngôn ngữ tự nhiên và nhúng từ. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Trượt, video xử lý ngôn ngữ tự nhiên và nhúng từ. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "48dfdd74-9085-4aaa-9f88-4d66d61c78ef",
+      "source_section": "sessions",
+      "session_number": "104",
+      "title": "Buổi 104 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 105: Chủ đề - 5.3 Mô hình trình tự và cơ chế chú ý. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video của các mô hình trình tự và cơ chế chú ý. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "ba21a528-6a95-45b3-9310-993124f05af5",
+      "source_section": "sessions",
+      "session_number": "105",
+      "title": "Buổi 105 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 106: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "522e10c3-b7ba-4cbb-8a1f-695c42158e8e",
+      "source_section": "sessions",
+      "session_number": "106",
+      "title": "Buổi 106 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 107: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "17d3eea0-ab62-4f5d-a161-81a4d93dc27d",
+      "source_section": "sessions",
+      "session_number": "107",
+      "title": "Buổi 107 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 108: Chủ đề - Dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Báo cáo tiến độ và tham gia vào các cuộc thảo luận.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "0461e994-d930-44cf-a4bc-04a514b25495",
+      "source_section": "sessions",
+      "session_number": "108",
+      "title": "Buổi 108 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 109: Chủ đề - Mạng máy biến áp 5.4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video của Mạng máy biến áp. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "008c2d2c-8263-4609-82be-8e3e8dc70a69",
+      "source_section": "sessions",
+      "session_number": "109",
+      "title": "Buổi 109 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 110: Chủ đề - Mạng máy biến áp 5.4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video của Mạng máy biến áp. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "88c0e664-598b-4f1d-9b0a-c29740f65cb9",
+      "source_section": "sessions",
+      "session_number": "110",
+      "title": "Buổi 110 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 111: Chủ đề - Mạng máy biến áp 5.4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Slide, Video của Mạng máy biến áp. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Đọc slide và xem video.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "ddd02ffe-f1ca-4bff-89c6-552bb7b032da",
+      "source_section": "sessions",
+      "session_number": "111",
+      "title": "Buổi 111 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 112: Chủ đề - Xem lại phòng thí nghiệm 4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Phòng thí nghiệm của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "dad9257d-fd2d-4c94-b5fb-5e273c6b501d",
+      "source_section": "sessions",
+      "session_number": "112",
+      "title": "Buổi 112 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 113: Chủ đề - Xem lại phòng thí nghiệm 4. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO5. Tài liệu sinh viên: Phòng thí nghiệm của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "400b6a2f-e054-4e1b-b542-716fd175eb45",
+      "source_section": "sessions",
+      "session_number": "113",
+      "title": "Buổi 113 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 114: Chủ đề - Bài kiểm tra Progess 2. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO3, CLO4, CLO5. Tài liệu sinh viên: - Mô -đun nội dung 3, 4 và 5.. Nhiệm vụ sinh viên: - Đánh giá mô -đun 3, 4 và 5 '- Thử nghiệm tiến độ 2.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "cc389d68-eb81-4958-bee7-6e0d7cae3047",
+      "source_section": "sessions",
+      "session_number": "114",
+      "title": "Buổi 114 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 115: Chủ đề - Phòng thủ dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "0cb044b1-afc1-4bf1-a6fd-9d6edc08dbc4",
+      "source_section": "sessions",
+      "session_number": "115",
+      "title": "Buổi 115 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 116: Chủ đề - Phòng thủ dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "d04c506b-eb9e-4ec0-849c-64b1c4a6efbd",
+      "source_section": "sessions",
+      "session_number": "116",
+      "title": "Buổi 116 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 117: Chủ đề - Phòng thủ dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "072a593c-9780-451f-9173-de4ca819abdf",
+      "source_section": "sessions",
+      "session_number": "117",
+      "title": "Buổi 117 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 118: Chủ đề - Phòng thủ dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "9a405243-d751-4de0-a744-c438bae4b8c8",
+      "source_section": "sessions",
+      "session_number": "118",
+      "title": "Buổi 118 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 119: Chủ đề - Phòng thủ dự án. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO6. Tài liệu sinh viên: Dự án của sinh viên. Nhiệm vụ sinh viên: Bài thuyết trình.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "b2963503-0429-4cb4-b142-3c08e4ab975b",
+      "source_section": "sessions",
+      "session_number": "119",
+      "title": "Buổi 119 - DPL302m"
+    }
+  },
+  {
+    "type": "session",
+    "content": "Buổi học số 120: Chủ đề - Ôn tập. Loại hình: Ngoại tuyến. Chuẩn đầu ra liên quan (LO): CLO1, CLO2, CLO3, CLO4, CLO5. Tài liệu sinh viên: Tất cả các slide. Link tải tài liệu buổi học: FLM and Coursera. Nhiệm vụ sinh viên: Xem lại slide.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "dd7386c7-277a-4316-8152-8febd6b49460",
+      "source_section": "sessions",
+      "session_number": "120",
+      "title": "Buổi 120 - DPL302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 1 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO1. Loại câu hỏi/Nhiệm vụ: . Thời gian: 1 ngày. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Nội dung của Moduel 1. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "ad2e33cc-5ed7-4706-b121-80a0ec64794f",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 1",
+      "title": "Đánh giá Phòng thí nghiệm 1 - DPL302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 2 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO2. Loại câu hỏi/Nhiệm vụ: . Thời gian: 1 ngày. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của Mô -đun 2. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "2039668c-1cca-4b07-af03-783239acd713",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 2",
+      "title": "Đánh giá Phòng thí nghiệm 2 - DPL302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 3 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO4. Loại câu hỏi/Nhiệm vụ: . Thời gian: 1 ngày. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của mô -đun 4. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "66500473-8fc5-41dc-bb6d-013e1c988052",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 3",
+      "title": "Đánh giá Phòng thí nghiệm 3 - DPL302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Phòng thí nghiệm 4 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO5. Loại câu hỏi/Nhiệm vụ: . Thời gian: 1 ngày. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của mô -đun 5. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "76d6a2c9-0514-4622-bbd8-0374c6632b3e",
+      "source_section": "assessments",
+      "assessment_category": "Phòng thí nghiệm 4",
+      "title": "Đánh giá Phòng thí nghiệm 4 - DPL302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 1 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 20'-30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của Mô -đun 1 và 2. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "4f2a9535-715e-40d3-8975-349fe651e1d3",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 1",
+      "title": "Đánh giá Kiểm tra tiến độ 1 - DPL302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kiểm tra tiến độ 2 (đang diễn ra). Trọng số: 5.0%. Chuẩn đầu ra liên quan (CLO): CLO3, CLO4, CLO5. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính hoặc định dạng phù hợp. Thời gian: 20'-30'. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của Mô -đun 3, 4 và 5. Ghi chú: Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "4b792c67-58fc-4046-beeb-b1fc41ecaed7",
+      "source_section": "assessments",
+      "assessment_category": "Kiểm tra tiến độ 2",
+      "title": "Đánh giá Kiểm tra tiến độ 2 - DPL302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Dự án (đang diễn ra). Trọng số: 40.0%. Chuẩn đầu ra liên quan (CLO): CLO6. Loại câu hỏi/Nhiệm vụ: . Thời gian: 8 tuần. Tiêu chí hoàn thành: >0. Kiến thức và kỹ năng: - Che nội dung của tất cả các mô -đun. Ghi chú: Instructor has resposibility to review the test for students after graded..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "4fec1bac-217e-4e39-996d-cd9edd6b93af",
+      "source_section": "assessments",
+      "assessment_category": "Dự án",
+      "title": "Đánh giá Dự án - DPL302m"
+    }
+  },
+  {
+    "type": "assessment",
+    "content": "Hình thức đánh giá: Kỳ thi cuối cùng (kỳ thi cuối cùng). Trọng số: 30.0%. Chuẩn đầu ra liên quan (CLO): CLO1, CLO2, CLO3, CLO4, CLO5. Loại câu hỏi/Nhiệm vụ: Nhiều lựa chọn Được đánh dấu bằng máy tính. Thời gian: 60'. Tiêu chí hoàn thành: 4. Kiến thức và kỹ năng: Tất cả các mô -đun nghiên cứu. Ghi chú: The exam questions must be updated or different at least 70% to the previous ones..",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "8e75dc84-7670-42b8-8a46-fd0d8e5c7bb6",
+      "source_section": "assessments",
+      "assessment_category": "Kỳ thi cuối cùng",
+      "title": "Đánh giá Kỳ thi cuối cùng - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Deep Learning Specialization. Tác giả: DeepLearning.AI. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/specializations/deep-learning.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "a1b0626b-8b96-41ae-99ba-2c5317549799",
+      "source_section": "materials_table",
+      "material_description": "Deep Learning Specialization",
+      "title": "Tài liệu 1 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Neural Networks and Deep Learning. Tác giả: DeepLearning.AI. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "b465399c-65b3-4b28-8a11-51733750945c",
+      "source_section": "materials_table",
+      "material_description": "Neural Networks and Deep Learning",
+      "title": "Tài liệu 2 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization. Tác giả: DeepLearning.AI. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/deep-neural-network?specialization=deep-learning.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "5264508b-4def-45e6-9828-357ce95e86ea",
+      "source_section": "materials_table",
+      "material_description": "Improving Deep Neural Networks: Hyperparameter Tun",
+      "title": "Tài liệu 3 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Structuring Machine Learning Projects. Tác giả: DeepLearning.AI. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/machine-learning-projects?specialization=deep-learning.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "0dfe1c66-56b1-413e-b190-ce9173ffe320",
+      "source_section": "materials_table",
+      "material_description": "Structuring Machine Learning Projects",
+      "title": "Tài liệu 4 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Convolutional Neural Networks. Tác giả: DeepLearning.AI. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/convolutional-neural-networks?specialization=deep-learning.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "760065d5-666d-45d2-9199-957bfcc77063",
+      "source_section": "materials_table",
+      "material_description": "Convolutional Neural Networks",
+      "title": "Tài liệu 5 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: Sequence Models. Tác giả: DeepLearning.AI. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/learn/nlp-sequence-models?specialization=deep-learning.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "9f0d259f-7470-42c7-b6ae-c9a5b9177746",
+      "source_section": "materials_table",
+      "material_description": "Sequence Models",
+      "title": "Tài liệu 6 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: GP 1: Diabetes Disease Detection with XG-Boost and Neural Networks. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/projects/diabetes-disease-detection-with-xg-boost-and-neural-networks.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "715a2736-3c30-44f7-ab85-f41f88a90cbe",
+      "source_section": "materials_table",
+      "material_description": "GP 1: Diabetes Disease Detection with XG-Boost and",
+      "title": "Tài liệu 7 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: GP 2: Hyperparameter Tuning with Keras Tuner. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/projects/keras-tuner.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "ef58931d-9bbe-4cb2-ab6f-2ac5c502083c",
+      "source_section": "materials_table",
+      "material_description": "GP 2: Hyperparameter Tuning with Keras Tuner",
+      "title": "Tài liệu 8 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: GP 3: Object Localization with TensorFlow. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/projects/object-localization-tensorflow.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "d3539e6c-9923-4e06-8b2b-16682e0da30c",
+      "source_section": "materials_table",
+      "material_description": "GP 3: Object Localization with TensorFlow",
+      "title": "Tài liệu 9 - DPL302m"
+    }
+  },
+  {
+    "type": "material",
+    "content": "Tài liệu học tập: GP 4: NLP: Twitter Sentiment Analysis. Nhà xuất bản: Coursera. Link/Ghi chú: https://www.coursera.org/projects/twitter-sentiment-analysis.",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "44005d8f-1582-4431-a94e-37bb493118cc",
+      "source_section": "materials_table",
+      "material_description": "GP 4: NLP: Twitter Sentiment Analysis",
+      "title": "Tài liệu 10 - DPL302m"
+    }
+  },
+  {
+    "type": "clo_plo_mapping",
+    "content": "Liên kết xem bản đồ Chuẩn đầu ra môn học (CLO) với Chuẩn đầu ra chương trình (PLO) của môn DPL302m là: https://flm.fpt.edu.vn/CLOMapping/View?syllabusID=12092",
+    "metadata": {
+      "subject_code": "DPL302m",
+      "syllabus_id": "12092",
+      "chunk_id": "a4340f80-57bf-4546-81ab-f2c278c8f077",
+      "source_section": "clo_plo_mapping_link",
+      "title": "Mapping CLO-PLO - DPL302m"
+    }
+  }
+]
