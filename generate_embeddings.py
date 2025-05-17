@@ -188,7 +188,7 @@ def get_all_subject_codes(chunks_data):
     return sorted(list(subject_codes))
 
 if __name__ == "__main__":
-    input_file = "Chunk/all_chunks.json"
+    input_file = "Chunk/enhanced_chunks.json"
     output_file = "Embedded/all_embeddings.json"
     
     # Tạo thư mục embedding nếu chưa tồn tại
