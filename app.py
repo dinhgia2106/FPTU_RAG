@@ -490,11 +490,8 @@ def main():
     - "DPL302m là môn học gì?"
     - "Môn Deep Learning có bao nhiêu tín chỉ?"
     - "Chuẩn đầu ra của môn DPL là gì?"
-    - "Session 45 học gì?"
     - "Môn DPL302m có bao nhiêu CLO?"
-    - "Những môn kết thúc bằng chữ 'c' là gì?"
     - "Có bao nhiêu môn toán?"
-    - "Đưa tất cả link Coursera"
     - "Môn DPL302m có bao nhiêu bài kiểm tra, cách tính điểm thế nào?"
     """)
     
