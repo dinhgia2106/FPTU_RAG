@@ -93,8 +93,14 @@ def extract_subject_areas(syllabus_data):
         "security": ["security", "bảo mật", "cryptography", "mã hóa", "privacy", "riêng tư"],
         "business": ["business", "kinh doanh", "marketing", "management", "quản lý", "finance", "tài chính"],
         "english": ["english", "tiếng anh", "language", "ngôn ngữ"],
+        "chinese": ["chinese", "tiếng trung", "language", "ngôn ngữ"],
+        "japanese": ["japanese", "tiếng nhật", "language", "ngôn ngữ"],
+        "graphic": ["graphic", "đồ họa", "graphics", "animation", "hoạt hình"],
         "design": ["design", "thiết kế", "ui", "ux", "interface", "giao diện"],
-        "mobile": ["mobile", "di động", "android", "ios", "app", "ứng dụng"]
+        "mobile": ["mobile", "di động", "android", "ios", "app", "ứng dụng"],
+        "vovinam": ["vovinam", "võ", "martial arts", "nghệ thuật chiến đấu"],
+        "bartending": ["bartending", "pha chế", "cocktail", "đồ uống"],
+        "cooking": ["cooking", "nấu ăn", "ẩm thực", "food", "đồ ăn"],
     }
     
     # Kiểm tra trong tên môn học và mô tả
