@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot FPTU</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chatbot FPTU</h2>
+      </div>
+      <div class="chat-box" id="chat-box">
+        <!-- Tin nhắn sẽ được thêm vào đây -->
+        <!-- Ví dụ tin nhắn ban đầu của bot -->
+        <div class="message bot-message">
+          <img
+            src="{{ url_for('static', filename='bot_avatar.png') }}"
+            alt="Bot"
+            class="avatar"
+          />
+          <div class="message-content">
+            <p>Alo alo! Mình nghe rõ đây — bạn cần mình giúp gì nè? 😊</p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <button class="tool-button" id="tool-button">
+          <i class="fas fa-paperclip"></i> Công cụ
+        </button>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Hỏi bất kỳ điều gì..."
+          />
+          <button class="send-button" id="send-button">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <button class="mic-button" id="mic-button">
+          <i class="fas fa-microphone"></i>
+        </button>
+      </div>
+      <div class="footer-text">
+        <p>
+          Chatbot FPTU có thể mắc lỗi. Hãy kiểm tra các thông tin quan trọng.
+        </p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

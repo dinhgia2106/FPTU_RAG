@@ -1,0 +1,525 @@
+{
+  "major_code_input": "AI",
+  "curriculum_title_on_page": "Curriculum for AI",
+  "curriculum_url": "https://flm.fpt.edu.vn/gui/role/student/CurriculumDetails?curid=2347",
+  "syllabuses": [
+    {
+      "metadata": {
+        "syllabus_url": "https://flm.fpt.edu.vn/gui/role/student/SyllabusDetails?sylID=11585",
+        "syllabus_id_from_url": "11585",
+        "course_id": "CSI106",
+        "course_name_from_curriculum": "Introduction to Computer Science_Nhập môn khoa học máy tính",
+        "semester_from_curriculum": 1,
+        "combo_name_from_curriculum": "",
+        "combo_short_name_from_curriculum": "",
+        "title": "Introduction to Computer Science_Nhập môn khoa học máy tính",
+        "english_title": "Introduction to Computer Science",
+        "syllabus_id": "11585",
+        "syllabus_code": "11585",
+        "subject_code_on_page": "CSI106",
+        "credits": "3",
+        "degree_level": "Bachelor",
+        "time_allocation": "",
+        "prerequisites": "",
+        "description": "This course provides an overview of computer fundamentals. Topics cover all areas of computer science in breadth such as computer organization, network, operating system, data structure , file structure, social and ethical issues.\nMajor Instructional Areas\n- Introduction to Von Neumann Model and computer components\n- Numbering system & data representation\n- Different data types and operations on data\n- The concepts of computer networking and internet\n- Operating system\n- Introduction to basic algorithms and algorithms representation\n- Introduction to Data structure and File structure\n- The concepts of database\n- Software engineering\n- Computing Security & Ethics\n- Introduction to Artificial Intelligence (Additional Learning)",
+        "student_tasks": "- Students must attend at least 80% of contact sessions in order to be accepted to the final examination.\n- Students are responsible to do all exercises, assignments and labs given by instructor in class or at home and submit on time\n- Use laptop in class only for learning purpose\n- Complete Additional Learning (AI For Everyone course in Coursera) and achieve the certificate\n- Promptly access to the https://flm.fpt.edu.vn for up-to-date course information\"",
+        "tools": "",
+        "scoring_scale": "10",
+        "min_avg_mark_to_pass": "5",
+        "is_approved": "True",
+        "is_active": "True",
+        "decision_no": "765/QĐ-ĐHFPT dated 07/29/2024",
+        "approved_date": "7/29/2024",
+        "note": "",
+        "course_type_guess": "coursera_only"
+      },
+      "materials": [
+        {
+          "description": "Foundations Of Computer Science",
+          "author": "Behrouz Forouzan",
+          "publisher": "Cengage",
+          "published_date": "2017",
+          "edition": "4th",
+          "isbn": "978-1-4737-5104-0",
+          "is_main_material": true,
+          "is_hard_copy": true,
+          "is_online": false,
+          "note": ""
+        },
+        {
+          "description": "Fundamentals of Information Systems Security",
+          "author": "",
+          "publisher": "Jones & Bartlett",
+          "published_date": "2016",
+          "edition": "3rd",
+          "isbn": "",
+          "is_main_material": false,
+          "is_hard_copy": true,
+          "is_online": false,
+          "note": ""
+        },
+        {
+          "description": "Computer architecture : A quantitative approach",
+          "author": "John L. Hennessy, David A Patterson",
+          "publisher": "Morgan Kaufmann",
+          "published_date": "2011",
+          "edition": "5th",
+          "isbn": "",
+          "is_main_material": false,
+          "is_hard_copy": true,
+          "is_online": false,
+          "note": ""
+        }
+      ],
+      "learning_outcomes": [
+        {
+          "id": "CLO1",
+          "details": "Understand the subsystems of a computer and describe the role of these components"
+        },
+        {
+          "id": "CLO10",
+          "details": "Distinguish between text file and binary file and access methods"
+        },
+        {
+          "id": "CLO11",
+          "details": "Describe and explain operations within a relational database"
+        }
+      ],
+      "schedule": [
+        {
+          "session": "Introduction to the Course\n1.Computer Organization\n1.1 Von Neumann model",
+          "topic": "Offline",
+          "teaching_type": "CLO1",
+          "learning_outcomes": ["IT"],
+          "itu": "- Chapter 1, text book\n- Slides: Part 1-1,\n- EduNext Slot 1 (Q&A)",
+          "materials": "CSI106",
+          "tasks": "",
+          "download_link": "Read & Review Slides Part 1-1;\nAnswer Edunext question in slot 1",
+          "urls": ""
+        },
+        {
+          "session": "1.2 Computer generations",
+          "topic": "Offline",
+          "teaching_type": "CLO1",
+          "learning_outcomes": ["TU"],
+          "itu": "- Chapter 1, text book\n- Slides: Part 1-2\n- EduNext Slot 1 (Q&A)",
+          "materials": "CSI106",
+          "tasks": "",
+          "download_link": "Read & Review Slides Part 1-2\nAnswer Edunext question in slot 1",
+          "urls": ""
+        },
+        {
+          "session": "1.3 Subsystems and the role of subsystems",
+          "topic": "Offline",
+          "teaching_type": "CLO1",
+          "learning_outcomes": ["TU"],
+          "itu": "- Chapter 1&5, text book\n- Slides: Part 1-3\n- EduNext Slot 1 (Q&A)",
+          "materials": "",
+          "tasks": "",
+          "download_link": "Read & Review Slides Part 1-3\nAnswer Edunext question in slot 1",
+          "urls": ""
+        }
+      ],
+      "assessments": [
+        {
+          "category": "Group presentation",
+          "type": "on-going",
+          "part": "2",
+          "weight": "10.0",
+          "clos": [">0"],
+          "duration": "Option 1: 30'/group Option 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "question_type": "Presentation1. One or many of CLO1, CLO2, CLO3, CLO4, CLO5, CLO6, CLO7, CLO8, CLO9, CLO10\nPresentation2. CLO13",
+          "no_question": "Option 1: .ppt and oral presentation\nOption 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "knowledge_and_skill": "Option 1: N/A Option 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "grading_guide": "one of the appendices",
+          "note": "Each group selects one topic ralated to Addional Learning ( (AI For Everyone course in Coursera) to present and has at least two weeks to prepare the presentation\n\nPresentation 2:\n- .ppt and oral presentation\n- Topics related to Additional Learning (Chapter 18 in Textbook, Deep Learning in Object Detection and Recognition, Speech Emotion Recognition, Traffic Sign Recognition, Federated Learning,…)",
+          "completion_criteria": ""
+        },
+        {
+          "category": "Lab",
+          "type": "on-going",
+          "part": "2",
+          "weight": "20.0",
+          "clos": [">0"],
+          "duration": "Option 1: 60-90'/each Option 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "question_type": "Lab1. CLO2\n\nLab2. One or many of CLO6, CLO7",
+          "no_question": "Option 1: practical exercises Option 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "knowledge_and_skill": "Option 1: N/A Option 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "grading_guide": "technical aspect of studied topics",
+          "note": "Guided by instructor\n- Labs are arranged relevant to the chapter theory\n- Student must finish labs and submit the results to the lecturer in class.",
+          "completion_criteria": ""
+        },
+        {
+          "category": "Progress Test",
+          "type": "on-going",
+          "part": "3",
+          "weight": "30.0",
+          "clos": [">0"],
+          "duration": "Option 1: 30'/each Option 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "question_type": "Test1. CLO1, CLO2, CLO3, CLO4, CLO5\n\nTest2. CLO6, CLO7, CLO8, CLO9\nTest3. CLO10, CLO11, CLO12, CLO13",
+          "no_question": "Option 1: MC or suitable format Option 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "knowledge_and_skill": "Option 1: 30 Option 2 (For Constructivism Approach only): Follow lecturer's proposal",
+          "grading_guide": "Test 1: Chapters 1, 2, 3, 4, 5 , 6, 7\nTest 2: Chapters 8, 9, 10, 11, 12\nTest 3: Chapters 13, 14, 16, 18, 20",
+          "note": "in class, by instructor",
+          "completion_criteria": ""
+        }
+      ],
+      "has_download_materials_button": true
+    },
+    {
+      "metadata": {
+        "syllabus_url": "https://flm.fpt.edu.vn/gui/role/student/SyllabusDetails?sylID=11246",
+        "syllabus_id_from_url": "11246",
+        "course_id": "MAD101",
+        "course_name_from_curriculum": "Discrete mathematics_Toán rời rạc",
+        "semester_from_curriculum": 1,
+        "combo_name_from_curriculum": "",
+        "combo_short_name_from_curriculum": "",
+        "title": "Toán rời rạc",
+        "english_title": "Discrete mathematics",
+        "syllabus_id": "11246",
+        "syllabus_code": "11246",
+        "subject_code_on_page": "MAD101",
+        "credits": "3",
+        "degree_level": "Bachelor",
+        "time_allocation": "",
+        "prerequisites": "CSI106",
+        "description": "Upon finishing the course, students must acquire:\n1. the following knowledge: (ABET a.1)\n• Concepts of logical expressions & predicate logic.\n• The method of induction and recursive definition.\n• Concepts of algorithms, recursive algorithms, the complexity.\n• Recurrence relations and divide-and-conquer algorithms.\n• Application of integers and congruence in information technology.\n• Set structure and map, counting principles and combinatorics concepts.\n• The terminologies and properties of graphs & trees & weighted graphs.\n• The applications of graphs, trees and weighted graphs in information technology.\n\n2. the following skills: (ABET a.2)\n• Manipulate logical expressions & produce equivalent logical expressions.\n• Produce proof of simple mathematical propositions, including applying induction method.\n• Evaluate complexity of algorithms.\n• Solving simple congruence equations.\n• Apply counting techniques in evaluating various set cardinalities.\n• Solve counting problems, apply in analyze algorithms.\n• Apply graph’s algorithms to solve problems related to graph theory.",
+        "student_tasks": "Students must attend at least 80% of contact hours in order to be accepted to the final examination.",
+        "tools": "- Testbank for ST1.\n- Powerpoint image in CD + Powerpoint prepared by previous lecturers (PP).\n- Computerized tools (for example C programming tools, Maxima http://maxima.sourceforge.net/) (CT)\n- Teaching Suggestion and Applications of Discrete Mathematics for ST1 (TS).",
+        "scoring_scale": "10",
+        "min_avg_mark_to_pass": "5",
+        "is_approved": "True",
+        "is_active": "True",
+        "decision_no": "358/QĐ-ĐHFPT dated 04/03/2024",
+        "approved_date": "4/3/2024",
+        "note": "",
+        "course_type_guess": "traditional"
+      },
+      "materials": [
+        {
+          "description": "Discrete Mathematics and its applications",
+          "author": "Kenneth Rosen",
+          "publisher": "Mc.Graw Hill, IE",
+          "published_date": "2007",
+          "edition": "Ed.7 (or 6)",
+          "isbn": "978-0073383095",
+          "is_main_material": true,
+          "is_hard_copy": true,
+          "is_online": false,
+          "note": ""
+        },
+        {
+          "description": "Teaching Suggestion and Applications of Discrete Mathematics for ST1 (TS)",
+          "author": "",
+          "publisher": "",
+          "published_date": "",
+          "edition": "",
+          "isbn": "",
+          "is_main_material": false,
+          "is_hard_copy": false,
+          "is_online": false,
+          "note": ""
+        },
+        {
+          "description": "Testbank for ST1",
+          "author": "",
+          "publisher": "",
+          "published_date": "",
+          "edition": "",
+          "isbn": "",
+          "is_main_material": false,
+          "is_hard_copy": false,
+          "is_online": false,
+          "note": ""
+        }
+      ],
+      "learning_outcomes": [
+        {
+          "id": "CLO1",
+          "details": "Manipulate logical expressions and use logic for inference LO1.1 Determine the truth value of a proposition; check if two propositions are equivalent; translate between logical expressions and sentences for propositional logic. LO1.2 Determine the truth value of a proposition; check if two propositions are equivalent; translate between logical expressions and sentences for predicate logic. LO1.3 Manipulate logical expressions with nested quantifiers. LO1.4 Recognize the inference rules used in a valid statemment; use inference rules to draw conclusions; check if a statement is valid."
+        },
+        {
+          "id": "CLO2",
+          "details": "Perform basic operations on sets, functions and sequences LO2.1 Distinguish basic terminologies in set theory; find the power set and cartersian product; represent a subset using binary bits. LO2.2 Perform operations on sets; check if two sets are equal. LO2.3 Determine if a given rule represents a function; perform operations on functions and manipulate functions inlvolving the floor and the ceiling functions. LO2.4 Determine if a function is one-to-one, onto or a bijection, and describe how these properties can be used to compare two sets. LO2.5 Find a formula for a sequence; evaluate a finite sum with a possible use of special summations."
+        },
+        {
+          "id": "CLO3",
+          "details": "Analyze basic algorithms written in pseudo codes and determine their complexities LO3.1 Determine if a procedure is an algorithm; work out basic algorithms written in pseudocodes including searching, sorting and greedy algorithms. LO3.2 Find big-O, big-Omega and big-Theta estimates of a function; describe complexity of an algorithm."
+        }
+      ],
+      "schedule": [
+        {
+          "session": "0 Introduction\n1.1 Propositional Logic (1.1 and 1.2, skip the topic on Logic Circuits)",
+          "topic": "Offline",
+          "teaching_type": "LO1",
+          "learning_outcomes": ["TU"],
+          "itu": "Textbook Chapter 1",
+          "materials": "MAD111_Chap 1",
+          "tasks": "",
+          "download_link": "Exercises Chapter 1",
+          "urls": ""
+        },
+        {
+          "session": "1.2 Propositional Equivalences (1.3, skip the topic on Satisfiability)",
+          "topic": "Offline",
+          "teaching_type": "LO1",
+          "learning_outcomes": ["TU"],
+          "itu": "Textbook Chapter 1",
+          "materials": "",
+          "tasks": "",
+          "download_link": "Exercises Chapter 1",
+          "urls": ""
+        },
+        {
+          "session": "1.3 Predicates (1.4)",
+          "topic": "Offline",
+          "teaching_type": "LO1",
+          "learning_outcomes": ["TU"],
+          "itu": "Textbook Chapter 1",
+          "materials": "",
+          "tasks": "",
+          "download_link": "Exercises Chapter 1",
+          "urls": ""
+        }
+      ],
+      "assessments": [
+        {
+          "category": "Progress Test",
+          "type": "quiz",
+          "part": "3",
+          "weight": "30.0",
+          "clos": [">0"],
+          "duration": "30 minutes",
+          "question_type": "All LOs",
+          "no_question": "OP1: MC or a suitable format // OP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "knowledge_and_skill": "15 questions within 30 minutes",
+          "grading_guide": "Chapters introduced",
+          "note": "OP1: by instructor, and by suitable means (computer, paper, oral...)\nOP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "completion_criteria": ""
+        },
+        {
+          "category": "Assignments/Exercises",
+          "type": "on-going",
+          "part": "3",
+          "weight": "30.0",
+          "clos": [">0"],
+          "duration": "at home",
+          "question_type": "All LOs",
+          "no_question": "OP1: Open // OP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "knowledge_and_skill": "At least 5/ chapter",
+          "grading_guide": "Chapters introduced",
+          "note": "OP1: guided by the instructor\nin class, completed by students at home, submitted by deadline\nOP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "completion_criteria": ""
+        },
+        {
+          "category": "Final Exam",
+          "type": "final exam",
+          "part": "1",
+          "weight": "40.0",
+          "clos": ["4"],
+          "duration": "60'",
+          "question_type": "",
+          "no_question": "Computer gradable",
+          "knowledge_and_skill": "50",
+          "grading_guide": "All studied chapters. At least 6 questions/chapter",
+          "note": "by Exam Board",
+          "completion_criteria": ""
+        }
+      ],
+      "has_download_materials_button": true
+    },
+    {
+      "metadata": {
+        "syllabus_url": "https://flm.fpt.edu.vn/gui/role/student/SyllabusDetails?sylID=11853",
+        "syllabus_id_from_url": "11853",
+        "course_id": "MAE101",
+        "course_name_from_curriculum": "Mathematics for Engineering_Toán cho ngành kỹ thuật",
+        "semester_from_curriculum": 1,
+        "combo_name_from_curriculum": "",
+        "combo_short_name_from_curriculum": "",
+        "title": "Mathematics for Engineering_Toán cho ngành kỹ thuật",
+        "english_title": "Mathematics for Engineering",
+        "syllabus_id": "11853",
+        "syllabus_code": "11853",
+        "subject_code_on_page": "MAE101",
+        "credits": "3",
+        "degree_level": "Bachelor",
+        "time_allocation": "",
+        "prerequisites": "None",
+        "description": "Upon finishing the course, students must acquire:\n1. the following knowledge: (ABET a1)\n• The basic concepts of single variable calculus: limit, derivative, integral.\n• Concepts of linear system of equations, matrix and their applications\n• The concepts of vector spaces, basis and dimension, linear transformations and their applications.\n• The range of application of calculus and algebra in science, technology, economics & finance...\n2. the following skills: (ABET a2)\n• Find limit, derivative and integral of functions of single variables;\n• Find solutions to linear systems by using row-reduced echelon form, Cramer's Rule, inverse matrix\n• Find determinants and inverse of a matrix\n• Find linear transformations in R^2 and R^3.\n• Find dimensions and bases of vector spaces .\n• Apply the concepts of calculus and algebra in solving problems in science, technology, economics & finance, ...",
+        "student_tasks": "Students must attend at least 80% of contact hours in order to be accepted to the final examination.",
+        "tools": "",
+        "scoring_scale": "10",
+        "min_avg_mark_to_pass": "5",
+        "is_approved": "True",
+        "is_active": "True",
+        "decision_no": "862/QĐ-ĐHFPT dated 08/16/2024",
+        "approved_date": "8/16/2024",
+        "note": "",
+        "course_type_guess": "traditional"
+      },
+      "materials": [
+        {
+          "description": "Calculus 1",
+          "author": "",
+          "publisher": "",
+          "published_date": "",
+          "edition": "",
+          "isbn": "",
+          "is_main_material": true,
+          "is_hard_copy": false,
+          "is_online": true,
+          "note": "https://openstax.org/details/books/calculus-volume-1"
+        },
+        {
+          "description": "Calculus 2",
+          "author": "",
+          "publisher": "",
+          "published_date": "",
+          "edition": "",
+          "isbn": "",
+          "is_main_material": true,
+          "is_hard_copy": false,
+          "is_online": true,
+          "note": "https://openstax.org/details/books/calculus-volume-2"
+        },
+        {
+          "description": "powerpoint in CD + Powerpoint prepared by previous lecturers (PP).",
+          "author": "",
+          "publisher": "",
+          "published_date": "",
+          "edition": "",
+          "isbn": "",
+          "is_main_material": false,
+          "is_hard_copy": false,
+          "is_online": false,
+          "note": ""
+        }
+      ],
+      "learning_outcomes": [
+        {
+          "id": "CLO1",
+          "details": "Describe basic properties and find the limit of a function LO1.1 Find the domain, range, zeros and analyze the symmetry of the graph; create new functions from old functions. LO1.2 Find the slope and write an equation of a line; describe how a function changes under graph translations. LO1.3 Compute the limit of a function using graphs and limit laws, including the Squeeze's Theorem. LO1.4 Find limits at infinity and infinity limits, and apply in finding asymptotes of a function. LO1.5 Identify where a function is continuous; use the Intermedia Value Theorem to show that an equation has a solution."
+        },
+        {
+          "id": "CLO2",
+          "details": "Calculate derivatives of a function LO2.1 Find the average rate of change; identify derivative as the limit of a difference quotient. LO2.2 Recognize derivative as the instantaneous velocity and the slope of tangent lines. LO2.3 Find derivatives using basic formulas and the sum, difference, product, quotient, chain rules."
+        },
+        {
+          "id": "CLO3",
+          "details": "Use derivatives to analyze a function and to solve applications LO3.1 Use implicit differentiation to find derivatives and to solve related rates problems. LO3.2 Find linear approximation of a function; calculate differentials and apply in calculating errors of approximation. LO3.3 Apply Rolle's Theorem and Mean Value Theorem to a function; find critical numbers and absolute extrema of a function. LO3.4 Identify local extrema, and describe the monotonicity of a function; solve optimization problems. LO3.5 Recognize acceleration as second derivative; determine inflection points and describe the concavity of a function. LO3.6 Use Newton method to approximate solutions of an equation."
+        }
+      ],
+      "schedule": [
+        {
+          "session": "0 Introduction. 1.1 Review of Functions. 1.2 Basic Classes of Functions",
+          "topic": "Offline",
+          "teaching_type": "LO1",
+          "learning_outcomes": ["ITU"],
+          "itu": "Textbook Chapter 1\n(Calculus Vol. 1)",
+          "materials": "",
+          "tasks": "",
+          "download_link": "https://flm.fpt.edu.vn/gui/role/student/Exercises Chapter 1(Calculus Vol. 1)",
+          "urls": ""
+        },
+        {
+          "session": "2.1 A Preview of Calculus. 2.2 The Limit of a Functions",
+          "topic": "Offline",
+          "teaching_type": "LO1",
+          "learning_outcomes": ["TU"],
+          "itu": "Textbook Chapter 2\n(Calculus Vol. 1)",
+          "materials": "",
+          "tasks": "",
+          "download_link": "https://flm.fpt.edu.vn/gui/role/student/Exercises Chapter 2(Calculus Vol. 1)",
+          "urls": ""
+        },
+        {
+          "session": "2.3 The Limit Laws 2.4 Continuity",
+          "topic": "Offline",
+          "teaching_type": "LO1",
+          "learning_outcomes": ["TU"],
+          "itu": "Textbook Chapter 2\n(Calculus Vol. 1)",
+          "materials": "",
+          "tasks": "",
+          "download_link": "https://flm.fpt.edu.vn/gui/role/student/Exercises Chapter 2(Calculus Vol. 1)",
+          "urls": ""
+        }
+      ],
+      "assessments": [
+        {
+          "category": "Assignments/Exercises",
+          "type": "on-going",
+          "part": "3",
+          "weight": "30.0",
+          "clos": [">0"],
+          "duration": "OP1: at home // OP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "question_type": "",
+          "no_question": "OP1: Open // OP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "knowledge_and_skill": "OP1: At least 3/chapter // OP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "grading_guide": "Chapters introduced",
+          "note": "OP1: guided by instructor\nin class, completed by students at home, submitted by deadline\nOP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "completion_criteria": ""
+        },
+        {
+          "category": "Progress Test",
+          "type": "on-going",
+          "part": "3",
+          "weight": "30.0",
+          "clos": [">0"],
+          "duration": "OP1: Test 1: 40'Test 2&3: 30' // OP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "question_type": "",
+          "no_question": "OP1: MC or a suitable format // OP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "knowledge_and_skill": "OP1: Test 1: 20 Test 2&3: 15+ At least 5*n questions where n is the number of Chapters covered in the test.+ Structure:• level 1 (knowledge & comprehension): 20%; • level 2 (application & analysis): 60%; • level 3 (synthesis & evaluation): 20% // OP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "grading_guide": "Chapters introduced",
+          "note": "OP1: by instructor, and by suitable means (computer, paper, oral...)\nOP2: (For Constructivism Approach only): Follow lecturer's proposal",
+          "completion_criteria": ""
+        },
+        {
+          "category": "Final Exam",
+          "type": "final exam",
+          "part": "1",
+          "weight": "40.0",
+          "clos": ["4"],
+          "duration": "60'",
+          "question_type": "",
+          "no_question": "Computer gradable",
+          "knowledge_and_skill": "50\nStructure:\n• level 1: 10%\n• level 2: 80%\n• level 3: 10%",
+          "grading_guide": "All studied chapters. Each studied Chapter contributes 2-8 questions, depending on the number of topics in the Chapter.",
+          "note": "by Exam Board",
+          "completion_criteria": ""
+        }
+      ],
+      "has_download_materials_button": false
+    }
+  ],
+  "students": [
+    {
+      "RollNumber": "DE170004",
+      "LastName": "Hoàng",
+      "MiddleName": "Trung",
+      "FirstName": "Quân",
+      "Fullname": "Hoàng Trung Quân",
+      "Email": "quanhtde170004@fpt.edu.vn",
+      "Major": "AI"
+    },
+    {
+      "RollNumber": "DE170061",
+      "LastName": "Trần",
+      "MiddleName": "Ngọc",
+      "FirstName": "Thiện",
+      "Fullname": "Trần Ngọc Thiện",
+      "Email": "thientnde170061@fpt.edu.vn",
+      "Major": "AI"
+    },
+    {
+      "RollNumber": "DE170221",
+      "LastName": "Lê",
+      "MiddleName": "Diên",
+      "FirstName": "Bình",
+      "Fullname": "Lê Diên Bình",
+      "Email": "binhldde170221@fpt.edu.vn",
+      "Major": "AI"
+    }
+  ]
+}

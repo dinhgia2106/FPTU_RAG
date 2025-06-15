@@ -1,0 +1,219 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 800px; /* Giống với ảnh hơn */
+  height: 95vh; /* Giống với ảnh hơn */
+  max-height: 700px; /* Giới hạn chiều cao tối đa */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  background-color: #f8f9fa; /* Màu sáng hơn một chút */
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center; /* Căn giữa tiêu đề nếu không có logo */
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.chat-box {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff; /* Nền trắng cho khu vực chat */
+}
+
+/* Custom scrollbar */
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+.message {
+  display: flex;
+  max-width: 75%;
+  align-items: flex-end; /* Căn avatar và bubble message */
+}
+
+.message .avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
+  align-self: flex-start; /* Avatar ở trên cùng của bubble */
+}
+
+.message-content {
+  padding: 10px 15px;
+  border-radius: 18px;
+  font-size: 0.95em;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.user-message {
+  align-self: flex-end;
+  flex-direction: row-reverse; /* Đảo ngược thứ tự cho tin nhắn người dùng */
+}
+
+.user-message .message-content {
+  background-color: #e9e9eb; /* Màu xám nhạt giống ảnh */
+  color: #000;
+  border-top-right-radius: 5px; /* Bo góc giống ảnh */
+}
+.user-message .avatar {
+  /* Có thể ẩn avatar người dùng nếu muốn, hoặc dùng ảnh mặc định */
+  /* display: none; */
+  background-color: #007bff; /* Hoặc màu khác */
+  /* Tạm thời ẩn đi cho giống ảnh */
+  visibility: hidden;
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+.bot-message .message-content {
+  background-color: #f1f0f0; /* Màu nền cho bot message giống ảnh */
+  color: #000;
+  border-top-left-radius: 5px; /* Bo góc giống ảnh */
+}
+
+.bot-message .avatar {
+  background-color: #28a745; /* Màu nền cho avatar bot */
+  /* Bạn có thể thay bằng src ảnh thực tế */
+}
+
+.chat-input-area {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+}
+
+.input-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 22px;
+  padding: 0 10px;
+  border: 1px solid #dcdcdc;
+}
+
+#user-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 12px 10px;
+  font-size: 1em;
+  background-color: transparent;
+}
+
+.tool-button,
+.send-button,
+.mic-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.3em;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.tool-button {
+  margin-right: 5px;
+}
+
+.mic-button {
+  margin-left: 5px;
+}
+
+.send-button i {
+  color: #007bff; /* Màu icon gửi */
+}
+
+.tool-button:hover,
+.send-button:hover,
+.mic-button:hover {
+  color: #000;
+}
+
+.footer-text {
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.8em;
+  color: #888;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e7e7e7;
+}
+
+/* Style cho các nút chức năng bên dưới tin nhắn bot (nếu có) */
+.message-actions {
+  margin-top: 5px;
+  margin-left: 55px; /* Căn với nội dung tin nhắn bot */
+}
+
+.message-actions button {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-right: 10px;
+  padding: 2px 5px;
+}
+
+.message-actions button:hover {
+  color: #333;
+}
+
+/* Placeholder cho avatar, bạn nên thay thế bằng ảnh thật */
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  /* background-image: url('bot_avatar.png'); */ /* Sẽ được set trong HTML */
+  background-size: cover;
+  background-position: center;
+}
