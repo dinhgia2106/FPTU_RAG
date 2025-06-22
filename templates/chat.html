@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FPTU RAG - AI Assistant</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/chat.css') }}"
+    />
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Header -->
+      <header class="chat-header">
+        <div class="header-content">
+          <h1>FPTU AI Assistant</h1>
+          <div class="header-subtitle">
+            Hỗ trợ tìm kiếm thông tin syllabus môn học
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="showSubjects" class="action-btn">
+            Danh sách môn học
+          </button>
+          <button id="showExamples" class="action-btn">Câu hỏi mẫu</button>
+        </div>
+      </header>
+
+      <!-- Chat Area -->
+      <main class="chat-main">
+        <div id="messages" class="chat-messages">
+          <!-- Welcome message -->
+          <div class="message assistant-message">
+            <div class="message-avatar">AI</div>
+            <div class="message-content">
+              <div class="message-text">
+                Xin chào! Tôi là AI Assistant của FPTU. Tôi có thể giúp bạn tìm
+                kiếm thông tin về các môn học, syllabus và chương trình đào tạo.
+                Hãy đặt câu hỏi cho tôi!
+              </div>
+              <div class="message-examples">
+                <p>Một số câu hỏi bạn có thể thử:</p>
+                <div class="example-questions">
+                  <button
+                    class="example-btn"
+                    onclick="sendExample('Liệt kê các môn học ngành AI')"
+                  >
+                    Liệt kê các môn học ngành AI
+                  </button>
+                  <button
+                    class="example-btn"
+                    onclick="sendExample('CSI106 là môn gì?')"
+                  >
+                    CSI106 là môn gì?
+                  </button>
+                  <button
+                    class="example-btn"
+                    onclick="sendExample('Các môn có 3 tín chỉ')"
+                  >
+                    Các môn có 3 tín chỉ
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="loading" class="loading-indicator" style="display: none">
+          <div class="loading-dots">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <span>AI đang suy nghĩ... <span id="responseTimer">0s</span></span>
+        </div>
+      </main>
+
+      <!-- Input Area -->
+      <footer class="chat-footer">
+        <div class="input-container">
+          <textarea
+            id="messageInput"
+            placeholder="Nhập câu hỏi của bạn..."
+            rows="1"
+            maxlength="1000"
+          ></textarea>
+          <button id="sendButton" class="send-btn" disabled>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M7 11L12 6L17 11M12 18V7"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="input-footer">
+          <span class="character-count">0/1000</span>
+          <span class="disclaimer"
+            >AI có thể mắc lỗi. Hãy kiểm tra thông tin quan trọng.</span
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modals -->
+    <!-- Subjects Modal -->
+    <div id="subjectsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Danh sách môn học</h2>
+          <button class="modal-close close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="search-box">
+            <input
+              type="text"
+              id="subjectSearch"
+              placeholder="Tìm kiếm môn học..."
+            />
+          </div>
+          <div id="subjectsList" class="subjects-list">
+            <!-- Subjects will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Examples Modal -->
+    <div id="examplesModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Câu hỏi mẫu</h2>
+          <button class="modal-close close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div id="examplesList" class="examples-list">
+            <!-- Examples will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+  </body>
+</html>
