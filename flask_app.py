@@ -52,7 +52,7 @@ def chat():
     try:
         data = request.get_json()
         question = data.get('message', '').strip()
-        enable_multihop = data.get('multihop', True)  # Mặc định bật multi-hop
+        enable_multihop = data.get('multihop', False)  # Mặc định TẮT multi-hop
         
         if not question:
             return jsonify({'error': 'Vui lòng nhập câu hỏi'}), 400
@@ -66,6 +66,7 @@ def chat():
             if isinstance(result, dict):
                 answer = result.get('final_answer', result.get('original_answer', ''))
                 search_results = result.get('search_results', [])
+                is_quick = result.get('is_quick_response', False)
                 
                 response = {
                     'answer': answer,
@@ -77,8 +78,9 @@ def chat():
                     },
                     'metadata': {
                         'subjects_covered': len(set([r.get('subject_code', '') for r in search_results if isinstance(r, dict)])),
-                        'query_type': 'multihop' if result.get('has_followup', False) else 'single',
-                        'followup_count': len(result.get('followup_queries', []))
+                        'query_type': 'quick' if is_quick else ('multihop' if result.get('has_followup', False) else 'single'),
+                        'followup_count': len(result.get('followup_queries', [])),
+                        'is_quick_response': is_quick
                     }
                 }
             else:

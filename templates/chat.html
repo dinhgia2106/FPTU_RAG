@@ -4,147 +4,264 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FPTU RAG - AI Assistant</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Custom Styles -->
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/chat.css') }}"
     />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+            },
+            colors: {
+              primary: {
+                50: "#eff6ff",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+              },
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <div class="chat-container">
+  <body
+    class="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 min-h-screen text-white font-sans"
+  >
+    <!-- Background Animation -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <div
+        class="absolute -top-40 -right-40 w-80 h-80 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"
+      ></div>
+      <div
+        class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"
+      ></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col h-screen">
       <!-- Header -->
-      <header class="chat-header">
-        <div class="header-content">
-          <h1>FPTU AI Assistant</h1>
-          <div class="header-subtitle">
-            Hỗ trợ tìm kiếm thông tin syllabus môn học
+      <header
+        class="bg-gray-800/50 backdrop-blur-sm border-b border-gray-700/50 px-6 py-4"
+      >
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div
+              class="w-10 h-10 bg-gradient-to-r from-primary-500 to-purple-600 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-brain text-white text-lg"></i>
+            </div>
+            <div>
+              <h1
+                class="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+              >
+                FPTU AI Assistant
+              </h1>
+              <p class="text-sm text-gray-400">
+                Hỗ trợ tìm kiếm thông tin syllabus và sinh viên
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="header-actions">
-          <button id="showSubjects" class="action-btn">
-            Danh sách môn học
-          </button>
-          <button id="showExamples" class="action-btn">Câu hỏi mẫu</button>
+
+          <div class="flex items-center space-x-4">
+            <!-- Action Button -->
+            <button
+              onclick="showSubjects()"
+              class="bg-gray-700/50 hover:bg-gray-600/50 px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium border border-gray-600/50"
+            >
+              <i class="fas fa-list mr-2"></i>Danh sách môn học
+            </button>
+          </div>
         </div>
       </header>
 
-      <!-- Chat Area -->
-      <main class="chat-main">
-        <div id="messages" class="chat-messages">
-          <!-- Welcome message -->
-          <div class="message assistant-message">
-            <div class="message-avatar">AI</div>
-            <div class="message-content">
-              <div class="message-text">
-                Xin chào! Tôi là AI Assistant của FPTU. Tôi có thể giúp bạn tìm
-                kiếm thông tin về các môn học, syllabus và chương trình đào tạo.
-                Hãy đặt câu hỏi cho tôi!
+      <!-- Main Content -->
+      <main class="flex-1 flex overflow-hidden">
+        <!-- Chat Container -->
+        <div class="flex-1 flex flex-col max-w-5xl mx-auto w-full">
+          <!-- Chat Messages -->
+          <div
+            id="chatContainer"
+            class="flex-1 overflow-y-auto px-6 py-6 space-y-6"
+          >
+            <!-- Welcome Message từ AI (bên trái) -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-10 h-10 bg-gradient-to-r from-primary-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fas fa-robot text-white"></i>
               </div>
-              <div class="message-examples">
-                <p>Một số câu hỏi bạn có thể thử:</p>
-                <div class="example-questions">
+              <div
+                class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 max-w-3xl border border-gray-700/50"
+              >
+                <div class="text-lg font-medium mb-3 text-primary-300">
+                  Xin chào! Tôi là AI Assistant của FPTU
+                </div>
+                <div class="text-gray-300 mb-4">
+                  Tôi có thể giúp bạn tìm kiếm thông tin về:
+                  <ul class="list-disc list-inside mt-2 space-y-1 text-sm">
+                    <li>Các môn học và syllabus</li>
+                    <li>Chương trình đào tạo ngành AI</li>
+                    <li>Thông tin sinh viên và lớp học</li>
+                    <li>Môn tiên quyết và lộ trình học tập</li>
+                  </ul>
+                </div>
+
+                <div class="text-sm text-gray-400 mb-4">
+                  Một số câu hỏi bạn có thể thử:
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <button
-                    class="example-btn"
-                    onclick="sendExample('Liệt kê các môn học ngành AI')"
+                    onclick="sendSampleQuery('Liệt kê các môn học ngành AI theo kỳ')"
+                    class="bg-gray-700/30 hover:bg-gray-600/40 p-3 rounded-lg text-left text-sm transition-all duration-200 border border-gray-600/30 hover:border-gray-500/50"
                   >
-                    Liệt kê các môn học ngành AI
+                    <i class="fas fa-list-ul mr-2 text-primary-400"></i>Liệt kê
+                    các môn học ngành AI theo kỳ
                   </button>
                   <button
-                    class="example-btn"
-                    onclick="sendExample('CSI106 là môn gì?')"
+                    onclick="sendSampleQuery('CSI106 là môn gì?')"
+                    class="bg-gray-700/30 hover:bg-gray-600/40 p-3 rounded-lg text-left text-sm transition-all duration-200 border border-gray-600/30 hover:border-gray-500/50"
                   >
-                    CSI106 là môn gì?
+                    <i class="fas fa-question-circle mr-2 text-green-400"></i
+                    >CSI106 là môn gì?
                   </button>
                   <button
-                    class="example-btn"
-                    onclick="sendExample('Các môn có 3 tín chỉ')"
+                    onclick="sendSampleQuery('Danh sách sinh viên AI')"
+                    class="bg-gray-700/30 hover:bg-gray-600/40 p-3 rounded-lg text-left text-sm transition-all duration-200 border border-gray-600/30 hover:border-gray-500/50"
                   >
-                    Các môn có 3 tín chỉ
+                    <i class="fas fa-users mr-2 text-purple-400"></i>Danh sách
+                    sinh viên AI
                   </button>
+                  <button
+                    onclick="sendSampleQuery('SEG301 và các môn tiên quyết')"
+                    class="bg-gray-700/30 hover:bg-gray-600/40 p-3 rounded-lg text-left text-sm transition-all duration-200 border border-gray-600/30 hover:border-gray-500/50"
+                  >
+                    <i class="fas fa-sitemap mr-2 text-yellow-400"></i>SEG301 và
+                    các môn tiên quyết
+                  </button>
+                </div>
+
+                <div
+                  class="mt-4 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg"
+                >
+                  <div class="text-sm text-blue-300">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <strong>Smart Detection:</strong> Hệ thống tự động phát hiện
+                    khi nào cần tìm kiếm đa cấp (multihop) dựa trên câu hỏi của
+                    bạn, như "thông tin chi tiết", "môn tiên quyết", "mở rộng
+                    thông tin".
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input Area -->
+          <div
+            class="p-6 border-t border-gray-700/50 bg-gray-800/30 backdrop-blur-sm"
+          >
+            <div class="max-w-4xl mx-auto">
+              <div class="flex items-end space-x-4">
+                <div class="flex-1 relative">
+                  <textarea
+                    id="messageInput"
+                    placeholder="Nhập câu hỏi của bạn..."
+                    class="w-full p-4 pr-20 bg-gray-800/50 border border-gray-600/50 rounded-2xl text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none backdrop-blur-sm transition-all duration-200 text-sm leading-relaxed"
+                    rows="1"
+                    maxlength="1000"
+                  ></textarea>
+                  <div
+                    class="absolute bottom-3 right-4 text-xs text-gray-500 pointer-events-none"
+                  >
+                    <span id="charCount">0</span>/1000
+                  </div>
+                </div>
+
+                <button
+                  id="sendButton"
+                  onclick="sendMessage()"
+                  disabled
+                  class="bg-primary-600 hover:bg-primary-700 disabled:bg-gray-600 disabled:cursor-not-allowed p-4 rounded-2xl transition-all duration-200 flex items-center justify-center min-w-[3.5rem]"
+                >
+                  <i class="fas fa-paper-plane text-white"></i>
+                </button>
+              </div>
+
+              <!-- Info footer -->
+              <div class="flex items-center justify-center mt-4">
+                <div class="text-xs text-gray-500">
+                  AI có thể mắc lỗi. Hãy kiểm tra thông tin quan trọng.
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Loading indicator -->
-        <div id="loading" class="loading-indicator" style="display: none">
-          <div class="loading-dots">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <span>AI đang suy nghĩ... <span id="responseTimer">0s</span></span>
-        </div>
       </main>
-
-      <!-- Input Area -->
-      <footer class="chat-footer">
-        <div class="input-container">
-          <textarea
-            id="messageInput"
-            placeholder="Nhập câu hỏi của bạn..."
-            rows="1"
-            maxlength="1000"
-          ></textarea>
-          <button id="sendButton" class="send-btn" disabled>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M7 11L12 6L17 11M12 18V7"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="input-footer">
-          <span class="character-count">0/1000</span>
-          <span class="disclaimer"
-            >AI có thể mắc lỗi. Hãy kiểm tra thông tin quan trọng.</span
-          >
-        </div>
-      </footer>
     </div>
 
-    <!-- Modals -->
-    <!-- Subjects Modal -->
-    <div id="subjectsModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Danh sách môn học</h2>
-          <button class="modal-close close-modal">&times;</button>
+    <!-- Inline Loading Indicator (thay thế popup) -->
+    <div
+      id="typingIndicator"
+      class="hidden flex items-start space-x-4 px-6 mb-6"
+    >
+      <div
+        class="w-10 h-10 bg-gradient-to-r from-primary-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0"
+      >
+        <i class="fas fa-robot text-white"></i>
+      </div>
+      <div
+        class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-4 rounded-2xl flex items-center gap-3"
+      >
+        <div class="typing-dots">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <div class="modal-body">
-          <div class="search-box">
-            <input
-              type="text"
-              id="subjectSearch"
-              placeholder="Tìm kiếm môn học..."
-            />
-          </div>
-          <div id="subjectsList" class="subjects-list">
-            <!-- Subjects will be loaded here -->
-          </div>
-        </div>
+        <span class="text-gray-400 text-sm">AI đang suy nghĩ...</span>
       </div>
     </div>
 
-    <!-- Examples Modal -->
-    <div id="examplesModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Câu hỏi mẫu</h2>
-          <button class="modal-close close-modal">&times;</button>
+    <!-- Modals -->
+    <div
+      id="subjectsModal"
+      class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-gray-800 rounded-2xl border border-gray-700 max-w-4xl w-full max-h-[80vh] overflow-hidden"
+      >
+        <div
+          class="p-6 border-b border-gray-700 flex items-center justify-between"
+        >
+          <h2 class="text-xl font-bold text-white">Danh sách môn học</h2>
+          <button
+            onclick="closeModal('subjectsModal')"
+            class="text-gray-400 hover:text-white"
+          >
+            <i class="fas fa-times text-xl"></i>
+          </button>
         </div>
-        <div class="modal-body">
-          <div id="examplesList" class="examples-list">
-            <!-- Examples will be loaded here -->
-          </div>
+        <div id="subjectsContent" class="p-6 overflow-y-auto max-h-96">
+          <div class="text-center text-gray-400">Đang tải...</div>
         </div>
       </div>
     </div>
