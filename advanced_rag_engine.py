@@ -1,6 +1,6 @@
 """
 Advanced RAG Engine - Hệ thống RAG tiên tiến cho FPTU
-Tích hợp các kỹ thuật tiên tiến: Hierarchical Indexing, Multi-stage Retrieval, Query Routing, Document Summarization
+Tích hợp các kỹ thuật tiên tiến: Hierarchical Indexing, Multi-stage Retrieval, Query Routing, Document Summarization, Multi-hop Query
 """
 
 import json
@@ -41,6 +41,24 @@ class QueryIntent:
     requires_summarization: bool
     target_subjects: List[str]
 
+@dataclass
+class FollowupQuery:
+    """Truy vấn tiếp theo được phát hiện từ câu trả lời"""
+    query: str
+    confidence: float
+    query_type: str  # 'prerequisite', 'related_subject', 'detail_expansion'
+    source_info: str  # Thông tin nguồn gốc từ câu trả lời trước
+
+@dataclass
+class QueryChainResult:
+    """Kết quả của chuỗi truy vấn đa cấp"""
+    original_query: str
+    original_answer: str
+    followup_queries: List[FollowupQuery]
+    followup_results: List[Dict[str, Any]]
+    final_integrated_answer: str
+    execution_path: List[str]
+
 class QueryRouter:
     """Router thông minh để định tuyến query"""
     
@@ -78,11 +96,17 @@ class QueryRouter:
         """Phân tích ý định và phạm vi của query"""
         query_lower = query.lower()
         
-        # Extract subject codes for later use
+        # Extract subject codes and combo codes for later use
         subject_codes = re.findall(r'[A-Z]{2,4}\d{3}[a-z]*', query)
         
+        # ENHANCED: Extract combo codes (like AI17_COM1, AI17_COM2.1)
+        combo_codes = re.findall(r'[A-Z]{2,4}\d{2}_[A-Z]{3}\d+(?:\.\d+)?', query)
+        
+        # Combine subject and combo codes
+        all_codes = subject_codes + combo_codes
+        
         # ENHANCED: Extract partial subject codes (like "DPL" -> "DPL302m")
-        if not subject_codes:
+        if not all_codes:
             # Look for partial subject codes (3+ characters)
             words = query.upper().split()
             for word in words:
@@ -99,7 +123,7 @@ class QueryRouter:
                 if (len(word) >= 3 and len(word) <= 6 and word.isalpha() 
                     and word not in excluded_words):
                     # This could be a partial subject code
-                    subject_codes.append(word)
+                    all_codes.append(word)
         
         # PRIORITY 1: SEMESTER/TERM QUERIES - Always treat as LISTING
         if any(term in query_lower for term in ['kỳ', 'ky', 'kì', 'ki', 'semester', 'học kỳ', 'hoc ky']):
@@ -110,7 +134,7 @@ class QueryRouter:
                     subject_scope='multiple',
                     complexity='medium',
                     requires_summarization=True,
-                    target_subjects=subject_codes
+                    target_subjects=all_codes
                 )
         
         # PRIORITY 2: EXPLICIT LISTING QUERIES
@@ -118,10 +142,10 @@ class QueryRouter:
             complexity = 'complex' if any(term in query_lower for term in ['phân tích', 'so sánh', 'compare']) else 'medium'
             return QueryIntent(
                 query_type='listing',
-                subject_scope='multiple' if not subject_codes else 'single',
+                subject_scope='multiple' if not all_codes else 'single',
                 complexity=complexity,
                 requires_summarization=True,
-                target_subjects=subject_codes
+                target_subjects=all_codes
             )
         
         # PRIORITY 3: COMPARATIVE QUERIES
@@ -131,7 +155,7 @@ class QueryRouter:
                 subject_scope='multiple',
                 complexity='complex',
                 requires_summarization=True,
-                target_subjects=subject_codes
+                target_subjects=all_codes
             )
         
         # PRIORITY 4: ANALYTICAL QUERIES
@@ -141,11 +165,11 @@ class QueryRouter:
                 subject_scope='multiple',
                 complexity='complex',
                 requires_summarization=True,
-                target_subjects=subject_codes
+                target_subjects=all_codes
             )
         
         # DEFAULT: FACTUAL QUERIES
-        if subject_codes:
+        if all_codes:
             scope = 'single'
             complexity = 'simple'
         elif any(term in query_lower for term in ['ngành', 'nganh', 'major', 'chương trình', 'chuong trinh']):
@@ -160,7 +184,7 @@ class QueryRouter:
             subject_scope=scope,
             complexity=complexity,
             requires_summarization=False,
-            target_subjects=subject_codes
+            target_subjects=all_codes
         )
 
 class HierarchicalIndex:
@@ -459,6 +483,7 @@ class AdvancedRAGEngine:
         self.index = None
         self.hierarchical_index = None
         self.query_router = QueryRouter()
+        self.query_chain = None  # Sẽ được khởi tạo sau khi engine sẵn sàng
         self.is_initialized = False
         
         # Initialize Gemini
@@ -480,6 +505,9 @@ class AdvancedRAGEngine:
         
         # Initialize hierarchical index
         self.hierarchical_index = HierarchicalIndex(self.model)
+        
+        # Initialize query chain for multi-hop queries
+        self.query_chain = QueryChain(self)
         
         self.is_initialized = True
         logger.info("Khởi tạo hoàn tất")
@@ -786,6 +814,46 @@ Cac buoi hoc dau:
             'search_results': search_results[:5]
         }
 
+    def query_with_multihop(self, question: str, enable_multihop: bool = True, max_results: int = 10) -> Dict[str, Any]:
+        """
+        Thực hiện truy vấn với khả năng multi-hop (truy vấn kép)
+        
+        Args:
+            question: Câu hỏi gốc
+            enable_multihop: Bật/tắt tính năng multi-hop
+            max_results: Số kết quả tối đa
+            
+        Returns:
+            Dict chứa kết quả chi tiết của chuỗi truy vấn
+        """
+        if not self.is_initialized:
+            raise RuntimeError("Engine chưa được khởi tạo")
+        
+        if not self.query_chain:
+            # Fallback to normal query if QueryChain not available
+            return self.query(question, max_results)
+        
+        # Thực hiện truy vấn chuỗi
+        chain_result = self.query_chain.execute_query_chain(question, enable_multihop)
+        
+        return {
+            'question': question,
+            'original_answer': chain_result.original_answer,
+            'final_answer': chain_result.final_integrated_answer,
+            'followup_queries': [
+                {
+                    'query': fq.query,
+                    'confidence': fq.confidence,
+                    'type': fq.query_type,
+                    'source': fq.source_info
+                } for fq in chain_result.followup_queries
+            ],
+            'followup_results': chain_result.followup_results,
+            'execution_path': chain_result.execution_path,
+            'multihop_enabled': enable_multihop,
+            'has_followup': len(chain_result.followup_queries) > 0
+        }
+
     def _expand_query(self, query: str) -> str:
         """Expand query with synonyms and multilingual terms for better matching"""
         
@@ -834,6 +902,43 @@ Cac buoi hoc dau:
         
         # Get search configuration
         config = self._get_search_config(intent, query_lower)
+        
+        # STEP 0: FORCE ALL COMBOS for listing combo queries
+        if config.get('force_all_combos', False):
+            all_combo_items = [item for item in self.data if item.get('type') == 'combo_specialization']
+            
+            if all_combo_items:
+                print(f"FORCED all combos: {len(all_combo_items)} items")
+                query_embedding = self.model.encode([query])
+                
+                for item in all_combo_items:
+                    # Find original index
+                    original_idx = None
+                    for i, orig_item in enumerate(self.data):
+                        if orig_item is item:
+                            original_idx = i
+                            break
+                    
+                    if original_idx is not None:
+                        item_embedding = self.embeddings[original_idx:original_idx+1]
+                        
+                        # Calculate inner product (to match FAISS)
+                        score = float(np.dot(query_embedding[0], item_embedding[0]))
+                        
+                        # Force very high scores for all combos
+                        score *= config['boost_factors'].get('combo_specialization', 15.0)
+                        score += 50.0  # Base boost to ensure all combos appear
+                        
+                        results.append({
+                            'content': item['content'],
+                            'subject_code': item['subject_code'],
+                            'type': item['type'],
+                            'score': score,
+                            'metadata': item.get('metadata', {}),
+                            'search_method': 'forced_all_combos'
+                        })
+                        
+                        print(f"FORCED combo {item['subject_code']} with score: {score:.4f}")
         
         # STEP 1: FORCE MAJOR_OVERVIEW for semester/major queries
         if (is_semester_query or is_major_query) and 'major_overview' in config['content_types']:
@@ -885,6 +990,12 @@ Cac buoi hoc dau:
                 # Check if it's a full subject code (has numbers)
                 if re.match(r'[A-Z]{2,4}\d{3}[a-z]*', subject_code):
                     resolved_subjects.append(subject_code)
+                # Check if it's a combo code (like AI17_COM2.1)
+                elif re.match(r'[A-Z]{2,4}\d{2}_[A-Z]{3}\d+(?:\.\d+)?', subject_code):
+                    # Convert to internal combo format
+                    combo_subject = f"COMBO_{subject_code}"
+                    resolved_subjects.append(combo_subject)
+                    print(f"Resolved combo '{subject_code}' to: {combo_subject}")
                 else:
                     # Partial subject code - find matches in data
                     partial_matches = []
@@ -951,8 +1062,9 @@ Cac buoi hoc dau:
             }
         
         elif intent.query_type == 'factual':
-            config['content_types'] = ['general_info', 'learning_outcomes_summary', 'materials', 'assessments']
+            config['content_types'] = ['combo_specialization', 'general_info', 'learning_outcomes_summary', 'materials', 'assessments']
             config['boost_factors'] = {
+                'combo_specialization': 10.0,  # High priority for combo queries
                 'general_info': 3.0,
                 'learning_outcomes_summary': 2.0,
                 'materials': 1.8,
@@ -987,6 +1099,10 @@ Cac buoi hoc dau:
             config['content_types'].insert(0, 'combo_specialization')
             config['boost_factors']['combo_specialization'] = 15.0
             config['max_results'] = max(config['max_results'], 10)
+            
+            # Special handling for listing all combos
+            if any(list_term in query_lower for list_term in ['các', 'cac', 'tất cả', 'tat ca', 'all', 'list']):
+                config['force_all_combos'] = True
         
         if 'ngành' in query_lower:
             config['content_types'].insert(0, 'major_overview')
@@ -1032,7 +1148,14 @@ Cac buoi hoc dau:
             # For subject-specific queries, we want comprehensive info
             # Override config to include all relevant content types
             if len(subject_items) > 0:
-                relevant_content_types = ['general_info', 'learning_outcomes_summary', 'materials', 'assessments', 'schedule']
+                # Check if this is a combo item
+                is_combo = subject_items[0].get('type') == 'combo_specialization'
+                
+                if is_combo:
+                    # For combo queries, prioritize combo content
+                    relevant_content_types = ['combo_specialization']
+                else:
+                    relevant_content_types = ['general_info', 'learning_outcomes_summary', 'materials', 'assessments', 'schedule']
                 
                 # Filter by available content types in config, but prioritize comprehensive coverage
                 for content_type in relevant_content_types:
@@ -1045,8 +1168,10 @@ Cac buoi hoc dau:
                         score = 2.0  # Base high score for exact subject match
                         
                         # Apply content type priorities
-                        if content_type == 'general_info':
-                            score *= 3.0  # Highest priority for general info
+                        if content_type == 'combo_specialization':
+                            score *= 5.0  # Highest priority for combo content
+                        elif content_type == 'general_info':
+                            score *= 3.0  # High priority for general info
                         elif content_type == 'learning_outcomes_summary':
                             score *= 2.0
                         elif content_type in ['materials', 'assessments']:
@@ -1495,4 +1620,233 @@ Hãy trả lời một cách chính xác, đầy đủ và có cấu trúc rõ r
                         'summary': item['content'][:200] + '...'
                     })
             
-            return {'subjects': subjects, 'total': len(subjects)} 
+            return {'subjects': subjects, 'total': len(subjects)}
+
+class QueryChain:
+    """Xử lý chuỗi truy vấn đa cấp (multi-hop query)"""
+    
+    def __init__(self, rag_engine):
+        self.rag_engine = rag_engine
+        self.max_hops = 3  # Giới hạn số lần truy vấn kép để tránh vòng lặp
+        
+        # Patterns để nhận diện thông tin có thể truy vấn tiếp
+        self.prerequisite_patterns = [
+            r'môn tiên quyết.*?([A-Z]{2,4}\d{3}[a-z]*)',
+            r'prerequisite.*?([A-Z]{2,4}\d{3}[a-z]*)',
+            r'cần học trước.*?([A-Z]{2,4}\d{3}[a-z]*)',
+            r'phải hoàn thành.*?([A-Z]{2,4}\d{3}[a-z]*)',
+        ]
+        
+        self.related_subject_patterns = [
+            r'liên quan đến.*?([A-Z]{2,4}\d{3}[a-z]*)',
+            r'kết hợp với.*?([A-Z]{2,4}\d{3}[a-z]*)',
+            r'tiếp theo.*?([A-Z]{2,4}\d{3}[a-z]*)',
+            r'nâng cao.*?([A-Z]{2,4}\d{3}[a-z]*)',
+        ]
+        
+        self.detail_expansion_keywords = [
+            'chi tiết hơn', 'thông tin đầy đủ', 'mô tả cụ thể', 'tài liệu',
+            'giáo trình', 'syllabus', 'CLO', 'learning outcomes'
+        ]
+
+    def detect_followup_queries(self, answer: str, original_query: str) -> List[FollowupQuery]:
+        """Phát hiện các truy vấn tiếp theo từ câu trả lời"""
+        followup_queries = []
+        answer_lower = answer.lower()
+        
+        # 1. Phát hiện môn tiên quyết
+        for pattern in self.prerequisite_patterns:
+            matches = re.findall(pattern, answer, re.IGNORECASE)
+            for subject_code in matches:
+                if subject_code not in original_query:  # Tránh truy vấn lại chính nó
+                    query = f"Thông tin chi tiết về môn {subject_code}"
+                    followup_queries.append(FollowupQuery(
+                        query=query,
+                        confidence=0.9,
+                        query_type='prerequisite',
+                        source_info=f"Được nhắc đến như môn tiên quyết trong câu trả lời về {original_query}"
+                    ))
+        
+        # 2. Phát hiện môn học liên quan
+        for pattern in self.related_subject_patterns:
+            matches = re.findall(pattern, answer, re.IGNORECASE)
+            for subject_code in matches:
+                if subject_code not in original_query:
+                    query = f"Thông tin về môn {subject_code}"
+                    followup_queries.append(FollowupQuery(
+                        query=query,
+                        confidence=0.7,
+                        query_type='related_subject',
+                        source_info=f"Được nhắc đến như môn liên quan trong câu trả lời về {original_query}"
+                    ))
+        
+        # 3. Phát hiện nhu cầu mở rộng thông tin
+        for keyword in self.detail_expansion_keywords:
+            if keyword in answer_lower:
+                # Extract subject codes từ câu trả lời
+                subject_codes = re.findall(r'([A-Z]{2,4}\d{3}[a-z]*)', answer)
+                for subject_code in subject_codes:
+                    if subject_code not in original_query:
+                        query = f"Thông tin đầy đủ về {subject_code} bao gồm syllabus và CLO"
+                        followup_queries.append(FollowupQuery(
+                            query=query,
+                            confidence=0.6,
+                            query_type='detail_expansion',
+                            source_info=f"Cần thông tin chi tiết hơn về {subject_code}"
+                        ))
+                        break  # Chỉ tạo 1 query mở rộng cho câu trả lời này
+        
+        # 4. Phát hiện từ context trả lời thiếu thông tin
+        if any(phrase in answer_lower for phrase in [
+            'không có thông tin đầy đủ', 'cần tìm thêm thông tin', 
+            'thông tin chi tiết', 'không được cung cấp đầy đủ'
+        ]):
+            # Extract subject codes từ câu trả lời
+            subject_codes = re.findall(r'([A-Z]{2,4}\d{3}[a-z]*)', answer)
+            for subject_code in subject_codes[:2]:  # Giới hạn 2 môn để tránh quá nhiều query
+                if subject_code not in original_query:
+                    query = f"Thông tin chi tiết về {subject_code}"
+                    followup_queries.append(FollowupQuery(
+                        query=query,
+                        confidence=0.8,
+                        query_type='detail_expansion',
+                        source_info=f"Câu trả lời thiếu thông tin về {subject_code}"
+                    ))
+        
+        # Sắp xếp theo confidence và loại bỏ trùng lặp
+        unique_queries = {}
+        for fq in followup_queries:
+            if fq.query not in unique_queries or unique_queries[fq.query].confidence < fq.confidence:
+                unique_queries[fq.query] = fq
+        
+        # Giới hạn số lượng followup queries
+        sorted_queries = sorted(unique_queries.values(), key=lambda x: x.confidence, reverse=True)
+        return sorted_queries[:3]  # Tối đa 3 followup queries
+
+    def execute_query_chain(self, original_query: str, enable_multihop: bool = True) -> QueryChainResult:
+        """Thực hiện chuỗi truy vấn đa cấp"""
+        execution_path = [f"Truy vấn gốc: {original_query}"]
+        
+        # Bước 1: Thực hiện truy vấn gốc
+        original_result = self.rag_engine.query(original_query)
+        original_answer = original_result['answer']
+        
+        if not enable_multihop:
+            return QueryChainResult(
+                original_query=original_query,
+                original_answer=original_answer,
+                followup_queries=[],
+                followup_results=[],
+                final_integrated_answer=original_answer,
+                execution_path=execution_path
+            )
+        
+        # Bước 2: Phát hiện truy vấn tiếp theo
+        followup_queries = self.detect_followup_queries(original_answer, original_query)
+        
+        if not followup_queries:
+            execution_path.append("Không phát hiện truy vấn tiếp theo")
+            return QueryChainResult(
+                original_query=original_query,
+                original_answer=original_answer,
+                followup_queries=[],
+                followup_results=[],
+                final_integrated_answer=original_answer,
+                execution_path=execution_path
+            )
+        
+        # Bước 3: Thực hiện các truy vấn tiếp theo
+        followup_results = []
+        for i, fq in enumerate(followup_queries):
+            if i >= self.max_hops:
+                break
+                
+            execution_path.append(f"Truy vấn tiếp theo {i+1}: {fq.query} (confidence: {fq.confidence:.2f})")
+            
+            try:
+                result = self.rag_engine.query(fq.query)
+                result['followup_query'] = fq
+                followup_results.append(result)
+                execution_path.append(f"  -> Hoàn thành truy vấn {i+1}")
+            except Exception as e:
+                execution_path.append(f"  -> Lỗi truy vấn {i+1}: {str(e)}")
+                continue
+        
+        # Bước 4: Tích hợp kết quả
+        final_answer = self._integrate_results(original_result, followup_results, original_query)
+        execution_path.append("Tích hợp kết quả hoàn tất")
+        
+        return QueryChainResult(
+            original_query=original_query,
+            original_answer=original_answer,
+            followup_queries=followup_queries,
+            followup_results=followup_results,
+            final_integrated_answer=final_answer,
+            execution_path=execution_path
+        )
+
+    def _integrate_results(self, original_result: Dict, followup_results: List[Dict], original_query: str) -> str:
+        """Tích hợp kết quả từ truy vấn gốc và các truy vấn tiếp theo"""
+        if not followup_results:
+            return original_result['answer']
+        
+        # Chuẩn bị context tích hợp
+        integration_context = f"""
+TRUY VẤN GỐC: {original_query}
+THÔNG TIN SỐ 1 (Câu trả lời chính):
+{original_result['answer']}
+
+"""
+        
+        # Thêm thông tin từ các truy vấn tiếp theo
+        for i, result in enumerate(followup_results):
+            fq = result.get('followup_query')
+            integration_context += f"""THÔNG TIN BỔ SUNG {i+2} (Từ truy vấn: {fq.query if fq else 'N/A'}):
+{result['answer']}
+
+"""
+        
+        # Prompt tích hợp thông minh
+        integration_prompt = f"""
+Dựa trên thông tin được cung cấp, hãy tạo ra một câu trả lời tích hợp và hoàn chỉnh cho truy vấn gốc.
+
+QUY TẮC TÍCH HỢP:
+1. Bắt đầu với câu trả lời chính cho truy vấn gốc
+2. Bổ sung thông tin chi tiết từ các truy vấn tiếp theo một cách logic
+3. Tránh lặp lại thông tin
+4. Sắp xếp thông tin theo thứ tự quan trọng và logic
+5. Giữ nguyên các thông tin quan trọng như mã môn học, tín chỉ, kỳ học
+6. Nếu có thông tin mâu thuẫn, ưu tiên thông tin từ câu trả lời chính
+
+THÔNG TIN ĐẦU VÀO:
+{integration_context}
+
+Hãy tạo ra một câu trả lời tích hợp, đầy đủ và có cấu trúc rõ ràng:
+"""
+        
+        try:
+            # Sử dụng Gemini để tích hợp
+            model = genai.GenerativeModel('gemini-1.5-flash')
+            response = model.generate_content(integration_prompt)
+            
+            if response.text:
+                return response.text.strip()
+            else:
+                # Fallback: ghép thông tin đơn giản
+                return self._simple_integration(original_result['answer'], followup_results)
+                
+        except Exception as e:
+            logger.error(f"Lỗi tích hợp kết quả với Gemini: {e}")
+            return self._simple_integration(original_result['answer'], followup_results)
+
+    def _simple_integration(self, original_answer: str, followup_results: List[Dict]) -> str:
+        """Tích hợp đơn giản khi Gemini không khả dụng"""
+        integrated = original_answer + "\n\n"
+        
+        for i, result in enumerate(followup_results):
+            fq = result.get('followup_query')
+            if fq:
+                integrated += f"THÔNG TIN BỔ SUNG VỀ {fq.query.upper()}:\n"
+                integrated += result['answer'] + "\n\n"
+        
+        return integrated.strip() 

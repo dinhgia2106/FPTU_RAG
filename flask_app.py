@@ -48,35 +48,70 @@ def index():
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
-    """API endpoint cho chat"""
+    """API endpoint cho chat với hỗ trợ multi-hop query"""
     try:
         data = request.get_json()
         question = data.get('message', '').strip()
+        enable_multihop = data.get('multihop', True)  # Mặc định bật multi-hop
         
         if not question:
             return jsonify({'error': 'Vui lòng nhập câu hỏi'}), 400
         
-        # Process query with RAG engine
-        result = rag_engine.query(question)
-        
-        # Handle both old and new result formats
-        if isinstance(result, dict) and 'answer' in result:
-            answer = result['answer']
-            search_results = result.get('search_results', [])
+        # Check if multi-hop is supported
+        if enable_multihop and hasattr(rag_engine, 'query_with_multihop'):
+            # Use multi-hop query
+            result = rag_engine.query_with_multihop(question, enable_multihop=True)
+            
+            # Handle multi-hop result format
+            if isinstance(result, dict):
+                answer = result.get('final_answer', result.get('original_answer', ''))
+                search_results = result.get('search_results', [])
+                
+                response = {
+                    'answer': answer,
+                    'search_results': search_results,
+                    'multihop_info': {
+                        'has_followup': result.get('has_followup', False),
+                        'followup_queries': result.get('followup_queries', []),
+                        'execution_path': result.get('execution_path', [])
+                    },
+                    'metadata': {
+                        'subjects_covered': len(set([r.get('subject_code', '') for r in search_results if isinstance(r, dict)])),
+                        'query_type': 'multihop' if result.get('has_followup', False) else 'single',
+                        'followup_count': len(result.get('followup_queries', []))
+                    }
+                }
+            else:
+                # Fallback format
+                response = {
+                    'answer': str(result),
+                    'search_results': [],
+                    'multihop_info': {'has_followup': False},
+                    'metadata': {'subjects_covered': 0, 'query_type': 'single'}
+                }
         else:
-            # Fallback for string response
-            answer = str(result)
-            search_results = []
-        
-        response = {
-            'answer': answer,
-            'search_results': search_results,
-            'metadata': {
-                'subjects_covered': len(set([r.get('subject_code', '') for r in search_results if isinstance(r, dict)]))
+            # Use normal query as fallback
+            result = rag_engine.query(question)
+            
+            # Handle normal result format
+            if isinstance(result, dict) and 'answer' in result:
+                answer = result['answer']
+                search_results = result.get('search_results', [])
+            else:
+                answer = str(result)
+                search_results = []
+            
+            response = {
+                'answer': answer,
+                'search_results': search_results,
+                'multihop_info': {'has_followup': False},
+                'metadata': {
+                    'subjects_covered': len(set([r.get('subject_code', '') for r in search_results if isinstance(r, dict)])),
+                    'query_type': 'single'
+                }
             }
-        }
         
-        logger.info(f"Processed query: {question[:50]}...")
+        logger.info(f"Processed query: {question[:50]}... (multihop: {enable_multihop})")
         return jsonify(response)
         
     except Exception as e:
