@@ -414,7 +414,7 @@ Trả lời:"""
                 "max_output_tokens": 1024,
             }
             
-            gemini_model_name = "gemini-1.5-flash-latest"
+            gemini_model_name = "gemini-1.5-flash"
             model = genai.GenerativeModel(gemini_model_name, generation_config=model_options)
             response = model.generate_content(prompt)
             answer = response.text
@@ -479,7 +479,7 @@ def main():
     show_analysis = st.sidebar.checkbox("Hiển thị phân tích truy vấn", value=False)
     
     # Khởi tạo Gemini model 
-    gemini_model = genai.GenerativeModel("gemini-1.5-flash-latest")
+    gemini_model = genai.GenerativeModel("gemini-1.5-flash")
     
     # Ô input cho câu hỏi
     query_text = st.text_area("Nhập câu hỏi của bạn về syllabus:", height=100)
