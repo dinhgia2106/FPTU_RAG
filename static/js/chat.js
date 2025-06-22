@@ -3,82 +3,151 @@
  * Xử lý giao diện chat và API calls
  */
 
+// Modern Chat Interface JavaScript
 class ChatInterface {
   constructor() {
-    this.messagesContainer = document.getElementById("messages");
+    this.chatContainer = document.getElementById("chatContainer");
     this.messageInput = document.getElementById("messageInput");
     this.sendButton = document.getElementById("sendButton");
-    this.subjectsModal = document.getElementById("subjectsModal");
-    this.examplesModal = document.getElementById("examplesModal");
-    this.loadingIndicator = document.getElementById("loading");
+    this.charCount = document.getElementById("charCount");
+    this.typingIndicator = document.getElementById("typingIndicator");
 
-    // Timer variables
+    this.isLoading = false;
     this.responseStartTime = null;
-    this.timerInterval = null;
 
     this.initializeEventListeners();
-    this.loadExamples();
-    this.updateCharacterCount();
-    this.updateSendButtonState();
+    this.initializeInputHandlers();
   }
 
   initializeEventListeners() {
     // Send button click
     this.sendButton.addEventListener("click", () => this.sendMessage());
 
-    // Enter key press
-    this.messageInput.addEventListener("keypress", (e) => {
+    // Enter key handling
+    this.messageInput.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         this.sendMessage();
       }
     });
 
-    // Input changes
+    // Auto-resize textarea
     this.messageInput.addEventListener("input", () => {
-      this.updateCharacterCount();
-      this.updateSendButtonState();
+      this.updateCharCount();
+      this.autoResizeTextarea();
     });
 
-    // Modal close buttons
-    document.querySelectorAll(".close-modal").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.target.closest(".modal").style.display = "none";
-      });
-    });
+    // Initial setup
+    this.updateCharCount();
+  }
 
-    // Modal background click
-    document.querySelectorAll(".modal").forEach((modal) => {
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-    });
+  initializeInputHandlers() {
+    this.messageInput.addEventListener("input", () => {
+      const hasText = this.messageInput.value.trim().length > 0;
+      this.sendButton.disabled = !hasText;
 
-    // Header buttons
-    document.getElementById("showSubjects")?.addEventListener("click", () => {
-      this.showSubjects();
+      if (hasText) {
+        this.sendButton.classList.remove("disabled:bg-gray-600");
+        this.sendButton.classList.add("bg-primary-600", "hover:bg-primary-700");
+      } else {
+        this.sendButton.classList.add("disabled:bg-gray-600");
+        this.sendButton.classList.remove(
+          "bg-primary-600",
+          "hover:bg-primary-700"
+        );
+      }
     });
+  }
 
-    document.getElementById("showExamples")?.addEventListener("click", () => {
-      this.showExamples();
-    });
+  updateCharCount() {
+    const count = this.messageInput.value.length;
+    this.charCount.textContent = count;
+
+    if (count > 800) {
+      this.charCount.classList.add("text-red-400");
+      this.charCount.classList.remove("text-yellow-400");
+    } else if (count > 600) {
+      this.charCount.classList.add("text-yellow-400");
+      this.charCount.classList.remove("text-red-400");
+    } else {
+      this.charCount.classList.remove("text-red-400", "text-yellow-400");
+    }
+  }
+
+  autoResizeTextarea() {
+    this.messageInput.style.height = "auto";
+    this.messageInput.style.height =
+      Math.min(this.messageInput.scrollHeight, 120) + "px";
+  }
+
+  // Smart multihop detection based on query content
+  shouldUseMultihop(query) {
+    const queryLower = query.toLowerCase().trim();
+
+    // Explicit multihop triggers
+    const multihopTriggers = [
+      "và các môn tiên quyết",
+      "và môn tiên quyết",
+      "cùng với môn tiên quyết",
+      "kèm theo môn tiên quyết",
+      "và các môn liên quan",
+      "thông tin đầy đủ",
+      "thông tin chi tiết",
+      "chi tiết về",
+      "mở rộng thông tin",
+      "phân tích chi tiết",
+      "tổng quan về",
+      "lộ trình học",
+      "so sánh với",
+      "liên quan đến",
+    ];
+
+    // Check for explicit multihop triggers
+    for (const trigger of multihopTriggers) {
+      if (queryLower.includes(trigger)) {
+        return true;
+      }
+    }
+
+    // Advanced patterns that might need multihop
+    const complexPatterns = [
+      /(.+)\s+(và|cùng)\s+(.+)/, // "X và Y" patterns
+      /so sánh\s+(.+)\s+với\s+(.+)/, // Comparison patterns
+      /mối quan hệ\s+giữa\s+(.+)/, // Relationship patterns
+      /lộ trình\s+từ\s+(.+)\s+đến\s+(.+)/, // Learning path patterns
+    ];
+
+    for (const pattern of complexPatterns) {
+      if (pattern.test(queryLower)) {
+        return true;
+      }
+    }
+
+    return false; // Default: single-hop search
   }
 
   async sendMessage() {
     const message = this.messageInput.value.trim();
-    if (!message) return;
+    if (!message || this.isLoading) return;
 
-    // Add user message to chat
-    this.addMessage(message, "user");
+    // Smart multihop detection
+    const enableMultihop = this.shouldUseMultihop(message);
+
+    // Add user message to chat (bên phải)
+    this.addUserMessage(message);
+
+    // Clear input
     this.messageInput.value = "";
-    this.updateCharacterCount();
-    this.updateSendButtonState();
-    this.showLoading(true);
-    this.startResponseTimer();
+    this.updateCharCount();
+    this.autoResizeTextarea();
+    this.sendButton.disabled = true;
+
+    // Show inline typing indicator
+    this.showTypingIndicator();
 
     try {
+      this.responseStartTime = Date.now();
+
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
@@ -86,339 +155,230 @@ class ChatInterface {
         },
         body: JSON.stringify({
           message: message,
-          multihop: true, // Bật multi-hop query
+          multihop: enableMultihop,
         }),
       });
 
-      const data = await response.json();
-      const responseTime = this.stopResponseTimer();
-
-      if (response.ok) {
-        this.addMessage(data.answer, "assistant", responseTime);
-
-        // Show multi-hop information if available
-        if (data.multihop_info && data.multihop_info.has_followup) {
-          this.showMultiHopInfo(data.multihop_info);
-        }
-
-        // Show search results if available
-        if (data.search_results && data.search_results.length > 0) {
-          this.showSearchResults(data.search_results);
-        }
-      } else {
-        this.addMessage(`Lỗi: ${data.error}`, "error");
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
+
+      const data = await response.json();
+      const responseTime = Date.now() - this.responseStartTime;
+
+      this.hideTypingIndicator();
+      this.addAssistantMessage(data.answer, {
+        responseTime,
+        isQuick: data.metadata?.is_quick_response || false,
+        hasFollowup: data.multihop_info?.has_followup || false,
+        subjectsCovered: data.metadata?.subjects_covered || 0,
+        autoMultihop: enableMultihop,
+      });
     } catch (error) {
-      console.error("Error:", error);
-      this.addMessage(
-        "Có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại.",
-        "error"
-      );
-    } finally {
-      this.showLoading(false);
+      this.hideTypingIndicator();
+      this.addErrorMessage(`Lỗi: ${error.message}`);
     }
   }
 
-  addMessage(content, type, responseTime = null) {
+  addUserMessage(message) {
     const messageDiv = document.createElement("div");
-    messageDiv.className = `message ${type}-message`;
+    messageDiv.className = "user-message flex justify-end mb-6 w-full";
 
-    const avatar = document.createElement("div");
-    avatar.className = "message-avatar";
-    avatar.textContent =
-      type === "user" ? "U" : type === "assistant" ? "AI" : "!";
+    messageDiv.innerHTML = `
+      <div class="message-content bg-gradient-to-r from-primary-500 to-primary-600 text-white p-4 rounded-2xl rounded-br-md max-w-[70%] shadow-lg">
+        ${this.formatMessage(message)}
+      </div>
+    `;
 
-    const messageContent = document.createElement("div");
-    messageContent.className = "message-content";
-
-    const messageText = document.createElement("div");
-    messageText.className = "message-text";
-    messageText.innerHTML = this.formatMessage(content);
-
-    messageContent.appendChild(messageText);
-
-    // Add response time for assistant messages
-    if (type === "assistant" && responseTime) {
-      const timeDiv = document.createElement("div");
-      timeDiv.className = "response-time";
-      timeDiv.textContent = `Phản hồi trong ${responseTime}`;
-      messageContent.appendChild(timeDiv);
-    }
-
-    messageDiv.appendChild(avatar);
-    messageDiv.appendChild(messageContent);
-
-    this.messagesContainer.appendChild(messageDiv);
+    this.chatContainer.appendChild(messageDiv);
     this.scrollToBottom();
   }
 
-  formatMessage(content) {
-    // Convert newlines to <br> and format basic markdown
-    return content
-      .replace(/\n/g, "<br>")
+  addAssistantMessage(message, metadata = {}) {
+    const messageDiv = document.createElement("div");
+    messageDiv.className =
+      "assistant-message flex items-start gap-4 mb-6 w-full";
+
+    const responseTimeClass = metadata.isQuick
+      ? "text-green-400"
+      : metadata.hasFollowup
+      ? "text-yellow-400"
+      : "text-gray-400";
+
+    let responseTypeText = "Tìm kiếm thường";
+    if (metadata.isQuick) {
+      responseTypeText = "Phản hồi nhanh";
+    } else if (metadata.hasFollowup) {
+      responseTypeText = "Tìm kiếm đa cấp";
+    } else if (metadata.autoMultihop) {
+      responseTypeText = "Tìm kiếm thông minh";
+    }
+
+    messageDiv.innerHTML = `
+      <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-robot text-white"></i>
+      </div>
+      <div class="message-content bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-gray-100 p-6 rounded-2xl rounded-tl-md max-w-[80%] shadow-lg">
+        ${this.formatMessage(message)}
+        <div class="response-time ${responseTimeClass} text-xs mt-3 flex items-center justify-between">
+          <span>${responseTypeText}</span>
+          <span>${(metadata.responseTime / 1000).toFixed(1)}s</span>
+        </div>
+      </div>
+    `;
+
+    this.chatContainer.appendChild(messageDiv);
+    this.scrollToBottom();
+  }
+
+  addErrorMessage(message) {
+    const messageDiv = document.createElement("div");
+    messageDiv.className =
+      "assistant-message flex items-start gap-4 mb-6 w-full";
+
+    messageDiv.innerHTML = `
+      <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-exclamation-triangle text-white"></i>
+      </div>
+      <div class="bg-red-900/20 border border-red-500/30 text-red-300 p-4 rounded-2xl max-w-[80%] flex items-center gap-3">
+        <div>${this.formatMessage(message)}</div>
+      </div>
+    `;
+
+    this.chatContainer.appendChild(messageDiv);
+    this.scrollToBottom();
+  }
+
+  formatMessage(message) {
+    // Convert markdown-like formatting
+    return message
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
-      .replace(/`(.*?)`/g, "<code>$1</code>");
+      .replace(
+        /`(.*?)`/g,
+        '<code class="bg-gray-700/50 px-2 py-1 rounded text-sm">$1</code>'
+      )
+      .replace(/\n/g, "<br>")
+      .replace(
+        /#{1,6}\s*(.*?)(?:\n|$)/g,
+        '<h3 class="text-lg font-semibold mt-4 mb-2 text-primary-300">$1</h3>'
+      )
+      .replace(/^\* (.+)$/gm, '<li class="ml-4">$1</li>')
+      .replace(
+        /(<li.*<\/li>)/s,
+        '<ul class="list-disc list-inside space-y-1 my-2">$1</ul>'
+      );
   }
 
-  showMultiHopInfo(multihopInfo) {
-    const multihopDiv = document.createElement("div");
-    multihopDiv.className = "multihop-info";
-
-    const header = document.createElement("div");
-    header.className = "multihop-header";
-    header.innerHTML = `
-      <div class="multihop-title">
-        Truy vấn kép đã được thực hiện (${multihopInfo.followup_queries.length} truy vấn phụ)
-      </div>
-      <div class="multihop-toggle">v</div>
-    `;
-
-    const content = document.createElement("div");
-    content.className = "multihop-content";
-
-    // Execution path
-    if (multihopInfo.execution_path && multihopInfo.execution_path.length > 0) {
-      const pathDiv = document.createElement("div");
-      pathDiv.className = "execution-path";
-      pathDiv.innerHTML = "<strong>Quy trình xử lý:</strong>";
-
-      const pathList = document.createElement("ol");
-      multihopInfo.execution_path.forEach((step) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = step;
-        pathList.appendChild(listItem);
-      });
-
-      pathDiv.appendChild(pathList);
-      content.appendChild(pathDiv);
-    }
-
-    // Followup queries
-    if (
-      multihopInfo.followup_queries &&
-      multihopInfo.followup_queries.length > 0
-    ) {
-      const queriesDiv = document.createElement("div");
-      queriesDiv.className = "followup-queries";
-      queriesDiv.innerHTML = "<strong>Các truy vấn được tạo tự động:</strong>";
-
-      multihopInfo.followup_queries.forEach((query, index) => {
-        const queryItem = document.createElement("div");
-        queryItem.className = "followup-query-item";
-        queryItem.innerHTML = `
-          <div class="query-text">${index + 1}. ${query.query}</div>
-          <div class="query-meta">
-            <span class="confidence">Độ tin cậy: ${(
-              query.confidence * 100
-            ).toFixed(0)}%</span>
-            <span class="query-type">Loại: ${this.getQueryTypeLabel(
-              query.type
-            )}</span>
-          </div>
-        `;
-        queriesDiv.appendChild(queryItem);
-      });
-
-      content.appendChild(queriesDiv);
-    }
-
-    // Add click handler for toggle
-    header.addEventListener("click", () => {
-      multihopDiv.classList.toggle("expanded");
-    });
-
-    multihopDiv.appendChild(header);
-    multihopDiv.appendChild(content);
-    this.messagesContainer.appendChild(multihopDiv);
+  showTypingIndicator() {
+    this.isLoading = true;
+    this.typingIndicator.classList.remove("hidden");
+    this.chatContainer.appendChild(this.typingIndicator);
     this.scrollToBottom();
   }
 
-  getQueryTypeLabel(type) {
-    const labels = {
-      prerequisite: "Môn tiên quyết",
-      related_subject: "Môn liên quan",
-      detail_expansion: "Mở rộng thông tin",
-    };
-    return labels[type] || type;
-  }
-
-  showSearchResults(results) {
-    const resultsDiv = document.createElement("div");
-    resultsDiv.className = "search-results";
-
-    const header = document.createElement("div");
-    header.className = "search-results-header";
-    header.innerHTML = `
-      <div class="search-results-title">
-        Nguồn tham khảo (${results.length} kết quả)
-      </div>
-      <div class="search-results-toggle">v</div>
-    `;
-
-    const content = document.createElement("div");
-    content.className = "search-results-content";
-
-    results.slice(0, 3).forEach((result) => {
-      const resultItem = document.createElement("div");
-      resultItem.className = "result-item";
-      resultItem.innerHTML = `
-        <div class="result-subject"><strong>${
-          result.subject_code || "N/A"
-        }</strong></div>
-        <div class="result-content">${this.truncateText(
-          result.content,
-          100
-        )}</div>
-      `;
-      content.appendChild(resultItem);
-    });
-
-    // Add click handler for toggle
-    header.addEventListener("click", () => {
-      resultsDiv.classList.toggle("expanded");
-    });
-
-    resultsDiv.appendChild(header);
-    resultsDiv.appendChild(content);
-    this.messagesContainer.appendChild(resultsDiv);
-    this.scrollToBottom();
-  }
-
-  truncateText(text, maxLength) {
-    return text.length > maxLength
-      ? text.substring(0, maxLength) + "..."
-      : text;
-  }
-
-  showLoading(show) {
-    if (this.loadingIndicator) {
-      this.loadingIndicator.style.display = show ? "flex" : "none";
+  hideTypingIndicator() {
+    this.isLoading = false;
+    this.typingIndicator.classList.add("hidden");
+    // Remove from chat container if it's there
+    if (this.typingIndicator.parentNode === this.chatContainer) {
+      this.chatContainer.removeChild(this.typingIndicator);
     }
-    this.sendButton.disabled = show;
-  }
-
-  startResponseTimer() {
-    this.responseStartTime = Date.now();
-    const timerElement = document.getElementById("responseTimer");
-
-    this.timerInterval = setInterval(() => {
-      if (timerElement && this.responseStartTime) {
-        const elapsed = Math.floor(
-          (Date.now() - this.responseStartTime) / 1000
-        );
-        timerElement.textContent = `${elapsed}s`;
-      }
-    }, 100);
-  }
-
-  stopResponseTimer() {
-    if (this.timerInterval) {
-      clearInterval(this.timerInterval);
-      this.timerInterval = null;
-    }
-
-    if (this.responseStartTime) {
-      const elapsed = Date.now() - this.responseStartTime;
-      this.responseStartTime = null;
-      return `${(elapsed / 1000).toFixed(1)}s`;
-    }
-
-    return null;
   }
 
   scrollToBottom() {
-    this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
-  }
-
-  updateCharacterCount() {
-    const charCountElement = document.querySelector(".character-count");
-    if (charCountElement && this.messageInput) {
-      const currentLength = this.messageInput.value.length;
-      charCountElement.textContent = `${currentLength}/1000`;
-    }
-  }
-
-  updateSendButtonState() {
-    if (this.sendButton && this.messageInput) {
-      const hasText = this.messageInput.value.trim().length > 0;
-      this.sendButton.disabled = !hasText;
-    }
-  }
-
-  async showSubjects() {
-    try {
-      const response = await fetch("/api/subjects");
-      const data = await response.json();
-
-      if (response.ok) {
-        const subjectsList = document.getElementById("subjectsList");
-        subjectsList.innerHTML = "";
-
-        data.subjects.forEach((subject) => {
-          const subjectItem = document.createElement("div");
-          subjectItem.className = "subject-item";
-          subjectItem.innerHTML = `
-                        <div class="subject-code">${subject.code}</div>
-                        <div class="subject-name">${subject.name}</div>
-                        <div class="subject-credits">${subject.credits} tín chỉ</div>
-                    `;
-          subjectItem.addEventListener("click", () => {
-            this.messageInput.value = `Thông tin về môn ${subject.code}`;
-            this.subjectsModal.style.display = "none";
-          });
-          subjectsList.appendChild(subjectItem);
-        });
-
-        this.subjectsModal.style.display = "block";
-      }
-    } catch (error) {
-      console.error("Error loading subjects:", error);
-    }
-  }
-
-  async showExamples() {
-    this.examplesModal.style.display = "block";
-  }
-
-  async loadExamples() {
-    try {
-      const response = await fetch("/api/examples");
-      const data = await response.json();
-
-      if (response.ok) {
-        const examplesList = document.getElementById("examplesList");
-        if (examplesList) {
-          examplesList.innerHTML = "";
-
-          data.examples.forEach((example) => {
-            const exampleItem = document.createElement("div");
-            exampleItem.className = "example-item";
-            exampleItem.textContent = example;
-            exampleItem.addEventListener("click", () => {
-              this.messageInput.value = example;
-              this.examplesModal.style.display = "none";
-            });
-            examplesList.appendChild(exampleItem);
-          });
-        }
-      }
-    } catch (error) {
-      console.error("Error loading examples:", error);
-    }
+    setTimeout(() => {
+      this.chatContainer.scrollTop = this.chatContainer.scrollHeight;
+    }, 100);
   }
 }
 
-// Global function for example buttons
-function sendExample(message) {
+// Modal functions
+function showSubjects() {
+  const modal = document.getElementById("subjectsModal");
+  const content = document.getElementById("subjectsContent");
+
+  modal.classList.remove("hidden");
+  content.innerHTML =
+    '<div class="text-center text-gray-400">Đang tải...</div>';
+
+  fetch("/api/subjects")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.subjects) {
+        content.innerHTML = `
+          <div class="grid gap-3">
+            ${data.subjects
+              .map(
+                (subject) => `
+              <div class="subject-item" onclick="sendSampleQuery('${subject.code} là môn gì?')">
+                <div class="subject-code">${subject.code}</div>
+                <div class="subject-name">${subject.name}</div>
+                <div class="subject-details">
+                  <span>Tín chỉ: ${subject.credits}</span>
+                  <span>Kỳ: ${subject.semester}</span>
+                </div>
+              </div>
+            `
+              )
+              .join("")}
+          </div>
+        `;
+      }
+    })
+    .catch((error) => {
+      content.innerHTML =
+        '<div class="error-message">Không thể tải danh sách môn học</div>';
+    });
+}
+
+function showExamples() {
+  fetch("/api/examples")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.examples) {
+        const exampleButtons = data.examples
+          .map(
+            (example) =>
+              `<button onclick="sendSampleQuery('${example}')" class="bg-gray-700/30 hover:bg-gray-600/40 p-3 rounded-lg text-left text-sm transition-all duration-200 border border-gray-600/30 hover:border-gray-500/50 w-full">
+            <i class="fas fa-question-circle mr-2 text-primary-400"></i>${example}
+          </button>`
+          )
+          .join("");
+
+        // Show examples in a simple alert or create a modal
+        alert("Câu hỏi mẫu:\n" + data.examples.join("\n"));
+      }
+    });
+}
+
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.add("hidden");
+}
+
+function sendSampleQuery(query) {
   const chatInterface = window.chatInterface;
   if (chatInterface) {
-    chatInterface.messageInput.value = message;
+    chatInterface.messageInput.value = query;
+    chatInterface.updateCharCount();
     chatInterface.sendMessage();
   }
+
+  // Close any open modals
+  closeModal("subjectsModal");
 }
 
-// Initialize chat interface when DOM is loaded
+// Initialize chat interface when page loads
 document.addEventListener("DOMContentLoaded", () => {
   window.chatInterface = new ChatInterface();
+});
+
+// Close modals when clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("fixed") &&
+    e.target.classList.contains("inset-0")
+  ) {
+    e.target.classList.add("hidden");
+  }
 });
