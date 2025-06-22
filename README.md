@@ -5,6 +5,7 @@ Hệ thống RAG (Retrieval-Augmented Generation) tiên tiến được thiết 
 ## Tính năng chính
 
 - **Tìm kiếm thông minh đa cấp**: Hỗ trợ tìm kiếm theo mã môn học, tên môn học, và semantic search
+- **Truy vấn kép (Multi-hop Query)**: Tự động phát hiện và thực hiện truy vấn bổ sung cho thông tin liên quan
 - **Giao diện chat hiện đại**: Web interface giống ChatGPT được xây dựng bằng Flask
 - **Xử lý ngữ cảnh thông minh**: Phân tích ý định truy vấn và định tuyến search strategy
 - **Tổ chức dữ liệu phân cấp**: Hierarchical indexing với nhiều content types
@@ -19,6 +20,7 @@ Hệ thống RAG (Retrieval-Augmented Generation) tiên tiến được thiết 
 - `QueryIntent`: Phân tích ý định truy vấn (factual, listing, comparative, analytical)
 - `QueryRouter`: Định tuyến query với pattern matching thông minh
 - `HierarchicalIndex`: Tổ chức dữ liệu theo 3 levels (summary, chunk, detail)
+- `QueryChain`: Xử lý truy vấn kép (multi-hop) với tự động phát hiện followup queries
 - `AdvancedRAGEngine`: Engine chính với intelligent search và summarization
 
 **Search Strategy (Multi-stage):**
@@ -47,12 +49,43 @@ general_results = self._semantic_search(query, config)
 - `schedule`: Lịch học chi tiết
 - `major_overview`: Tổng quan ngành học
 
+**Multi-hop Query System:**
+
+Tính năng truy vấn kép cho phép hệ thống tự động phát hiện và thực hiện các truy vấn bổ sung khi câu trả lời chứa thông tin có thể được mở rộng:
+
+```python
+# Ví dụ: "Thông tin SEG301 và các môn tiên quyết"
+original_query = "Thông tin SEG301 và thông tin các môn tiên quyết của nó"
+
+# Hệ thống tự động phát hiện:
+followup_queries = [
+    {
+        "query": "Thông tin chi tiết về môn CSD203",
+        "confidence": 0.90,
+        "type": "prerequisite"
+    },
+    {
+        "query": "Thông tin đầy đủ về CSD203 bao gồm syllabus và CLO",
+        "confidence": 0.60,
+        "type": "detail_expansion"
+    }
+]
+
+# Tích hợp tất cả thông tin thành câu trả lời hoàn chỉnh
+```
+
+**Các loại Followup Query được hỗ trợ:**
+
+- `prerequisite`: Môn tiên quyết được nhắc đến
+- `related_subject`: Môn học liên quan
+- `detail_expansion`: Mở rộng thông tin chi tiết
+
 ### 2. Flask Web Application (`flask_app.py`)
 
 **API Endpoints:**
 
 - `GET /`: Trang chủ với chat interface
-- `POST /api/chat`: Xử lý truy vấn chat
+- `POST /api/chat`: Xử lý truy vấn chat (hỗ trợ multi-hop query)
 - `GET /api/subjects`: Lấy danh sách môn học
 - `GET /api/examples`: Lấy câu hỏi mẫu
 
@@ -255,6 +288,18 @@ System: Tìm thấy 18 items cho CSI106
 User: "Machine Learning là môn gì?"
 System: Tìm thấy 141 ML-related items
 → Trả về: AIL303m - Machine Learning với thông tin chi tiết
+```
+
+### Multi-hop Queries (NEW)
+
+```
+User: "Thông tin SEG301 và thông tin các môn tiên quyết của nó"
+System:
+  1. Truy vấn gốc → Thông tin SEG301
+  2. Phát hiện môn tiên quyết: CSD203, AIL303m
+  3. Tự động truy vấn: "Thông tin chi tiết về môn CSD203"
+  4. Tự động truy vấn: "Thông tin đầy đủ về CSD203 bao gồm syllabus và CLO"
+  5. Tích hợp → Câu trả lời hoàn chỉnh về SEG301 + CSD203 + AIL303m
 ```
 
 ### Major-level Queries

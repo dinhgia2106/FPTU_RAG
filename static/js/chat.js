@@ -84,7 +84,10 @@ class ChatInterface {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: message }),
+        body: JSON.stringify({
+          message: message,
+          multihop: true, // Bật multi-hop query
+        }),
       });
 
       const data = await response.json();
@@ -92,6 +95,11 @@ class ChatInterface {
 
       if (response.ok) {
         this.addMessage(data.answer, "assistant", responseTime);
+
+        // Show multi-hop information if available
+        if (data.multihop_info && data.multihop_info.has_followup) {
+          this.showMultiHopInfo(data.multihop_info);
+        }
 
         // Show search results if available
         if (data.search_results && data.search_results.length > 0) {
@@ -151,6 +159,88 @@ class ChatInterface {
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
       .replace(/`(.*?)`/g, "<code>$1</code>");
+  }
+
+  showMultiHopInfo(multihopInfo) {
+    const multihopDiv = document.createElement("div");
+    multihopDiv.className = "multihop-info";
+
+    const header = document.createElement("div");
+    header.className = "multihop-header";
+    header.innerHTML = `
+      <div class="multihop-title">
+        Truy vấn kép đã được thực hiện (${multihopInfo.followup_queries.length} truy vấn phụ)
+      </div>
+      <div class="multihop-toggle">v</div>
+    `;
+
+    const content = document.createElement("div");
+    content.className = "multihop-content";
+
+    // Execution path
+    if (multihopInfo.execution_path && multihopInfo.execution_path.length > 0) {
+      const pathDiv = document.createElement("div");
+      pathDiv.className = "execution-path";
+      pathDiv.innerHTML = "<strong>Quy trình xử lý:</strong>";
+
+      const pathList = document.createElement("ol");
+      multihopInfo.execution_path.forEach((step) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = step;
+        pathList.appendChild(listItem);
+      });
+
+      pathDiv.appendChild(pathList);
+      content.appendChild(pathDiv);
+    }
+
+    // Followup queries
+    if (
+      multihopInfo.followup_queries &&
+      multihopInfo.followup_queries.length > 0
+    ) {
+      const queriesDiv = document.createElement("div");
+      queriesDiv.className = "followup-queries";
+      queriesDiv.innerHTML = "<strong>Các truy vấn được tạo tự động:</strong>";
+
+      multihopInfo.followup_queries.forEach((query, index) => {
+        const queryItem = document.createElement("div");
+        queryItem.className = "followup-query-item";
+        queryItem.innerHTML = `
+          <div class="query-text">${index + 1}. ${query.query}</div>
+          <div class="query-meta">
+            <span class="confidence">Độ tin cậy: ${(
+              query.confidence * 100
+            ).toFixed(0)}%</span>
+            <span class="query-type">Loại: ${this.getQueryTypeLabel(
+              query.type
+            )}</span>
+          </div>
+        `;
+        queriesDiv.appendChild(queryItem);
+      });
+
+      content.appendChild(queriesDiv);
+    }
+
+    // Add click handler for toggle
+    header.addEventListener("click", () => {
+      multihopDiv.classList.toggle("expanded");
+    });
+
+    multihopDiv.appendChild(header);
+    multihopDiv.appendChild(content);
+    this.messagesContainer.appendChild(multihopDiv);
+    this.scrollToBottom();
+  }
+
+  getQueryTypeLabel(type) {
+    const labels = {
+      prerequisite: "Môn tiên quyết",
+      related_subject: "Môn liên quan",
+      detail_expansion: "Mở rộng thông tin",
+    };
+    return labels[type] || type;
   }
 
   showSearchResults(results) {

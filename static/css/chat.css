@@ -236,6 +236,125 @@ body {
   transition: border-color 0.2s ease;
 }
 
+.result-subject {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.result-content {
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Multi-hop Info Styling */
+.multihop-info {
+  margin: 1rem 0;
+  border: 1px solid #ddd6fe;
+  border-radius: 8px;
+  background: #faf5ff;
+  overflow: hidden;
+}
+
+.multihop-header {
+  padding: 0.75rem 1rem;
+  background: #f3e8ff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd6fe;
+}
+
+.multihop-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #7c3aed;
+}
+
+.multihop-toggle {
+  font-size: 0.75rem;
+  color: #8b5cf6;
+  transition: transform 0.2s ease;
+}
+
+.multihop-info.expanded .multihop-toggle {
+  transform: rotate(180deg);
+}
+
+.multihop-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.multihop-info.expanded .multihop-content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.execution-path {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.execution-path strong {
+  color: #6366f1;
+  font-size: 0.875rem;
+}
+
+.execution-path ol {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.execution-path li {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.followup-queries {
+  padding: 0.75rem 1rem;
+}
+
+.followup-queries strong {
+  color: #7c3aed;
+  font-size: 0.875rem;
+}
+
+.followup-query-item {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e0e7ff;
+}
+
+.query-text {
+  font-size: 0.8rem;
+  color: #334155;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.query-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.7rem;
+}
+
+.confidence {
+  color: #059669;
+  font-weight: 500;
+}
+
+.query-type {
+  color: #7c3aed;
+  font-weight: 500;
+}
+
 .result-item:hover {
   border-color: #cbd5e1;
 }
@@ -313,14 +432,15 @@ body {
   flex: 1;
   border: none;
   background: transparent;
+  padding: 0;
   resize: none;
   outline: none;
   font-family: inherit;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.5;
   max-height: 6rem;
-  min-height: 1.4rem;
-  height: auto;
+  min-height: 2.5rem;
+  height: 2.5rem;
   overflow-y: auto;
 }
 
