@@ -207,11 +207,15 @@ class QueryRouter:
         """Phân tích ý định và phạm vi của query"""
         query_lower = query.lower()
         
-        # Extract subject codes and combo codes for later use
-        subject_codes = re.findall(r'[A-Z]{2,4}\d{3}[a-z]*', query)
+        # Extract subject codes and combo codes for later use (CASE INSENSITIVE)
+        subject_codes = re.findall(r'[A-Za-z]{2,4}\d{3}[a-zA-Z]*', query, re.IGNORECASE)
+        # Normalize to uppercase
+        subject_codes = [code.upper() for code in subject_codes]
         
         # ENHANCED: Extract combo codes (like AI17_COM1, AI17_COM2.1)
-        combo_codes = re.findall(r'[A-Z]{2,4}\d{2}_[A-Z]{3}\d+(?:\.\d+)?', query)
+        combo_codes = re.findall(r'[A-Za-z]{2,4}\d{2}_[A-Za-z]{3}\d+(?:\.\d+)?', query, re.IGNORECASE)
+        # Normalize to uppercase
+        combo_codes = [code.upper() for code in combo_codes]
         
         # Combine subject and combo codes
         all_codes = subject_codes + combo_codes
@@ -239,6 +243,20 @@ class QueryRouter:
                     and not word.endswith('NG')):  # Avoid words like "THONG", "DUNG"
                     # This could be a partial subject code
                     all_codes.append(word)
+        
+        # IMPROVEMENT: Also extract partial codes from full subject codes to enable broader search
+        # This helps when specific subject code search fails but partial search succeeds
+        partial_codes_from_full = []
+        for full_code in subject_codes:
+            # Extract the prefix (e.g., "DPL" from "DPL302m")
+            prefix_match = re.match(r'([A-Z]{2,4})', full_code)
+            if prefix_match:
+                prefix = prefix_match.group(1)
+                if prefix not in all_codes and len(prefix) >= 3:
+                    partial_codes_from_full.append(prefix)
+        
+        # Add partial codes as fallback option
+        all_codes.extend(partial_codes_from_full)
         
         # PRIORITY 1: SEMESTER/TERM QUERIES - Always treat as LISTING
         if any(term in query_lower for term in ['kỳ', 'ky', 'kì', 'ki', 'semester', 'học kỳ', 'hoc ky']):
@@ -1486,12 +1504,37 @@ Ten: {student.get('FirstName', '')}
         return config
     
     def _search_by_subject(self, subject_codes: List[str], config: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """Search specifically by subject codes"""
+        """Search specifically by subject codes with enhanced fallback"""
         results = []
         
         for subject_code in subject_codes:
+            # First, try exact match
             subject_items = [item for item in self.data if item['subject_code'] == subject_code]
-            print(f"Found {len(subject_items)} items for {subject_code}")
+            print(f"Found {len(subject_items)} items for exact match '{subject_code}'")
+            
+            # If no exact match and this looks like a full subject code, try partial match
+            if len(subject_items) == 0 and len(subject_code) > 4:
+                # Extract prefix for fallback search (e.g., "DPL" from "DPL302m")
+                prefix_match = re.match(r'([A-Z]{2,4})', subject_code)
+                if prefix_match:
+                    prefix = prefix_match.group(1)
+                    print(f"No exact match for '{subject_code}', trying partial match with prefix '{prefix}'")
+                    
+                    # Search for items containing the prefix or mentioning the full code
+                    partial_items = []
+                    for item in self.data:
+                        item_content = item.get('content', '').upper()
+                        item_subject = item.get('subject_code', '').upper()
+                        
+                        # Check if item mentions the subject code in content or has similar prefix
+                        if (subject_code.upper() in item_content or 
+                            (item_subject.startswith(prefix) and item_subject != subject_code.upper()) or
+                            (prefix in item_content and 'TIÊN QUYẾT' in item_content.upper()) or
+                            (prefix in item_content and 'PREREQUISITE' in item_content.upper())):
+                            partial_items.append(item)
+                    
+                    subject_items = partial_items
+                    print(f"Found {len(subject_items)} items for partial/content match")
             
             # For subject-specific queries, we want comprehensive info
             # Override config to include all relevant content types
@@ -1515,6 +1558,10 @@ Ten: {student.get('FirstName', '')}
                     for item in filtered_items:
                         score = 2.0  # Base high score for exact subject match
                         
+                        # Lower score if this was a fallback search
+                        if item['subject_code'] != subject_code:
+                            score *= 0.8  # Slightly lower score for partial matches
+                        
                         # Apply content type priorities
                         if content_type == 'combo_specialization':
                             score *= 5.0  # Highest priority for combo content
@@ -1529,13 +1576,15 @@ Ten: {student.get('FirstName', '')}
                         if content_type in config.get('boost_factors', {}):
                             score *= config['boost_factors'][content_type]
                         
+                        search_method = 'subject_specific' if item['subject_code'] == subject_code else 'subject_partial_match'
+                        
                         results.append({
                             'content': item['content'],
                             'subject_code': item['subject_code'],
                             'type': item['type'],
                             'score': score,
                             'metadata': item.get('metadata', {}),
-                            'search_method': 'subject_specific'
+                            'search_method': search_method
                         })
         
         # Sort by score and return top results
@@ -1941,11 +1990,23 @@ Ten: {student.get('FirstName', '')}
         is_coursera_query = any(term in question_lower for term in ['coursera', 'course', 'khóa học', 'trực tuyến'])
         is_listing_query = any(term in question_lower for term in ['liệt kê', 'danh sách', 'những môn', 'các môn', 'có gì'])
         is_semester_query = any(term in question_lower for term in ['kỳ', 'kì', 'ky', 'ki', 'semester'])
+        is_comparison_query = any(term in question_lower for term in ['so sánh', 'compare', 'khác nhau', 'mối quan hệ', 'liên quan'])
         
-        # Base prompt
+        # Base prompt với format instructions
         base_prompt = f"""
 Bạn là chuyên gia tư vấn học tập tại FPT University, chuyên về ngành AI.
 Hãy trả lời câu hỏi dựa trên thông tin được cung cấp.
+
+HƯỚNG DẪN ĐỊNH DẠNG QUAN TRỌNG:
+- Sử dụng markdown format để tổ chức nội dung
+- Dùng **text** cho chữ in đậm
+- Dùng *text* cho chữ nghiêng  
+- Dùng `code` cho mã môn học
+- Dùng ### cho tiêu đề phụ
+- Dùng ## cho tiêu đề chính
+- Dùng bảng markdown (|) khi so sánh thông tin
+- Dùng danh sách có số (1. 2. 3.) cho các bước
+- Dùng danh sách gạch đầu dòng (*) cho các điểm
 
 THÔNG TIN QUAN TRỌNG VỀ MÃ MÔN HỌC:
 - Môn có đuôi 'c' (ví dụ: BDI302c, DWP301c): Môn học hoàn toàn trên Coursera, không cần lên lớp
@@ -1955,12 +2016,31 @@ THÔNG TIN QUAN TRỌNG VỀ MÃ MÔN HỌC:
 """
 
         # Enhanced prompting for specific query types
-        if is_coursera_query and is_listing_query:
+        if is_comparison_query:
+            enhanced_prompt = base_prompt + """
+NHIỆM VỤ ĐặC BIỆT: So sánh hai môn học
+- Tạo bảng so sánh với định dạng markdown:
+  | Tính chất | Môn 1 | Môn 2 |
+  |-----------|-------|-------|
+  | Ngành | ... | ... |
+  | Số tín chỉ | ... | ... |
+  | Kỳ học | ... | ... |
+  | Môn tiên quyết | ... | ... |
+  
+- Phân tích mối quan hệ giữa các môn
+- Giải thích chi tiết sự khác biệt và liên quan
+- Sử dụng ### cho các phần chính
+
+"""
+        elif is_coursera_query and is_listing_query:
             enhanced_prompt = base_prompt + """
 NHIỆM VỤ ĐặC BIỆT: Tìm và liệt kê TẤT CẢ các môn học Coursera (có đuôi 'c')
 - Đọc kỹ toàn bộ thông tin được cung cấp
 - Tìm tất cả môn học có mã kết thúc bằng 'c' 
 - Liệt kê đầy đủ, không bỏ sót môn nào
+- Sử dụng bảng markdown để tổ chức thông tin:
+  | Mã môn | Tên môn | Số tín chỉ | Kỳ học |
+  |--------|---------|------------|--------|
 - Giải thích rõ ràng rằng đây là các môn học hoàn toàn trên Coursera
 
 """
@@ -1970,7 +2050,9 @@ NHIỆM VỤ ĐặC BIỆT: Liệt kê ĐẦY ĐỦ TẤT CẢ các môn học t
 - ĐỌC KỸ VÀ DUYỆT TOÀN BỘ thông tin được cung cấp
 - Tìm TẤT CẢ môn học thuộc kỳ được hỏi (ví dụ: "Ky 5", "Ky 6")
 - KHÔNG ĐƯỢC BỎ SÓT bất kỳ môn học nào
-- Liệt kê theo thứ tự: mã môn, tên môn đầy đủ, số tín chỉ
+- Sử dụng bảng markdown để tổ chức:
+  | Mã môn | Tên môn đầy đủ | Số tín chỉ | Loại học |
+  |--------|----------------|------------|----------|
 - Phân loại rõ ràng theo loại môn học:
   * Môn có đuôi 'c': Học hoàn toàn trên Coursera
   * Môn có đuôi 'm': Học trên lớp kết hợp với Coursera
@@ -1982,6 +2064,7 @@ NHIỆM VỤ ĐặC BIỆT: Liệt kê ĐẦY ĐỦ TẤT CẢ các môn học t
         else:
             enhanced_prompt = base_prompt + """
 Hãy trả lời chính xác và đầy đủ dựa trên thông tin được cung cấp.
+Sử dụng markdown format để làm cho câu trả lời dễ đọc và có cấu trúc.
 
 """
 
@@ -1992,7 +2075,9 @@ THÔNG TIN ĐƯỢC CUNG CẤP:
 
 CÂU HỎI: {question}
 
-Hãy trả lời một cách chính xác, đầy đủ và có cấu trúc rõ ràng. Nếu thông tin không đủ để trả lời, hãy nói rõ và gợi ý cách tìm thêm thông tin."""
+Hãy trả lời một cách chính xác, đầy đủ và có cấu trúc rõ ràng sử dụng markdown format. 
+Nếu thông tin không đủ để trả lời, hãy nói rõ và gợi ý cách tìm thêm thông tin.
+QUAN TRỌNG: Sử dụng bảng markdown cho việc so sánh và liệt kê thông tin."""
 
         try:
             response = self.genai.generate_content(prompt)
