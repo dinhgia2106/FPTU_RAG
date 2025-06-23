@@ -541,46 +541,6 @@ Multilingual embedding model supports:
 }
 ```
 
-## 🏆 Success Metrics
-
-### System Performance
-
-- ⚡ **Quick responses**: 0.0s for 20+ common queries
-- 🎯 **Search accuracy**: 95%+ relevance for academic queries
-- 📊 **Student data support**: 100% coverage of 15 AI students
-- 🔄 **Multi-hop success**: 90%+ for complex academic chains
-- 📱 **UI responsiveness**: <100ms interaction feedback
-
-### User Experience
-
-- 🎨 **Modern interface**: Dark theme, smooth animations
-- 📱 **Mobile-friendly**: Responsive design
-- ⌨️ **Smart input**: Auto-resize, character tracking
-- 🔍 **Intelligent search**: Context-aware query routing
-- 📈 **Performance transparency**: Response time display
-
 ---
 
-## 👥 Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **FPT University** for providing academic data
-- **Google Gemini** for AI language model
-- **Sentence Transformers** for multilingual embeddings
-- **FAISS** for efficient vector search
-- **Tailwind CSS** for modern UI framework
-
----
-
-**FPTU RAG** - Empowering education through intelligent information retrieval 🎓✨
+**FPTU RAG** - Empowering education through intelligent information retrieval

@@ -1,0 +1,46 @@
+﻿course_code,course_name,semester,credits,prerequisites,has_materials,materials_count,assessments_count,has_schedule
+CSI106,Introduction to Computer Science_Nhập môn khoa học máy tính,1,3,,True,4,4,True
+MAD101,Discrete mathematics_Toán rời rạc,1,3,None,True,6,3,True
+MAE101,Mathematics for Engineering_Toán cho ngành kỹ thuật,1,3,None,True,12,3,True
+PFP191,Programming Fundamentals with Python_Cơ sở lập trình với Python,1,3,,True,4,5,True
+SSL101c,Academic Skills for University Success_Kỹ năng học tập đại học,1,3,None,True,7,1,True
+AIG202c,Artificial Intelligence_Trí tuệ nhân tạo,2,3,,True,6,1,True
+CEA201,Computer Organization and Architecture_Tổ chức và Kiến trúc máy tính,2,3,,True,8,3,True
+CSD203,Data Structures and Algorithm with Python_Cấu trúc dữ liệu và giải thuật với Python,2,3,PFP191 (Programming Fundamentals with Python_Cơ sở lập trình với Python),True,6,6,True
+DBI202,Introduction to Databases_Các hệ cơ sở dữ liệu,2,3,,True,5,5,True
+JPD113,Elementary Japanese 1- A1.1_Tiếng Nhật sơ cấp 1-A1.1,2,3,Không,True,5,6,True
+ADY201m,"AI, DS with Python & SQL_TTNT và KHDL với Python và SQL",3,3,"PFP191, DBI202",True,9,5,True
+ITE303c,Ethics in IT_Đạo đức trong CNTT,3,3,,True,6,1,True
+JPD123,Elementary Japanese 1-A1.2_Tiếng Nhật sơ cấp 1-A1.2,3,3,JPD113,True,4,6,True
+MAI391,Mathematics for Machine Learning_Toán cho học máy,3,3,MAE101,True,9,4,True
+MAS291,Statistics & Probability_Xác suất thống kê,3,3,MAE101 or MAC101,True,4,4,True
+AIL303m,Machine Learning_Học máy,4,3,"MAS291, MAI391, PFP191",True,5,8,True
+CPV301,Computer Vision_Thị giác máy tính,4,3,"PFP191, CSD203",True,6,5,True
+DAP391m,AI-DS Project_Dự án TTNT-KHDL,4,3,"PFP191, ADY201m",True,6,4,True
+SWE201c,Introduction to Software Engineering_Nhập môn kĩ thuật phần mềm,4,3,PRO192 (not applied to the BIT_AI17 and BA programs),True,6,2,True
+DPL302m,Deep Learning_Học sâu,5,6,AIL303m,True,10,8,True
+DWP301c,Web Development with Python_Phát triển Web với Python,5,3,PFP191,True,13,1,True
+NLP301c,Natural Language Processing_Xử lý ngôn ngữ tự nhiên,6,3,AIL30x and (PRP201c or PFP191),True,6,2,True
+OJT202,On-The-Job Training_Đào tạo trong môi trường thực tế,6,10,Students attained 90% of the total credits prior to the OJT term (excluding Physical Education and OTP Programs) Students choosing JS combo (Japanese Bridge Engineer) have to pass JPD133,True,4,3,True
+DAT301m,AI Development with TensorFlow_Phát triển UDTTNT với TensorFlow,7,3,"CPV301, DPL302m",True,5,7,True
+ENW493c,Research Methods & Academic Writing Skills_Phương pháp nghiên cứu & Kỹ năng viết học thuật,7,3,,True,5,1,True
+EXE101,Experiential Entrepreneurship 1_Trải nghiệm khởi nghiệp 1,7,3,None,True,10,5,True
+PMG201c,Project Management,7,3,None,True,9,2,True
+AID301c,AI in Production_Thiết kế sản phẩm TTNT,8,3,"SWE201c, AIL303m",True,8,1,True
+EXE201,Experiential Entrepreneurship 2_Trải nghiệm khởi nghiệp 2,8,3,EXE101,True,10,3,True
+MLN111,Philosophy of Marxism – Leninism_Triết học Mác - Lê-nin,8,3,None,True,7,4,True
+MLN122,Political economics of Marxism – Leninism_Kinh tế chính trị Mác - Lê-nin,8,2,None,True,6,4,True
+REL301m,Reinforcement Learning_Học tăng cường,8,3,"AIL303m, DPL302m",True,5,6,True
+HCM202,HCM Ideology_Tư tưởng Hồ Chí Minh,9,2,"MLN111, MLN122",True,7,4,True
+MLN131,Scientific socialism_Chủ nghĩa xã hội khoa học,9,2,"MLN111, MLN122",True,7,4,True
+VNR202,History of CPV_Lịch sử Đảng Cộng sản Việt Nam,9,2,"MLN111, MLN122",True,10,4,True
+DSR301m,Applied DS with R_Khoa học dữ liệu ứng dụng với R,5,3,DBI202,True,4,8,True
+BDI302c,Big Data_Dữ liệu lớn,5,3,,True,7,1,True
+DBM302m,Data Mining_Khai phá dữ liệu,7,3,,True,4,5,True
+DSP391m,Data Science - Capstone Project_Dự án KHDL,8,3,"DSR301m, DBM302m, BDI302c",True,6,5,True
+ASR301c,AI for Scientific Research_TTNT cho Nghiên cứu khoa học,5,3,,True,6,1,True
+AIH301m,AI in Healthcare_Ứng dụng TTNT trong chăm sóc sức khỏe,5,3,No,True,11,6,True
+AIM301m,AI for Medicine_Ứng dụng TTNT cho y học,7,3,PFP191,True,7,10,True
+AIE301m,AI for Trading_Ứng dụng TTNT cho giao dịch,8,3,"PFP191, AIL303m",True,6,8,True
+SEG301,Search Engines_Công cụ tìm kiếm,5,3,"CSD203, AIL303m",True,10,6,True
+TMG301,Text Mining_Khai thác văn bản,5,3,"CSD203, AIL303m",True,9,5,True
