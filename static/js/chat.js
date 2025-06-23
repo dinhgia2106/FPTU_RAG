@@ -7,6 +7,7 @@
 class ChatInterface {
   constructor() {
     this.chatContainer = document.getElementById("chatContainer");
+    this.chatMessages = document.getElementById("chatMessages");
     this.messageInput = document.getElementById("messageInput");
     this.sendButton = document.getElementById("sendButton");
     this.charCount = document.getElementById("charCount");
@@ -190,7 +191,7 @@ class ChatInterface {
       </div>
     `;
 
-    this.chatContainer.appendChild(messageDiv);
+    this.chatMessages.appendChild(messageDiv);
     this.scrollToBottom();
   }
 
@@ -227,7 +228,7 @@ class ChatInterface {
       </div>
     `;
 
-    this.chatContainer.appendChild(messageDiv);
+    this.chatMessages.appendChild(messageDiv);
     this.scrollToBottom();
   }
 
@@ -245,101 +246,124 @@ class ChatInterface {
       </div>
     `;
 
-    this.chatContainer.appendChild(messageDiv);
+    this.chatMessages.appendChild(messageDiv);
     this.scrollToBottom();
   }
 
   formatMessage(message) {
     // Xử lý bảng markdown trước
     let formattedMessage = this.processMarkdownTables(message);
-    
+
     // Xử lý các định dạng markdown khác
     formattedMessage = formattedMessage
       // Headers (# ## ###)
-      .replace(/^### (.*?)$/gm, '<h3 class="text-lg font-semibold mt-4 mb-2 text-primary-300">$1</h3>')
-      .replace(/^## (.*?)$/gm, '<h2 class="text-xl font-bold mt-4 mb-3 text-primary-200">$1</h2>')
-      .replace(/^# (.*?)$/gm, '<h1 class="text-2xl font-bold mt-4 mb-3 text-white">$1</h1>')
-      
+      .replace(
+        /^### (.*?)$/gm,
+        '<h3 class="text-lg font-semibold mt-4 mb-2 text-primary-300">$1</h3>'
+      )
+      .replace(
+        /^## (.*?)$/gm,
+        '<h2 class="text-xl font-bold mt-4 mb-3 text-primary-200">$1</h2>'
+      )
+      .replace(
+        /^# (.*?)$/gm,
+        '<h1 class="text-2xl font-bold mt-4 mb-3 text-white">$1</h1>'
+      )
+
       // Bold và Italic
-      .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-primary-200">$1</strong>')
+      .replace(
+        /\*\*(.*?)\*\*/g,
+        '<strong class="font-semibold text-primary-200">$1</strong>'
+      )
       .replace(/\*(.*?)\*/g, '<em class="italic text-gray-300">$1</em>')
-      
+
       // Code inline
-      .replace(/`(.*?)`/g, '<code class="bg-gray-700/70 px-2 py-1 rounded text-sm font-mono text-green-300">$1</code>')
-      
+      .replace(
+        /`(.*?)`/g,
+        '<code class="bg-gray-700/70 px-2 py-1 rounded text-sm font-mono text-green-300">$1</code>'
+      )
+
       // Numbered lists (1. 2. 3.)
       .replace(/^\d+\.\s+(.+)$/gm, '<li class="ml-6 mb-1 list-decimal">$1</li>')
-      
+
       // Bullet points (* -)
       .replace(/^[\*\-]\s+(.+)$/gm, '<li class="ml-6 mb-1 list-disc">$1</li>')
-      
+
       // Line breaks
-      .replace(/\n\n/g, '<br><br>')
-      .replace(/\n/g, '<br>');
-    
+      .replace(/\n\n/g, "<br><br>")
+      .replace(/\n/g, "<br>");
+
     // Wrap consecutive list items in ul/ol tags
     formattedMessage = this.wrapListItems(formattedMessage);
-    
+
     // Xử lý các pattern đặc biệt cho dữ liệu FPTU
     formattedMessage = this.processSpecialPatterns(formattedMessage);
-    
+
     return formattedMessage;
   }
 
   processMarkdownTables(text) {
     // Tìm các bảng markdown (có dấu |)
     const tableRegex = /(\|.*\|.*\n)+/g;
-    
+
     return text.replace(tableRegex, (match) => {
-      const rows = match.trim().split('\n');
+      const rows = match.trim().split("\n");
       if (rows.length < 2) return match;
-      
+
       // Xử lý header row
       const headerRow = rows[0];
-      const headerCells = headerRow.split('|').map(cell => cell.trim()).filter(cell => cell);
-      
+      const headerCells = headerRow
+        .split("|")
+        .map((cell) => cell.trim())
+        .filter((cell) => cell);
+
       // Skip separator row (thường là dòng thứ 2 với dấu -)
       let dataRows = rows.slice(2);
-      
+
       // Nếu không có separator, lấy tất cả rows từ dòng 2
       if (dataRows.length === 0 && rows.length > 1) {
         dataRows = rows.slice(1);
       }
-      
+
       let tableHTML = '<div class="overflow-x-auto my-4">';
-      tableHTML += '<table class="min-w-full border border-gray-600/50 rounded-lg overflow-hidden">';
-      
+      tableHTML +=
+        '<table class="min-w-full border border-gray-600/50 rounded-lg overflow-hidden">';
+
       // Header
       if (headerCells.length > 0) {
         tableHTML += '<thead class="bg-gray-700/50">';
-        tableHTML += '<tr>';
-        headerCells.forEach(cell => {
+        tableHTML += "<tr>";
+        headerCells.forEach((cell) => {
           tableHTML += `<th class="px-4 py-3 text-left text-sm font-semibold text-primary-300 border-b border-gray-600/50">${cell}</th>`;
         });
-        tableHTML += '</tr>';
-        tableHTML += '</thead>';
+        tableHTML += "</tr>";
+        tableHTML += "</thead>";
       }
-      
+
       // Body
       if (dataRows.length > 0) {
-        tableHTML += '<tbody>';
+        tableHTML += "<tbody>";
         dataRows.forEach((row, index) => {
-          const cells = row.split('|').map(cell => cell.trim()).filter(cell => cell);
+          const cells = row
+            .split("|")
+            .map((cell) => cell.trim())
+            .filter((cell) => cell);
           if (cells.length > 0) {
-            const rowClass = index % 2 === 0 ? 'bg-gray-800/30' : 'bg-gray-800/50';
+            const rowClass =
+              index % 2 === 0 ? "bg-gray-800/30" : "bg-gray-800/50";
             tableHTML += `<tr class="${rowClass} hover:bg-gray-700/30 transition-colors">`;
-            cells.forEach(cell => {
+            cells.forEach((cell) => {
               tableHTML += `<td class="px-4 py-3 text-sm text-gray-200 border-b border-gray-700/50">${cell}</td>`;
             });
-            tableHTML += '</tr>';
+            tableHTML += "</tr>";
           }
         });
-        tableHTML += '</tbody>';
+        tableHTML += "</tbody>";
       }
-      
-      tableHTML += '</table>';
-      tableHTML += '</div>';
-      
+
+      tableHTML += "</table>";
+      tableHTML += "</div>";
+
       return tableHTML;
     });
   }
@@ -349,18 +373,24 @@ class ChatInterface {
     text = text.replace(
       /(<li class="ml-6 mb-1 list-decimal">.*?<\/li>)(\s*<br>\s*<li class="ml-6 mb-1 list-decimal">.*?<\/li>)*/g,
       (match) => {
-        return `<ol class="list-decimal list-inside space-y-1 my-3 ml-4">${match.replace(/<br>/g, '')}</ol>`;
+        return `<ol class="list-decimal list-inside space-y-1 my-3 ml-4">${match.replace(
+          /<br>/g,
+          ""
+        )}</ol>`;
       }
     );
-    
-    // Wrap bullet list items  
+
+    // Wrap bullet list items
     text = text.replace(
       /(<li class="ml-6 mb-1 list-disc">.*?<\/li>)(\s*<br>\s*<li class="ml-6 mb-1 list-disc">.*?<\/li>)*/g,
       (match) => {
-        return `<ul class="list-disc list-inside space-y-1 my-3 ml-4">${match.replace(/<br>/g, '')}</ul>`;
+        return `<ul class="list-disc list-inside space-y-1 my-3 ml-4">${match.replace(
+          /<br>/g,
+          ""
+        )}</ul>`;
       }
     );
-    
+
     return text;
   }
 
@@ -370,37 +400,65 @@ class ChatInterface {
       /\b([A-Z]{2,4}\d{3}[a-z]*)\b/g,
       '<span class="bg-blue-900/30 text-blue-300 px-2 py-1 rounded font-mono text-sm">$1</span>'
     );
-    
+
     // Highlight năm học và kỳ
     text = text.replace(
       /\b(Kỳ|Ky|Kì|Ki)\s+(\d+)\b/g,
       '<span class="bg-green-900/30 text-green-300 px-2 py-1 rounded text-sm font-medium">$1 $2</span>'
     );
-    
+
     // Highlight số tín chỉ
     text = text.replace(
       /(\d+)\s+(tín chỉ|tin chi)/gi,
       '<span class="bg-yellow-900/30 text-yellow-300 px-2 py-1 rounded text-sm font-medium">$1 $2</span>'
     );
-    
+
     // Highlight từ khóa quan trọng
     const keywords = [
-      'Môn tiên quyết', 'Prerequisites', 'CLO', 'Learning Outcomes',
-      'Coursera', 'Deep Learning', 'Machine Learning', 'AI'
+      "Môn tiên quyết",
+      "Prerequisites",
+      "CLO",
+      "Learning Outcomes",
+      "Coursera",
+      "Deep Learning",
+      "Machine Learning",
+      "AI",
     ];
-    
-    keywords.forEach(keyword => {
-      const regex = new RegExp(`\\b(${keyword})\\b`, 'gi');
-      text = text.replace(regex, '<span class="bg-purple-900/30 text-purple-300 px-1 py-0.5 rounded text-sm font-medium">$1</span>');
+
+    keywords.forEach((keyword) => {
+      const regex = new RegExp(`\\b(${keyword})\\b`, "gi");
+      text = text.replace(
+        regex,
+        '<span class="bg-purple-900/30 text-purple-300 px-1 py-0.5 rounded text-sm font-medium">$1</span>'
+      );
     });
-    
+
     return text;
   }
 
   showTypingIndicator() {
     this.isLoading = true;
+    // Tạo wrapper div với layout phù hợp
+    const typingWrapper = document.createElement("div");
+    typingWrapper.className = "flex items-start space-x-4 mb-6";
+    typingWrapper.innerHTML = `
+      <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-robot text-white"></i>
+      </div>
+      <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-4 rounded-2xl flex items-center gap-3">
+        <div class="typing-dots">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <span class="text-gray-400 text-sm">AI đang suy nghĩ...</span>
+      </div>
+    `;
+
+    this.typingIndicator.innerHTML = "";
+    this.typingIndicator.appendChild(typingWrapper);
     this.typingIndicator.classList.remove("hidden");
-    this.chatContainer.appendChild(this.typingIndicator);
+    this.chatMessages.appendChild(this.typingIndicator);
     this.scrollToBottom();
   }
 
