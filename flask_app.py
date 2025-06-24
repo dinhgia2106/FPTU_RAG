@@ -25,12 +25,27 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Initialize RAG Engine
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-if not GEMINI_API_KEY:
-    raise ValueError("GEMINI_API_KEY không được tìm thấy trong .env file")
+# Initialize RAG Engine với multiple API keys
+api_keys = []
+for i in range(1, 4):  # Check for GEMINI_API_KEY_1, GEMINI_API_KEY_2, GEMINI_API_KEY_3
+    key = os.getenv(f"GEMINI_API_KEY_{i}")
+    if key:
+        api_keys.append(key)
 
-rag_engine = AdvancedRAGEngine(GEMINI_API_KEY)
+# Fallback to original GEMINI_API_KEY nếu không có numbered keys
+if not api_keys:
+    original_key = os.getenv("GEMINI_API_KEY")
+    if original_key:
+        api_keys.append(original_key)
+
+if not api_keys:
+    raise ValueError("Không tìm thấy API key nào. Cần có ít nhất GEMINI_API_KEY hoặc GEMINI_API_KEY_1")
+
+logger.info(f"✓ Tìm thấy {len(api_keys)} API keys")
+for i, key in enumerate(api_keys, 1):
+    logger.info(f"  API Key {i}: ...{key[-10:]}")
+
+rag_engine = AdvancedRAGEngine(api_keys)
 
 # Initialize with data
 logger.info("==================== BẮT ĐẦU KHỞI TẠO FPTU RAG ENGINE ====================")
@@ -83,72 +98,47 @@ def chat():
             logger.warning("Câu hỏi rỗng")
             return jsonify({'error': 'Vui lòng nhập câu hỏi'}), 400
         
-        # Check if multi-hop is supported
-        if enable_multihop and hasattr(rag_engine, 'query_with_multihop'):
-            logger.info("Sử dụng multi-hop query engine...")
-            # Use multi-hop query
-            result = rag_engine.query_with_multihop(question, enable_multihop=True)
-            
-            # Handle multi-hop result format
-            if isinstance(result, dict):
-                answer = result.get('final_answer', result.get('original_answer', ''))
-                search_results = result.get('search_results', [])
-                is_quick = result.get('is_quick_response', False)
-                
-                response = {
-                    'answer': answer,
-                    'search_results': search_results,
-                    'multihop_info': {
-                        'has_followup': result.get('has_followup', False),
-                        'followup_queries': result.get('followup_queries', []),
-                        'execution_path': result.get('execution_path', [])
-                    },
-                    'metadata': {
-                        'subjects_covered': len(set([r.get('subject_code', '') for r in search_results if isinstance(r, dict)])),
-                        'query_type': 'quick' if is_quick else ('multihop' if result.get('has_followup', False) else 'single'),
-                        'followup_count': len(result.get('followup_queries', [])),
-                        'is_quick_response': is_quick
-                    }
-                }
-            else:
-                # Fallback format
-                response = {
-                    'answer': str(result),
-                    'search_results': [],
-                    'multihop_info': {'has_followup': False},
-                    'metadata': {'subjects_covered': 0, 'query_type': 'single'}
-                }
-        else:
-            logger.info("Sử dụng normal query engine...")
-            # Use normal query as fallback
-            result = rag_engine.query(question)
-            
-            # Handle normal result format
-            if isinstance(result, dict) and 'answer' in result:
-                answer = result['answer']
-                search_results = result.get('search_results', [])
-            else:
-                answer = str(result)
-                search_results = []
-            
-            response = {
-                'answer': answer,
-                'search_results': search_results,
-                'multihop_info': {'has_followup': False},
-                'metadata': {
-                    'subjects_covered': len(set([r.get('subject_code', '') for r in search_results if isinstance(r, dict)])),
-                    'query_type': 'single'
-                }
+        # Sử dụng chatbot_query method mới
+        session_id = session.get('session_id', 'anonymous')
+        logger.info("Sử dụng chatbot engine với conversation memory...")
+        
+        result = rag_engine.chatbot_query(question, session_id, enable_multihop)
+        
+        # Handle result format
+        answer = result.get('answer', '')
+        search_results = result.get('search_results', [])
+        query_type = result.get('query_type', 'unknown')
+        
+        # Build response object
+        response = {
+            'answer': answer,
+            'search_results': search_results,
+            'metadata': {
+                'subjects_covered': len(set([r.get('subject_code', '') for r in search_results if isinstance(r, dict)])),
+                'query_type': query_type,
+                'conversation_enhanced': result.get('conversation_enhanced', False),
+                'is_data_search': query_type == 'data_search',
+                'is_direct_chat': query_type == 'direct_chat'
             }
+        }
+        
+        # Add multihop info if available
+        if 'multihop_info' in result:
+            response['multihop_info'] = result['multihop_info']
+        else:
+            response['multihop_info'] = {'has_followup': False}
         
         # Tính thời gian xử lý tổng
         total_time = time.time() - start_time
         
         logger.info(f"FLASK RESPONSE SUMMARY:")
-        logger.info(f"  Query: '{question[:50]}{'...' if len(question) > 50 else ''}'")
+        logger.info(f"  Query: '{question}'")
+        logger.info(f"  Session ID: {session_id}")
         logger.info(f"  Multihop: {enable_multihop}")
-        logger.info(f"  Response type: {response.get('metadata', {}).get('query_type', 'unknown')}")
-        logger.info(f"  Is quick response: {response.get('metadata', {}).get('is_quick_response', False)}")
+        logger.info(f"  Query type: {response.get('metadata', {}).get('query_type', 'unknown')}")
+        logger.info(f"  Is data search: {response.get('metadata', {}).get('is_data_search', False)}")
+        logger.info(f"  Is direct chat: {response.get('metadata', {}).get('is_direct_chat', False)}")
+        logger.info(f"  Conversation enhanced: {response.get('metadata', {}).get('conversation_enhanced', False)}")
         
         # Chi tiết về phản hồi
         answer_text = response.get('answer', '')
@@ -175,11 +165,12 @@ def chat():
         
         # Multihop details nếu có
         if 'multihop_info' in response and response['multihop_info'].get('has_followup'):
-            followup_count = len(response['multihop_info'].get('followup_queries', []))
+            followup_queries = response['multihop_info'].get('followup_queries', [])
+            followup_count = len(followup_queries)
             logger.info(f"MULTIHOP DETAILS:")
             logger.info(f"  - Followup queries: {followup_count}")
-            for i, fq in enumerate(response['multihop_info'].get('followup_queries', [])[:3]):
-                logger.info(f"    {i+1}. {fq.get('query', '')[:60]}... (confidence: {fq.get('confidence', 0):.2f})")
+            for i, fq in enumerate(followup_queries):
+                logger.info(f"    {i+1}. {fq.get('query', '')} (confidence: {fq.get('confidence', 0):.2f})")
         
         logger.info(f"PERFORMANCE:")
         logger.info(f"  - Total processing time: {total_time:.2f}s")
@@ -233,14 +224,108 @@ def get_subjects():
 def get_examples():
     """API để lấy câu hỏi mẫu"""
     examples = [
+        "Xin chào",
+        "Bạn có thể giúp gì?",
         "Liệt kê các môn học ngành AI",
         "CSI106 là môn gì?",
         "Các môn có 3 tín chỉ",
         "MAD101 có bao nhiêu tín chỉ?",
         "Tất cả môn học toán",
-        "Danh sách môn học kỳ 1"
+        "Danh sách môn học kỳ 1",
+        "Cảm ơn bạn"
     ]
     return jsonify({'examples': examples})
+
+@app.route('/api/conversation')
+def get_conversation():
+    """API để lấy lịch sử conversation"""
+    try:
+        session_id = session.get('session_id', 'anonymous')
+        
+        if session_id in rag_engine.conversation_memory:
+            history = rag_engine.conversation_memory[session_id]
+            return jsonify({
+                'session_id': session_id,
+                'conversation_count': len(history),
+                'conversation': history[-10:]  # Chỉ trả về 10 tin nhắn gần nhất
+            })
+        else:
+            return jsonify({
+                'session_id': session_id,
+                'conversation_count': 0,
+                'conversation': []
+            })
+    except Exception as e:
+        logger.error(f"Lỗi lấy conversation: {e}")
+        return jsonify({'error': f'Không thể lấy lịch sử conversation: {str(e)}'}), 500
+
+@app.route('/api/conversation/clear', methods=['POST'])
+def clear_conversation():
+    """API để xóa lịch sử conversation"""
+    try:
+        session_id = session.get('session_id', 'anonymous')
+        
+        if session_id in rag_engine.conversation_memory:
+            del rag_engine.conversation_memory[session_id]
+        
+        return jsonify({
+            'success': True,
+            'message': 'Đã xóa lịch sử conversation',
+            'session_id': session_id
+        })
+    except Exception as e:
+        logger.error(f"Lỗi xóa conversation: {e}")
+        return jsonify({'error': f'Không thể xóa lịch sử conversation: {str(e)}'}), 500
+
+@app.route('/api/status')
+def get_system_status():
+    """API để lấy trạng thái hệ thống và API keys"""
+    try:
+        api_status = rag_engine.api_key_manager.get_status()
+        
+        # Test current API key
+        current_key_working = False
+        try:
+            current_model = rag_engine.api_key_manager.get_current_model()
+            if current_model:
+                test_response = current_model.generate_content("Test")
+                current_key_working = True
+        except:
+            current_key_working = False
+        
+        return jsonify({
+            'api_keys': {
+                'total': api_status['total_keys'],
+                'current_index': api_status['current_index'],
+                'current_key_suffix': api_status['current_key_suffix'],
+                'failed_keys': api_status['failed_keys'],
+                'available_keys': api_status['available_keys'],
+                'current_key_working': current_key_working
+            },
+            'system': {
+                'data_loaded': hasattr(rag_engine, 'data') and rag_engine.data is not None,
+                'data_count': len(rag_engine.data) if hasattr(rag_engine, 'data') and rag_engine.data else 0,
+                'conversations_active': len(rag_engine.conversation_memory)
+            }
+        })
+    except Exception as e:
+        logger.error(f"Lỗi lấy system status: {e}")
+        return jsonify({'error': f'Không thể lấy trạng thái hệ thống: {str(e)}'}), 500
+
+@app.route('/api/reset-keys', methods=['POST'])
+def reset_api_keys():
+    """API để reset failed API keys"""
+    try:
+        rag_engine.api_key_manager.reset_failed_keys()
+        
+        return jsonify({
+            'success': True,
+            'message': 'Đã reset tất cả failed API keys',
+            'status': rag_engine.api_key_manager.get_status()
+        })
+    except Exception as e:
+        logger.error(f"Lỗi reset API keys: {e}")
+        return jsonify({'error': f'Không thể reset API keys: {str(e)}'}), 500
 
 @app.errorhandler(404)
 def not_found(error):
