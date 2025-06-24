@@ -17,9 +17,16 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 import logging
 from enum import Enum
+import time
 
-# Cấu hình logging
-logging.basicConfig(level=logging.INFO)
+# Cấu hình logging chi tiết
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),  # Console output
+    ]
+)
 logger = logging.getLogger(__name__)
 
 @dataclass
@@ -1044,12 +1051,22 @@ Ten: {student.get('FirstName', '')}
         self.index.add(embeddings_np)
 
     def query(self, question: str, max_results: int = 10) -> Dict[str, Any]:
+        start_time = time.time()
+        logger.info(f"========== BẮT ĐẦU XỬ LÝ TRUY VẤN ==========")
+        logger.info(f"USER QUERY: '{question}'")
+        
         if not self.is_initialized:
+            logger.error("Engine chưa được khởi tạo")
             raise RuntimeError("Engine chưa được khởi tạo")
         
         # Check for quick response first
+        logger.info("Kiểm tra quick response patterns...")
         quick_response = self.query_router.check_quick_response(question)
         if quick_response:
+            logger.info("✓ Tìm thấy quick response pattern")
+            logger.info(f"QUICK RESPONSE: {quick_response[:100]}...")
+            processing_time = time.time() - start_time
+            logger.info(f"========== KẾT THÚC XỬ LÝ (Quick Response) - Thời gian: {processing_time:.2f}s ==========")
             return {
                 'question': question,
                 'answer': quick_response,
@@ -1057,10 +1074,80 @@ Ten: {student.get('FirstName', '')}
                 'is_quick_response': True
             }
         
+        logger.info("Không tìm thấy quick response, tiếp tục xử lý...")
+        
+        # Expand query
+        logger.info("Mở rộng truy vấn...")
         expanded_query = self._expand_query(question)
-        search_results = self._search_strategy(expanded_query, self.query_router.analyze_query(expanded_query))
+        if expanded_query != question:
+            logger.info(f"EXPANDED QUERY: '{expanded_query}'")
+        
+        # Analyze query intent
+        logger.info("Phân tích ý định truy vấn...")
+        intent = self.query_router.analyze_query(expanded_query)
+        logger.info(f"QUERY INTENT:")
+        logger.info(f"  - Type: {intent.query_type}")
+        logger.info(f"  - Scope: {intent.subject_scope}")
+        logger.info(f"  - Complexity: {intent.complexity}")
+        logger.info(f"  - Requires summarization: {intent.requires_summarization}")
+        if intent.target_subjects:
+            logger.info(f"  - Target subjects: {intent.target_subjects}")
+        else:
+            logger.info(f"  - Target subjects: None")
+        
+        # Search strategy
+        logger.info("Thực hiện search strategy...")
+        search_results = self._search_strategy(expanded_query, intent)
+        logger.info(f"SEARCH RESULTS: Tìm thấy {len(search_results)} kết quả")
+        
+        # Log chi tiết từng kết quả
+        for i, result in enumerate(search_results[:5]):
+            final_score = result.get('final_score', result.get('score', 0))
+            search_method = result.get('search_method', 'unknown')
+            content_preview = result.get('content', '')[:100].replace('\n', ' ')
+            
+            logger.info(f"  [{i+1}] {result.get('subject_code', 'N/A')}:")
+            logger.info(f"      Type: {result.get('type', 'N/A')}")
+            logger.info(f"      Score: {final_score:.4f}")
+            logger.info(f"      Method: {search_method}")
+            logger.info(f"      Content: {content_preview}...")
+            
+            # Log metadata nếu có
+            metadata = result.get('metadata', {})
+            if metadata:
+                logger.info(f"      Metadata: {dict(list(metadata.items())[:3])}...")  # Chỉ hiển thị 3 fields đầu
+        
+        # Prepare context
+        logger.info("Chuẩn bị context...")
         context = self._prepare_context(search_results)
+        context_length = len(context)
+        logger.info(f"CONTEXT PREPARATION:")
+        logger.info(f"  - Total length: {context_length} ký tự")
+        
+        # Count sections (cannot use backslash in f-string)
+        context_lines = context.split('\n')
+        section_count = len([line for line in context_lines if line.startswith('**')])
+        logger.info(f"  - Number of sections: {section_count}")
+        
+        # Log preview của context
+        context_lines = context.split('\n')
+        logger.info(f"CONTEXT PREVIEW (first 10 lines):")
+        for i, line in enumerate(context_lines[:10]):
+            if line.strip():
+                logger.info(f"  {i+1}: {line[:80]}{'...' if len(line) > 80 else ''}")
+        
+        if len(context_lines) > 10:
+            logger.info(f"  ... và {len(context_lines) - 10} dòng khác")
+        
+        # Generate response
+        logger.info("Gọi Gemini để tạo phản hồi...")
         response = self._generate_response(question, context)
+        response_length = len(response)
+        logger.info(f"GEMINI RESPONSE: Độ dài {response_length} ký tự")
+        logger.info(f"RESPONSE PREVIEW: {response[:200]}...")
+        
+        processing_time = time.time() - start_time
+        logger.info(f"========== KẾT THÚC XỬ LÝ - Thời gian: {processing_time:.2f}s ==========")
         
         return {
             'question': question,
@@ -1081,12 +1168,23 @@ Ten: {student.get('FirstName', '')}
         Returns:
             Dict chứa kết quả chi tiết của chuỗi truy vấn
         """
+        start_time = time.time()
+        logger.info(f"========== BẮT ĐẦU XỬ LÝ MULTI-HOP QUERY ==========")
+        logger.info(f"USER QUERY: '{question}'")
+        logger.info(f"MULTI-HOP ENABLED: {enable_multihop}")
+        
         if not self.is_initialized:
+            logger.error("Engine chưa được khởi tạo")
             raise RuntimeError("Engine chưa được khởi tạo")
         
         # Check for quick response first (no need for multi-hop)
+        logger.info("Kiểm tra quick response patterns...")
         quick_response = self.query_router.check_quick_response(question)
         if quick_response:
+            logger.info("✓ Tìm thấy quick response pattern - bỏ qua multi-hop")
+            logger.info(f"QUICK RESPONSE: {quick_response[:100]}...")
+            processing_time = time.time() - start_time
+            logger.info(f"========== KẾT THÚC XỬ LÝ (Quick Response) - Thời gian: {processing_time:.2f}s ==========")
             return {
                 'question': question,
                 'original_answer': quick_response,
@@ -1100,8 +1198,11 @@ Ten: {student.get('FirstName', '')}
             }
         
         if not self.query_chain:
+            logger.warning("QueryChain không khả dụng - fallback to normal query")
             # Fallback to normal query if QueryChain not available
             normal_result = self.query(question, max_results)
+            processing_time = time.time() - start_time
+            logger.info(f"========== KẾT THÚC XỬ LÝ (Fallback) - Thời gian: {processing_time:.2f}s ==========")
             return {
                 'question': question,
                 'original_answer': normal_result['answer'],
@@ -1115,7 +1216,17 @@ Ten: {student.get('FirstName', '')}
             }
         
         # Thực hiện truy vấn chuỗi
+        logger.info("Bắt đầu thực hiện query chain...")
         chain_result = self.query_chain.execute_query_chain(question, enable_multihop)
+        
+        logger.info(f"FOLLOWUP QUERIES: {len(chain_result.followup_queries)} truy vấn")
+        for i, fq in enumerate(chain_result.followup_queries):
+            logger.info(f"  Followup {i+1}: '{fq.query}' (confidence: {fq.confidence:.2f})")
+        
+        processing_time = time.time() - start_time
+        logger.info(f"FINAL ANSWER LENGTH: {len(chain_result.final_integrated_answer)} ký tự")
+        logger.info(f"FINAL ANSWER PREVIEW: {chain_result.final_integrated_answer[:200]}...")
+        logger.info(f"========== KẾT THÚC XỬ LÝ MULTI-HOP - Thời gian: {processing_time:.2f}s ==========")
         
         return {
             'question': question,
@@ -1175,6 +1286,31 @@ Ten: {student.get('FirstName', '')}
 
     def _search_strategy(self, query: str, intent: QueryIntent) -> List[Dict[str, Any]]:
         """Enhanced search strategy với intelligent routing"""
+        search_start_time = time.time()
+        logger.info(f"SEARCH STRATEGY: Bắt đầu tìm kiếm")
+        logger.info(f"  Query: '{query}'")
+        logger.info(f"  Intent: {intent.query_type} / {intent.subject_scope} / {intent.complexity}")
+        logger.info(f"  Target subjects: {intent.target_subjects}")
+        
+        # Log search configuration
+        config = self._get_search_config(intent, query.lower())
+        logger.info(f"SEARCH CONFIG:")
+        logger.info(f"  - Max results: {config['max_results']}")
+        logger.info(f"  - Content types: {config['content_types']}")
+        logger.info(f"  - Boost factors: {config['boost_factors']}")
+        
+        # Log special configurations
+        if config.get('force_all_combos'):
+            logger.info(f"  - SPECIAL: Force all combos enabled")
+        if config.get('coursera_boost'):
+            logger.info(f"  - SPECIAL: Coursera boost enabled")
+        if config.get('smart_filter_semester'):
+            logger.info(f"  - SMART FILTER: semester={config['smart_filter_semester']}, suffix='{config.get('smart_filter_suffix', '')}'")
+        if config.get('force_specific_student'):
+            logger.info(f"  - STUDENT FILTER: targeting {config['force_specific_student']}")
+        if config.get('force_student_overview'):
+            logger.info(f"  - STUDENT FILTER: prioritizing overview")
+        
         results = []
         
         # PRIORITY CHECK: For semester/major queries, ensure major_overview is found
@@ -1265,6 +1401,9 @@ Ten: {student.get('FirstName', '')}
         
         # STEP 2: Subject-specific search (if subjects detected)
         if intent.target_subjects:
+            logger.info(f"STEP 2: Subject-specific search")
+            logger.info(f"  Raw target subjects: {intent.target_subjects}")
+            
             # Enhanced subject code resolution - handle partial codes
             resolved_subjects = []
             
@@ -1293,25 +1432,41 @@ Ten: {student.get('FirstName', '')}
                     if unique_matches:
                         print(f"Resolved '{subject_code}' to: {unique_matches}")
             
+            logger.info(f"  Resolved subjects: {resolved_subjects}")
+            
             if resolved_subjects:
                 subject_results = self._search_by_subject(resolved_subjects, config)
+                logger.info(f"  Subject search returned: {len(subject_results)} results")
                 results.extend(subject_results)
+            else:
+                logger.info(f"  No subjects could be resolved")
         
         # STEP 3: Content type search
+        logger.info(f"STEP 3: Content type search")
         content_type_results = self._search_by_content_type(query, config)
+        logger.info(f"  Content type search returned: {len(content_type_results)} results")
         results.extend(content_type_results)
         
         # STEP 4: General semantic search as fallback
         if len(results) < config['max_results']:
+            logger.info(f"STEP 4: General semantic search (fallback)")
             remaining_slots = config['max_results'] - len(results)
+            logger.info(f"  Need {remaining_slots} more results")
             fallback_config = config.copy()
             fallback_config['max_results'] = remaining_slots
             
             semantic_results = self._semantic_search(query, fallback_config)
+            logger.info(f"  Semantic search returned: {len(semantic_results)} results")
             results.extend(semantic_results)
+        else:
+            logger.info(f"STEP 4: Skipped (already have {len(results)} results)")
         
         # STEP 5: Remove duplicates
+        logger.info(f"STEP 5: Remove duplicates")
+        original_count = len(results)
         results = self._deduplicate_results(results)
+        logger.info(f"  Before: {original_count} results, After: {len(results)} results")
+        logger.info(f"  Removed {original_count - len(results)} duplicates")
         
         # STEP 5.5: SMART PATTERN FILTERING - Add all matching courses if pattern detected
         if config.get('smart_filter_semester') and config.get('smart_filter_suffix'):
@@ -1348,10 +1503,40 @@ Ten: {student.get('FirstName', '')}
             results.extend(pattern_matches)
         
         # STEP 6: Advanced ranking
+        logger.info(f"STEP 6: Advanced ranking")
+        pre_ranking_scores = [r.get('score', 0) for r in results[:5]]
+        logger.info(f"  Pre-ranking top 5 scores: {[round(s, 2) for s in pre_ranking_scores]}")
+        
         results = self._rank_results(results, query, intent)
         
-        print(f"Final ranked results: {len(results)}")
-        return results[:config['max_results']]
+        post_ranking_scores = [r.get('final_score', r.get('score', 0)) for r in results[:5]]
+        logger.info(f"  Post-ranking top 5 scores: {[round(s, 2) for s in post_ranking_scores]}")
+        
+        search_time = time.time() - search_start_time
+        logger.info(f"SEARCH STRATEGY: Hoàn thành trong {search_time:.2f}s")
+        logger.info(f"  Final results: {len(results)} kết quả")
+        logger.info(f"  Top 5 scores: {[round(r.get('final_score', r.get('score', 0)), 2) for r in results[:5]]}")
+        
+        # Log search method distribution
+        method_counts = {}
+        for r in results:
+            method = r.get('search_method', 'unknown')
+            method_counts[method] = method_counts.get(method, 0) + 1
+        
+        logger.info(f"  Search methods used: {method_counts}")
+        
+        # Log content type distribution
+        type_counts = {}
+        for r in results:
+            content_type = r.get('type', 'unknown')
+            type_counts[content_type] = type_counts.get(content_type, 0) + 1
+        
+        logger.info(f"  Content types found: {type_counts}")
+        
+        final_results = results[:config['max_results']]
+        logger.info(f"  Returning top {len(final_results)} results")
+        
+        return final_results
     
     def _get_search_config(self, intent: QueryIntent, query_lower: str) -> Dict[str, Any]:
         """Get search configuration based on query intent and content"""
@@ -1983,6 +2168,8 @@ Ten: {student.get('FirstName', '')}
     def _generate_response(self, question: str, context: str) -> str:
         """Generate response using Gemini với enhanced prompting"""
         
+        logger.info("Bắt đầu tạo prompt cho Gemini...")
+        
         # Enhanced prompt construction based on question type
         question_lower = question.lower()
         
@@ -1991,6 +2178,12 @@ Ten: {student.get('FirstName', '')}
         is_listing_query = any(term in question_lower for term in ['liệt kê', 'danh sách', 'những môn', 'các môn', 'có gì'])
         is_semester_query = any(term in question_lower for term in ['kỳ', 'kì', 'ky', 'ki', 'semester'])
         is_comparison_query = any(term in question_lower for term in ['so sánh', 'compare', 'khác nhau', 'mối quan hệ', 'liên quan'])
+        
+        logger.info(f"PROMPT ANALYSIS:")
+        logger.info(f"  - Coursera query: {is_coursera_query}")
+        logger.info(f"  - Listing query: {is_listing_query}")
+        logger.info(f"  - Semester query: {is_semester_query}")
+        logger.info(f"  - Comparison query: {is_comparison_query}")
         
         # Base prompt với format instructions
         base_prompt = f"""
@@ -2017,6 +2210,7 @@ THÔNG TIN QUAN TRỌNG VỀ MÃ MÔN HỌC:
 
         # Enhanced prompting for specific query types
         if is_comparison_query:
+            logger.info(f"  Selected prompt type: COMPARISON")
             enhanced_prompt = base_prompt + """
 NHIỆM VỤ ĐặC BIỆT: So sánh hai môn học
 - Tạo bảng so sánh với định dạng markdown:
@@ -2033,6 +2227,7 @@ NHIỆM VỤ ĐặC BIỆT: So sánh hai môn học
 
 """
         elif is_coursera_query and is_listing_query:
+            logger.info(f"  Selected prompt type: COURSERA + LISTING")
             enhanced_prompt = base_prompt + """
 NHIỆM VỤ ĐặC BIỆT: Tìm và liệt kê TẤT CẢ các môn học Coursera (có đuôi 'c')
 - Đọc kỹ toàn bộ thông tin được cung cấp
@@ -2045,6 +2240,7 @@ NHIỆM VỤ ĐặC BIỆT: Tìm và liệt kê TẤT CẢ các môn học Cours
 
 """
         elif is_listing_query and is_semester_query:
+            logger.info(f"  Selected prompt type: LISTING + SEMESTER")
             enhanced_prompt = base_prompt + """
 NHIỆM VỤ ĐặC BIỆT: Liệt kê ĐẦY ĐỦ TẤT CẢ các môn học trong kỳ
 - ĐỌC KỸ VÀ DUYỆT TOÀN BỘ thông tin được cung cấp
@@ -2062,6 +2258,7 @@ NHIỆM VỤ ĐặC BIỆT: Liệt kê ĐẦY ĐỦ TẤT CẢ các môn học t
 
 """
         else:
+            logger.info(f"  Selected prompt type: STANDARD")
             enhanced_prompt = base_prompt + """
 Hãy trả lời chính xác và đầy đủ dựa trên thông tin được cung cấp.
 Sử dụng markdown format để làm cho câu trả lời dễ đọc và có cấu trúc.
@@ -2079,11 +2276,51 @@ Hãy trả lời một cách chính xác, đầy đủ và có cấu trúc rõ r
 Nếu thông tin không đủ để trả lời, hãy nói rõ và gợi ý cách tìm thêm thông tin.
 QUAN TRỌNG: Sử dụng bảng markdown cho việc so sánh và liệt kê thông tin."""
 
+        logger.info(f"GEMINI REQUEST:")
+        logger.info(f"  - Prompt length: {len(prompt)} ký tự")
+        
+        # Log preview của prompt
+        prompt_lines = prompt.split('\n')
+        logger.info(f"PROMPT PREVIEW (first 15 lines):")
+        for i, line in enumerate(prompt_lines[:15]):
+            if line.strip():
+                logger.info(f"  {i+1}: {line[:100]}{'...' if len(line) > 100 else ''}")
+        
+        if len(prompt_lines) > 15:
+            logger.info(f"  ... và {len(prompt_lines) - 15} dòng khác")
+        
+        logger.info("Gửi request tới Gemini...")
+        
         try:
+            gemini_start_time = time.time()
             response = self.genai.generate_content(prompt)
-            return response.text.strip()
+            gemini_time = time.time() - gemini_start_time
+            
+            if response and response.text:
+                logger.info(f"✓ Gemini response nhận được trong {gemini_time:.2f}s")
+                logger.info(f"GEMINI RESPONSE:")
+                logger.info(f"  - Length: {len(response.text)} ký tự")
+                logger.info(f"  - Word count: ~{len(response.text.split())} từ")
+                response_line_count = len(response.text.split('\n'))
+                logger.info(f"  - Line count: {response_line_count}")
+                
+                # Log preview của response
+                response_lines = response.text.split('\n')
+                logger.info(f"RESPONSE PREVIEW (first 10 lines):")
+                for i, line in enumerate(response_lines[:10]):
+                    if line.strip():
+                        logger.info(f"  {i+1}: {line[:120]}{'...' if len(line) > 120 else ''}")
+                
+                if len(response_lines) > 10:
+                    logger.info(f"  ... và {len(response_lines) - 10} dòng khác")
+                
+                return response.text.strip()
+            else:
+                logger.warning("Gemini response rỗng hoặc không hợp lệ")
+                return self._fallback_response(question, context)
+                
         except Exception as e:
-            logger.error(f"Lỗi khi generate response: {e}")
+            logger.error(f"✗ Lỗi khi generate response: {e}")
             return self._fallback_response(question, context)
     
     def _fallback_response(self, question: str, context: str) -> str:
