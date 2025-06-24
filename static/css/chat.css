@@ -641,7 +641,7 @@ body {
 
   .user-message .message-content,
   .assistant-message .message-content {
-    max-width: 85%;
+    max-width: 80%;
   }
 
   .user-message .message-content {
@@ -1094,7 +1094,7 @@ body {
   color: #86efac;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -1104,7 +1104,7 @@ body {
   color: #93c5fd !important;
   padding: 0.25rem 0.5rem !important;
   border-radius: 0.25rem !important;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace !important;
   font-size: 0.875rem !important;
 }
 
@@ -1198,12 +1198,12 @@ body {
   .message-content table {
     font-size: 0.75rem;
   }
-  
+
   .message-content th,
   .message-content td {
     padding: 0.5rem;
   }
-  
+
   .message-content .overflow-x-auto {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;

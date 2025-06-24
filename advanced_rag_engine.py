@@ -18,6 +18,8 @@ from concurrent.futures import ThreadPoolExecutor
 import logging
 from enum import Enum
 import time
+import hashlib
+import pickle
 
 # Cấu hình logging chi tiết
 logging.basicConfig(
@@ -28,6 +30,140 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+class APIKeyManager:
+    """Quản lý và xoay vòng API keys để tránh quota exceeded"""
+    
+    def __init__(self, api_keys: List[str]):
+        self.api_keys = [key for key in api_keys if key]  # Filter out empty keys
+        self.current_index = 0
+        self.failed_keys = set()  # Track keys that are temporarily failed
+        self.last_error_time = {}  # Track when each key last failed
+        self.retry_delay = 60  # Wait 60 seconds before retrying a failed key
+        
+        if not self.api_keys:
+            raise ValueError("Cần ít nhất một API key hợp lệ")
+        
+        logger.info(f"✓ APIKeyManager khởi tạo với {len(self.api_keys)} API keys")
+        
+    def get_current_key(self) -> str:
+        """Lấy API key hiện tại"""
+        return self.api_keys[self.current_index]
+        
+    def get_current_model(self):
+        """Lấy Gemini model với API key hiện tại"""
+        try:
+            current_key = self.get_current_key()
+            genai.configure(api_key=current_key)
+            return genai.GenerativeModel('gemini-1.5-flash')
+        except Exception as e:
+            logger.error(f"Lỗi tạo model với key {self.current_index + 1}: {e}")
+            return None
+    
+    def rotate_key(self, error_message: str = None) -> bool:
+        """
+        Xoay sang API key tiếp theo
+        Returns: True nếu còn key khả dụng, False nếu hết key
+        """
+        # Mark current key as failed
+        current_key_index = self.current_index
+        self.failed_keys.add(current_key_index)
+        self.last_error_time[current_key_index] = time.time()
+        
+        logger.warning(f"API Key {current_key_index + 1} failed: {error_message}")
+        
+        # Try to find next available key
+        attempts = 0
+        while attempts < len(self.api_keys):
+            self.current_index = (self.current_index + 1) % len(self.api_keys)
+            
+            # Check if this key is available
+            if self._is_key_available(self.current_index):
+                logger.info(f"Chuyển sang API Key {self.current_index + 1}")
+                return True
+                
+            attempts += 1
+        
+        # No available keys
+        logger.error("Tất cả API keys đều không khả dụng")
+        return False
+    
+    def _is_key_available(self, key_index: int) -> bool:
+        """Kiểm tra xem API key có khả dụng không"""
+        if key_index not in self.failed_keys:
+            return True
+            
+        # Check if enough time has passed since last failure
+        if key_index in self.last_error_time:
+            time_since_failure = time.time() - self.last_error_time[key_index]
+            if time_since_failure > self.retry_delay:
+                # Remove from failed set to retry
+                self.failed_keys.discard(key_index)
+                logger.info(f"API Key {key_index + 1} sẵn sàng thử lại sau {time_since_failure:.1f}s")
+                return True
+        
+        return False
+    
+    def reset_failed_keys(self):
+        """Reset tất cả failed keys - dùng để force retry"""
+        self.failed_keys.clear()
+        self.last_error_time.clear()
+        logger.info("Đã reset tất cả failed API keys")
+    
+    def get_status(self) -> Dict[str, Any]:
+        """Lấy trạng thái của API key manager"""
+        return {
+            'total_keys': len(self.api_keys),
+            'current_index': self.current_index,
+            'current_key_suffix': self.get_current_key()[-10:] if self.api_keys else 'N/A',
+            'failed_keys': list(self.failed_keys),
+            'available_keys': [i for i in range(len(self.api_keys)) if self._is_key_available(i)]
+        }
+    
+    def call_with_rotation(self, func, *args, **kwargs):
+        """
+        Gọi function với auto rotation khi gặp quota error
+        """
+        max_attempts = len(self.api_keys)
+        attempt = 0
+        
+        while attempt < max_attempts:
+            try:
+                # Get current model and try the function
+                model = self.get_current_model()
+                if not model:
+                    if not self.rotate_key("Failed to create model"):
+                        break
+                    attempt += 1
+                    continue
+                
+                # Call function with current model
+                if hasattr(func, '__self__'):
+                    # Method call - update the model reference
+                    func.__self__.gemini_model = model
+                
+                return func(*args, **kwargs)
+                
+            except Exception as e:
+                error_str = str(e)
+                
+                # Check if it's a quota error
+                if '429' in error_str or 'quota' in error_str.lower() or 'exceeded' in error_str.lower():
+                    logger.warning(f"Quota exceeded with API Key {self.current_index + 1}, attempting rotation...")
+                    
+                    if not self.rotate_key(error_str):
+                        # No more keys available
+                        logger.error("Tất cả API keys đã hết quota")
+                        raise e
+                    
+                    attempt += 1
+                    continue
+                else:
+                    # Non-quota error, don't rotate
+                    raise e
+        
+        # If we get here, all attempts failed
+        raise Exception("Tất cả API keys đều không khả dụng")
 
 @dataclass
 class SearchResult:
@@ -65,6 +201,256 @@ class QueryChainResult:
     followup_results: List[Dict[str, Any]]
     final_integrated_answer: str
     execution_path: List[str]
+
+@dataclass
+class ProcessedQuery:
+    """Query đã được xử lý bởi LLM"""
+    original_query: str
+    processed_query: str
+    intent_description: str
+    suggested_keywords: List[str]
+    confidence: float
+    needs_data_search: bool
+
+class QueryPreprocessor:
+    """Xử lý query bằng LLM trước khi đưa vào hệ thống chính"""
+    
+    def __init__(self, gemini_model, rag_engine=None):
+        self.gemini_model = gemini_model
+        self.rag_engine = rag_engine  # Reference to parent engine for rotation
+        
+        # Domain-specific knowledge về FPTU
+        self.fptu_domain_knowledge = {
+            'combo_terms': [
+                'combo', 'combo chuyên ngành', 'chuyên ngành hẹp', 'specialization', 
+                'track', 'specialization track', 'major track'
+            ],
+            'semester_terms': [
+                'kì', 'ky', 'kỳ', 'ki', 'semester', 'học kì', 'hoc ky', 'term'
+            ],
+            'quantity_terms': [
+                'bao nhiêu', 'có mấy', 'số lượng', 'tổng cộng', 'how many', 'count'
+            ],
+            'definition_terms': [
+                'là gì', 'la gi', 'what is', 'what are', 'định nghĩa', 'dinh nghia', 'nghĩa là'
+            ]
+        }
+        
+    def preprocess_query(self, query: str, conversation_context: str = "") -> ProcessedQuery:
+        """Xử lý query bằng LLM để cải thiện hiểu ý định"""
+        
+        try:
+            # Tạo prompt cho LLM
+            prompt = self._build_preprocessing_prompt(query, conversation_context)
+            
+            # Gọi LLM với rotation nếu có reference tới engine
+            if self.rag_engine and hasattr(self.rag_engine, '_call_gemini_with_rotation'):
+                result_text = self.rag_engine._call_gemini_with_rotation(prompt)
+            else:
+                # Fallback to direct call
+                response = self.gemini_model.generate_content(prompt)
+                result_text = response.text.strip()
+            
+            # Parse kết quả
+            parsed_result = self._parse_llm_response(result_text, query)
+            
+            logger.info(f"QUERY PREPROCESSING:")
+            logger.info(f"  Original: '{query}'")
+            logger.info(f"  Processed: '{parsed_result.processed_query}'")
+            logger.info(f"  Intent: {parsed_result.intent_description}")
+            logger.info(f"  Keywords: {parsed_result.suggested_keywords}")
+            logger.info(f"  Needs data search: {parsed_result.needs_data_search}")
+            
+            return parsed_result
+            
+        except Exception as e:
+            logger.error(f"Lỗi preprocessing query: {e}")
+            # Fallback - trả về query gốc
+            return ProcessedQuery(
+                original_query=query,
+                processed_query=query,
+                intent_description="unknown",
+                suggested_keywords=[],
+                confidence=0.5,
+                needs_data_search=True
+            )
+    
+    def _build_preprocessing_prompt(self, query: str, conversation_context: str) -> str:
+        """Tạo prompt cho LLM preprocessing"""
+        
+        context_part = ""
+        if conversation_context:
+            context_part = f"\nLịch sử cuộc trò chuyện:\n{conversation_context}\n"
+        
+        return f"""Bạn là chuyên gia phân tích query cho hệ thống thông tin học tập FPT University. 
+Nhiệm vụ: Phân tích và cải thiện query của người dùng để tìm kiếm hiệu quả hơn.
+
+DOMAIN KNOWLEDGE - FPT UNIVERSITY:
+- Ngành AI có 45 môn học, phân bố theo 8 kì
+- Có 3 combo chuyên ngành hẹp: AI17_COM1 (Data Science), AI17_COM2.1 (Text Mining), AI17_COM3 (AI Healthcare)
+- Mỗi môn có mã (vd: CSI106, AIG202c), tên tiếng Việt/Anh, số tín chỉ, kì học
+- Thuật ngữ "combo chuyên ngành hẹp" = "specialization track"
+
+{context_part}
+
+QUERY CẦN PHÂN TÍCH: "{query}"
+
+Hãy phân tích và trả về kết quả theo định dạng JSON:
+{{
+  "processed_query": "[Query được cải thiện để tìm kiếm tốt hơn]",
+  "intent_description": "[Mô tả ý định: factual/listing/definition/counting/etc.]",
+  "suggested_keywords": ["keyword1", "keyword2", "keyword3"],
+  "confidence": [0.0-1.0],
+  "needs_data_search": [true/false],
+  "reasoning": "[Giải thích logic phân tích]"
+}}
+
+HƯỚNG DẪN CỤTHỂ:
+1. Nếu hỏi "bao nhiêu combo/chuyên ngành" → processed_query: "liệt kê tất cả combo chuyên ngành hẹp AI"
+2. Nếu hỏi "combo/chuyên ngành là gì" → processed_query: "thông tin về combo chuyên ngành hẹp ngành AI"
+3. Nếu hỏi về kì học cụ thể → thêm keywords về semester
+4. Nếu chỉ chào hỏi/cảm ơn → needs_data_search: false
+
+Trả về JSON hợp lệ:"""
+
+    def _parse_llm_response(self, response_text: str, original_query: str) -> ProcessedQuery:
+        """Parse phản hồi từ LLM"""
+        
+        try:
+            # Tìm JSON trong response
+            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if json_match:
+                json_str = json_match.group()
+                parsed = json.loads(json_str)
+                
+                return ProcessedQuery(
+                    original_query=original_query,
+                    processed_query=parsed.get('processed_query', original_query),
+                    intent_description=parsed.get('intent_description', 'unknown'),
+                    suggested_keywords=parsed.get('suggested_keywords', []),
+                    confidence=float(parsed.get('confidence', 0.7)),
+                    needs_data_search=bool(parsed.get('needs_data_search', True))
+                )
+            else:
+                # Không parse được JSON, fallback
+                logger.warning("Không parse được JSON từ LLM response")
+                return self._fallback_processing(original_query)
+                
+        except Exception as e:
+            logger.error(f"Lỗi parse LLM response: {e}")
+            return self._fallback_processing(original_query)
+    
+    def _fallback_processing(self, query: str) -> ProcessedQuery:
+        """Fallback processing khi LLM thất bại - Enhanced version"""
+        
+        query_lower = query.lower()
+        
+        # ENHANCED RULE-BASED PROCESSING
+        
+        # 1. SEMESTER RELATIONSHIP QUERIES
+        if ('kì' in query_lower or 'ky' in query_lower or 'kỳ' in query_lower) and ('liên quan' in query_lower or 'lien quan' in query_lower):
+            return ProcessedQuery(
+                original_query=query,
+                processed_query=f"môn học kì 4 kì 5 mối liên hệ tiên quyết phụ thuộc {query}",
+                intent_description="semester_relationship_analysis",
+                suggested_keywords=['kì 4', 'kì 5', 'môn học', 'liên quan', 'tiên quyết', 'prerequisite'],
+                confidence=0.85,
+                needs_data_search=True
+            )
+        
+        # 2. COMBO COUNTING QUERIES
+        if any(term in query_lower for term in ['bao nhiêu', 'có mấy', 'số lượng']):
+            if any(term in query_lower for term in ['combo', 'chuyên ngành']):
+                return ProcessedQuery(
+                    original_query=query,
+                    processed_query="liệt kê tất cả combo chuyên ngành hẹp AI specialization track",
+                    intent_description="counting_combo",
+                    suggested_keywords=['combo', 'chuyên ngành hẹp', 'AI', 'specialization', 'track'],
+                    confidence=0.9,
+                    needs_data_search=True
+                )
+        
+        # 3. COMBO DEFINITION QUERIES  
+        if any(term in query_lower for term in ['là gì', 'what is', 'định nghĩa']):
+            if any(term in query_lower for term in ['combo', 'chuyên ngành']):
+                return ProcessedQuery(
+                    original_query=query,
+                    processed_query="thông tin định nghĩa combo chuyên ngành hẹp ngành AI specialization track",
+                    intent_description="definition_combo",
+                    suggested_keywords=['combo', 'chuyên ngành hẹp', 'thông tin', 'specialization'],
+                    confidence=0.9,
+                    needs_data_search=True
+                )
+        
+        # 4. SEMESTER LISTING QUERIES
+        semester_patterns = ['kì 1', 'kì 2', 'kì 3', 'kì 4', 'kì 5', 'kì 6', 'kì 7', 'kì 8',
+                           'ky 1', 'ky 2', 'ky 3', 'ky 4', 'ky 5', 'ky 6', 'ky 7', 'ky 8']
+        if any(pattern in query_lower for pattern in semester_patterns):
+            # Extract semester numbers
+            semesters = []
+            for i in range(1, 9):
+                if f'kì {i}' in query_lower or f'ky {i}' in query_lower or f'kỳ {i}' in query_lower:
+                    semesters.append(str(i))
+            
+            if semesters:
+                semester_text = ' '.join([f'kì {s}' for s in semesters])
+                return ProcessedQuery(
+                    original_query=query,
+                    processed_query=f"môn học {semester_text} semester {' '.join(semesters)} curriculum subjects",
+                    intent_description="semester_listing",
+                    suggested_keywords=['môn học'] + [f'kì {s}' for s in semesters] + ['semester', 'curriculum'],
+                    confidence=0.85,
+                    needs_data_search=True
+                )
+        
+        # 5. GREETINGS AND THANKS - SHOULD BE DIRECT CHAT
+        greeting_patterns = [
+            'xin chào', 'hello', 'hi', 'chào bạn', 'chao ban',
+            'cảm ơn', 'cam on', 'thank you', 'thanks', 'cám ơn'
+        ]
+        if any(pattern in query_lower for pattern in greeting_patterns):
+            return ProcessedQuery(
+                original_query=query,
+                processed_query=query,
+                intent_description="greeting_or_thanks",
+                suggested_keywords=[],
+                confidence=0.95,
+                needs_data_search=False  # IMPORTANT: Direct chat
+            )
+        
+        # 6. SUBJECT CODE QUERIES
+        subject_codes = re.findall(r'[A-Za-z]{2,4}\d{3}[a-zA-Z]*', query)
+        if subject_codes:
+            return ProcessedQuery(
+                original_query=query,
+                processed_query=f"{query} subject code course information",
+                intent_description="subject_specific",
+                suggested_keywords=subject_codes + ['môn học', 'course', 'subject'],
+                confidence=0.8,
+                needs_data_search=True
+            )
+        
+        # 7. GENERAL ACADEMIC QUERIES
+        academic_terms = ['môn học', 'mon hoc', 'subject', 'course', 'curriculum', 'chương trình', 'chuong trinh']
+        if any(term in query_lower for term in academic_terms):
+            return ProcessedQuery(
+                original_query=query,
+                processed_query=f"{query} academic curriculum course information",
+                intent_description="general_academic",
+                suggested_keywords=['môn học', 'curriculum', 'academic'],
+                confidence=0.7,
+                needs_data_search=True
+            )
+        
+        # 8. DEFAULT FALLBACK
+        return ProcessedQuery(
+            original_query=query,
+            processed_query=query,
+            intent_description="unknown",
+            suggested_keywords=[],
+            confidence=0.5,
+            needs_data_search=True  # Default to data search unless clearly conversational
+        )
 
 class QueryRouter:
     """Router thông minh để định tuyến query"""
@@ -180,7 +566,13 @@ class QueryRouter:
         academic_context_indicators = [
             'môn', 'mon', 'học', 'hoc', 'tín chỉ', 'tin chi', 'tiên quyết', 'tien quyet',
             'syllabus', 'course', 'subject', 'credit', 'prerequisite', 'thông tin', 'thong tin',
-            'chi tiết', 'chi tiet', 'nội dung', 'noi dung'
+            'chi tiết', 'chi tiet', 'nội dung', 'noi dung',
+            # COMBO/SPECIALIZATION INDICATORS
+            'combo', 'chuyên ngành', 'chuyen nganh', 'specialization', 'track',
+            'chuyên ngành hẹp', 'chuyen nganh hep', 'combo chuyên ngành', 'combo chuyen nganh',
+            # COUNTING/QUANTITY INDICATORS
+            'bao nhiêu', 'bao nhieu', 'có mấy', 'co may', 'số lượng', 'so luong',
+            'tổng cộng', 'tong cong', 'how many', 'count', 'list', 'liệt kê', 'liet ke'
         ]
         
         # Only skip if query contains both academic context AND potential subject codes
@@ -646,24 +1038,84 @@ class HierarchicalIndex:
 class AdvancedRAGEngine:
     """Engine RAG tiên tiến với đầy đủ tính năng"""
     
-    def __init__(self, gemini_api_key: str):
-        """Initialize the Advanced RAG Engine"""
-        self.gemini_api_key = gemini_api_key
-        self.model = SentenceTransformer('sentence-transformers/paraphrase-multilingual-mpnet-base-v2')
-        self.genai = None
-        self.data = []
+    def __init__(self, api_keys: Union[str, List[str]]):
+        """Khởi tạo RAG Engine với API key rotation"""
+        
+        # Xử lý API keys input
+        if isinstance(api_keys, str):
+            api_keys = [api_keys]  # Convert single key to list
+        
+        # Initialize API Key Manager
+        self.api_key_manager = APIKeyManager(api_keys)
+        
+        # Configure Gemini với key đầu tiên
+        self.model = self.api_key_manager.get_current_model()
+        
+        # Initialize components
+        self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
         self.embeddings = None
+        self.data = None
         self.index = None
+        
+        # Enhanced components
         self.hierarchical_index = None
+        self.subject_mapping = {}
         self.query_router = QueryRouter()
-        self.query_chain = None  # Sẽ được khởi tạo sau khi engine sẵn sàng
-        self.is_initialized = False
+        self.multihop_engine = None
         
-        # Initialize Gemini
-        genai.configure(api_key=gemini_api_key)
-        self.genai = genai.GenerativeModel('gemini-1.5-flash')
+        # NEW: Query Preprocessor với API key rotation support
+        self.query_preprocessor = QueryPreprocessor(self.model, self)
         
-        logger.info("Khởi tạo Advanced RAG Engine")
+        # Conversation memory for chatbot functionality
+        self.conversation_memory = {}  # session_id -> [{'user': query, 'bot': response}]
+        
+        logger.info(f"✓ AdvancedRAGEngine được khởi tạo với {len(self.api_key_manager.api_keys)} API keys")
+
+    def _call_gemini_with_rotation(self, prompt: str, max_retries: int = None) -> str:
+        """
+        Gọi Gemini với auto rotation khi gặp quota error
+        """
+        if max_retries is None:
+            max_retries = len(self.api_key_manager.api_keys)
+        
+        for attempt in range(max_retries):
+            try:
+                # Lấy model hiện tại
+                current_model = self.api_key_manager.get_current_model()
+                if not current_model:
+                    raise Exception("Không thể tạo Gemini model")
+                
+                # Update model reference
+                self.model = current_model
+                self.query_preprocessor.gemini_model = current_model
+                
+                # Gọi API
+                response = current_model.generate_content(prompt)
+                return response.text.strip()
+                
+            except Exception as e:
+                error_str = str(e)
+                
+                # Kiểm tra quota error
+                if ('429' in error_str or 
+                    'quota' in error_str.lower() or 
+                    'exceeded' in error_str.lower() or
+                    'resource exhausted' in error_str.lower()):
+                    
+                    logger.warning(f"API Key {self.api_key_manager.current_index + 1} quota exceeded, rotating...")
+                    
+                    # Thử rotate key
+                    if not self.api_key_manager.rotate_key(error_str):
+                        logger.error("Tất cả API keys đã hết quota")
+                        break
+                    
+                    continue  # Thử với key mới
+                else:
+                    # Lỗi khác (không phải quota) -> throw ngay
+                    raise e
+        
+        # Nếu tới đây = hết quota tất cả keys
+        raise Exception("Tất cả API keys đã hết quota, vui lòng thử lại sau")
 
     def initialize(self, data_path: str):
         """Khởi tạo engine với dữ liệu từ file JSON"""
@@ -677,13 +1129,461 @@ class AdvancedRAGEngine:
         self._build_index()
         
         # Initialize hierarchical index
-        self.hierarchical_index = HierarchicalIndex(self.model)
+        self.hierarchical_index = HierarchicalIndex(self.embedding_model)
         
         # Initialize query chain for multi-hop queries
         self.query_chain = QueryChain(self)
         
         self.is_initialized = True
         logger.info("Khởi tạo hoàn tất")
+    
+    def add_to_conversation(self, session_id: str, user_message: str, bot_response: str):
+        """Thêm tin nhắn vào lịch sử conversation"""
+        if session_id not in self.conversation_memory:
+            self.conversation_memory[session_id] = []
+        
+        self.conversation_memory[session_id].append({
+            'user': user_message,
+            'bot': bot_response,
+            'timestamp': time.time()
+        })
+        
+        # Giới hạn lịch sử conversation (chỉ giữ 10 tin nhắn gần nhất)
+        if len(self.conversation_memory[session_id]) > 10:
+            self.conversation_memory[session_id] = self.conversation_memory[session_id][-10:]
+    
+    def get_conversation_context(self, session_id: str) -> str:
+        """Lấy context từ lịch sử conversation"""
+        if session_id not in self.conversation_memory:
+            return ""
+        
+        context = "Lịch sử cuộc trò chuyện:\n"
+        for msg in self.conversation_memory[session_id][-5:]:  # Chỉ lấy 5 tin nhắn gần nhất
+            context += f"Người dùng: {msg['user']}\n"
+            context += f"AI: {msg['bot']}\n\n"
+        
+        return context
+    
+    def should_use_data_search(self, query: str, session_id: str = None) -> bool:
+        """Phân biệt câu hỏi cần tìm kiếm data hay chỉ cần LLM với conversation context"""
+        query_lower = query.lower().strip()
+        
+        # ENHANCED: Kiểm tra context conversation history để xác định câu hỏi follow-up về data
+        has_conversation_history = (session_id and 
+                                   session_id in self.conversation_memory and 
+                                   len(self.conversation_memory[session_id]) > 0)
+        
+        if has_conversation_history:
+            # Lấy câu trả lời bot gần nhất để hiểu context
+            last_bot_response = self.conversation_memory[session_id][-1].get('bot', '')
+            
+            # SMART CONTEXT DETECTION: Nếu câu trả lời trước có chứa thông tin về FPTU/môn học
+            # và câu hỏi hiện tại là follow-up về học kỳ khác -> cần data search
+            fptu_context_indicators = [
+                'môn học', 'mon hoc', 'subject', 'course', 'tín chỉ', 'tin chi', 'credit',
+                'kỳ', 'ky', 'semester', 'ngành ai', 'nganh ai', 'fptu', 'fpt university',
+                'csi', 'mad', 'csd', 'dbi', 'aig', 'cea', 'jpd', 'ady', 'ite'  # Common subject prefixes
+            ]
+            
+            has_fptu_context = any(indicator in last_bot_response.lower() for indicator in fptu_context_indicators)
+            
+            # ENHANCED: Phát hiện câu hỏi follow-up về kì học khác
+            semester_followup_patterns = [
+                r'kì\s*(\d+|hai|ba|bốn|năm|sáu|bảy|tám)\s*(thì\s*sao|như\s*thế\s*nào|ra\s*sao)',
+                r'ky\s*(\d+|hai|ba|bốn|năm|sáu|bảy|tám)\s*(thì\s*sao|như\s*thế\s*nào|ra\s*sao)',
+                r'semester\s*(\d+|two|three|four|five|six|seven|eight)\s*(how|what)',
+                r'(còn|con)\s*kì\s*(\d+|hai|ba|bốn|năm|sáu|bảy|tám)',
+                r'(còn|con)\s*ky\s*(\d+|hai|ba|bốn|năm|sáu|bảy|tám)',
+                r'(kì|ky)\s*(\d+|hai|ba|bốn|năm|sáu|bảy|tám)\s*(có|co)\s*(gì|gi|những\s*gì)',
+                r'(học|hoc)\s*(kì|ky)\s*(\d+|hai|ba|bốn|năm|sáu|bảy|tám)',
+                r'(thì|thi)\s*(kì|ky)\s*(\d+|hai|ba|bốn|năm|sáu|bảy|tám)',
+                # Thêm các pattern khác
+                r'kì\s*tiếp\s*theo', r'ky\s*tiep\s*theo',
+                r'kì\s*sau', r'ky\s*sau',
+                r'kì\s*khác', r'ky\s*khac'
+            ]
+            
+            is_semester_followup = any(re.search(pattern, query_lower) for pattern in semester_followup_patterns)
+            
+            if has_fptu_context and is_semester_followup:
+                logger.info("SMART DETECTION: Semester follow-up question with FPTU context - using DATA SEARCH")
+                return True
+        
+        # Kiểm tra các pattern chỉ cần conversation context (KHÔNG cần data search)
+        conversation_only_patterns = [
+            # Tham chiếu đến câu trả lời trước (nhưng KHÔNG phải về kì học)
+            r'(trong|ở|từ)?\s*(danh sách|bảng|kết quả|thông tin)\s*(trên|này|đó|vừa|ở trên)',
+            r'(môn|item|mục)\s*(đầu tiên|cuối cùng|thứ \d+|số \d+)',
+            r'(theo|dựa vào|từ)\s*(thông tin|dữ liệu|kết quả)\s*(trên|vừa|đã)',
+            r'(cái|thứ|món)\s*(đầu|cuối|nào)\s*(trong|ở)',
+            r'(first|last|which)\s*(one|item)',
+            
+            # Câu hỏi về conversation trước
+            r'(bạn|em|mình)\s*(vừa|đã|vửa)\s*(nói|trả lời|đưa ra)',
+            r'(từ|theo)\s*(câu trả lời|thông tin)\s*(trước|phía trên)',
+            r'(ý nghĩa|hiểu|giải thích).*(?!môn|ngành)',  # Trừ khi hỏi về môn/ngành
+            
+            # Pure greetings/chit-chat (KHÔNG liên quan FPTU)
+            r'^(xin chào|chào|hi|hello)$',
+            r'^(cảm ơn|thank|thanks).*',
+            r'^(tạm biệt|bye|goodbye).*',
+            r'(bạn|em)\s*(có thể|có thể)\s*(giúp|hỗ trợ|làm)\s*(gì|được gì)',
+        ]
+        
+        # Kiểm tra conversation context patterns trước (NHƯNG BỎ QUA pattern follow-up về học kì)
+        for pattern in conversation_only_patterns:
+            if re.search(pattern, query_lower):
+                # ĐẶC BIỆT: Nếu pattern match nhưng có chứa từ khóa về kì học -> vẫn cần data search
+                if any(semester_word in query_lower for semester_word in ['kì', 'ky', 'semester']):
+                    logger.info(f"CONVERSATION PATTERN '{pattern}' matched but contains semester keyword - still using DATA SEARCH")
+                    return True
+                logger.info(f"CONVERSATION CONTEXT DETECTED: Pattern '{pattern}' matched")
+                return False
+        
+        # ENHANCED: DOMAIN-SPECIFIC PATTERNS - FPTU AI context mạnh mẽ hơn
+        fptu_domain_patterns = [
+            # Ngành AI context (ngầm định về FPTU)
+            r'(môn|mon).*ngành.*ai(?!.*nào)',  # "môn ngành AI" 
+            r'ngành.*ai(?!.*nào).*môn',
+            r'toàn bộ.*môn.*ai',
+            r'danh sách.*môn.*ai(?!.*nào)',
+            
+            # Kì học patterns (ENHANCED)
+            r'kì\s*(\d+|một|hai|ba|bốn|năm|sáu|bảy|tám)',
+            r'ky\s*(\d+|một|hai|ba|bốn|năm|sáu|bảy|tám)', 
+            r'semester\s*(\d+|one|two|three|four|five|six|seven|eight)',
+            r'học\s*kì\s*(\d+|một|hai|ba|bốn|năm|sáu|bảy|tám)',
+            r'hoc\s*ky\s*(\d+|một|hai|ba|bốn|năm|sáu|bảy|tám)',
+            
+            # FPTU-specific terms
+            r'combo.*chuyên ngành',
+            r'chuyên ngành.*hẹp',
+            r'combo.*hẹp',
+            r'combo.*ai',  # "combo AI"
+            r'fptu?.*ai',
+            r'fpt.*university.*ai',
+            
+            # Course-related với context AI
+            r'(môn|mon).*(ai|artificial intelligence)',
+            r'curriculum.*ai',
+            r'chương trình.*ai',
+            
+            # Khi hỏi chung về FPTU domain
+            r'môn.*(?:nào|gì).*(?:thuộc|trong).*ai',
+            r'ai.*có.*môn.*nào',
+        ]
+        
+        # Kiểm tra FPTU domain patterns
+        for pattern in fptu_domain_patterns:
+            if re.search(pattern, query_lower):
+                logger.info(f"FPTU DOMAIN CONTEXT DETECTED: Pattern '{pattern}' matched")
+                return True
+        
+        # Các pattern CẦN tìm kiếm data (traditional patterns)
+        data_search_patterns = [
+            # Tìm kiếm môn học cụ thể (case insensitive)
+            r'[a-zA-Z]{2,4}\d{3}[a-z]*\s+(?:là|gì|thông tin|chi tiết|môn)',  # Mã môn học với context câu hỏi
+            r'[a-zA-Z]{2,4}\d{3}[a-z]*$',  # Mã môn học đơn thuần
+            r'[a-zA-Z]{2,4}\d{3}[a-z]*',  # Mã môn học general
+            r'môn học.*(?:nào|gì|là)', r'mon hoc', r'subject', r'course',
+            r'tín chỉ', r'tin chi', r'credit',
+            r'syllabus', r'curriculum', r'chương trình',
+            r'ngành.*(?:nào|gì|có)', r'nganh', r'major',
+            r'tiên quyết', r'tien quyet', r'prerequisite',
+            r'CLO', r'learning outcome',
+            
+            # Từ khóa tìm kiếm TOÀN BỘ data (không phải follow-up)
+            r'^(liệt kê|liet ke)', r'^(danh sách|danh sach)(?!.*trên)',
+            r'^(tất cả|tat ca)', r'^(các môn|cac mon)',
+            r'thông tin.*(?:về|của|môn)', r'chi tiết.*(?:về|của|môn)',
+            r'bao nhiêu.*(?:môn|tín chỉ|credit)',
+            
+            # Tên môn học phổ biến
+            r'machine learning', r'artificial intelligence', r'data science',
+            r'programming', r'algorithm', r'database', r'network',
+            r'mathematics', r'toán(?:.*học)?', r'toan', r'physics', r'vật lý',
+        ]
+        
+        # Kiểm tra xem có pattern data search nào match không
+        for pattern in data_search_patterns:
+            if re.search(pattern, query_lower):
+                logger.info(f"DATA SEARCH DETECTED: Pattern '{pattern}' matched")
+                return True
+        
+        logger.info("NO DATA SEARCH PATTERNS - using conversation/direct chat")
+        return False
+    
+    def chat_direct(self, question: str, session_id: str = None) -> str:
+        """Chat trực tiếp với LLM không cần tìm kiếm data"""
+        try:
+            # Lấy context từ conversation history nếu có session_id
+            conversation_context = ""
+            if session_id:
+                conversation_context = self.get_conversation_context(session_id)
+            
+            # Kiểm tra xem có phải câu hỏi follow-up về dữ liệu vừa trả lời không
+            is_followup_about_data = (
+                conversation_context and 
+                any(indicator in question.lower() for indicator in [
+                    'danh sách trên', 'bảng trên', 'thông tin trên',
+                    'đầu tiên', 'cuối cùng', 'thứ', 'trong danh sách'
+                ])
+            )
+            
+            # Kiểm tra có phải câu hỏi về FPTU domain mà được misclassified không
+            fptu_related_but_misclassified = any(indicator in question.lower() for indicator in [
+                'môn ngành ai', 'ngành ai', 'combo chuyên ngành', 'chuyên ngành hẹp',
+                'fptu', 'fpt university', 'toàn bộ môn ai', 'danh sách môn ai'
+            ])
+            
+            if is_followup_about_data:
+                prompt = f"""Bạn là AI Assistant của FPTU. Hãy trả lời câu hỏi dựa trên CHÍNH XÁC thông tin đã cung cấp trong cuộc trò chuyện trước.
+
+{conversation_context}
+
+QUAN TRỌNG: 
+- Dựa vào CHÍNH XÁC thông tin trong lịch sử cuộc trò chuyện
+- Nếu hỏi về "đầu tiên", hãy tìm item đầu tiên trong danh sách/bảng đã trả lời
+- Nếu hỏi về "cuối cùng", hãy tìm item cuối cùng trong danh sách/bảng đã trả lời  
+- Không tự tạo ra thông tin mới
+- Trả lời ngắn gọn và chính xác
+
+Câu hỏi của người dùng: {question}
+
+Trả lời:"""
+            elif fptu_related_but_misclassified:
+                # Gợi ý người dùng hỏi cụ thể hơn về FPTU
+                prompt = f"""Bạn là AI Assistant của FPTU - chuyên hỗ trợ thông tin về trường FPT University.
+
+{conversation_context}
+
+Tôi hiểu bạn đang hỏi về thông tin liên quan đến FPT University và ngành AI. Để tôi có thể cung cấp thông tin chính xác nhất, bạn có thể hỏi cụ thể hơn như:
+
+- "Liệt kê các môn học ngành AI theo kỳ"
+- "Danh sách combo chuyên ngành AI" 
+- "Các môn học trong chương trình AI FPTU"
+- "Thông tin chi tiết về môn [tên môn]"
+
+Hướng dẫn trả lời:
+- Trả lời thân thiện và gợi ý cách hỏi hiệu quả
+- Nhấn mạnh đây là hệ thống hỗ trợ thông tin FPTU
+- Khuyến khích hỏi cụ thể để có kết quả tốt nhất
+- Không sử dụng biểu tượng cảm xúc hay icon
+
+Câu hỏi của người dùng: {question}
+
+Trả lời:"""
+            else:
+                prompt = f"""Bạn là AI Assistant của FPTU - trợ lý thông minh hỗ trợ sinh viên.
+
+{conversation_context}
+
+Hướng dẫn trả lời:
+- Trả lời bằng tiếng Việt một cách tự nhiên và thân thiện
+- Nếu câu hỏi liên quan đến môn học cụ thể, gợi ý người dùng hỏi cụ thể hơn
+- Giữ phong cách trò chuyện tự nhiên và hữu ích
+- Không sử dụng biểu tượng cảm xúc hay icon
+
+Câu hỏi của người dùng: {question}
+
+Trả lời:"""
+            
+            answer = self._call_gemini_with_rotation(prompt)
+            
+            # Lưu vào conversation memory nếu có session_id
+            if session_id:
+                self.add_to_conversation(session_id, question, answer)
+            
+            return answer
+            
+        except Exception as e:
+            logger.error(f"Lỗi chat_direct: {e}")
+            return "Xin lỗi, tôi gặp sự cố khi xử lý câu hỏi của bạn. Bạn có thể thử lại không?"
+    
+    def chatbot_query(self, question: str, session_id: str, enable_multihop: bool = False) -> Dict[str, Any]:
+        """
+        Main chatbot method - kết hợp Query Preprocessing, RAG search và conversation management
+        
+        Args:
+            question: Câu hỏi của người dùng
+            session_id: ID phiên để quản lý conversation
+            enable_multihop: Có cho phép multi-hop query không
+            
+        Returns:
+            Dict chứa answer, search_results, metadata và conversation info
+        """
+        logger.info(f"========== CHATBOT QUERY ==========")
+        logger.info(f"SESSION: {session_id}")
+        logger.info(f"USER QUERY: '{question}'")
+        logger.info(f"MULTIHOP ENABLED: {enable_multihop}")
+        
+        start_time = time.time()
+        
+        try:
+            # BƯỚC 1: Query Preprocessing với LLM
+            conversation_context = self.get_conversation_context(session_id)
+            conversation_summary = ""
+            if conversation_context:
+                # Tạo summary ngắn gọn cho context
+                last_exchanges = conversation_context.split('\n')[-4:]  # 2 lượt cuối
+                conversation_summary = '\n'.join(last_exchanges)
+            
+            preprocessed = self.query_preprocessor.preprocess_query(question, conversation_summary)
+            
+            # BƯỚC 2: Quyết định strategy dựa trên kết quả preprocessing
+            use_data_search = preprocessed.needs_data_search
+            final_query = preprocessed.processed_query if preprocessed.confidence > 0.6 else question
+            
+            logger.info(f"PREPROCESSING DECISION:")
+            logger.info(f"  Use preprocessed query: {preprocessed.confidence > 0.6}")
+            logger.info(f"  Final query: '{final_query}'")
+            logger.info(f"  Strategy: {'DATA SEARCH' if use_data_search else 'DIRECT CHAT'}")
+            
+            if use_data_search:
+                # Sử dụng RAG với query đã được preprocessing
+                logger.info("Executing RAG search with preprocessed query...")
+                
+                if enable_multihop:
+                    result = self.query_with_multihop(final_query, enable_multihop)
+                    query_type = 'data_search_multihop'
+                    # For multihop, the answer is in 'final_answer' key
+                    answer = result.get('final_answer', result.get('answer', ''))
+                else:
+                    result = self.query(final_query)
+                    query_type = 'data_search'
+                    answer = result.get('answer', '')
+                
+                # Lưu vào conversation memory (dùng question gốc)
+                self.add_to_conversation(session_id, question, answer)
+                
+                # Build response structure for multihop vs regular
+                if enable_multihop:
+                    # For multihop, build consistent response structure
+                    response_result = {
+                        'answer': answer,
+                        'search_results': result.get('followup_results', []),  # Use followup results as search results
+                        'metadata': {
+                            'query_type': query_type,
+                            'is_data_search': True,
+                            'is_direct_chat': False,
+                            'conversation_enhanced': bool(conversation_context),
+                            'subjects_covered': 0,  # Will be calculated below
+                            'preprocessing_info': {
+                                'original_query': preprocessed.original_query,
+                                'processed_query': preprocessed.processed_query,
+                                'intent': preprocessed.intent_description,
+                                'confidence': preprocessed.confidence,
+                                'keywords': preprocessed.suggested_keywords,
+                                'query_improved': preprocessed.confidence > 0.6
+                            }
+                        },
+                        'multihop_info': {
+                            'has_followup': result.get('has_followup', False),
+                            'followup_queries': result.get('followup_queries', []),
+                            'execution_path': result.get('execution_path', []),
+                            'original_answer': result.get('original_answer', ''),
+                            'final_answer': result.get('final_answer', answer)
+                        }
+                    }
+                    result = response_result
+                else:
+                    # Set metadata với preprocessing info
+                    if 'metadata' not in result:
+                        result['metadata'] = {}
+                    
+                    result['metadata']['query_type'] = query_type
+                    result['metadata']['is_data_search'] = True
+                    result['metadata']['is_direct_chat'] = False
+                    result['metadata']['conversation_enhanced'] = bool(conversation_context)
+                    result['metadata']['preprocessing_info'] = {
+                        'original_query': preprocessed.original_query,
+                        'processed_query': preprocessed.processed_query,
+                        'intent': preprocessed.intent_description,
+                        'confidence': preprocessed.confidence,
+                        'keywords': preprocessed.suggested_keywords,
+                        'query_improved': preprocessed.confidence > 0.6
+                    }
+                    
+                    # Add multihop info if not present
+                    if 'multihop_info' not in result:
+                        result['multihop_info'] = {'has_followup': False}
+                
+                logger.info(f"CHATBOT RESPONSE:")
+                logger.info(f"  - Query type: {result['metadata']['query_type']}")
+                logger.info(f"  - Preprocessing confidence: {preprocessed.confidence:.2f}")
+                logger.info(f"  - Used improved query: {preprocessed.confidence > 0.6}")
+                logger.info(f"  - Response length: {len(answer)} chars")
+                logger.info(f"  - Search results: {len(result.get('search_results', []))}")
+                logger.info(f"  - Processing time: {time.time() - start_time:.2f}s")
+                
+                return result
+                
+            else:
+                # Sử dụng direct chat
+                logger.info("Executing direct chat...")
+                answer = self.chat_direct(question, session_id)
+                
+                # Build result structure consistent với RAG response
+                result = {
+                    'answer': answer,
+                    'search_results': [],
+                    'metadata': {
+                        'query_type': 'direct_chat',
+                        'is_data_search': False,
+                        'is_direct_chat': True,
+                        'conversation_enhanced': True,
+                        'subjects_covered': 0,
+                        'preprocessing_info': {
+                            'original_query': preprocessed.original_query,
+                            'processed_query': preprocessed.processed_query,
+                            'intent': preprocessed.intent_description,
+                            'confidence': preprocessed.confidence,
+                            'keywords': preprocessed.suggested_keywords,
+                            'query_improved': False
+                        }
+                    },
+                    'multihop_info': {
+                        'has_followup': False
+                    }
+                }
+                
+                logger.info(f"CHATBOT RESPONSE:")
+                logger.info(f"  - Query type: {result['metadata']['query_type']}")
+                logger.info(f"  - Preprocessing confidence: {preprocessed.confidence:.2f}")
+                logger.info(f"  - Response length: {len(answer)} chars")
+                logger.info(f"  - Search results: {len(result.get('search_results', []))}")
+                logger.info(f"  - Processing time: {time.time() - start_time:.2f}s")
+                
+                return result
+                
+        except Exception as e:
+            logger.error(f"Lỗi trong chatbot_query: {e}")
+            
+            # Fallback response
+            fallback_answer = "Xin lỗi, tôi gặp sự cố khi xử lý câu hỏi của bạn. Bạn có thể thử lại không?"
+            
+            result = {
+                'answer': fallback_answer,
+                'search_results': [],
+                'metadata': {
+                    'query_type': 'error',
+                    'is_data_search': False,
+                    'is_direct_chat': False,
+                    'conversation_enhanced': False,
+                    'subjects_covered': 0,
+                    'error': str(e),
+                    'preprocessing_info': None
+                },
+                'multihop_info': {
+                    'has_followup': False
+                }
+            }
+            
+            return result
+            
+        finally:
+            total_time = time.time() - start_time
+            logger.info(f"========== CHATBOT QUERY COMPLETE ==========")
 
     def _process_data(self, raw_data):
         processed_data = []
@@ -1042,7 +1942,7 @@ Ten: {student.get('FirstName', '')}
     def _create_embeddings(self):
         logger.info("Đang tạo embeddings...")
         contents = [item['content'] for item in self.data]
-        self.embeddings = self.model.encode(contents)
+        self.embeddings = self.embedding_model.encode(contents)
 
     def _build_index(self):
         logger.info("Đang xây dựng FAISS index...")
@@ -1327,7 +2227,7 @@ Ten: {student.get('FirstName', '')}
             
             if all_combo_items:
                 print(f"FORCED all combos: {len(all_combo_items)} items")
-                query_embedding = self.model.encode([query])
+                query_embedding = self.embedding_model.encode([query])
                 
                 for item in all_combo_items:
                     # Find original index
@@ -1364,7 +2264,7 @@ Ten: {student.get('FirstName', '')}
             
             if major_overview_items:
                 # Calculate similarity for major_overview
-                query_embedding = self.model.encode([query])
+                query_embedding = self.embedding_model.encode([query])
                 
                 for item in major_overview_items:
                     # Find original index
@@ -1780,7 +2680,7 @@ Ten: {student.get('FirstName', '')}
     def _search_by_content_type(self, query: str, config: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Search by content type with semantic similarity"""
         results = []
-        query_embedding = self.model.encode([query])
+        query_embedding = self.embedding_model.encode([query])
         
         # Filter data by content types
         filtered_data = [
@@ -1826,7 +2726,7 @@ Ten: {student.get('FirstName', '')}
     def _semantic_search(self, query: str, config: Dict[str, Any]) -> List[Dict[str, Any]]:
         """General semantic search as fallback"""
         results = []
-        query_embedding = self.model.encode([query])
+        query_embedding = self.embedding_model.encode([query])
         
         # Search in main index with more results if coursera query
         search_k = config['max_results'] * 10 if config.get('coursera_boost') else config['max_results']
@@ -2166,180 +3066,256 @@ Ten: {student.get('FirstName', '')}
         return '\n'.join(important_lines)
 
     def _generate_response(self, question: str, context: str) -> str:
-        """Generate response using Gemini với enhanced prompting"""
-        
-        logger.info("Bắt đầu tạo prompt cho Gemini...")
-        
-        # Enhanced prompt construction based on question type
-        question_lower = question.lower()
-        
-        # Detect specific query types for enhanced prompting
-        is_coursera_query = any(term in question_lower for term in ['coursera', 'course', 'khóa học', 'trực tuyến'])
-        is_listing_query = any(term in question_lower for term in ['liệt kê', 'danh sách', 'những môn', 'các môn', 'có gì'])
-        is_semester_query = any(term in question_lower for term in ['kỳ', 'kì', 'ky', 'ki', 'semester'])
-        is_comparison_query = any(term in question_lower for term in ['so sánh', 'compare', 'khác nhau', 'mối quan hệ', 'liên quan'])
-        
-        logger.info(f"PROMPT ANALYSIS:")
-        logger.info(f"  - Coursera query: {is_coursera_query}")
-        logger.info(f"  - Listing query: {is_listing_query}")
-        logger.info(f"  - Semester query: {is_semester_query}")
-        logger.info(f"  - Comparison query: {is_comparison_query}")
-        
-        # Base prompt với format instructions
-        base_prompt = f"""
-Bạn là chuyên gia tư vấn học tập tại FPT University, chuyên về ngành AI.
-Hãy trả lời câu hỏi dựa trên thông tin được cung cấp.
+        """Tạo phản hồi sử dụng Gemini với context được cung cấp"""
+        try:
+            # ENHANCED: Phân tích câu hỏi để tạo prompt phù hợp
+            question_lower = question.lower()
+            
+            # Detect question type for better prompt
+            is_semester_question = any(term in question_lower for term in ['kỳ', 'ky', 'kì', 'ki', 'semester'])
+            is_listing_question = any(term in question_lower for term in ['liệt kê', 'danh sách', 'list', 'tất cả', 'các môn'])
+            is_specific_subject = bool(re.search(r'[A-Za-z]{2,4}\d{3}[a-zA-Z]*', question))
+            is_followup_question = any(term in question_lower for term in ['thì sao', 'ra sao', 'như thế nào', 'còn', 'con'])
+            
+            # Build enhanced prompt based on question type
+            if is_semester_question and (is_listing_question or is_followup_question):
+                # Semester-focused questions
+                prompt = f"""Bạn là AI Assistant chuyên môn về thông tin học tập tại FPT University. Hãy trả lời câu hỏi dựa trên CHÍNH XÁC thông tin được cung cấp.
 
-HƯỚNG DẪN ĐỊNH DẠNG QUAN TRỌNG:
-- Sử dụng markdown format để tổ chức nội dung
-- Dùng **text** cho chữ in đậm
-- Dùng *text* cho chữ nghiêng  
-- Dùng `code` cho mã môn học
-- Dùng ### cho tiêu đề phụ
-- Dùng ## cho tiêu đề chính
-- Dùng bảng markdown (|) khi so sánh thông tin
-- Dùng danh sách có số (1. 2. 3.) cho các bước
-- Dùng danh sách gạch đầu dòng (*) cho các điểm
+NGUYÊN TẮC QUAN TRỌNG:
+- Sử dụng CHÍNH XÁC thông tin từ dữ liệu được cung cấp
+- Khi trả lời về môn học trong một kỳ cụ thể, hãy liệt kê TẤT CẢ các môn của kỳ đó
+- Tạo bảng thông tin rõ ràng với các cột: Mã môn, Tên môn, Số tín chỉ
+- Đảm bảo thông tin về tín chỉ, kỳ học được hiển thị chính xác
+- Tính tổng số tín chỉ của kỳ học
+- Không tự tạo ra thông tin không có trong dữ liệu
 
-THÔNG TIN QUAN TRỌNG VỀ MÃ MÔN HỌC:
-- Môn có đuôi 'c' (ví dụ: BDI302c, DWP301c): Môn học hoàn toàn trên Coursera, không cần lên lớp
-- Môn có đuôi 'm' (ví dụ: DPL302m, AIH301m): Học trên lớp kết hợp với Coursera tự học
-- Môn không có đuôi đặc biệt: Học trên lớp bình thường
+ĐỊNH DẠNG TRẢ LỜI CHO CÂUHỎI VỀ KỲ HỌC:
 
-"""
+**Kỳ [số] ngành AI tại FPT University gồm [số] môn học:**
 
-        # Enhanced prompting for specific query types
-        if is_comparison_query:
-            logger.info(f"  Selected prompt type: COMPARISON")
-            enhanced_prompt = base_prompt + """
-NHIỆM VỤ ĐặC BIỆT: So sánh hai môn học
-- Tạo bảng so sánh với định dạng markdown:
-  | Tính chất | Môn 1 | Môn 2 |
-  |-----------|-------|-------|
-  | Ngành | ... | ... |
-  | Số tín chỉ | ... | ... |
-  | Kỳ học | ... | ... |
-  | Môn tiên quyết | ... | ... |
-  
-- Phân tích mối quan hệ giữa các môn
-- Giải thích chi tiết sự khác biệt và liên quan
-- Sử dụng ### cho các phần chính
+| Mã môn | Tên môn học | Số tín chỉ |
+|--------|-------------|------------|
+| [mã]   | [tên]       | [tín chỉ]  |
 
-"""
-        elif is_coursera_query and is_listing_query:
-            logger.info(f"  Selected prompt type: COURSERA + LISTING")
-            enhanced_prompt = base_prompt + """
-NHIỆM VỤ ĐặC BIỆT: Tìm và liệt kê TẤT CẢ các môn học Coursera (có đuôi 'c')
-- Đọc kỹ toàn bộ thông tin được cung cấp
-- Tìm tất cả môn học có mã kết thúc bằng 'c' 
-- Liệt kê đầy đủ, không bỏ sót môn nào
-- Sử dụng bảng markdown để tổ chức thông tin:
-  | Mã môn | Tên môn | Số tín chỉ | Kỳ học |
-  |--------|---------|------------|--------|
-- Giải thích rõ ràng rằng đây là các môn học hoàn toàn trên Coursera
+**Tổng số tín chỉ:** [tổng] tín chỉ
 
-"""
-        elif is_listing_query and is_semester_query:
-            logger.info(f"  Selected prompt type: LISTING + SEMESTER")
-            enhanced_prompt = base_prompt + """
-NHIỆM VỤ ĐặC BIỆT: Liệt kê ĐẦY ĐỦ TẤT CẢ các môn học trong kỳ
-- ĐỌC KỸ VÀ DUYỆT TOÀN BỘ thông tin được cung cấp
-- Tìm TẤT CẢ môn học thuộc kỳ được hỏi (ví dụ: "Ky 5", "Ky 6")
-- KHÔNG ĐƯỢC BỎ SÓT bất kỳ môn học nào
-- Sử dụng bảng markdown để tổ chức:
-  | Mã môn | Tên môn đầy đủ | Số tín chỉ | Loại học |
-  |--------|----------------|------------|----------|
-- Phân loại rõ ràng theo loại môn học:
-  * Môn có đuôi 'c': Học hoàn toàn trên Coursera
-  * Môn có đuôi 'm': Học trên lớp kết hợp với Coursera
-  * Môn không có đuôi đặc biệt: Học trên lớp thường
-- ĐẾMV SỐ LƯỢNG môn trong dữ liệu và đảm bảo liệt kê đủ số đó
-- TUYỆT ĐỐI KHÔNG ĐƯỢC thiếu môn nào
+**Lưu ý bổ sung:** [nếu có thông tin đặc biệt về môn nào]
 
-"""
-        else:
-            logger.info(f"  Selected prompt type: STANDARD")
-            enhanced_prompt = base_prompt + """
-Hãy trả lời chính xác và đầy đủ dựa trên thông tin được cung cấp.
-Sử dụng markdown format để làm cho câu trả lời dễ đọc và có cấu trúc.
-
-"""
-
-        # Final prompt assembly
-        prompt = enhanced_prompt + f"""
-THÔNG TIN ĐƯỢC CUNG CẤP:
+DỮ LIỆU:
 {context}
 
-CÂU HỎI: {question}
+CÂUHỎI: {question}
 
-Hãy trả lời một cách chính xác, đầy đủ và có cấu trúc rõ ràng sử dụng markdown format. 
-Nếu thông tin không đủ để trả lời, hãy nói rõ và gợi ý cách tìm thêm thông tin.
-QUAN TRỌNG: Sử dụng bảng markdown cho việc so sánh và liệt kê thông tin."""
+TRẢ LỜI:"""
 
-        logger.info(f"GEMINI REQUEST:")
-        logger.info(f"  - Prompt length: {len(prompt)} ký tự")
-        
-        # Log preview của prompt
-        prompt_lines = prompt.split('\n')
-        logger.info(f"PROMPT PREVIEW (first 15 lines):")
-        for i, line in enumerate(prompt_lines[:15]):
-            if line.strip():
-                logger.info(f"  {i+1}: {line[:100]}{'...' if len(line) > 100 else ''}")
-        
-        if len(prompt_lines) > 15:
-            logger.info(f"  ... và {len(prompt_lines) - 15} dòng khác")
-        
-        logger.info("Gửi request tới Gemini...")
-        
-        try:
-            gemini_start_time = time.time()
-            response = self.genai.generate_content(prompt)
-            gemini_time = time.time() - gemini_start_time
-            
-            if response and response.text:
-                logger.info(f"✓ Gemini response nhận được trong {gemini_time:.2f}s")
-                logger.info(f"GEMINI RESPONSE:")
-                logger.info(f"  - Length: {len(response.text)} ký tự")
-                logger.info(f"  - Word count: ~{len(response.text.split())} từ")
-                response_line_count = len(response.text.split('\n'))
-                logger.info(f"  - Line count: {response_line_count}")
-                
-                # Log preview của response
-                response_lines = response.text.split('\n')
-                logger.info(f"RESPONSE PREVIEW (first 10 lines):")
-                for i, line in enumerate(response_lines[:10]):
-                    if line.strip():
-                        logger.info(f"  {i+1}: {line[:120]}{'...' if len(line) > 120 else ''}")
-                
-                if len(response_lines) > 10:
-                    logger.info(f"  ... và {len(response_lines) - 10} dòng khác")
-                
-                return response.text.strip()
+            elif is_specific_subject:
+                # Subject-specific questions
+                prompt = f"""Bạn là AI Assistant chuyên môn về thông tin học tập tại FPT University. Hãy trả lời câu hỏi về môn học cụ thể dựa trên thông tin được cung cấp.
+
+NGUYÊN TẮC:
+- Cung cấp thông tin CHI TIẾT và CHÍNH XÁC về môn học
+- Bao gồm: mã môn, tên đầy đủ, số tín chỉ, kỳ học, mô tả, CLO nếu có
+- Định dạng thông tin rõ ràng, dễ đọc
+- Nếu có nhiều môn tương tự, so sánh và phân biệt
+
+DỮ LIỆU:
+{context}
+
+CÂUHỎI: {question}
+
+TRẢ LỜI:"""
+
             else:
-                logger.warning("Gemini response rỗng hoặc không hợp lệ")
-                return self._fallback_response(question, context)
+                # General questions
+                prompt = f"""Bạn là AI Assistant chuyên môn về thông tin học tập tại FPT University (FPTU). Hãy trả lời câu hỏi dựa trên thông tin được cung cấp.
+
+HƯỚNG DẪN TRẢ LỜI:
+1. Sử dụng thông tin chính xác từ dữ liệu được cung cấp
+2. Trả lời bằng tiếng Việt, rõ ràng và chuyên nghiệp  
+3. Cấu trúc thông tin logic, dễ hiểu
+4. Nếu cần liệt kê nhiều môn học, sử dụng bảng markdown
+5. Tính toán tổng số tín chỉ khi cần thiết
+6. Thêm lưu ý hữu ích cho sinh viên
+
+QUAN TRỌNG:
+- KHÔNG sử dụng biểu tượng cảm xúc hay icon
+- KHÔNG tự tạo thông tin không có trong dữ liệu
+- Nếu thiếu thông tin, nêu rõ và gợi ý cách tìm hiểu thêm
+
+DỮ LIỆU:
+{context}
+
+CÂUHỎI: {question}
+
+TRẢ LỜI:"""
+            
+            # Generate response with enhanced context awareness and API rotation
+            answer = self._call_gemini_with_rotation(prompt)
+            
+            # ENHANCED: Post-process to ensure quality
+            # Ensure no emojis or icons (as per user rules)
+            answer = re.sub(r'[🎯🚀✅❌📚📝💡⭐🔍📊🌟✨🎪🎨🎭🎪🔥💥🎉🎊🎈🎁🎀🎃🎄🎆🎇✨🌈⚡💎🌟]', '', answer)
+            
+            # Ensure proper formatting for tables if detected
+            if '|' in answer and 'Mã môn' in answer:
+                # This looks like a table - ensure proper markdown formatting
+                lines = answer.split('\n')
+                formatted_lines = []
+                in_table = False
                 
+                for line in lines:
+                    if '|' in line and ('Mã môn' in line or 'Tên môn' in line):
+                        in_table = True
+                        formatted_lines.append(line)
+                        # Add separator line if not already present
+                        if not any('---' in next_line for next_line in lines[lines.index(line)+1:lines.index(line)+3]):
+                            formatted_lines.append('|--------|-------------|------------|')
+                    elif '|' in line and in_table:
+                        formatted_lines.append(line)
+                    elif in_table and line.strip() == '':
+                        in_table = False
+                        formatted_lines.append(line)
+                    else:
+                        formatted_lines.append(line)
+                
+                answer = '\n'.join(formatted_lines)
+            
+            return answer
+            
         except Exception as e:
-            logger.error(f"✗ Lỗi khi generate response: {e}")
+            logger.error(f"Lỗi tạo phản hồi: {e}")
             return self._fallback_response(question, context)
     
     def _fallback_response(self, question: str, context: str) -> str:
-        """Fallback response when main generation fails"""
-        if not context:
-            return "Xin lỗi, tôi không tìm thấy thông tin phù hợp với câu hỏi của bạn. Bạn có thể thử hỏi về một môn học cụ thể bằng mã môn (ví dụ: CSI106)?"
+        """Enhanced fallback response khi không thể gọi Gemini"""
         
-        # Simple context summary
+        # ENHANCED: Try to extract useful information from context even without LLM
+        question_lower = question.lower()
+        
+        # 1. COMBO/SPECIALIZATION QUERIES
+        if any(term in question_lower for term in ['combo', 'chuyên ngành']):
+            if any(term in question_lower for term in ['bao nhiêu', 'có mấy', 'số lượng']):
+                # Extract combo information from context
+                combo_count = context.count('COMBO_')
+                combo_names = []
+                if 'AI17_COM1' in context:
+                    combo_names.append('AI17_COM1 (Data Science và Big Data Analytics)')
+                if 'AI17_COM3' in context:
+                    combo_names.append('AI17_COM3 (AI for Healthcare và Research)')
+                if 'AI17_COM2.1' in context:
+                    combo_names.append('AI17_COM2.1 (Text Mining và Search Engineering)')
+                
+                if combo_names:
+                    response = f"Ngành AI tại FPT University có **{len(combo_names)} combo chuyên ngành hẹp**:\n\n"
+                    for i, combo in enumerate(combo_names, 1):
+                        response += f"{i}. {combo}\n"
+                    response += "\nMỗi combo bao gồm các môn học chuyên sâu trong lĩnh vực đó."
+                    return response
+            
+            elif any(term in question_lower for term in ['là gì', 'định nghĩa']):
+                return """**Combo chuyên ngành hẹp** là các nhóm môn học chuyên sâu trong ngành AI tại FPT University.
+
+Ngành AI có **3 combo chuyên ngành hẹp**:
+
+1. **AI17_COM1**: Data Science và Big Data Analytics
+   - Tập trung vào khoa học dữ liệu và phân tích dữ liệu lớn
+
+2. **AI17_COM2.1**: Text Mining và Search Engineering  
+   - Khai thác văn bản và công cụ tìm kiếm
+
+3. **AI17_COM3**: AI for Healthcare và Research
+   - Ứng dụng AI trong y tế và nghiên cứu khoa học
+
+Mỗi combo giúp sinh viên chuyên sâu vào một lĩnh vực cụ thể của AI."""
+        
+        # 2. SEMESTER QUERIES
+        if any(term in question_lower for term in ['kì', 'ky', 'kỳ']):
+            # Extract semester information from context
+            semester_info = {}
+            lines = context.split('\n')
+            for line in lines:
+                if 'Ky ' in line or 'ký ' in line:
+                    # Try to extract semester info
+                    if ' - ' in line and ':' in line:
+                        parts = line.split(' - ')
+                        if len(parts) >= 2:
+                            subject_part = parts[0].strip()
+                            desc_part = parts[1].split('(')[0].strip()
+                            # Extract semester number
+                            ky_match = re.search(r'Ky (\d+)', line)
+                            if ky_match:
+                                semester = ky_match.group(1)
+                                if semester not in semester_info:
+                                    semester_info[semester] = []
+                                semester_info[semester].append(f"- {subject_part}: {desc_part}")
+            
+            if semester_info:
+                response = "**Thông tin môn học theo kì:**\n\n"
+                for semester in sorted(semester_info.keys()):
+                    if len(semester_info[semester]) > 0:
+                        response += f"**Kì {semester}:**\n"
+                        response += '\n'.join(semester_info[semester][:5])  # Limit to 5 subjects
+                        if len(semester_info[semester]) > 5:
+                            response += f"\n... và {len(semester_info[semester]) - 5} môn khác"
+                        response += '\n\n'
+                return response
+        
+        # 3. RELATIONSHIP QUERIES
+        if 'liên quan' in question_lower and ('kì' in question_lower or 'ky' in question_lower):
+            return """Để phân tích mối liên hệ giữa các môn học ở các kì khác nhau, cần xem xét:
+
+**1. Môn tiên quyết (Prerequisites)**:
+- Một số môn ở kì sau yêu cầu hoàn thành môn ở kì trước
+- Ví dụ: Toán cao cấp (kì 1) → Xác suất thống kê (kì sau)
+
+**2. Chuỗi kiến thức**:
+- Môn cơ bản → Môn nâng cao → Môn chuyên sâu
+- Ví dụ: Lập trình cơ bản → Cấu trúc dữ liệu → Thuật toán AI
+
+**3. Nhóm môn cùng lĩnh vực**:
+- Toán học: MAD101, MAE101, PRO192...
+- Lập trình: PFP191, PRO192, OOP...
+- AI chuyên sâu: AIG, AIE, AIH...
+
+Để biết chi tiết mối liên hệ cụ thể, bạn có thể hỏi về từng cặp môn học."""
+        
+        # 4. EXTRACT SUBJECT CODES FROM CONTEXT
         subjects = set()
         for line in context.split('\n'):
+            # Extract from various patterns
             if '** ' in line:
                 match = re.search(r'\*\*([A-Z]{2,4}\d{3}[a-z]*)\*\*', line)
                 if match:
                     subjects.add(match.group(1))
+            # Extract from listing patterns
+            subject_codes = re.findall(r'([A-Z]{2,4}\d{3}[a-z]*)', line)
+            subjects.update(subject_codes)
         
         if subjects:
-            return f"Tôi tìm thấy thông tin về {len(subjects)} môn học: {', '.join(sorted(subjects))}. Tuy nhiên, có lỗi khi xử lý câu hỏi. Bạn có thể hỏi cụ thể hơn về môn học nào?"
+            subjects_list = sorted(list(subjects))
+            return f"""Dựa trên dữ liệu tìm được, tôi có thông tin về **{len(subjects_list)} môn học**: {', '.join(subjects_list[:10])}{', ...' if len(subjects_list) > 10 else ''}.
+
+**Câu hỏi của bạn**: {question}
+
+Tuy nhiên, hệ thống gặp sự cố kỹ thuật khi tạo câu trả lời chi tiết. Bạn có thể:
+- Hỏi cụ thể về một môn học: "CSI106 là môn gì?"
+- Hỏi về kì học: "Kì 1 có những môn gì?"
+- Thử lại sau khi hệ thống phục hồi"""
         
-        return "Có lỗi xảy ra khi xử lý câu hỏi. Vui lòng thử lại với câu hỏi khác."
+        # 5. DEFAULT FALLBACK
+        return f"""Xin lỗi, hệ thống đang gặp sự cố kỹ thuật khi xử lý câu hỏi.
+
+**Câu hỏi của bạn**: {question}
+
+**Gợi ý các câu hỏi bạn có thể thử**:
+- "Liệt kê các môn học kì 1"
+- "CSI106 là môn gì?"
+- "Có bao nhiêu combo chuyên ngành hẹp?"
+- "Chuyên ngành hẹp là gì?"
+- "Các môn có 3 tín chỉ"
+
+**Hoặc thử lại sau khi hệ thống phục hồi.**"""
 
     def get_subject_overview(self, subject_code: str = None) -> Dict[str, Any]:
         """Lấy tổng quan về môn học"""
@@ -2603,15 +3579,18 @@ Hãy tạo ra một câu trả lời tích hợp, đầy đủ và có cấu tr�
 """
         
         try:
-            # Sử dụng Gemini để tích hợp
-            model = genai.GenerativeModel('gemini-1.5-flash')
-            response = model.generate_content(integration_prompt)
-            
-            if response.text:
-                return response.text.strip()
+            # Sử dụng Gemini để tích hợp với rotation
+            if hasattr(self.rag_engine, '_call_gemini_with_rotation'):
+                result_text = self.rag_engine._call_gemini_with_rotation(integration_prompt)
+                return result_text
             else:
-                # Fallback: ghép thông tin đơn giản
-                return self._simple_integration(original_result['answer'], followup_results)
+                # Fallback: direct call
+                model = genai.GenerativeModel('gemini-1.5-flash')
+                response = model.generate_content(integration_prompt)
+                if response.text:
+                    return response.text.strip()
+                else:
+                    return self._simple_integration(original_result['answer'], followup_results)
                 
         except Exception as e:
             logger.error(f"Lỗi tích hợp kết quả với Gemini: {e}")
