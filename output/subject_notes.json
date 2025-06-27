@@ -1,0 +1,1688 @@
+{
+  "CSI106 - Introduction to Computer Science_Nhập môn khoa học máy tính": {
+    "material_notes": [
+      {
+        "description": "AI For Everyone\" course in Coursera\nhttps://www.coursera.org/learn/ai-for-everyone/",
+        "note": "Additional Learning"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Group presentation",
+        "note": "Each group selects one topic ralated to Addional Learning ( (AI For Everyone course in Coursera) to present and has at least two weeks to prepare the presentation\n\nPresentation 2:\n- .ppt and oral presentation\n- Topics related to Additional Learning (Chapter 18 in Textbook, Deep Learning in Object Detection and Recognition, Speech Emotion Recognition, Traffic Sign Recognition, Federated Learning,…)"
+      },
+      {
+        "category": "Lab",
+        "note": "Guided by instructor\n- Labs are arranged relevant to the chapter theory\n- Student must finish labs and submit the results to the lecturer in class."
+      },
+      {
+        "category": "Progress Test",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "MAD101 - Discrete mathematics_Toán rời rạc": {
+    "assessment_notes": [
+      {
+        "category": "Progress Test",
+        "note": "OP1: by instructor, and by suitable means (computer, paper, oral...)\nOP2: (For Constructivism Approach only): Follow lecturer's proposal"
+      },
+      {
+        "category": "Assignments/Exercises",
+        "note": "OP1: guided by the instructor\nin class, completed by students at home, submitted by deadline\nOP2: (For Constructivism Approach only): Follow lecturer's proposal"
+      },
+      {
+        "category": "Final Exam",
+        "note": "by Exam Board"
+      }
+    ]
+  },
+  "MAE101 - Mathematics for Engineering_Toán cho ngành kỹ thuật": {
+    "material_notes": [
+      {
+        "description": "Calculus 1",
+        "note": "https://openstax.org/details/books/calculus-volume-1"
+      },
+      {
+        "description": "Calculus 2",
+        "note": "https://openstax.org/details/books/calculus-volume-2"
+      },
+      {
+        "description": "Linear Algebra with Applications",
+        "note": "https://lyryx.com/linear-algebra-applications/"
+      },
+      {
+        "description": "Coursera - FPT University Private Authored Courses: Linear transformation with python (Guided Project)",
+        "note": "Optional practice"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignments/Exercises",
+        "note": "OP1: guided by instructor\nin class, completed by students at home, submitted by deadline\nOP2: (For Constructivism Approach only): Follow lecturer's proposal"
+      },
+      {
+        "category": "Progress Test",
+        "note": "OP1: by instructor, and by suitable means (computer, paper, oral...)\nOP2: (For Constructivism Approach only): Follow lecturer's proposal"
+      },
+      {
+        "category": "Final Exam",
+        "note": "by Exam Board"
+      }
+    ]
+  },
+  "PFP191 - Programming Fundamentals with Python_Cơ sở lập trình với Python": {
+    "material_notes": [
+      {
+        "description": "Python for Everybody Exploring Data Using Python 3",
+        "note": "http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf"
+      },
+      {
+        "description": "Python for Everybody (PY4E)",
+        "note": "https://www.py4e.com/"
+      },
+      {
+        "description": "Python for Everybody Specialization",
+        "note": "https://www.coursera.org/specializations/python"
+      },
+      {
+        "description": "Python Programming and Numerical Methods - A Guide for Engineers and Scientists",
+        "note": "https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/Index.html"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "in class, by teacher"
+      },
+      {
+        "category": "Lab",
+        "note": "in class, by teacher"
+      },
+      {
+        "category": "Practical Exam",
+        "note": "By exam board"
+      },
+      {
+        "category": "Progress Test",
+        "note": "in class, by LMS system"
+      },
+      {
+        "category": "Final Exam",
+        "note": "Exam room"
+      }
+    ]
+  },
+  "SSL101c - Academic Skills for University Success_Kỹ năng học tập đại học": {
+    "main_note": "1) Ongoing assessment: Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n2) Theoretical Exam (TE)\n3) Final Result (FR) =min (10, TE + Bonus)\n4) Completion Criteria: TE>=4 and FR>=5",
+    "material_notes": [
+      {
+        "description": "https://www.coursera.org/specializations/academic-skills",
+        "note": "SPEC: Academic Skills for University Success Specialization"
+      },
+      {
+        "description": "https://www.coursera.org/learn/digital-literacy",
+        "note": "MOOC 01: Introduction to Information & Digital Literacy for University Success"
+      },
+      {
+        "description": "https://www.coursera.org/learn/problem-solving-skills",
+        "note": "MOOC 02: Introduction to Problem-Solving Skill for University Success"
+      },
+      {
+        "description": "https://www.coursera.org/learn/critical-thinking-skills",
+        "note": "MOOC 03: Critical Thinking Skills for University Success"
+      },
+      {
+        "description": "https://www.coursera.org/learn/communication-skills",
+        "note": "MOOC 04: Communication Skills for University Success"
+      },
+      {
+        "description": "https://www.coursera.org/learn/academic-skills-project",
+        "note": "MOOC 05: Academic Skills for University Success: Capstone"
+      },
+      {
+        "description": "Coursera - FPT University Private Authored Courses: SSL101c - How To Avoid Plagiarism with Digital Tools (Guided Project)",
+        "note": "Optional Practice"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Theoretical Exam (TE)",
+        "note": "by exam board"
+      }
+    ]
+  },
+  "AIG202c - Artificial Intelligence_Trí tuệ nhân tạo": {
+    "main_note": "1. Complete the online courses and get all specialization certifications to be allowed to take Final Exam\n2. Final Exam included Final Theory Exam (TE): 100%\n3. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n4. Completion Criteria: Final TE Score >=4 & (Final TE Score + bonus) >= 5",
+    "material_notes": [
+      {
+        "description": "https://www.coursera.org/learn/introduction-to-ai",
+        "note": "MOOC 01: Introduction to Artificial Intelligence (AI)"
+      },
+      {
+        "description": "https://learner.coursera.help/hc/en-us/articles/208280036-Coursera-Code-of-Conduct",
+        "note": "Help Articles"
+      },
+      {
+        "description": "https://www.coursera.org/learn/generative-ai-introduction-and-applications",
+        "note": "MOOC 02: Generative AI: Introduction and Applications"
+      },
+      {
+        "description": "https://www.coursera.org/learn/building-ai-powered-chatbots",
+        "note": "MOOC 04: Building AI Powered Chatbots Without Programming"
+      },
+      {
+        "description": "https://www.coursera.org/specializations/ai-foundations-for-everyone",
+        "note": "SPEC: AI Foundations for Everyone Specialization"
+      },
+      {
+        "description": "https://www.coursera.org/learn/generative-ai-prompt-engineering-for-everyone",
+        "note": "MOOC 03: Generative AI: Prompt Engineering Basics"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "TE",
+        "note": "by Exam Board"
+      }
+    ]
+  },
+  "CEA201 - Computer Organization and Architecture_Tổ chức và Kiến trúc máy tính": {
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "Teachers assess their works on their computers"
+      },
+      {
+        "category": "Exercises",
+        "note": "Students write answers to their notebook"
+      },
+      {
+        "category": "Final exam",
+        "note": "by Exam board"
+      }
+    ]
+  },
+  "CSD203 - Data Structures and Algorithm with Python_Cấu trúc dữ liệu và giải thuật với Python": {
+    "material_notes": [
+      {
+        "description": "Data Structures and Algorithms in Python",
+        "note": "Sách online (Wiley platform)"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Assignment 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Practical exam",
+        "note": "by exam board,\nusing computer"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "DBI202 - Introduction to Databases_Các hệ cơ sở dữ liệu": {
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "in class, by teacher"
+      },
+      {
+        "category": "Lab",
+        "note": "in class, by teacher"
+      },
+      {
+        "category": "Practical Exam",
+        "note": "By exam board"
+      },
+      {
+        "category": "Progress test",
+        "note": "in class, by LMS system"
+      },
+      {
+        "category": "Final exam",
+        "note": "Exam room"
+      }
+    ]
+  },
+  "JPD113 - Elementary Japanese 1- A1.1_Tiếng Nhật sơ cấp 1-A1.1": {
+    "material_notes": [
+      {
+        "description": "できる日本語　初級　本冊",
+        "note": "Giáo trình Dekiru quyển đỏ (Tiếng Nhật trong tầm tay)"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Kiểm tra giữa kì",
+        "note": "Thi trên phần mềm EOS."
+      },
+      {
+        "category": "Kiểm tra nhỏ (small test)",
+        "note": "Đối với small test 1 (kiểm tra bảng chữ cái): kiểm tra miệng cách đọc hoặc thi bằng phần mềm thi trên mạng, hoặc EOS.\nĐối với small test 2: có thể thi EOS hoặc phần mềm thi trên mạng."
+      },
+      {
+        "category": "Thi cuối kỳ",
+        "note": "Thi trên trường, sử dụng máy tính và phần mềm EOS."
+      },
+      {
+        "category": "Thi cuối kỳ: Từ vựng, ngữ pháp, chữ Hán",
+        "note": "Thi trên trường, sử dụng máy tính và phần mềm EOS."
+      },
+      {
+        "category": "Thi cuối kỳ: Nói",
+        "note": "Thi trên trường."
+      }
+    ]
+  },
+  "ADY201m - AI, DS with Python & SQL_TTNT và KHDL với Python và SQL": {
+    "main_note": "1) On-going Assessment\n- 1 Assignment: 10%\n- 2 progress tests: 20%\n- 6 lab: 30%\n- 1 Final Exam: 40%\n2) Final Result 100%\nCompletion Criteria:\n1) Every on-going assessment component > 0\n2) Final Exam Score >= 4 & Final Result >= 5\nnote: Assignment: plus 0.5 to 1 points for completed IBM certification",
+    "material_notes": [
+      {
+        "description": "Predict Sales Revenue with scikit-learn",
+        "note": "Guided Project"
+      },
+      {
+        "description": "Build Data Analysis tools using R and DPLYR",
+        "note": "Guided Project"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "6 Labs",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Assignment",
+        "note": "at home"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "ITE303c - Ethics in IT_Đạo đức trong CNTT": {
+    "main_note": "1. Final Exam included Final Theory Exam (TE): 100%\n2. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n3.Completion Criteria: Final TE Score >=4 & (Final TE Score + bonus) >= 5\n4. Complete the online courses and get all specialization certifications to be allowed to take Final Exam",
+    "material_notes": [
+      {
+        "description": "MOOC 1: Artificial Intelligence Algorithms Models and Limitations",
+        "note": "https://www.coursera.org/learn/ai-algorithm-limitations?specialization=ethics-in-ai"
+      },
+      {
+        "description": "MOOC 2: Artificial Intelligence Data Fairness and Bias",
+        "note": "https://www.coursera.org/learn/ai-data-bias?specialization=ethics-in-ai"
+      },
+      {
+        "description": "MOOC 3: Artificial Intelligence Privacy and Convenience",
+        "note": "https://www.coursera.org/learn/ai-privacy-and-convenience?specialization=ethics-in-ai"
+      },
+      {
+        "description": "MOOC 4: Artificial Intelligence Ethics in Action",
+        "note": "https://www.coursera.org/learn/ai-ethics-analysis?specialization=ethics-in-ai"
+      },
+      {
+        "description": "Help Articles",
+        "note": "https://www.coursera.support/s/article/208280036-Coursera-Code-of-Conduct?language=en_US"
+      },
+      {
+        "description": "Ethics in the Age of AI Specialization",
+        "note": "https://www.coursera.org/specializations/ethics-in-ai"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "JPD123 - Elementary Japanese 1-A1.2_Tiếng Nhật sơ cấp 1-A1.2": {
+    "material_notes": [
+      {
+        "description": "できる日本語　初級　本冊",
+        "note": "Giáo trình Dekiru quyển đỏ (Tiếng Nhật trong tầm tay)"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Kiểm tra giữa kỳ",
+        "note": "Phần mềm EOS trên lớp."
+      },
+      {
+        "category": "Kiểm tra nhỏ (small test)",
+        "note": "Phần mềm EOS hoặc phần mềm thi trên mạng."
+      },
+      {
+        "category": "Thi cuối kỳ",
+        "note": "Thi trên trường, sử dụng máy tính và phần mềm EOS."
+      },
+      {
+        "category": "Thi cuối kỳ: Ngữ pháp- Từ vựng - Chữ Hán",
+        "note": "Thi trên trường, sử dụng máy tính và phần mềm EOS."
+      },
+      {
+        "category": "Thi cuối kỳ: Nói",
+        "note": "Thi trên trường."
+      }
+    ]
+  },
+  "MAI391 - Mathematics for Machine Learning_Toán cho học máy": {
+    "material_notes": [
+      {
+        "description": "Mathematics for Machine Learning",
+        "note": "https://mml-book.github.io/?fbclid=IwAR2WAfBUZe-E6O-pbbGL3k6E7KngL8F9sbOqraZr9LD14PAnHw6Y_e-O6Q4"
+      },
+      {
+        "description": "Machine Learning cơ bản",
+        "note": "https://github.com/tiepvupsu/ebookMLCB/blob/master/book_ML.pdf"
+      },
+      {
+        "description": "Multivariate Calculus",
+        "note": "https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/index.htm"
+      },
+      {
+        "description": "Mathematics for machine learning",
+        "note": "https://www.youtube.com/playlist?list=PLcQCwsZDEzFmlSc6levE3UV9rZ8yY-D_7"
+      },
+      {
+        "description": "Mathematics for machine Learning",
+        "note": "https://www.youtube.com/channel/UCSzae1ITUdw9DCdELMduaQw/playlists"
+      },
+      {
+        "description": "Machine Learning",
+        "note": "https://www.youtube.com/watch?v=UzxYlbK2c7E&list=PLA89DCFA6ADACE599&index=1"
+      },
+      {
+        "description": "Mathematics for Machine Learning",
+        "note": "https://www.coursera.org/specializations/mathematics-machine-learning"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignments",
+        "note": "guided by instructor in class, completed by student at home, submitted by deadline"
+      },
+      {
+        "category": "Computer Project",
+        "note": "by instructor"
+      },
+      {
+        "category": "Progress tests",
+        "note": "by instructor, and by\nsuitable means (computer, paper, oral)"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "MAS291 - Statistics & Probability_Xác suất thống kê": {
+    "main_note": "\"On-going assessment:\n• 03 progress tests: 30% (a1, i)\n• 02 assignments 20% (a2)\n• 01 computer project 15%\nFinal Examination 35% (a1, a2)\nFinal results 100%\nCompletion Criteria: Every on-going assessment component > 0, Final Result >=5 & Final Exam Score >=4 \"",
+    "material_notes": [
+      {
+        "description": "Montgomery D.C. & Runger G.C., Applied Statistics and Probability for Engineers",
+        "note": "7th ed. ISBN: 9781119718871"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "OP1: guided by the instructor\nin class, completed by student at home, submitted by deadline\nOP2: (For Constructivism Approach only): Follow lecturer's proposal"
+      },
+      {
+        "category": "Computer Project",
+        "note": "OP1: Groups of students are required to collect secondary data (topics may be suggested by instructor), form their own questions, and apply learned knowledge and methods of inferential statistics to analyze data and make conclusions about the populations.\nGroups are expected to use a statistical software to perform the analysis and present their results to other groups in class.\nOP2: (For Constructivism Approach only): Follow lecturer's proposal"
+      },
+      {
+        "category": "Progress Test",
+        "note": "OP1: by instructor, and by\nsuitable means (computer, paper, oral...)\nOP2: (For Constructivism Approach only): Follow lecturer's proposal"
+      },
+      {
+        "category": "Final exam",
+        "note": "by Exam Board"
+      }
+    ]
+  },
+  "AIL303m - Machine Learning_Học máy": {
+    "assessment_notes": [
+      {
+        "category": "Lab 1",
+        "note": "in home, by instructor"
+      },
+      {
+        "category": "Lab 2",
+        "note": "in home by instructor"
+      },
+      {
+        "category": "Mini capstone",
+        "note": "in home by instructor"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 3",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 4",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "CPV301 - Computer Vision_Thị giác máy tính": {
+    "material_notes": [
+      {
+        "description": "Computer Vision: Algorithms and Applications",
+        "note": "https://szeliski.org/Book/"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "in class, by teacher"
+      },
+      {
+        "category": "Lab",
+        "note": "in class, by teacher"
+      },
+      {
+        "category": "Practical Exam",
+        "note": "in class, by teacher"
+      },
+      {
+        "category": "Progress Test",
+        "note": "in class, by LMS system"
+      },
+      {
+        "category": "Final Exam",
+        "note": "By Exam Board"
+      }
+    ]
+  },
+  "DAP391m - AI-DS Project_Dự án TTNT-KHDL": {
+    "main_note": "The implementation of this course can be carried out in a traditional manner following the syllabus, or it can be standardized according to project topics. Once the project topic is determined, subsequent assessments will be designed according to the project topic. Please ensure compliance with the syllabus and corresponding CLOs.",
+    "material_notes": [
+      {
+        "description": "Building AI Applications with Watson APIs",
+        "note": "Updated slides"
+      },
+      {
+        "description": "GP 1: Simple Linear Regression for the Absolute Beginner",
+        "note": "Guided Project"
+      },
+      {
+        "description": "GP 2: Predict Ad Clicks Using Logistic Regression and XG-Boost",
+        "note": "Guided Project"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "5Labs",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Assignment",
+        "note": "at home"
+      },
+      {
+        "category": "Progress test",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "SWE201c - Introduction to Software Engineering_Nhập môn kĩ thuật phần mềm": {
+    "main_note": "1. Complete the online course to be allowed to take Final Exam\n2. Final Exam is included of Final Theory Exam (TE) & Final Practical Exam (PE): 100%\n3. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n4. Completion Criteria: Final TE Score >=4 & Final PE Score >=4 & FR >= 5\n(FR = min(10, (Final TE Score + Final PE Score)/2 + bonus)",
+    "material_notes": [
+      {
+        "description": "https://www.coursera.org/learn/software-processes",
+        "note": "MOOC 01: Software Development Processes and Methodologies"
+      },
+      {
+        "description": "https://www.coursera.org/learn/agile-software-development",
+        "note": "MOOC 02: Agile Software Development"
+      },
+      {
+        "description": "https://www.coursera.org/learn/lean-software-development",
+        "note": "MOOC 03: Lean Software Development"
+      },
+      {
+        "description": "https://www.coursera.org/learn/engineering-practices-secure-software-quality",
+        "note": "MOOC 04: Engineering Practices for Building Quality Software"
+      },
+      {
+        "description": "https://www.coursera.org/specializations/software-development-lifecycle",
+        "note": "SPEC: Software Development Lifecycle"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "PE",
+        "note": "by Exam Board"
+      },
+      {
+        "category": "TE",
+        "note": "by Exam Board"
+      }
+    ]
+  },
+  "DPL302m - Deep Learning_Học sâu": {
+    "main_note": "1) On-going Assessment\n- 4 labs: 20%\n- 1 Project: 40%\n- 2 progress tests: 10%\n2) 1 Final Exam: 30%\n3) Final Result 100%\nCompletion Criteria:\n1) Every on-going assessment component > 0\n2) Final Exam Score >= 4 & Final Result >= 5\nNote: All GP certificates is a prerequisite for project grading.",
+    "material_notes": [
+      {
+        "description": "Deep Learning Specialization",
+        "note": "https://www.coursera.org/specializations/deep-learning"
+      },
+      {
+        "description": "Neural Networks and Deep Learning",
+        "note": "https://www.coursera.org/learn/neural-networks-deep-learning?specialization=deep-learning"
+      },
+      {
+        "description": "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
+        "note": "https://www.coursera.org/learn/deep-neural-network?specialization=deep-learning"
+      },
+      {
+        "description": "Structuring Machine Learning Projects",
+        "note": "https://www.coursera.org/learn/machine-learning-projects?specialization=deep-learning"
+      },
+      {
+        "description": "Convolutional Neural Networks",
+        "note": "https://www.coursera.org/learn/convolutional-neural-networks?specialization=deep-learning"
+      },
+      {
+        "description": "Sequence Models",
+        "note": "https://www.coursera.org/learn/nlp-sequence-models?specialization=deep-learning"
+      },
+      {
+        "description": "GP 1: Diabetes Disease Detection with XG-Boost and Neural Networks",
+        "note": "https://www.coursera.org/projects/diabetes-disease-detection-with-xg-boost-and-neural-networks"
+      },
+      {
+        "description": "GP 2: Hyperparameter Tuning with Keras Tuner",
+        "note": "https://www.coursera.org/projects/keras-tuner"
+      },
+      {
+        "description": "GP 3: Object Localization with TensorFlow",
+        "note": "https://www.coursera.org/projects/object-localization-tensorflow"
+      },
+      {
+        "description": "GP 4: NLP: Twitter Sentiment Analysis",
+        "note": "https://www.coursera.org/projects/twitter-sentiment-analysis"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Lab 1",
+        "note": "in home, by instructor"
+      },
+      {
+        "category": "Lab 2",
+        "note": "in home by instructor"
+      },
+      {
+        "category": "Lab 3",
+        "note": "in home by instructor"
+      },
+      {
+        "category": "Lab 4",
+        "note": "in home by instructor"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Project",
+        "note": "in home by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "DWP301c - Web Development with Python_Phát triển Web với Python": {
+    "main_note": "1. Final Exam included Final Theory Exam (TE): 100%\n2. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n3.Completion Criteria: Final TE Score >=4 & (Final TE Score + bonus) >= 5\n4. Complete the online courses and get all specialization certifications to be allowed to take Final Exam",
+    "assessment_notes": [
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "NLP301c - Natural Language Processing_Xử lý ngôn ngữ tự nhiên": {
+    "main_note": "1. Complete the online course to be allowed to take Final Exam\n2. Final Exam is included of Final Theory Exam (TE) & Final Practical Exam (PE): 100%\n3. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n4. Completion Criteria: Final TE Score >=4 & Final PE Score >=4 & FR >= 5\n(FR = min(10, (Final TE Score + Final PE Score)/2 + bonus)",
+    "material_notes": [
+      {
+        "description": "https://www.coursera.org/learn/classification-vector-spaces-in-nlp?specialization=natural-language-processing",
+        "note": "MOOC 1: Natural Language Processing with Classification and Vector Spaces"
+      },
+      {
+        "description": "https://www.coursera.org/learn/probabilistic-models-in-nlp?specialization=natural-language-processing",
+        "note": "MOOC 2: Natural Language Processing with Probabilistic Models"
+      },
+      {
+        "description": "https://www.coursera.org/learn/sequence-models-in-nlp?specialization=natural-language-processing",
+        "note": "MOOC 3: Natural Language Processing with Sequence Models"
+      },
+      {
+        "description": "https://www.coursera.org/learn/attention-models-in-nlp?specialization=natural-language-processing",
+        "note": "MOOC 4: Natural Language Processing with Attention Models"
+      },
+      {
+        "description": "https://www.coursera.org/specializations/natural-language-processing",
+        "note": "SPEC: Natural Language Processing Specialization"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "PE",
+        "note": "by Exam Board"
+      },
+      {
+        "category": "TE",
+        "note": "by Exam Board"
+      }
+    ]
+  },
+  "OJT202 - On-The-Job Training_Đào tạo trong môi trường thực tế": {
+    "main_note": "1. For KS combo: Students have to study KOR101 and KOR201 at Fsoft.\n2. For JS combo: Students have to study JPD134, JPD216, and JPD226 (or the courses of equivalent program) at Fsoft.\n3. Completion Criteria for KS combo & JS combo:\n- For KS combo: Pass KOR101 and KOR201 (GPA>=4)\n- For JS combo: Pass JPD134, JPD216, and JPD226 (or the courses of equivalent program) (GPA>=4)",
+    "material_notes": [
+      {
+        "description": "Hướng dẫn quản lý thực tập\n(07.04PL - HDCV Quan ly thuc tap)\nGuideline for internship management\n(07.04PL - HDCV Quan ly thuc tap)",
+        "note": "Internal material, self-documented FPTU"
+      },
+      {
+        "description": "Phiếu khảo sát doanh nghiệp về sinh viên thực tập\n(07.16BMĐHFE10- Khảo sát doanh nghiệp về sinh viên thực tập)\nBusiness survey on student interns",
+        "note": "Internal material, self-documented FPTU"
+      },
+      {
+        "description": "Phiếu Khảo sát sinh viên về kỳ thực tập\n(07.17BMĐHFE10- Khao sat sinh vien ve ky thuc tap)\nStudent survey on the internship",
+        "note": "Internal material, self-documented FPTU"
+      },
+      {
+        "description": "Phiếu đánh giá sinh viên kỳ OJT\nEvaluation of the students' OJT performance",
+        "note": "Internal material, self-documented FPTU"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Kiến thức và kỹ năng chuyên môn(Professional knowledge and skills)",
+        "note": "Doanh nghiệp thực hiện đánh giá câu hỏi về Kiến thức, kỹ năng ngành tại biểu mẫu ĐHFPT gửi\nThe enterprise evaluates students' Professional knowledge and skills based on the form of FPT University"
+      },
+      {
+        "category": "Kỹ năng mềm\n\n(Soft skills)",
+        "note": "Doanh nghiệp thực hiện đánh giá câu hỏi về Kỹ năng mềm tại biểu mẫu ĐHFPT gửi\nThe enterprise evaluates students' Soft skills based on the form of FPT University"
+      },
+      {
+        "category": "Thái độ\n\n(Attitude)",
+        "note": "Doanh nghiệp thực hiện đánh giá câu hỏi về Thái độ tại biểu mẫu ĐHFPT gửi\nThe enterprise evaluates students' Attitudes based on the form of FPT University"
+      }
+    ]
+  },
+  "DAT301m - AI Development with TensorFlow_Phát triển UDTTNT với TensorFlow": {
+    "main_note": "1) On-going Assessment\n- 1 Assignments: 30%\n- 1 progress tests: 10%\n- 4 labs 30%\n- 1 Final Exam: 30%\n2) Final Result 100%\nCompletion Criteria:\n1) Every on-going assessment component > 0\n2) Final Exam Score >= 4 & Final Result >= 5\nnote: Assignment: plus 0.5 to 1 points for completedDeepLearning.AI TensorFlow Developer Professional Certificate",
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "at home"
+      },
+      {
+        "category": "Lab1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "lab2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "lab3",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "lab4",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "ENW493c - Research Methods & Academic Writing Skills_Phương pháp nghiên cứu & Kỹ năng viết học thuật": {
+    "main_note": "1. Complete the online courses and get certifications to be allowed to take Final Exam\n2. Final Exam included Practical Exam (PE): 100%\n3. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n4. Completion Criteria: Final PE Score >=4 & (Final PE Score + bonus) >= 5",
+    "material_notes": [
+      {
+        "description": "Mooc 1: Understanding Research Methods",
+        "note": "https://www.coursera.org/learn/research-methods"
+      },
+      {
+        "description": "Mooc 2: Research Methodologies",
+        "note": "https://www.coursera.org/learn/research-methodologies"
+      },
+      {
+        "description": "Mooc 3: Being a reseacher (in Information Science and Technology)",
+        "note": "https://www.coursera.org/learn/being-researcher"
+      },
+      {
+        "description": "Mooc 4: Advanced Writing",
+        "note": "https://www.coursera.org/learn/advanced-writing?specialization=academic-english"
+      },
+      {
+        "description": "Mooc 5: Introduction to Research for Essay Writing",
+        "note": "https://www.coursera.org/learn/introduction-to-research-for-essay-writing?specialization=academic-english"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Final exam PE",
+        "note": "Part 1: Multiple choices\nMarked by Computer 30' (30% - 30 questions)\n\nPart 2: Writing - 60' (70%)\nWrite 450-500 words on a given topic"
+      }
+    ]
+  },
+  "EXE101 - Experiential Entrepreneurship 1_Trải nghiệm khởi nghiệp 1": {
+    "material_notes": [
+      {
+        "description": "Online material sources (video, documents)",
+        "note": "www.StartupSchool.org"
+      },
+      {
+        "description": "Startup Directory sources",
+        "note": "https://www.ycombinator.com/companies"
+      },
+      {
+        "description": "Techstars",
+        "note": "https://www.techstars.com/portfolio"
+      },
+      {
+        "description": "500 Startups",
+        "note": "https://500.co/companies"
+      },
+      {
+        "description": "AngelPad (NYC)",
+        "note": "https://angelpad.com/portfolio/"
+      },
+      {
+        "description": "Seed Accelerators database",
+        "note": "https://www.seed-db.com/accelerators"
+      },
+      {
+        "description": "How to Design a Better Pitch Deck",
+        "note": "https://www.ycombinator.com/library/4T-how-to-design-a-better-pitch-deck/"
+      },
+      {
+        "description": "A Guide to Seed Fundraising",
+        "note": "https://www.ycombinator.com/library/4A-a-guide-to-seed-fundraising"
+      },
+      {
+        "description": "A Guide to YC Demo Day Presentations",
+        "note": "https://www.ycombinator.com/library/49-a-guide-to-yc-demo-day-presentations"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Constructivism Presentations",
+        "note": "- Guided by instructor\n- Questions from video lectures, class discussion activities.\n- Students discuss on group then present.\n- An average point could be evaluated and publised to students at the end of the semesters"
+      },
+      {
+        "category": "Group Assignm ent 1 (Checkp oint 1)",
+        "note": "- In class, by instructor\n- The class will be divided into groups, each group of 4-6 students (must be from 2 majors or more).\n- The group assigns roles to each member, for example, team leader - CEO, in charge of engineering - CTO, in charge of marketing - CMO,...\n- Each group has the task of finding a startup idea, naming the group, and presenting the business area of that idea."
+      },
+      {
+        "category": "Group Assignm ent 2 (Checkp oint 2)",
+        "note": "- In class, by instructor\n- Identify the problem to be solved and analyze the market:\n. Servery group (> 100 people) or interview two experts in their industry.\n. The team presented market research results and analysis insights related to their business areas, including industry outlook, market size, trends, segments, key players, market share, product/service pricing.\n. The team presented the value proposition for their idea, market fit and compared it with competitors."
+      },
+      {
+        "category": "Group Assignm ent 3 (Checkp oint 3)",
+        "note": "- Product/service description:\n- Technology tools description\n- Canvas business model presentation."
+      },
+      {
+        "category": "Presentation (Checkp oint 4)",
+        "note": "Build a preliminary pitch deck and present it.\nGraded by instructor and mentor.\nMarking criteria:\n- Team profile 10%\n- Product market fit 40%\n- Business model 20%\n- Operative 20%\n- Fundraising plan 10%\n\nNote: Students can ask the University for financial support for the implementing of their project. For this purpose, the group submit a funding estimation which will be examined and validated by the instructor and the mentor."
+      }
+    ]
+  },
+  "PMG201c - Project Management": {
+    "main_note": "1. Complete the online course to be allowed to take Final Exam\n2. Final Exam is included of Final Theory Exam (TE) & Final Practical Exam (PE): 100%\n3. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n4. Completion Criteria: Final TE Score >=4 & Final PE Score >=4 & FR >= 5\n(FR = min(10, (Final TE Score + Final PE Score)/2 + bonus)",
+    "material_notes": [
+      {
+        "description": "https://www.coursera.org/learn/project-planning",
+        "note": "MOOC 1: Initiating and Planning Projects"
+      },
+      {
+        "description": "https://www.coursera.org/learn/schedule-projects",
+        "note": "MOOC 2: Budgeting and Scheduling Projects"
+      },
+      {
+        "description": "https://www.coursera.org/learn/project-risk-management",
+        "note": "MOOC 3: Managing Project Risks and Changes"
+      },
+      {
+        "description": "https://www.coursera.org/learn/project-management-capstone",
+        "note": "MOOC 4: Project Management Project"
+      },
+      {
+        "description": "https://www.coursera.org/specializations/project-management",
+        "note": "SPEC: Project Management Principles and Practices"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "PE",
+        "note": "by Exam Board"
+      },
+      {
+        "category": "TE",
+        "note": "by Exam Board"
+      }
+    ]
+  },
+  "AID301c - AI in Production_Thiết kế sản phẩm TTNT": {
+    "main_note": "1. Final Exam included Final Theory Exam (TE): 100%\n2. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n3.Completion Criteria: Final TE Score >=4 & (Final TE Score + bonus) >= 5\n4. Complete the online courses and get all specialization certifications to be allowed to take the Final Exam",
+    "material_notes": [
+      {
+        "description": "IBM AI Enterprise Workflow Specialization",
+        "note": "https://www.coursera.org/specializations/ibm-ai-workflow"
+      },
+      {
+        "description": "Course 1. AI Workflow: Business Priorities and Data Ingestion",
+        "note": "https://www.coursera.org/learn/ibm-ai-workflow-business-priorities-data-ingestion"
+      },
+      {
+        "description": "Course 2. AI Workflow: Data Analysis and Hypothesis Testing",
+        "note": "https://www.coursera.org/learn/ibm-ai-workflow-data-analysis-hypothesis-testing"
+      },
+      {
+        "description": "Course 3. AI Workflow: Feature Engineering and Bias Detection",
+        "note": "https://www.coursera.org/learn/ibm-ai-workflow-feature-engineering-bias-detection"
+      },
+      {
+        "description": "Course 4. AI Workflow: Machine Learning, Visual Recognition and NLP",
+        "note": "https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-vr-nlp?specialization=ibm-ai-workflow"
+      },
+      {
+        "description": "Course 5. AI Workflow: Enterprise Model Deployment",
+        "note": "https://www.coursera.org/learn/ibm-ai-workflow-machine-learning-model-deployment?specialization=ibm-ai-workflow"
+      },
+      {
+        "description": "Course 6. AI Workflow: AI in Production",
+        "note": "https://www.coursera.org/learn/ibm-ai-workflow-ai-production?specialization=ibm-ai-workflow"
+      },
+      {
+        "description": "Help Articles",
+        "note": "https://www.coursera.support/s/article/208280036-Coursera-Code-of-Conduct?language=en_US"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "EXE201 - Experiential Entrepreneurship 2_Trải nghiệm khởi nghiệp 2": {
+    "material_notes": [
+      {
+        "description": "Online material sources (video, documents)",
+        "note": "www.StartupSchool.org"
+      },
+      {
+        "description": "Startup Directory sources",
+        "note": "https://www.ycombinator.com/companies/"
+      },
+      {
+        "description": "Techstars",
+        "note": "https://www.techstars.com/portfolio"
+      },
+      {
+        "description": "500 Startups",
+        "note": "https://500.co/companies"
+      },
+      {
+        "description": "AngelPad (NYC)",
+        "note": "https://angelpad.com/portfolio/"
+      },
+      {
+        "description": "Seed Accelerators database",
+        "note": "https://www.seed-db.com/accelera tors"
+      },
+      {
+        "description": "How to Design a Better Pitch Deck",
+        "note": "https://www.ycombinator.com/library/4T-how-to-design-a-better-pitch-deck/"
+      },
+      {
+        "description": "A Guide to Seed Fundraising",
+        "note": "https://www.ycombinator.com/library/4A- a-guide- to-seed- fundraisi ng"
+      },
+      {
+        "description": "A Guide to YC Demo Day Presentations",
+        "note": "https://www.ycombinator.com/library/49-a-guide-to-yc-demo-day-present ations"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Outcome 1",
+        "note": "- In class, by instructor\n- Students demonstrate the product/service to the class\n- Product/service should run well and be market- ready"
+      },
+      {
+        "category": "Outcome 2",
+        "note": "- In class, by instructor\n- Students need to submit the required document, and do a presentation in class"
+      },
+      {
+        "category": "Outcome 3",
+        "note": "- In class, by instructor and mentor\n- Students need to submit the sales results along with all needed proof to the instructor\n- Students will present their result in class"
+      }
+    ]
+  },
+  "MLN111 - Philosophy of Marxism – Leninism_Triết học Mác - Lê-nin": {
+    "main_note": "1)'Progress test + Assignments: 70%\n- Participation: 10%\n- 02 Progress test: 30%(2x15%)\n- 1 Assignments: 30 %\n2) Final Exam : 30%\n3) Final results:100%\n4) Completion Criteria:\nFinal Result >=5 & Final Exam Score >=4",
+    "material_notes": [
+      {
+        "description": "Giáo trình Triết học Mác-Lênin, dùng cho sinh viên đại học hệ không chuyên lý luận chính trị - Bản dự thảo\nPhilosophy of Marxism – Leninism textbook for non-politics majored students - Draft",
+        "note": "https://moet.gov.vn/van-ban/vbdh/Pages/chi-tiet-van-ban.aspx?ItemID=2729#divShowDialogDownload"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "OP1:\nThuyết trình theo nhóm, nộp lại file báo cáo của nhóm trên LMS\nPresented by groups and hand in group's work on LMS\n\nOP2: (For Constructivism Approach only): Follow lecturer's proposal"
+      },
+      {
+        "category": "Participation",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Progress tests",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Final exam",
+        "note": "Phòng Khảo thí tổ chức\nby Office of Assessment"
+      }
+    ]
+  },
+  "MLN122 - Political economics of Marxism – Leninism_Kinh tế chính trị Mác - Lê-nin": {
+    "main_note": "1) Progress test + Assignment: 70%\n- Participation: 10%\n- 02 Progress tests: 30% (2x15%)\n- 1 Assignment: 30 %\n2) Final Exam: 30%\n3) Final result: 100%\n4) Completion Criteria:\nFinal Result >=5 & Final Exam Score >=4",
+    "material_notes": [
+      {
+        "description": "Giáo trình Kinh tế chính trị Mác-Lênin, dùng cho sinh viên đại học hệ không chuyên lý luận chính trị - Bản dự thảo\nPolitical economics of Marxism – Leninism textbook for non-politics majored students - Draft",
+        "note": "https://moet.gov.vn/van-ban/vbdh/Pages/chi-tiet-van-ban.aspx?ItemID=2729#divShowDialogDownload"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "Thuyết trình theo nhóm, nộp lại file báo cáo của nhóm trên LMS\nPresented by groups and hand in group's work on LMS"
+      },
+      {
+        "category": "Participation",
+        "note": "Trong lớp học"
+      },
+      {
+        "category": "Progress tests",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Final exam",
+        "note": "Phòng Khảo thí tổ chức\nby Office of Assessment"
+      }
+    ]
+  },
+  "REL301m - Reinforcement Learning_Học tăng cường": {
+    "material_notes": [
+      {
+        "description": "Fundamentals of Reinforcement Learning-",
+        "note": "https://www.coursera.org/learn/fundamentals-of-reinforcement-learning"
+      },
+      {
+        "description": "Sample-based Learning Methods",
+        "note": "https://www.coursera.org/learn/sample-based-learning-methods"
+      },
+      {
+        "description": "Prediction and Control with Function Approximation",
+        "note": "https://www.coursera.org/learn/prediction-control-function-approximation"
+      },
+      {
+        "description": "A Complete Reinforcement Learning System (Capstone)",
+        "note": "https://www.coursera.org/learn/complete-reinforcement-learning-system"
+      },
+      {
+        "description": "Guided Project\nCreate a Tic-Tac-Toe game in Python",
+        "note": "https://www.coursera.org/projects/tic-tac-toe-game-python"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "at home"
+      },
+      {
+        "category": "Lab1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "lab2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "lab3",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "HCM202 - HCM Ideology_Tư tưởng Hồ Chí Minh": {
+    "main_note": "1) Progress test + Assignment: 70%\n- Participation: 10%\n- 02 Progress tests: 30% (2x15%)\n- 1 Assignment: 30 %\n2) Final Exam: 30%\n3) Final result: 100%\n4) Completion Criteria:\nEvery on-going assessment component > 0, Final Result >=5 & Final Exam Score >=4",
+    "material_notes": [
+      {
+        "description": "Tài liệu giảng dạy về phòng, chống tham nhũng dùng cho các trường đại học, cao đẳng không chuyên về luật\n(Phê duyệt kèm theo Quyết định số 3468/QĐ-BGDĐT ngày 06 tháng 9 năm 2014 của Bộ trưởng Bộ Giáo dục và Đào tạo)",
+        "note": "https://drive.google.com/file/d/1Tf3Fyybs8puDEnp5JGw3zqezIfreh6H2/view?usp=sharing"
+      },
+      {
+        "description": "Kiên quyết, kiên trì đấu tranh phòng, chống tham nhũng, tiêu cực, góp phần xây dựng Đảng và Nhà nước ta ngày càng trong sạch, vững mạnh",
+        "note": "https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/book/sach-chinh-tri/kien-quyet-kien-tri-dau-tranh-phong-chong-tham-nhung-tieu-cuc-gop-phan-xay-dung-dang-va-nha-nuoc-ta-ngay-cang-trong-sach-436"
+      },
+      {
+        "description": "Giáo trình Tư tưởng Hồ Chí Minh, dùng cho sinh viên bậc đại học hệ không chuyên ngành lý luận chính trị - Bản dự thảo\nHo Chi Minh ideology textbook for non-politics majored students - Draft",
+        "note": "https://moet.gov.vn/van-ban/vbdh/Pages/chi-tiet-van-ban.aspx?ItemID=2729#divShowDialogDownload"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "Thuyết trình theo nhóm, nộp lại file báo cáo của nhóm trên LMS\nPresented by groups and hand in group's work on LMS"
+      },
+      {
+        "category": "Participation",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Progress tests",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Final exam",
+        "note": "Phòng Khảo thí tổ chức\nby Office of Assessment"
+      }
+    ]
+  },
+  "MLN131 - Scientific socialism_Chủ nghĩa xã hội khoa học": {
+    "main_note": "1)'Progress tests + Assignment: 70%\n- Participation: 10%\n- 02 Progress tests: 30%(2x15%)\n- 1 Assignment: 30 %\n2) Final Exam: 30%\n3) Final result:100%\n4) Completion Criteria:\nFinal Result >=5 & Final Exam Score >=4",
+    "material_notes": [
+      {
+        "description": "Tài liệu giảng dạy về phòng, chống tham nhũng dùng cho các trường đại học, cao đẳng không chuyên về luật\n(Phê duyệt kèm theo Quyết định số 3468/QĐ-BGDĐT ngày 06 tháng 9 năm 2014 của Bộ trưởng Bộ Giáo dục và Đào tạo)",
+        "note": "https://drive.google.com/file/d/1Tf3Fyybs8puDEnp5JGw3zqezIfreh6H2/view?usp=sharing"
+      },
+      {
+        "description": "Kiên quyết, kiên trì đấu tranh phòng, chống tham nhũng, tiêu cực, góp phần xây dựng Đảng và Nhà nước ta ngày càng trong sạch, vững mạnh",
+        "note": "https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/book/sach-chinh-tri/kien-quyet-kien-tri-dau-tranh-phong-chong-tham-nhung-tieu-cuc-gop-phan-xay-dung-dang-va-nha-nuoc-ta-ngay-cang-trong-sach-436"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "Thuyết trình theo nhóm, nộp lại file báo cáo của nhóm trên LMS\nPresented by groups and hand in group's work on LMS\n\nKiến tạo XH tính vào thành phần điểm này.\nSocial constructivism applies to this grading component."
+      },
+      {
+        "category": "Participation",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Progress tests",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Final exam",
+        "note": "Phòng Khảo thí tổ chức\nby Office of Assessment"
+      }
+    ]
+  },
+  "VNR202 - History of CPV_Lịch sử Đảng Cộng sản Việt Nam": {
+    "main_note": "1)'Progress test + Assignments: 70%\n- Participation: 10%\n- 02 Progress tests: 30% (2x15%)\n- 1 Assignment: 30 %\n2) Final Exam: 30%\n3) Final result: 100%\n4) Completion Criteria:\nEvery on-going assessment component > 0, Final Result >=5 & Final Exam Score >=4",
+    "material_notes": [
+      {
+        "description": "Tài liệu giảng dạy về phòng, chống tham nhũng dùng cho các trường đại học, cao đẳng không chuyên về luật\n(Phê duyệt kèm theo Quyết định số 3468/QĐ-BGDĐT ngày 06 tháng 9 năm 2014 của Bộ trưởng Bộ Giáo dục và Đào tạo)",
+        "note": "https://drive.google.com/file/d/1Tf3Fyybs8puDEnp5JGw3zqezIfreh6H2/view?usp=sharing"
+      },
+      {
+        "description": "Kiên quyết, kiên trì đấu tranh phòng, chống tham nhũng, tiêu cực, góp phần xây dựng Đảng và Nhà nước ta ngày càng trong sạch, vững mạnh",
+        "note": "https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/book/sach-chinh-tri/kien-quyet-kien-tri-dau-tranh-phong-chong-tham-nhung-tieu-cuc-gop-phan-xay-dung-dang-va-nha-nuoc-ta-ngay-cang-trong-sach-436"
+      },
+      {
+        "description": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (Dành cho sinh viên đại học, cao đẳng khối không chuyên ngành Mác – Lênin, tư tưởng Hồ Chí Minh) - Bản dự thảo\nHistory of CPV textbook for students whose major is not Marxism-Leninism and Ho Chi Minh ideology - Draft",
+        "note": "https://moet.gov.vn/van-ban/vbdh/Pages/chi-tiet-van-ban.aspx?ItemID=2729#divShowDialogDownload."
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "Thuyết trình theo nhóm, nộp lại file báo cáo của nhóm trên LMS\nPresented by groups and hand in group's work on LMS"
+      },
+      {
+        "category": "Participation",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Progress tests",
+        "note": "Trong lớp học\nin class"
+      },
+      {
+        "category": "Final exam",
+        "note": "Phòng Khảo thí tổ chức\nby Office of Assessment"
+      }
+    ]
+  },
+  "DSR301m - Applied DS with R_Khoa học dữ liệu ứng dụng với R": {
+    "main_note": "Assignment: plus 0.5 to 1 points for completed IBM certification",
+    "material_notes": [
+      {
+        "description": "Introduction to R Programming for Data Science",
+        "note": "https://www.coursera.org/learn/introducton-r-programming-data-science"
+      },
+      {
+        "description": "SQL for Data Science with R",
+        "note": "https://www.coursera.org/learn/sql-data-science-r"
+      },
+      {
+        "description": "Data Analysis with R",
+        "note": "https://www.coursera.org/learn/data-analysis-with-r?specialization=applied-data-science-r"
+      },
+      {
+        "description": "Data Visualization with R",
+        "note": "https://www.coursera.org/learn/data-visualization-r?specialization=applied-data-science-r"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment",
+        "note": "at home"
+      },
+      {
+        "category": "Lab 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Lab 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Lab 3",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Lab 4",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "BDI302c - Big Data_Dữ liệu lớn": {
+    "material_notes": [
+      {
+        "description": "https://www.coursera.org/specializations/big-data",
+        "note": "Big Data Specialization"
+      },
+      {
+        "description": "https://www.coursera.org/learn/big-data-introduction?specialization=big-data",
+        "note": "MOOC 1: Introduction to Big Data"
+      },
+      {
+        "description": "https://www.coursera.org/learn/big-data-management?specialization=big-data",
+        "note": "MOOC 2: Big Data Modeling and Management Systems"
+      },
+      {
+        "description": "https://www.coursera.org/learn/big-data-integration-processing?specialization=big-data",
+        "note": "MOOC 3: Big Data Integration and Processing"
+      },
+      {
+        "description": "https://www.coursera.org/learn/big-data-machine-learning?specialization=big-data",
+        "note": "MOOC 4: Machine Learning With Big Data"
+      },
+      {
+        "description": "https://www.coursera.org/learn/big-data-graph-analytics?specialization=big-data",
+        "note": "MOOC 5: Graph Analytics for Big Data"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "DBM302m - Data Mining_Khai phá dữ liệu": {
+    "main_note": "Assignment: plus 0.5 to 1 points for completed Coursera certification, Final Result <=10",
+    "material_notes": [
+      {
+        "description": "Data Mining Pipeline",
+        "note": "https://www.coursera.org/learn/data-mining-pipeline?specialization=data-mining-foundations-practice"
+      },
+      {
+        "description": "Data Visualization",
+        "note": "https://www.coursera.org/learn/datavisualization?specialization=data-mining"
+      },
+      {
+        "description": "Pattern Discovery in Data Mining",
+        "note": "https://www.coursera.org/learn/data-patterns?specialization=data-mining"
+      },
+      {
+        "description": "Cluster Analysis in Data Mining",
+        "note": "https://www.coursera.org/learn/cluster-analysis?specialization=data-mining"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Lab 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Lab 3",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Lab 4",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "DSP391m - Data Science - Capstone Project_Dự án KHDL": {
+    "main_note": "\"- The essential capstone project is mandatory, focusing on solving a real-world data challenge. It comprises 100% of assessments, culminating in a final exam by oral presentation.\n- The final mark is determined by summing the weighted scores of Report 1 (10%), Report 2 (20%), Report 3 (40%), Final Report (10%), and Final Exam[Oral presentation] (20%).\n- The final exam [oral group presentation] takes place in class, individually evaluated by one professor. Retakes are permissible, involving the submission of a revised final report and presentation, also evaluated by one professor.\"",
+    "material_notes": [
+      {
+        "description": "Data Mining Pipeline",
+        "note": "https://www.coursera.org/learn/data-mining-pipeline?specialization=data-mining-foundations-practice"
+      },
+      {
+        "description": "Data Visualization",
+        "note": "https://www.coursera.org/learn/datavisualization?specialization=data-mining"
+      },
+      {
+        "description": "Pattern Discovery in Data Mining",
+        "note": "https://www.coursera.org/learn/data-patterns?specialization=data-mining"
+      },
+      {
+        "description": "Cluster Analysis in Data Mining",
+        "note": "https://www.coursera.org/learn/cluster-analysis?specialization=data-mining"
+      },
+      {
+        "description": "Research Paper: Various research papers on machine learning algorithms",
+        "note": "https://scholar.google.com/"
+      },
+      {
+        "description": "Dataset: Publicly available datasets from Kaggle",
+        "note": "https://www.kaggle.com/"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Report 1: Project Proposal",
+        "note": "homework, class, by instructor"
+      },
+      {
+        "category": "Report 2: Data Tasks [ Data Collection and Cleaning + Exploratory Data Analysis]",
+        "note": "homework, class, by instructor"
+      },
+      {
+        "category": "Report 3: Model & Results[ Model Development + Model Evaluation and Fine-Tuning + Results Interpretation and Visualization + Conclusion and Recommendations]",
+        "note": "homework, class, by instructor"
+      },
+      {
+        "category": "Report 4: Final Project Report",
+        "note": "homework, class, by instructor"
+      },
+      {
+        "category": "Final exam[ Oral group presentatation]",
+        "note": "class, by instructor"
+      }
+    ]
+  },
+  "ASR301c - AI for Scientific Research_TTNT cho Nghiên cứu khoa học": {
+    "main_note": "1. Final Exam included Final Theory Exam (TE): 100%\n2. Students who complete all MOOCs before the course deadline will receive 1 bonus point; otherwise, no bonus point will be awarded.\n3.Completion Criteria: Final TE Score >=4 & (Final TE Score + bonus) >= 5\n4. Complete the online courses and get all specialization certifications to be allowed to take Final Exam",
+    "material_notes": [
+      {
+        "description": "Specialization: AI for Scientific Research Specialization",
+        "note": "https://www.coursera.org/specializations/artificial-intelligence-scientific-research"
+      },
+      {
+        "description": "MOOC 1: Introduction to Data Science and scikit-learn in Python",
+        "note": "https://www.coursera.org/learn/data-science-and-scikit-learn-in-python?specialization=artificial-intelligence-scientific-research"
+      },
+      {
+        "description": "MOOC 2: Machine Learning Models in Science",
+        "note": "https://www.coursera.org/learn/machine-learning-models-in-science?specialization=artificial-intelligence-scientific-research"
+      },
+      {
+        "description": "MOOC 3: Neural Networks and Random Forests",
+        "note": "https://www.coursera.org/learn/neural-networks-random-forests?specialization=artificial-intelligence-scientific-research"
+      },
+      {
+        "description": "MOOC 4: Capstone Project: Advanced AI for Drug Discovery",
+        "note": "https://www.coursera.org/learn/ai-for-drug-discovery?specialization=artificial-intelligence-scientific-research"
+      },
+      {
+        "description": "Help Articles",
+        "note": "https://www.coursera.support/s/article/208280036-Coursera-Code-of-Conduct?language=en_US"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "AIH301m - AI in Healthcare_Ứng dụng TTNT trong chăm sóc sức khỏe": {
+    "assessment_notes": [
+      {
+        "category": "Assignment 1",
+        "note": "in class, by group presentation"
+      },
+      {
+        "category": "Assignment 2",
+        "note": "in class, by group presentation"
+      },
+      {
+        "category": "Assignment 3",
+        "note": "in class, by group presentation"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "AIM301m - AI for Medicine_Ứng dụng TTNT cho y học": {
+    "material_notes": [
+      {
+        "description": "Spec: AI for Medicine Specialization",
+        "note": "https://www.coursera.org/specializations/ai-for-medicine#courses"
+      },
+      {
+        "description": "MOOC 1: AI for Medical Diagnosis",
+        "note": "https://www.coursera.org/learn/ai-for-medical-diagnosis?specialization=ai-for-medicine"
+      },
+      {
+        "description": "MOOC 2: AI for Medical Prognosis",
+        "note": "https://www.coursera.org/learn/ai-for-medical-prognosis?specialization=ai-for-medicine"
+      },
+      {
+        "description": "MOOC 3: AI For Medical Treatment",
+        "note": "https://www.coursera.org/learn/ai-for-medical-treatment?specialization=ai-for-medicine"
+      },
+      {
+        "description": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems",
+        "note": "http://ds.libol.fpt.edu.vn/"
+      },
+      {
+        "description": "Healthcare IT Support Specialization",
+        "note": "https://www.coursera.org/specializations/healthcare-it"
+      },
+      {
+        "description": "AI For Everyone",
+        "note": "https://www.coursera.org/learn/ai-for-everyone"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment 1",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Assignment 2",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Assignment 3",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Assignment 4",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Assignment 5",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Assignment 6",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 3",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "AIE301m - AI for Trading_Ứng dụng TTNT cho giao dịch": {
+    "material_notes": [
+      {
+        "description": "Spec: Machine Learning for Trading Specialization",
+        "note": "https://www.coursera.org/specializations/machine-learning-trading"
+      },
+      {
+        "description": "MOOC 1: Introduction to Trading, Machine Learning & GCP",
+        "note": "https://www.coursera.org/learn/introduction-trading-machine-learning-gcp?specialization=machine-learning-trading"
+      },
+      {
+        "description": "MOOC 2: Using Machine Learning in Trading and Finance",
+        "note": "https://www.coursera.org/learn/machine-learning-trading-finance?specialization=machine-learning-trading"
+      },
+      {
+        "description": "MOOC 3: Reinforcement Learning for Trading Strategies",
+        "note": "https://www.coursera.org/learn/trading-strategies-reinforcement-learning?specialization=machine-learning-trading"
+      },
+      {
+        "description": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems",
+        "note": "http://ds.libol.fpt.edu.vn/"
+      },
+      {
+        "description": "Course AI For Everyone",
+        "note": "https://www.coursera.org/learn/ai-for-everyone"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment 1",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Assignment 2",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Assignment 3",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Assignment 4",
+        "note": "in class, by group and personal presentations"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 3",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "SEG301 - Search Engines_Công cụ tìm kiếm": {
+    "main_note": "1) On-going Assessment\n- 3 Assignments: 30%\n- 2 progress tests: 30%\n2) 1 Final Exam: 40%\n3) Final Result 100% (The Final result - including bonus score - is not greater than 10)\n\nCompletion Criteria:\n1) Every on-going assessment component > 0\n2) Final Exam Score >= 4 & Final Result >= 5\n\nBonus score for accepted paper (email accepted/ published):\nISI/Scopus Q1, Q2: 5\nISI/Scopus Q3, Q4: 3\nScopus Q1, Q2: 3\nScopus Q3, Q4: 2\n\nThe accepted paper must be related to topics in AI17_COM2 and be assessed by the in-class Lecturer.\n\nSource to check Scopus ranking: https://www.scimagojr.com/\nSource to check ISI: https://mjl.clarivate.com",
+    "material_notes": [
+      {
+        "description": "Web Information Retrieval",
+        "note": "https://library.books24x7.com/toc.aspx?bookid=77020"
+      },
+      {
+        "description": "Understanding Information Retrieval Systems: Management, Types, and Standards",
+        "note": "https://library.books24x7.com/toc.aspx?bookid=47168"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment 1",
+        "note": "in class, lecturer select articles and assign to students, by group presentation"
+      },
+      {
+        "category": "Assignment 2",
+        "note": "in class, lecturer select articles and assign to students, by group presentation"
+      },
+      {
+        "category": "Assignment 3",
+        "note": "in class, lecturer select articles and assign to students, by group presentation"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  },
+  "TMG301 - Text Mining_Khai thác văn bản": {
+    "main_note": "1) On-going Assessment\n- 2 Assignments: 30%\n- 2 progress tests: 30%\n2) 1 Final Exam: 40%\n3) Final Result 100% (The Final result - including bonus score - is not greater than 10)\n\nCompletion Criteria:\n1) Every on-going assessment component > 0\n2) Final Exam Score >= 4 & Final Result >= 5\n\nBonus score for accepted paper (email accepted/ published):\nISI/Scopus Q1, Q2: 5\nISI/Scopus Q3, Q4: 3\nScopus Q1, Q2: 3\nScopus Q3, Q4: 2\n\nThe accepted paper must be related to topics in AI17_COM2 and be assessed by the in-class Lecturer.\n\nSource to check Scopus ranking: https://www.scimagojr.com/\nSource to check ISI: https://mjl.clarivate.com",
+    "material_notes": [
+      {
+        "description": "Natural Language Processing in Action: Understanding, Analyzing, and Generating Text with Python",
+        "note": "https://library.books24x7.com/toc.aspx?bookid=147295"
+      },
+      {
+        "description": "Text Analytics with Python: A Practitioner's Guide to Natural Language Processing",
+        "note": "https://library.books24x7.com/toc.aspx?bookid=146229"
+      }
+    ],
+    "assessment_notes": [
+      {
+        "category": "Assignment 1",
+        "note": "in class, the lecturer selects articles and assign them to students, by group presentation"
+      },
+      {
+        "category": "Assignment 2",
+        "note": "in class, the lecturer selects articles and assign them to students, by group presentation"
+      },
+      {
+        "category": "Progress test 1",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Progress test 2",
+        "note": "in class, by instructor"
+      },
+      {
+        "category": "Final exam",
+        "note": "by exam board,\nusing computer"
+      }
+    ]
+  }
+}

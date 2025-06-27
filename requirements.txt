@@ -5,6 +5,12 @@ playwright==1.40.0
 python-dotenv==1.0.0
 streamlit==1.29.0
 
+# Web framework
+flask==2.3.3
+
+# Graph database
+neo4j==5.15.0
+
 # Embedding and vector search
 sentence-transformers==2.2.2
 torch==2.1.0
