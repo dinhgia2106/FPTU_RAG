@@ -45,7 +45,7 @@ logger.info(f"✓ Tìm thấy {len(api_keys)} API keys")
 for i, key in enumerate(api_keys, 1):
     logger.info(f"  API Key {i}: ...{key[-10:]}")
 
-rag_engine = AdvancedRAGEngine(api_keys)
+rag_engine = AdvancedRAGEngine(api_keys, enable_graph=True)
 
 # Initialize with data
 logger.info("==================== BẮT ĐẦU KHỞI TẠO FPTU RAG ENGINE ====================")
@@ -326,6 +326,107 @@ def reset_api_keys():
     except Exception as e:
         logger.error(f"Lỗi reset API keys: {e}")
         return jsonify({'error': f'Không thể reset API keys: {str(e)}'}), 500
+
+@app.route('/api/graph-query', methods=['POST'])
+def graph_query():
+    """API endpoint để test Hybrid GraphRAG query"""
+    import time
+    start_time = time.time()
+    
+    try:
+        data = request.get_json()
+        question = data.get('message', '').strip()
+        
+        logger.info(f"==================== GRAPH QUERY REQUEST ====================")
+        logger.info(f"USER QUERY: '{question}'")
+        
+        if not question:
+            logger.warning("Câu hỏi rỗng")
+            return jsonify({'error': 'Vui lòng nhập câu hỏi'}), 400
+        
+        # Check if GraphRAG is available
+        if not hasattr(rag_engine, 'graph_enabled') or not rag_engine.graph_enabled:
+            logger.warning("GraphRAG không available - fallback to regular RAG")
+            result = rag_engine.query(question)
+            result['metadata']['graph_fallback'] = True
+        else:
+            logger.info("Sử dụng Hybrid GraphRAG...")
+            result = rag_engine.hybrid_graph_query(question)
+        
+        # Process response
+        answer = result.get('answer', '')
+        search_results = result.get('search_results', [])
+        metadata = result.get('metadata', {})
+        graph_info = result.get('graph_info', {})
+        
+        # Build response object
+        response = {
+            'answer': answer,
+            'search_results': search_results,
+            'metadata': {
+                'subjects_covered': len(set([r.get('subject_code', '') for r in search_results if isinstance(r, dict)])),
+                'query_type': metadata.get('query_type', 'unknown'),
+                'graph_enabled': metadata.get('graph_enabled', False),
+                'vector_results_count': metadata.get('vector_results_count', 0),
+                'graph_results_count': metadata.get('graph_results_count', 0),
+                'total_results': metadata.get('total_results', len(search_results)),
+                'processing_time': metadata.get('processing_time', 0),
+                'entities_extracted': metadata.get('entities_extracted', [])
+            },
+            'graph_info': graph_info
+        }
+        
+        # Calculate total time
+        total_time = time.time() - start_time
+        
+        logger.info(f"GRAPH QUERY RESPONSE SUMMARY:")
+        logger.info(f"  Query: '{question}'")
+        logger.info(f"  Graph enabled: {metadata.get('graph_enabled', False)}")
+        logger.info(f"  Vector results: {metadata.get('vector_results_count', 0)}")
+        logger.info(f"  Graph results: {metadata.get('graph_results_count', 0)}")
+        logger.info(f"  Total results: {len(search_results)}")
+        logger.info(f"  Entities extracted: {metadata.get('entities_extracted', [])}")
+        logger.info(f"  Total processing time: {total_time:.2f}s")
+        logger.info(f"==================== GRAPH QUERY COMPLETED ====================")
+        
+        return jsonify(response)
+        
+    except Exception as e:
+        total_time = time.time() - start_time
+        logger.error(f"✗ LỖI XỬ LÝ GRAPH QUERY sau {total_time:.2f}s: {e}", exc_info=True)
+        return jsonify({'error': f'Có lỗi xảy ra: {str(e)}'}), 500
+
+@app.route('/api/graph-status')
+def get_graph_status():
+    """API để lấy trạng thái GraphRAG system"""
+    try:
+        graph_status = {
+            'graph_available': hasattr(rag_engine, 'graph_enabled'),
+            'graph_enabled': getattr(rag_engine, 'graph_enabled', False),
+            'graph_connected': False,
+            'graph_stats': {},
+            'entities_extracted': False
+        }
+        
+        if hasattr(rag_engine, 'graph_db') and rag_engine.graph_db:
+            graph_status['graph_connected'] = rag_engine.graph_db.is_connected
+            
+            if rag_engine.graph_db.is_connected:
+                graph_status['graph_stats'] = rag_engine.graph_db.get_graph_stats()
+        
+        if hasattr(rag_engine, 'graph_entities'):
+            entities = rag_engine.graph_entities
+            graph_status['entities_extracted'] = True
+            graph_status['entities_count'] = {
+                'nodes': len(entities.get('nodes', [])),
+                'relationships': len(entities.get('relationships', []))
+            }
+        
+        return jsonify(graph_status)
+        
+    except Exception as e:
+        logger.error(f"Lỗi lấy graph status: {e}")
+        return jsonify({'error': f'Không thể lấy trạng thái graph: {str(e)}'}), 500
 
 @app.errorhandler(404)
 def not_found(error):

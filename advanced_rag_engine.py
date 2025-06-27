@@ -1,6 +1,7 @@
 """
 Advanced RAG Engine - Hệ thống RAG tiên tiến cho FPTU
 Tích hợp các kỹ thuật tiên tiến: Hierarchical Indexing, Multi-stage Retrieval, Query Routing, Document Summarization, Multi-hop Query
+ENHANCED với GraphRAG: Vector Search + Knowledge Graph Traversal
 """
 
 import json
@@ -20,6 +21,15 @@ from enum import Enum
 import time
 import hashlib
 import pickle
+
+# Import GraphRAG components
+try:
+    from graph_database import GraphDatabase, GraphPath, GraphNode, GraphRelationship
+    GRAPH_AVAILABLE = True
+except ImportError:
+    GRAPH_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("⚠ GraphDatabase module không khả dụng - chạy trong vector-only mode")
 
 # Cấu hình logging chi tiết
 logging.basicConfig(
@@ -1036,10 +1046,13 @@ class HierarchicalIndex:
         return results
 
 class AdvancedRAGEngine:
-    """Engine RAG tiên tiến với đầy đủ tính năng"""
+    """
+    Engine RAG tiên tiến với đầy đủ tính năng  
+    ENHANCED với GraphRAG: Hybrid Vector + Graph Database Architecture
+    """
     
-    def __init__(self, api_keys: Union[str, List[str]]):
-        """Khởi tạo RAG Engine với API key rotation"""
+    def __init__(self, api_keys: Union[str, List[str]], enable_graph: bool = True):
+        """Khởi tạo RAG Engine với API key rotation và GraphRAG capabilities"""
         
         # Xử lý API keys input
         if isinstance(api_keys, str):
@@ -1051,7 +1064,7 @@ class AdvancedRAGEngine:
         # Configure Gemini với key đầu tiên
         self.model = self.api_key_manager.get_current_model()
         
-        # Initialize components
+        # Initialize core components
         self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
         self.embeddings = None
         self.data = None
@@ -1066,10 +1079,31 @@ class AdvancedRAGEngine:
         # NEW: Query Preprocessor với API key rotation support
         self.query_preprocessor = QueryPreprocessor(self.model, self)
         
+        # GraphRAG components
+        self.graph_db = None
+        self.graph_enabled = enable_graph and GRAPH_AVAILABLE
+        
+        if self.graph_enabled:
+            logger.info("🔄 Khởi tạo GraphRAG components...")
+            try:
+                self.graph_db = GraphDatabase()
+                graph_connected = self.graph_db.connect()
+                if graph_connected:
+                    logger.info("✅ GraphRAG mode: Vector + Graph Hybrid")
+                else:
+                    logger.warning("⚠ Graph DB không kết nối được - fallback to Vector-only")
+                    self.graph_enabled = False
+            except Exception as e:
+                logger.warning(f"⚠ Lỗi khởi tạo GraphDatabase: {e} - fallback to Vector-only")
+                self.graph_enabled = False
+        else:
+            logger.info("📋 Vector-only mode enabled")
+        
         # Conversation memory for chatbot functionality
         self.conversation_memory = {}  # session_id -> [{'user': query, 'bot': response}]
         
         logger.info(f"✓ AdvancedRAGEngine được khởi tạo với {len(self.api_key_manager.api_keys)} API keys")
+        logger.info(f"✓ GraphRAG enabled: {self.graph_enabled}")
 
     def _call_gemini_with_rotation(self, prompt: str, max_retries: int = None) -> str:
         """
@@ -1118,7 +1152,7 @@ class AdvancedRAGEngine:
         raise Exception("Tất cả API keys đã hết quota, vui lòng thử lại sau")
 
     def initialize(self, data_path: str):
-        """Khởi tạo engine với dữ liệu từ file JSON"""
+        """Khởi tạo engine với dữ liệu từ file JSON và populate graph database"""
         logger.info(f"Đang khởi tạo Advanced RAG Engine với dữ liệu từ {data_path}")
         
         with open(data_path, 'r', encoding='utf-8') as f:
@@ -1134,8 +1168,40 @@ class AdvancedRAGEngine:
         # Initialize query chain for multi-hop queries
         self.query_chain = QueryChain(self)
         
+        # GraphRAG: Populate graph database
+        if self.graph_enabled and self.graph_db:
+            logger.info("🔄 Populating Graph Database...")
+            try:
+                # Extract curriculum data for graph
+                curriculum_data = []
+                if isinstance(raw_data, dict) and 'syllabuses' in raw_data:
+                    curriculum_data = raw_data['syllabuses']
+                elif isinstance(raw_data, list):
+                    curriculum_data = raw_data
+                else:
+                    logger.warning("Unknown data format for graph extraction")
+                
+                if curriculum_data:
+                    nodes, relationships = self.graph_db.extract_entities_from_curriculum_data(curriculum_data)
+                    
+                    # Create schema and populate (simplified approach)
+                    if nodes and relationships:
+                        logger.info(f"📊 Graph entities: {len(nodes)} nodes, {len(relationships)} relationships")
+                        # Note: In production, you'd want to populate the actual Neo4j database here
+                        # For now, we store the extracted entities for later use
+                        self.graph_entities = {'nodes': nodes, 'relationships': relationships}
+                        logger.info("✅ Graph entities extracted successfully")
+                    else:
+                        logger.warning("⚠ No graph entities extracted")
+                else:
+                    logger.warning("⚠ No curriculum data found for graph extraction")
+                    
+            except Exception as e:
+                logger.error(f"❌ Lỗi populate graph database: {e}")
+                self.graph_enabled = False
+        
         self.is_initialized = True
-        logger.info("Khởi tạo hoàn tất")
+        logger.info("✅ Khởi tạo hoàn tất")
     
     def add_to_conversation(self, session_id: str, user_message: str, bot_response: str):
         """Thêm tin nhắn vào lịch sử conversation"""
@@ -1796,7 +1862,7 @@ Tai lieu chinh: {len(main_materials)} tai lieu
                         }
                     })
                 
-                # 4. ASSESSMENTS PROCESSING
+                # 4. ASSESSMENTS PROCESSING với Special Notes Enhancement
                 if 'assessments' in syllabus:
                     assessments = syllabus['assessments']
                     
@@ -1829,6 +1895,95 @@ Danh gia mon {subject_code} - Nganh {major_code} ({len(assessments)} loai):
                             'search_keywords': f"nganh {major_code} {subject_code} danh gia assessment exam test weight"
                         }
                     })
+                    
+                    # SPECIAL NOTES PROCESSING - Extract bonus paper và các note đặc biệt
+                    # Check both syllabus-level và assessment-level completion criteria và notes
+                    completion_criteria = syllabus.get('completion_criteria', '')
+                    note_content = syllabus.get('note', '')
+                    
+                    # Also check individual assessments for completion_criteria (especially final exam)
+                    assessment_criteria = ""
+                    for assess in assessments:
+                        assess_criteria = assess.get('completion_criteria', '')
+                        if assess_criteria:
+                            assessment_criteria += f" {assess_criteria}"
+                    
+                    # Combine all sources để tìm special features
+                    combined_special_text = f"{completion_criteria}\n{note_content}\n{assessment_criteria}".lower()
+                    
+                    special_features = []
+                    special_content = ""
+                    
+                    # Detect Bonus Paper Scoring
+                    if 'bonus' in combined_special_text and 'paper' in combined_special_text:
+                        if 'scopus' in combined_special_text or 'isi' in combined_special_text:
+                            special_features.append('bonus_paper_scoring')
+                            
+                            # Extract the bonus scoring section từ tất cả nguồn
+                            bonus_section = ""
+                            if 'bonus score for accepted paper' in combined_special_text:
+                                # Check trong completion_criteria
+                                all_text_sources = [completion_criteria, note_content, assessment_criteria]
+                                for text_source in all_text_sources:
+                                    if 'bonus score for accepted paper' in text_source.lower():
+                                        lines = text_source.split('\n')
+                                        in_bonus_section = False
+                                        for line in lines:
+                                            if 'bonus score for accepted paper' in line.lower():
+                                                in_bonus_section = True
+                                            if in_bonus_section:
+                                                bonus_section += line + "\n"
+                                                if 'source to check' in line.lower():
+                                                    break
+                                        if bonus_section.strip():
+                                            break
+                            
+                            special_content += f"""
+MON {subject_code} CO DIEM THUONG PAPER KHOA HOC:
+
+{bonus_section}
+"""
+                    
+                    # Detect Project-based Assessment
+                    if 'capstone' in combined_special_text or 'project' in combined_special_text:
+                        if 'oral presentation' in combined_special_text or 'final presentation' in combined_special_text:
+                            special_features.append('capstone_project_assessment')
+                            special_content += f"Mon {subject_code}: Co capstone project voi oral presentation\n"
+                    
+                    # Detect MOOC Requirements
+                    if 'mooc' in combined_special_text or 'specialization' in combined_special_text:
+                        special_features.append('mooc_required')
+                        special_content += f"Mon {subject_code}: Yeu cau hoan thanh MOOC/certification\n"
+                    
+                    # Detect Special Language Requirements
+                    if any(lang in combined_special_text for lang in ['korean', 'japanese', 'kor101', 'jpd']):
+                        special_features.append('language_requirement')
+                        special_content += f"Mon {subject_code}: Co yeu cau ngoai ngu dac biet\n"
+                    
+                    # Create special features chunk if any special features found
+                    if special_features and special_content.strip():
+                        processed_data.append({
+                            'content': special_content,
+                            'subject_code': subject_code,
+                            'type': 'special_features',
+                            'major_code': major_code,
+                            'special_features': special_features,
+                            'has_bonus_paper': 'bonus_paper_scoring' in special_features,
+                            'has_capstone': 'capstone_project_assessment' in special_features,
+                            'has_mooc': 'mooc_required' in special_features,
+                            'has_language_req': 'language_requirement' in special_features,
+                            'metadata': {
+                                'major_code': major_code,
+                                'subject_code': subject_code,
+                                'type': 'special_features',
+                                'special_features': special_features,
+                                'has_bonus_paper': 'bonus_paper_scoring' in special_features,
+                                'has_capstone': 'capstone_project_assessment' in special_features,
+                                'has_mooc': 'mooc_required' in special_features,
+                                'has_language_req': 'language_requirement' in special_features,
+                                'search_keywords': f"nganh {major_code} {subject_code} diem thuong bonus paper scopus isi special features {' '.join(special_features)}"
+                            }
+                        })
                 
                 # 5. SCHEDULE SUMMARY (sample sessions)
                 if 'schedule' in syllabus:
@@ -2438,6 +2593,245 @@ Ten: {student.get('FirstName', '')}
         
         return final_results
     
+    def hybrid_graph_query(self, question: str, max_results: int = 10) -> Dict[str, Any]:
+        """
+        Hybrid GraphRAG query: Kết hợp Vector Search và Graph Traversal
+        Implements the GraphRAG architecture from the research paper
+        """
+        if not self.graph_enabled:
+            logger.info("Graph không enabled - fallback to regular query")
+            return self.query(question, max_results)
+        
+        start_time = time.time()
+        logger.info(f"========== HYBRID GRAPHRAG QUERY ==========")
+        logger.info(f"USER QUERY: '{question}'")
+        
+        try:
+            # STEP 1: Regular vector search for semantic similarity
+            logger.info("STEP 1: Vector Search for semantic similarity...")
+            vector_results = self.query(question, max_results)
+            vector_search_results = vector_results.get('search_results', [])
+            
+            # STEP 2: Extract entities from query for graph traversal
+            logger.info("STEP 2: Entity extraction for graph traversal...")
+            extracted_entities = self._extract_entities_from_query(question)
+            
+            # STEP 3: Graph traversal for relationship discovery
+            graph_results = []
+            if extracted_entities and hasattr(self, 'graph_entities'):
+                logger.info("STEP 3: Graph traversal...")
+                graph_results = self._perform_graph_traversal(extracted_entities, question)
+            
+            # STEP 4: Hybrid result integration
+            logger.info("STEP 4: Integrating vector and graph results...")
+            integrated_results = self._integrate_vector_graph_results(
+                vector_search_results, graph_results, question
+            )
+            
+            # STEP 5: Generate enhanced answer with both semantic and relational context
+            logger.info("STEP 5: Generating enhanced answer...")
+            enhanced_context = self._prepare_hybrid_context(integrated_results)
+            enhanced_answer = self._generate_hybrid_response(question, enhanced_context, vector_results.get('answer', ''))
+            
+            processing_time = time.time() - start_time
+            
+            result = {
+                'answer': enhanced_answer,
+                'search_results': integrated_results,
+                'metadata': {
+                    'query_type': 'hybrid_graphrag',
+                    'vector_results_count': len(vector_search_results),
+                    'graph_results_count': len(graph_results),
+                    'total_results': len(integrated_results),
+                    'processing_time': processing_time,
+                    'graph_enabled': True,
+                    'entities_extracted': extracted_entities
+                },
+                'graph_info': {
+                    'entities_found': extracted_entities,
+                    'graph_traversal_performed': len(graph_results) > 0,
+                    'relationship_paths': len(graph_results)
+                }
+            }
+            
+            logger.info(f"HYBRID GraphRAG SUMMARY:")
+            logger.info(f"  - Vector results: {len(vector_search_results)}")
+            logger.info(f"  - Graph results: {len(graph_results)}")
+            logger.info(f"  - Integrated results: {len(integrated_results)}")
+            logger.info(f"  - Entities extracted: {extracted_entities}")
+            logger.info(f"  - Processing time: {processing_time:.2f}s")
+            logger.info(f"========== HYBRID GRAPHRAG COMPLETED ==========")
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"❌ Lỗi hybrid graph query: {e}")
+            # Fallback to regular vector search
+            logger.info("Fallback to regular vector search...")
+            return self.query(question, max_results)
+    
+    def _extract_entities_from_query(self, query: str) -> List[str]:
+        """Extract course codes và entities từ user query"""
+        entities = []
+        
+        # Extract course codes (e.g., CSI106, MAD101, etc.)
+        course_pattern = r'\b([A-Z]{2,4}\d{3}[a-z]*)\b'
+        course_matches = re.findall(course_pattern, query, re.IGNORECASE)
+        entities.extend([code.upper() for code in course_matches])
+        
+        # Extract semester numbers
+        semester_pattern = r'kì\s*(\d+)|ky\s*(\d+)|semester\s*(\d+)'
+        semester_matches = re.findall(semester_pattern, query, re.IGNORECASE)
+        for match in semester_matches:
+            semester_num = next((num for num in match if num), None)
+            if semester_num:
+                entities.append(f"Semester_{semester_num}")
+        
+        # Extract combo patterns
+        if 'combo' in query.lower() or 'chuyên ngành' in query.lower():
+            entities.append("COMBO_ENTITY")
+        
+        logger.info(f"Extracted entities from query: {entities}")
+        return entities
+    
+    def _perform_graph_traversal(self, entities: List[str], query: str) -> List[Dict[str, Any]]:
+        """Perform graph traversal to find relationships"""
+        if not hasattr(self, 'graph_entities'):
+            return []
+        
+        graph_results = []
+        nodes = self.graph_entities.get('nodes', [])
+        relationships = self.graph_entities.get('relationships', [])
+        
+        logger.info(f"Graph traversal với {len(entities)} entities...")
+        
+        # Simple graph traversal - find related nodes
+        for entity in entities:
+            # Find direct matches in nodes
+            matching_nodes = [node for node in nodes if node.id == entity]
+            
+            # Find relationships involving this entity
+            related_relationships = [
+                rel for rel in relationships 
+                if rel.source_id == entity or rel.target_id == entity
+            ]
+            
+            # Build graph results
+            for rel in related_relationships:
+                # Find the related course/entity
+                related_entity_id = rel.target_id if rel.source_id == entity else rel.source_id
+                related_node = next((node for node in nodes if node.id == related_entity_id), None)
+                
+                if related_node:
+                    graph_result = {
+                        'content': f"Graph relationship: {entity} {rel.type} {related_entity_id}",
+                        'subject_code': related_entity_id,
+                        'type': 'graph_relationship',
+                        'score': 5.0,  # High score for direct relationships
+                        'metadata': {
+                            'relationship_type': rel.type,
+                            'source_entity': entity,
+                            'target_entity': related_entity_id,
+                            'graph_traversal': True,
+                            'node_properties': related_node.properties
+                        },
+                        'search_method': 'graph_traversal'
+                    }
+                    graph_results.append(graph_result)
+        
+        logger.info(f"Graph traversal found {len(graph_results)} relationship results")
+        return graph_results
+    
+    def _integrate_vector_graph_results(self, vector_results: List[Dict], graph_results: List[Dict], query: str) -> List[Dict]:
+        """Integrate vector search results with graph traversal results"""
+        integrated = []
+        
+        # Add vector results with marking
+        for result in vector_results:
+            result['result_source'] = 'vector_search'
+            integrated.append(result)
+        
+        # Add graph results with marking and boost scores
+        for result in graph_results:
+            result['result_source'] = 'graph_traversal'
+            # Boost graph result scores since they represent explicit relationships
+            if 'score' in result:
+                result['score'] = result['score'] * 1.5  # Boost graph results
+            integrated.append(result)
+        
+        # Remove duplicates based on subject_code and content similarity
+        unique_results = []
+        seen_combinations = set()
+        
+        for result in integrated:
+            key = (result.get('subject_code', ''), result.get('type', ''))
+            if key not in seen_combinations:
+                seen_combinations.add(key)
+                unique_results.append(result)
+        
+        # Sort by score (descending)
+        unique_results.sort(key=lambda x: x.get('score', 0), reverse=True)
+        
+        logger.info(f"Integrated results: {len(vector_results)} vector + {len(graph_results)} graph = {len(unique_results)} unique")
+        return unique_results
+    
+    def _prepare_hybrid_context(self, integrated_results: List[Dict]) -> str:
+        """Prepare context từ integrated vector + graph results"""
+        if not integrated_results:
+            return "Không tìm thấy thông tin liên quan."
+        
+        context = "=== THÔNG TIN TÌM KIẾM ===\n\n"
+        
+        # Group by result source
+        vector_results = [r for r in integrated_results if r.get('result_source') == 'vector_search']
+        graph_results = [r for r in integrated_results if r.get('result_source') == 'graph_traversal']
+        
+        # Add vector search results
+        if vector_results:
+            context += "📚 THÔNG TIN NỘI DUNG:\n"
+            for i, result in enumerate(vector_results[:5], 1):  # Top 5 vector results
+                context += f"{i}. {result.get('content', '')}\n\n"
+        
+        # Add graph relationship results
+        if graph_results:
+            context += "🔗 MỐI QUAN HỆ LIÊN KẾT:\n"
+            for i, result in enumerate(graph_results[:3], 1):  # Top 3 graph results
+                rel_type = result.get('metadata', {}).get('relationship_type', 'RELATED')
+                source = result.get('metadata', {}).get('source_entity', '')
+                target = result.get('metadata', {}).get('target_entity', '')
+                context += f"{i}. {source} --[{rel_type}]--> {target}\n"
+                context += f"   Chi tiết: {result.get('content', '')}\n\n"
+        
+        return context
+    
+    def _generate_hybrid_response(self, question: str, hybrid_context: str, original_answer: str) -> str:
+        """Generate enhanced answer sử dụng cả vector và graph context"""
+        try:
+            prompt = f"""Bạn là AI Assistant thông minh của FPTU, chuyên phân tích thông tin giáo dục với khả năng hiểu mối quan hệ phức tạp.
+
+NGỮ CẢNH THÔNG TIN (Vector Search + Graph Relationships):
+{hybrid_context}
+
+CÂU HỎI: {question}
+
+CÂU TRẢ LỜI GỐC (Vector-only): {original_answer}
+
+HƯỚNG DẪN TRẢ LỜI ENHANCED:
+1. Kết hợp thông tin từ cả nội dung (vector search) và mối quan hệ (graph traversal)
+2. Ưu tiên thông tin có mối quan hệ rõ ràng từ graph analysis
+3. Giải thích các mối liên kết và phụ thuộc nếu có
+4. Đưa ra câu trả lời toàn diện và có cấu trúc
+5. Không sử dụng biểu tượng cảm xúc
+
+Trả lời bằng tiếng Việt một cách tự nhiên và chuyên nghiệp:"""
+
+            enhanced_answer = self._call_gemini_with_rotation(prompt)
+            return enhanced_answer
+            
+        except Exception as e:
+            logger.error(f"Lỗi generate hybrid response: {e}")
+            return original_answer  # Fallback to original answer
+    
     def _get_search_config(self, intent: QueryIntent, query_lower: str) -> Dict[str, Any]:
         """Get search configuration based on query intent and content"""
         
@@ -2494,6 +2888,29 @@ Ten: {student.get('FirstName', '')}
             }
         
         # Special cases based on query content
+        
+        # Special Features Detection - Bonus Paper, Special Assessment, etc.
+        special_features_keywords = [
+            # Bonus paper keywords
+            'điểm thưởng', 'diem thuong', 'bonus', 'paper', 'bài báo', 'bai bao', 'scopus', 'isi',
+            'nghiên cứu', 'nghien cuu', 'research', 'publication', 'xuất bản', 'xuat ban',
+            # Project-based keywords
+            'capstone', 'dự án', 'du an', 'project', 'thuyết trình', 'thuyet trinh', 'presentation',
+            # MOOC keywords
+            'mooc', 'coursera', 'certification', 'chứng chỉ', 'chung chi', 'online',
+            # Language requirements
+            'tiếng nhật', 'tieng nhat', 'tiếng hàn', 'tieng han', 'japanese', 'korean',
+            # Special assessment
+            'đặc biệt', 'dac biet', 'special', 'unique', 'riêng', 'rieng'
+        ]
+        
+        if any(keyword in query_lower for keyword in special_features_keywords):
+            # Add special_features to content types with high priority
+            if 'special_features' not in config['content_types']:
+                config['content_types'].insert(0, 'special_features')
+            config['boost_factors']['special_features'] = 20.0  # Very high priority
+            config['max_results'] = max(config['max_results'], 10)
+            config['include_special_features'] = True
         
         # Combo/specialization queries get highest priority
         if any(keyword in query_lower for keyword in ['combo', 'chuyên ngành', 'chuyen nganh', 'specialization', 'track', 'hẹp', 'hep']):
@@ -2663,14 +3080,22 @@ Ten: {student.get('FirstName', '')}
                         
                         search_method = 'subject_specific' if item['subject_code'] == subject_code else 'subject_partial_match'
                         
-                        results.append({
+                        result_item = {
                             'content': item['content'],
                             'subject_code': item['subject_code'],
                             'type': item['type'],
                             'score': score,
                             'metadata': item.get('metadata', {}),
                             'search_method': search_method
-                        })
+                        }
+                        
+                        # Preserve special fields for special_features
+                        if item['type'] == 'special_features':
+                            result_item['has_bonus_paper'] = item.get('has_bonus_paper', False)
+                            result_item['has_mooc'] = item.get('has_mooc', False)
+                            result_item['has_special_assessment'] = item.get('has_special_assessment', False)
+                        
+                        results.append(result_item)
         
         # Sort by score and return top results
         results.sort(key=lambda x: x['score'], reverse=True)
@@ -2712,14 +3137,22 @@ Ten: {student.get('FirstName', '')}
                 if item['type'] in config['boost_factors']:
                     score *= config['boost_factors'][item['type']]
                 
-                results.append({
+                result_item = {
                     'content': item['content'],
                     'subject_code': item['subject_code'],
                     'type': item['type'],
                     'score': score,
                     'metadata': item.get('metadata', {}),
                     'search_method': 'content_type_semantic'
-                })
+                }
+                
+                # Preserve special fields for special_features
+                if item['type'] == 'special_features':
+                    result_item['has_bonus_paper'] = item.get('has_bonus_paper', False)
+                    result_item['has_mooc'] = item.get('has_mooc', False)
+                    result_item['has_special_assessment'] = item.get('has_special_assessment', False)
+                
+                results.append(result_item)
         
         return results
     
@@ -2786,14 +3219,22 @@ Ten: {student.get('FirstName', '')}
                         score *= 2.0  # Additional 2x boost for semester 5 Coursera courses
                         print(f"SEMESTER 5 + COURSERA BOOST applied to {item.get('subject_code', 'unknown')}")
                 
-                results.append({
+                result_item = {
                     'content': item['content'],
                     'subject_code': item['subject_code'],
                     'type': item['type'],
                     'score': score,
                     'metadata': item.get('metadata', {}),
                     'search_method': 'general_semantic'
-                })
+                }
+                
+                # Preserve special fields for special_features
+                if item['type'] == 'special_features':
+                    result_item['has_bonus_paper'] = item.get('has_bonus_paper', False)
+                    result_item['has_mooc'] = item.get('has_mooc', False)
+                    result_item['has_special_assessment'] = item.get('has_special_assessment', False)
+                
+                results.append(result_item)
         
         # Sort by score and return top results
         results.sort(key=lambda x: x['score'], reverse=True)
@@ -2925,7 +3366,26 @@ Ten: {student.get('FirstName', '')}
         """Compress context based on content type and importance"""
         context_parts = []
         
-        # Check if we have combo specialization first (highest priority for combo queries)
+        # PRIORITY 1: Special Features with Bonus Paper
+        special_features_results = []
+        bonus_paper_results = []
+        for subject_code, content_types in grouped_results.items():
+            if 'special_features' in content_types:
+                for result in content_types['special_features']:
+                    special_features_results.append(result)
+                    if result.get('has_bonus_paper', False):
+                        bonus_paper_results.append(result)
+        
+        # If we have bonus paper results, show them prominently
+        if bonus_paper_results:
+            context_parts.append(f"\n** MON CO DIEM THUONG PAPER KHOA HOC **:")
+            for bonus_result in bonus_paper_results:
+                subject_code = bonus_result.get('subject_code', '')
+                content = bonus_result.get('content', '')
+                context_parts.append(f"\n** {subject_code} **: {content}")
+            context_parts.append("")  # Empty line
+        
+        # PRIORITY 2: Check if we have combo specialization (highest priority for combo queries)
         combo_results = []
         for subject_code, content_types in grouped_results.items():
             if 'combo_specialization' in content_types:
@@ -3077,8 +3537,35 @@ Ten: {student.get('FirstName', '')}
             is_specific_subject = bool(re.search(r'[A-Za-z]{2,4}\d{3}[a-zA-Z]*', question))
             is_followup_question = any(term in question_lower for term in ['thì sao', 'ra sao', 'như thế nào', 'còn', 'con'])
             
+            # Detect special features question
+            is_special_features_question = any(keyword in question_lower for keyword in [
+                'điểm thưởng', 'diem thuong', 'bonus', 'paper', 'bài báo', 'bai bao', 'scopus', 'isi',
+                'đặc biệt', 'dac biet', 'special', 'mooc', 'coursera'
+            ])
+            has_bonus_paper_in_context = '** MON CO DIEM THUONG PAPER KHOA HOC **' in context
+            
             # Build enhanced prompt based on question type
-            if is_semester_question and (is_listing_question or is_followup_question):
+            if is_special_features_question and has_bonus_paper_in_context:
+                # Special features questions (bonus paper, MOOC, etc.)
+                prompt = f"""Bạn là AI Assistant chuyên môn về thông tin học tập tại FPT University. Hãy trả lời câu hỏi dựa trên CHÍNH XÁC thông tin được cung cấp.
+
+NGUYÊN TẮC QUAN TRỌNG CHO SPECIAL FEATURES:
+- Trả lời CHÍNH XÁC dựa trên dữ liệu được cung cấp về các môn học có đặc điểm đặc biệt
+- Khi có thông tin về điểm thưởng paper, hãy liệt kê rõ ràng các môn học và mức điểm thưởng
+- Tạo bảng thông tin với các cột: Mã môn, Điểm thưởng ISI/Scopus, Điều kiện
+- CHÚ Ý: Thông tin về bonus paper nằm trong phần "** MON CO DIEM THUONG PAPER KHOA HOC **"
+
+DỮ LIỆU:
+{context}
+
+TÍNH NĂNG QUAN TRỌNG:
+- Nếu câu hỏi hỏi về "môn có điểm thưởng paper", hãy tập trung vào phần "** MON CO DIEM THUONG PAPER KHOA HOC **"
+- Trả lời bằng format bảng rõ ràng về mức điểm thưởng cho từng loại journal
+- Bao gồm điều kiện và yêu cầu cho việc nhận điểm thưởng
+
+CÂU HỎI: {question}"""
+            
+            elif is_semester_question and (is_listing_question or is_followup_question):
                 # Semester-focused questions
                 prompt = f"""Bạn là AI Assistant chuyên môn về thông tin học tập tại FPT University. Hãy trả lời câu hỏi dựa trên CHÍNH XÁC thông tin được cung cấp.
 
