@@ -447,7 +447,7 @@ body {
   min-height: 2.5rem;
   height: 2.5rem;
   overflow-y: auto;
-  text-indent: 10px;
+  padding-left: 13px;
   padding-top: 8px;
 }
 
@@ -612,57 +612,67 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .chat-header {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+  /* Safe area support for mobile browsers */
+  body {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for better mobile support */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+      env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 
-  .header-actions {
-    justify-content: center;
+  .chat-container {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .chat-header {
+    padding: 1rem 1.5rem;
+    flex-direction: row; /* Keep horizontal layout on mobile */
+  }
+
+  .header-content h1 {
+    font-size: 1.25rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .action-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
   }
 
   .chat-messages {
     padding: 1rem;
+    padding-bottom: 0; /* Remove bottom padding to prevent overlap */
   }
 
+  /* Input area improvements for mobile */
   .chat-footer {
     padding: 1rem;
+    padding-bottom: max(
+      1rem,
+      env(safe-area-inset-bottom)
+    ); /* Respect safe area */
+    background: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(75, 85, 99, 0.3);
   }
 
-  .modal-content {
-    margin: 10% auto;
-    width: 95%;
-  }
-
-  .example-questions {
-    gap: 0.75rem;
-  }
-
-  .user-message .message-content,
-  .assistant-message .message-content {
-    max-width: 80%;
-  }
-
-  .user-message .message-content {
-    margin-left: auto;
-  }
-
-  .message-content {
-    padding: 1rem;
-    font-size: 0.875rem;
-  }
-
-  .subject-details {
-    flex-direction: column;
-    gap: 0.25rem;
+  .input-container {
+    padding: 0.75rem 1rem;
+    border-radius: 1.25rem;
+    border-width: 1px;
   }
 
   /* Mobile input fixes */
   #messageInput {
     font-size: 16px; /* Prevent zoom on iOS */
-    padding: 0.75rem 6rem 0.75rem 1rem; /* More space for char count */
-    min-height: 2.5rem;
+    padding: 0.75rem 4rem 0.75rem 1rem; /* More space for char count */
+    min-height: 2.25rem;
+    max-height: 4rem; /* Limit height on mobile */
+    border-radius: 1rem;
   }
 
   #messageInput::placeholder {
@@ -670,11 +680,80 @@ body {
     opacity: 0.8;
   }
 
+  .send-btn {
+    padding: 0.75rem;
+    border-radius: 1rem;
+    min-width: 3rem;
+  }
+
   /* Character count on mobile */
   .char-count {
-    bottom: 0.375rem;
+    bottom: 0.75rem;
     right: 0.75rem;
     font-size: 0.7rem;
+  }
+
+  /* Message adaptations */
+  .message {
+    margin: 1rem 0;
+  }
+
+  .user-message .message-content,
+  .assistant-message .message-content {
+    max-width: 85%;
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .user-message .message-content {
+    margin-left: auto;
+  }
+
+  .message-avatar {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+  }
+
+  /* Modal improvements */
+  .modal-content {
+    margin: 5% auto;
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .modal-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .modal-body {
+    padding: 1rem 1.5rem;
+  }
+
+  /* Example buttons */
+  .example-questions {
+    gap: 0.5rem;
+  }
+
+  .example-btn {
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  /* Subject details */
+  .subject-details {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  /* Welcome message grid fix */
+  .grid-cols-1.sm\\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ensure typing indicator is visible */
+  #typingIndicator {
+    margin: 1rem;
   }
 }
 
@@ -883,7 +962,6 @@ body {
 #messageInput {
   line-height: 1.5;
   min-height: 2.5rem;
-  text-indent: 10px;
 }
 
 #messageInput::placeholder {
@@ -1193,19 +1271,93 @@ body {
   margin: 1rem 0 0.5rem 0;
 }
 
-/* Responsive Table */
-@media (max-width: 768px) {
+/* Additional mobile viewport support */
+@supports (height: 100dvh) {
+  @media (max-width: 768px) {
+    body {
+      height: 100dvh;
+    }
+    .chat-container {
+      height: 100dvh;
+    }
+  }
+}
+
+/* Touch device optimizations */
+@media (max-width: 768px) and (pointer: coarse) {
+  /* Larger touch targets */
+  .example-btn,
+  .action-btn,
+  .send-btn {
+    min-height: 44px; /* iOS HIG recommended minimum */
+  }
+
+  /* Better scrolling on touch devices */
+  .chat-messages {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* Table responsive improvements */
   .message-content table {
     font-size: 0.75rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 
   .message-content th,
   .message-content td {
     padding: 0.5rem;
+    min-width: fit-content;
   }
 
   .message-content .overflow-x-auto {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Virtual keyboard support for mobile */
+@media (max-width: 768px) {
+  /* Prevent zoom on input focus for iOS */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Ensure input area stays above virtual keyboard */
+  .chat-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+  }
+
+  /* Auto-adjust height when virtual keyboard appears */
+  .relative.z-10.flex.flex-col.h-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Better chat message container sizing */
+  #chatContainer {
+    min-height: 0;
+    flex: 1;
+  }
+
+  /* Improve text readability on small screens */
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .text-xs {
+    font-size: 0.75rem;
+    line-height: 1.3;
   }
 }
