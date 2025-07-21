@@ -221,6 +221,8 @@ class ProcessedQuery:
     suggested_keywords: List[str]
     confidence: float
     needs_data_search: bool
+    main_topic: str = ""  # Chủ đề chính của cuộc trò chuyện
+    is_follow_up: bool = False  # Có phải là câu hỏi follow-up không
 
 class QueryPreprocessor:
     """Xử lý query bằng LLM trước khi đưa vào hệ thống chính"""
@@ -282,7 +284,9 @@ class QueryPreprocessor:
                 intent_description="unknown",
                 suggested_keywords=[],
                 confidence=0.5,
-                needs_data_search=True
+                needs_data_search=True,
+                main_topic="",
+                is_follow_up=False
             )
     
     def _build_preprocessing_prompt(self, query: str, conversation_context: str) -> str:
@@ -293,7 +297,7 @@ class QueryPreprocessor:
             context_part = f"\nLịch sử cuộc trò chuyện:\n{conversation_context}\n"
         
         return f"""Bạn là chuyên gia phân tích query cho hệ thống thông tin học tập FPT University. 
-Nhiệm vụ: Phân tích và cải thiện query của người dùng để tìm kiếm hiệu quả hơn.
+Nhiệm vụ: Phân tích và cải thiện query của người dùng để tìm kiếm hiệu quả hơn, đặc biệt chú ý đến việc duy trì CHỦ ĐỀ CHÍNH trong các câu hỏi follow-up.
 
 DOMAIN KNOWLEDGE - FPT UNIVERSITY:
 - Ngành AI có 45 môn học, phân bố theo 8 kì
@@ -303,23 +307,35 @@ DOMAIN KNOWLEDGE - FPT UNIVERSITY:
 
 {context_part}
 
+NGUYÊN TẮC XỬ LÝ CÂU HỎI FOLLOW-UP:
+1. Khi thấy câu hỏi ngắn gọn như "Rõ hơn", "Chi tiết hơn", "Thêm thông tin", "Giải thích thêm":
+   - PHẢI duy trì CHỦ ĐỀ CHÍNH từ cuộc trò chuyện trước
+   - CHỦ ĐỀ CHÍNH thường là đối tượng chính trong câu hỏi ban đầu (VD: "các môn kỳ 1", "môn học SEG301")
+   - KHÔNG được nhầm lẫn chi tiết phụ trong câu trả lời (như số tín chỉ, điểm số) với chủ đề chính
+
+2. Phân biệt rõ:
+   - CHỦ ĐỀ CHÍNH: Đối tượng mà người dùng quan tâm ban đầu (vd: "các môn kỳ 1", "SEG301")
+   - CHI TIẾT PHỤ: Thông tin bổ sung được đề cập trong câu trả lời (vd: "15 tín chỉ", "điểm thưởng")
+
 QUERY CẦN PHÂN TÍCH: "{query}"
 
 Hãy phân tích và trả về kết quả theo định dạng JSON:
 {{
+  "main_topic": "[CHỦ ĐỀ CHÍNH của cuộc trò chuyện]",
   "processed_query": "[Query được cải thiện để tìm kiếm tốt hơn]",
   "intent_description": "[Mô tả ý định: factual/listing/definition/counting/etc.]",
   "suggested_keywords": ["keyword1", "keyword2", "keyword3"],
   "confidence": [0.0-1.0],
   "needs_data_search": [true/false],
-  "reasoning": "[Giải thích logic phân tích]"
+  "reasoning": "[Giải thích logic phân tích, đặc biệt lý do duy trì chủ đề chính nếu đây là follow-up]"
 }}
 
 HƯỚNG DẪN CỤTHỂ:
-1. Nếu hỏi "bao nhiêu combo/chuyên ngành" → processed_query: "liệt kê tất cả combo chuyên ngành hẹp AI"
-2. Nếu hỏi "combo/chuyên ngành là gì" → processed_query: "thông tin về combo chuyên ngành hẹp ngành AI"
-3. Nếu hỏi về kì học cụ thể → thêm keywords về semester
-4. Nếu chỉ chào hỏi/cảm ơn → needs_data_search: false
+1. Với câu hỏi dạng "Rõ hơn", "Chi tiết hơn" → processed_query nên là: "Chi tiết về [CHỦ ĐỀ CHÍNH]" 
+2. Nếu hỏi "bao nhiêu combo/chuyên ngành" → processed_query: "liệt kê tất cả combo chuyên ngành hẹp AI"
+3. Nếu hỏi "combo/chuyên ngành là gì" → processed_query: "thông tin về combo chuyên ngành hẹp ngành AI"
+4. Nếu hỏi về kì học cụ thể → thêm keywords về semester
+5. Nếu chỉ chào hỏi/cảm ơn → needs_data_search: false
 
 Trả về JSON hợp lệ:"""
 
@@ -333,13 +349,29 @@ Trả về JSON hợp lệ:"""
                 json_str = json_match.group()
                 parsed = json.loads(json_str)
                 
+                # Get main topic if available (for follow-up questions)
+                main_topic = parsed.get('main_topic', '')
+                
+                # If this is a follow-up question and we have a main topic, prioritize it
+                processed_query = parsed.get('processed_query', original_query)
+                is_follow_up = len(original_query.split()) <= 3 and any(term in original_query.lower() 
+                                                                       for term in ['rõ hơn', 'chi tiết', 'giải thích', 'thêm'])
+                
+                # Log the main topic and follow-up detection
+                if main_topic:
+                    logger.info(f"Detected MAIN TOPIC: '{main_topic}'")
+                if is_follow_up:
+                    logger.info(f"Detected FOLLOW-UP question: '{original_query}'")
+                
                 return ProcessedQuery(
                     original_query=original_query,
-                    processed_query=parsed.get('processed_query', original_query),
+                    processed_query=processed_query,
                     intent_description=parsed.get('intent_description', 'unknown'),
                     suggested_keywords=parsed.get('suggested_keywords', []),
                     confidence=float(parsed.get('confidence', 0.7)),
-                    needs_data_search=bool(parsed.get('needs_data_search', True))
+                    needs_data_search=bool(parsed.get('needs_data_search', True)),
+                    main_topic=main_topic,
+                    is_follow_up=is_follow_up
                 )
             else:
                 # Không parse được JSON, fallback
@@ -365,7 +397,9 @@ Trả về JSON hợp lệ:"""
                 intent_description="semester_relationship_analysis",
                 suggested_keywords=['kì 4', 'kì 5', 'môn học', 'liên quan', 'tiên quyết', 'prerequisite'],
                 confidence=0.85,
-                needs_data_search=True
+                needs_data_search=True,
+                main_topic="môn học liên quan giữa các kỳ",
+                is_follow_up=False
             )
         
         # 2. COMBO COUNTING QUERIES
@@ -377,7 +411,9 @@ Trả về JSON hợp lệ:"""
                     intent_description="counting_combo",
                     suggested_keywords=['combo', 'chuyên ngành hẹp', 'AI', 'specialization', 'track'],
                     confidence=0.9,
-                    needs_data_search=True
+                    needs_data_search=True,
+                    main_topic="combo chuyên ngành hẹp",
+                    is_follow_up=False
                 )
         
         # 3. COMBO DEFINITION QUERIES  
@@ -389,7 +425,9 @@ Trả về JSON hợp lệ:"""
                     intent_description="definition_combo",
                     suggested_keywords=['combo', 'chuyên ngành hẹp', 'thông tin', 'specialization'],
                     confidence=0.9,
-                    needs_data_search=True
+                    needs_data_search=True,
+                    main_topic="combo chuyên ngành hẹp",
+                    is_follow_up=False
                 )
         
         # 4. SEMESTER LISTING QUERIES
@@ -410,7 +448,9 @@ Trả về JSON hợp lệ:"""
                     intent_description="semester_listing",
                     suggested_keywords=['môn học'] + [f'kì {s}' for s in semesters] + ['semester', 'curriculum'],
                     confidence=0.85,
-                    needs_data_search=True
+                    needs_data_search=True,
+                    main_topic=f"các môn học kỳ {', '.join(semesters)}",
+                    is_follow_up=False
                 )
         
         # 5. GREETINGS AND THANKS - SHOULD BE DIRECT CHAT
@@ -425,7 +465,9 @@ Trả về JSON hợp lệ:"""
                 intent_description="greeting_or_thanks",
                 suggested_keywords=[],
                 confidence=0.95,
-                needs_data_search=False  # IMPORTANT: Direct chat
+                needs_data_search=False,  # IMPORTANT: Direct chat
+                main_topic="",
+                is_follow_up=False
             )
         
         # 6. SUBJECT CODE QUERIES
@@ -437,7 +479,9 @@ Trả về JSON hợp lệ:"""
                 intent_description="subject_specific",
                 suggested_keywords=subject_codes + ['môn học', 'course', 'subject'],
                 confidence=0.8,
-                needs_data_search=True
+                needs_data_search=True,
+                main_topic=subject_codes[0] if subject_codes else "",
+                is_follow_up=False
             )
         
         # 7. GENERAL ACADEMIC QUERIES
@@ -449,7 +493,9 @@ Trả về JSON hợp lệ:"""
                 intent_description="general_academic",
                 suggested_keywords=['môn học', 'curriculum', 'academic'],
                 confidence=0.7,
-                needs_data_search=True
+                needs_data_search=True,
+                main_topic="thông tin chương trình học",
+                is_follow_up=False
             )
         
         # 8. DEFAULT FALLBACK
@@ -1114,6 +1160,9 @@ class AdvancedRAGEngine:
         # Conversation memory for chatbot functionality
         self.conversation_memory = {}  # session_id -> [{'user': query, 'bot': response}]
         
+        # Session memory to store search context and results for follow-up questions
+        self.session_memory = {}  # session_id -> {'last_query': query, 'last_results': results, 'main_topic': topic}
+        
         logger.info(f"✓ AdvancedRAGEngine được khởi tạo với {len(self.api_key_manager.api_keys)} API keys")
         logger.info(f"✓ GraphRAG enabled: {self.graph_enabled}")
 
@@ -1506,14 +1555,34 @@ Trả lời:"""
                 last_exchanges = conversation_context.split('\n')[-4:]  # 2 lượt cuối
                 conversation_summary = '\n'.join(last_exchanges)
             
+            # Lấy thông tin về truy vấn trước đó từ session memory nếu có
+            previous_search_query = None
+            previous_search_results = None
+            if session_id in self.session_memory:
+                previous_search_query = self.session_memory[session_id].get('last_query', None)
+                previous_search_results = self.session_memory[session_id].get('last_results', None)
+                logger.info(f"Retrieved previous search query: '{previous_search_query}'")
+                
             preprocessed = self.query_preprocessor.preprocess_query(question, conversation_summary)
             
             # BƯỚC 2: Quyết định strategy dựa trên kết quả preprocessing
             use_data_search = preprocessed.needs_data_search
-            final_query = preprocessed.processed_query if preprocessed.confidence > 0.6 else question
+            
+            # Xử lý đặc biệt cho câu hỏi follow-up
+            if preprocessed.is_follow_up and preprocessed.main_topic and previous_search_query:
+                logger.info(f"FOLLOW-UP DETECTED: Maintaining previous search context about '{preprocessed.main_topic}'")
+                # Kết hợp chủ đề chính với câu hỏi hiện tại
+                enhanced_query = f"Chi tiết về {preprocessed.main_topic} - {question}"
+                final_query = enhanced_query
+                logger.info(f"  Enhanced query for follow-up: '{final_query}'")
+            else:
+                final_query = preprocessed.processed_query if preprocessed.confidence > 0.6 else question
             
             logger.info(f"PREPROCESSING DECISION:")
             logger.info(f"  Use preprocessed query: {preprocessed.confidence > 0.6}")
+            logger.info(f"  Is follow-up question: {preprocessed.is_follow_up}")
+            if preprocessed.main_topic:
+                logger.info(f"  Main topic: '{preprocessed.main_topic}'")
             logger.info(f"  Final query: '{final_query}'")
             logger.info(f"  Strategy: {'DATA SEARCH' if use_data_search else 'DIRECT CHAT'}")
             
@@ -1533,6 +1602,16 @@ Trả lời:"""
                 
                 # Lưu vào conversation memory (dùng question gốc)
                 self.add_to_conversation(session_id, question, answer)
+                
+                # Lưu trữ query và kết quả tìm kiếm vào session memory để dùng cho follow-up
+                if session_id and use_data_search:
+                    self.session_memory[session_id] = {
+                        'last_query': final_query,
+                        'last_results': result.get('search_results', []),
+                        'main_topic': preprocessed.main_topic or self._extract_main_topic(final_query)
+                    }
+                    logger.info(f"Stored search context for session {session_id} with main topic: "
+                              f"'{self.session_memory[session_id]['main_topic']}'")
                 
                 # Build response structure for multihop vs regular
                 if enable_multihop:
@@ -4023,6 +4102,34 @@ Tuy nhiên, hệ thống gặp sự cố kỹ thuật khi tạo câu trả lời
                     })
             
             return {'subjects': subjects, 'total': len(subjects)}
+
+    def _extract_main_topic(self, query: str) -> str:
+        """Extract the main topic from a query if not provided by the query preprocessor"""
+        # Simple pattern matching for common query types
+        query_lower = query.lower()
+        
+        # Check for semester patterns
+        semester_pattern = re.search(r'(kì|ky|kỳ|ki|semester)\s*(\d+)', query_lower)
+        if semester_pattern:
+            semester_num = semester_pattern.group(2)
+            return f"các môn học kỳ {semester_num}"
+            
+        # Check for subject code patterns
+        subject_pattern = re.search(r'([a-z]{2,4}\d{3}[a-z]*)', query_lower)
+        if subject_pattern:
+            return subject_pattern.group(1).upper()
+            
+        # Check for combo patterns
+        if 'combo' in query_lower or 'chuyên ngành' in query_lower or 'chuyen nganh' in query_lower:
+            return "combo chuyên ngành hẹp"
+            
+        # Check for bonus paper pattern
+        if ('điểm thưởng' in query_lower or 'diem thuong' in query_lower or 'bonus' in query_lower) and ('paper' in query_lower or 'bài báo' in query_lower):
+            return "môn học có điểm thưởng paper"
+            
+        # Default to using first part of query (up to 5 words)
+        words = query.split()[:5]
+        return ' '.join(words)
 
 class QueryChain:
     """Xử lý chuỗi truy vấn đa cấp (multi-hop query)"""
