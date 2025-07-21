@@ -325,6 +325,17 @@ class ChatInterface {
         dataRows = rows.slice(1);
       }
 
+      // Fix for handling pipe format lines like "| TMG301 | Scopus Q3, Q4 | 2 điểm | Bài báo được chấp nhận/xuất bản |"
+      // by ensuring consistent cell structure
+      dataRows = dataRows.map(row => {
+        // If row starts with | and ends with |, ensure consistent splitting
+        if (row.trim().startsWith('|') && row.trim().endsWith('|')) {
+          const cleanRow = row.trim();
+          return cleanRow;
+        }
+        return row;
+      });
+
       let tableHTML = '<div class="overflow-x-auto my-4">';
       tableHTML +=
         '<table class="min-w-full border border-gray-600/50 rounded-lg overflow-hidden">';
@@ -344,10 +355,25 @@ class ChatInterface {
       if (dataRows.length > 0) {
         tableHTML += "<tbody>";
         dataRows.forEach((row, index) => {
-          const cells = row
-            .split("|")
-            .map((cell) => cell.trim())
-            .filter((cell) => cell);
+          // Normalize row format for lines that may have extra spaces or inconsistent formatting
+          let rowContent = row;
+          if (typeof rowContent === 'string') {
+            // Remove leading and trailing whitespace
+            rowContent = rowContent.trim();
+            // Remove leading and trailing | if they exist
+            if (rowContent.startsWith('|')) {
+              rowContent = rowContent.substring(1);
+            }
+            if (rowContent.endsWith('|')) {
+              rowContent = rowContent.substring(0, rowContent.length - 1);
+            }
+          }
+          
+          const cells = rowContent
+            .split('|')
+            .map(cell => cell.trim())
+            .filter(cell => cell !== '');
+            
           if (cells.length > 0) {
             const rowClass =
               index % 2 === 0 ? "bg-gray-800/30" : "bg-gray-800/50";
