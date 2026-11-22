@@ -1,11 +1,13 @@
 import json
 import csv
+import os
 
 def merge_data():
     # Paths to files
-    json_path = "e:/FPTU_RAG_V2/Data/flm_data_AI.json"
-    csv_path = "e:/FPTU_RAG_V2/Data/Students_AI17D.csv"
-    output_path = "e:/FPTU_RAG_V2/Data/combined_data.json"
+    data_dir = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(data_dir, "flm_data_AI.json")
+    csv_path = os.path.join(data_dir, "Students_AI17D.csv")  # personal data, not committed
+    output_path = os.path.join(data_dir, "combined_data.json")
     
     # Read the JSON data
     with open(json_path, 'r', encoding='utf-8') as json_file:

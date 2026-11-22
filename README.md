@@ -5,7 +5,7 @@
 FPTU RAG là hệ thống AI Assistant tiên tiến được thiết kế để hỗ trợ sinh viên và giảng viên FPT University tìm kiếm thông tin về:
 
 - **Syllabus và môn học**: 542 môn học với thông tin chi tiết
-- **Dữ liệu sinh viên**: 15 sinh viên ngành AI với thông tin cá nhân
+- **Dữ liệu sinh viên**: hỗ trợ truy vấn danh sách sinh viên (dữ liệu cá nhân không được đưa lên repo — `students` để trống)
 - **Chương trình đào tạo**: Lộ trình học tập, môn tiên quyết, combo chuyên ngành
 - **Multi-hop queries**: Tìm kiếm đa cấp thông minh
 
@@ -57,7 +57,7 @@ FPTU RAG là hệ thống AI Assistant tiên tiến được thiết kế để 
   "major_code_input": "AI",
   "curriculum_title_on_page": "Curriculum for AI",
   "syllabuses": [...],  // 542 môn học
-  "students": [...]     // 15 sinh viên
+  "students": []        // để trống vì lý do riêng tư
 }
 ```
 
